@@ -6,21 +6,21 @@ import Answer from '../quiz/Answer'
 
 describe('QuestionBox', () => {
   it('matches last snapshot', () => {
-    const wrapper = shallow(<QuestionBox />)
+    const wrapper = shallow(<QuestionBox answers={[1,2,3,4]}/>)
 
     expect(wrapper).toMatchSnapshot()
   })
 
   it('should render a QuestionBox component', () => {
-    const wrapper = shallow(<QuestionBox />)
+    const wrapper = shallow(<QuestionBox answers={[1,2,3,4]}/>)
 
     expect(wrapper.containsMatchingElement(<Question/>)).toEqual(true);
   })
 
   it('should render 4 Answer components', () => {
-    const wrapper = shallow(<QuestionBox/>)
+    const wrapper = shallow(<QuestionBox answers={[1,2,3,4]}/>)
 
-    expect(wrapper.containsMatchingElement(<Answer />)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<Answer/>)).toEqual(true);
   })
 
 
