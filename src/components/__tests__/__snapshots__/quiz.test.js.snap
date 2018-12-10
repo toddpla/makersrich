@@ -22,6 +22,7 @@ ShallowWrapper {
           End of level Quiz
         </h1>,
         <QuestionBox />,
+        <Results />,
       ],
       "id": "quiz-container",
     },
@@ -47,6 +48,15 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -61,6 +71,7 @@ ShallowWrapper {
             End of level Quiz
           </h1>,
           <QuestionBox />,
+          <Results />,
         ],
         "id": "quiz-container",
       },
@@ -76,6 +87,15 @@ ShallowWrapper {
           "ref": null,
           "rendered": "End of level Quiz",
           "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,
