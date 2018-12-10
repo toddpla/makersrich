@@ -9,11 +9,14 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
 
+import Quiz from './components/quiz/Quiz'
+
 const store = configureStore()
 
 const jsx = (
   <Provider store={store}>
     <AppRouter />
+    <Quiz />
   </Provider>
 );
 
