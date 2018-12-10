@@ -8,22 +8,25 @@ import { loadQuestion, sendResult } from '../../actions/quiz'
 
 export class QuestionBox extends React.Component {
 
+
+
   handleClick = (e, index) => {
-    //if questionCount <= 5
-    //check answer
-    var result = false
-    if(this.props.answers[index] == this.props.correctAnswer) {
-      result = true
-    }
-    //send result
-    this.props.sendResult(result)
-    //load new question
-    this.props.loadQuestion()
+      var result = false
+      if(this.props.answers[index] == this.props.correctAnswer) {
+        result = true
+      }
+      this.props.sendResult(result)
+      if(this.props.questionNumber < 4){
+        this.props.loadQuestion()
+      } else {
+        this.props.showResults()
+      }
+
   }
 
   render() {
     return (
-      <div id='question-box-container'>
+      <div id='question-box-container' style={{display: this.props.visible}}>
         <Question
         question={this.props.question}/>
         <Answer answer={this.props.answers[0]} onClick={ (e) =>  {this.handleClick(e, 0)}} id='answer-1'/>
