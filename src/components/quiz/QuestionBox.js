@@ -1,9 +1,12 @@
 import React from 'react'
 import Question from './Question'
 import Answer from './Answer'
+import { connect } from 'react-redux'
+
+import { loadQuestion } from '../../actions/quiz'
 
 
-export default class QuestionBox extends React.Component {
+export class QuestionBox extends React.Component {
 
   handleClick = (e, index) => {
     //if questionCount <= 5
@@ -13,9 +16,10 @@ export default class QuestionBox extends React.Component {
       result = true
     }
     //send result
-    sendResult(result)
+    // sendResult(result)
     //load new question
-    loadQuestion()
+    console.log('here1')
+    this.props.loadQuestion()
   }
 
   render() {
@@ -31,3 +35,13 @@ export default class QuestionBox extends React.Component {
     )
   }
 }
+
+const mapStateToProps = dispatch => ({
+
+})
+
+const mapDispatchToProps = dispatch => ({
+      loadQuestion: () => dispatch(loadQuestion())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionBox)

@@ -21,7 +21,7 @@ ShallowWrapper {
         <h1>
           End of level Quiz
         </h1>,
-        <QuestionBox />,
+        <Connect(QuestionBox) />,
         <Results />,
       ],
       "id": "quiz-container",
@@ -74,7 +74,7 @@ ShallowWrapper {
           <h1>
             End of level Quiz
           </h1>,
-          <QuestionBox />,
+          <Connect(QuestionBox) />,
           <Results />,
         ],
         "id": "quiz-container",

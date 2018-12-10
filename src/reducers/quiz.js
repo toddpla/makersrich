@@ -9,7 +9,9 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'LOAD_QUESTION':
       return {
-        ...action.payload
+        question: action.payload.question,
+        answers: action.payload.answers,
+        correctAnswer: action.payload.correctAnswer
       }
     default:
       return state

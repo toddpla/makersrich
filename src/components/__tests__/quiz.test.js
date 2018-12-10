@@ -20,7 +20,7 @@ describe('Quiz', () => {
   it('should render a QuestionBox component', () => {
     const wrapper = shallow(<Quiz />)
 
-    expect(wrapper.containsMatchingElement(<QuestionBox />)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<QuestionBox/>)).toEqual(true);
   })
 
   it('should render a Results component', () => {

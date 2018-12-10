@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import QuestionBox from './QuestionBox'
 import Results from './Results'
 
+
 export class Quiz extends React.Component {
 
   render() {
