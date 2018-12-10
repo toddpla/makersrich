@@ -5,8 +5,9 @@ import { updatePlayer } from '../actions/players'
 
 class GamePage extends Component {
 
-  handleMovement = (player, update) => {
-    this.props.updatePlayer(player, update)
+  handleMovement = (player, updates) => {
+    this.props.updatePlayer(player, updates)
+    this.forceUpdate()
   }
 
   render() {

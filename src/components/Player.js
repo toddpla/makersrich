@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
 
 class Player extends Component {
-  handleKeyDown = (e) => {
-    e.preventDefault()
-
-    switch(e.keyCode) {
+  handleKeyDown = (keyCode) => {
+    switch(keyCode) {
       // left key
       case 37:
         return { left: this.props.player.left - 16 }
       // up key
       case 38:
         return { top: this.props.player.top - 16 }
-
       // right key
       case 39:
         return { left: this.props.player.left + 16 }
-
       // down key
       case 40:
         return { top: this.props.player.top + 16 }
-
       default:
-        console.log(e.keyCode);
+        console.log(keyCode);
     }
-
   }
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
-      this.props.handleMovement(this.props.player.name, this.handleKeyDown(e))
+      this.props.handleMovement(this.props.player, this.handleKeyDown(e.keyCode))
     })
   }
 
@@ -47,7 +41,6 @@ class Player extends Component {
       </div>
     );
   }
-
 }
 
 

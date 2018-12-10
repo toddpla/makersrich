@@ -5,13 +5,16 @@ export default (state=playersReducerDefaultState, action) => {
     case "ADD_PLAYER":
       return [...state, action.player]
     case "UPDATE_PLAYER":
-      state.forEach(player => {
+      return state.map(player => {
         if (player.name === action.player.name) {
           return {
-            player,
+            ...player,
             ...action.updates
           }
-      }})
+      } else {
+        return player
+      }
+    })
       return state
     default:
       return state
