@@ -4,7 +4,7 @@ export default class Answer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div onClick={this.props.onClick}>
         {this.props.answer}
       </div>
     )
