@@ -50,6 +50,9 @@ ShallowWrapper {
         />,
       ],
       "id": "question-box-container",
+      "style": Object {
+        "display": undefined,
+      },
     },
     "ref": null,
     "rendered": Array [
@@ -149,6 +152,9 @@ ShallowWrapper {
           />,
         ],
         "id": "question-box-container",
+        "style": Object {
+          "display": undefined,
+        },
       },
       "ref": null,
       "rendered": Array [
