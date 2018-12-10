@@ -15,7 +15,6 @@ export default (state=playersReducerDefaultState, action) => {
         return player
       }
     })
-      return state
     default:
       return state
   }
