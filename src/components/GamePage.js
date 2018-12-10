@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Player from './Player'
 import { connect } from 'react-redux'
-import { updatePlayer } from '../actions/players'
+import { startUpdatePlayer } from '../actions/players'
 
 class GamePage extends Component {
 
-  handleMovement = (player, updates) => {
-    this.props.updatePlayer(player, updates)
+  handleMovement = (updates) => {
+    this.props.startUpdatePlayer(updates)
     this.forceUpdate()
   }
 
@@ -24,7 +24,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePlayer: (player, direction) => dispatch(updatePlayer(player, direction))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

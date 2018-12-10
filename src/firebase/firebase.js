@@ -15,18 +15,19 @@ const database = firebase.database();
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
+const currentUser = () => firebase.auth().currentUser;
 
 const subscribe = () => {
-  const currentUser = firebase.auth().currentUser;
-  const userStatusDatabaseRef = firebase.database().ref(`/status/${currentUser.uid}`);
+  const userStatusDatabaseRef = firebase.database().ref(`/players/${currentUser().uid}`);
   const isOfflineForDatabase = {
       state: 'offline',
       last_changed: firebase.database.ServerValue.TIMESTAMP,
   };
   const isOnlineForDatabase = {
       state: 'online',
-      displayName: currentUser.displayName,
+      displayName: currentUser().displayName,
       last_changed: firebase.database.ServerValue.TIMESTAMP,
+
   };
   firebase.database().ref('.info/connected').on('value', function(snapshot) {
       if (snapshot.val() == false) {
@@ -43,5 +44,6 @@ export {
   firebase,
   googleAuthProvider,
   database as default,
-  subscribe
+  subscribe,
+  currentUser
 };

@@ -6,15 +6,17 @@ export default (state=playersReducerDefaultState, action) => {
       return [...state, action.player]
     case "UPDATE_PLAYER":
       return state.map(player => {
-        if (player.name === action.player.name) {
+        if (player.uid === action.id) {
           return {
             ...player,
             ...action.updates
           }
-      } else {
-        return player
-      }
-    })
+        } else {
+          return player
+        }
+      })
+    case "SET_PLAYERS":
+      return action.players
     default:
       return state
   }

@@ -5,6 +5,7 @@ import AppRouter from './routers/AppRouter'
 import { history } from './routers/AppRouter'
 import { firebase, subscribe } from './firebase/firebase'
 import { login, logout } from './actions/auth'
+import { startOnPlayers } from './actions/players'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
@@ -36,6 +37,7 @@ firebase.auth().onAuthStateChanged(user => {
   if(user) {
     store.dispatch(login(user.uid))
     subscribe()
+    store.dispatch(startOnPlayers())
     renderApp()
     if (history.location.pathname === '/') {
       history.push('/add-player')

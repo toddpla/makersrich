@@ -22,7 +22,7 @@ class Player extends Component {
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
-      this.props.handleMovement(this.props.player, this.handleKeyDown(e.keyCode))
+      this.props.handleMovement(this.handleKeyDown(e.keyCode))
     })
   }
 
@@ -38,6 +38,7 @@ class Player extends Component {
           backgroundColor: 'red'
         }}
       >
+      {this.props.player.displayName.split(' ')[0]}
       </div>
     );
   }
