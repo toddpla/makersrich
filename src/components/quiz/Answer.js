@@ -5,7 +5,7 @@ export default class Answer extends React.Component {
   render() {
     return (
       <div>
-        Answer
+        {this.props.answer}
       </div>
     )
   }

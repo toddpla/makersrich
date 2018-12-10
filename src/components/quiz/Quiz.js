@@ -11,7 +11,10 @@ export class Quiz extends React.Component {
     return(
       <div id='quiz-container'>
         <h1>End of level Quiz</h1>
-        <QuestionBox />
+        <QuestionBox
+        question={this.props.question}
+        answers={this.props.answers}
+        correctAnswer={this.props.correctAnswer}/>
         <Results />
       </div>
     )
