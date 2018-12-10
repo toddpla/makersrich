@@ -7,11 +7,10 @@ class GamePage extends Component {
   render() {
     return (
       <div>
-        {this.props.players.map(player => <Player player={player} /> )}
+        {this.props.players.map((player, i) => <Player key={i} player={player} /> )}
       </div>
     );
   }
-
 }
 
 const mapStateToProps = (state) => ({

@@ -4,7 +4,9 @@ class Player extends Component {
 
   render() {
     return (
-      <div></div>
+      <div id={this.props.player.name}>
+        {this.props.player.name}
+      </div>
     );
   }
 
