@@ -1,10 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import QuestionBox from './QuestionBox'
 import Results from './Results'
 
-export default class Quiz extends React.Component {
+export class Quiz extends React.Component {
 
   render() {
+
     return(
       <div id='quiz-container'>
         <h1>End of level Quiz</h1>
@@ -14,3 +17,11 @@ export default class Quiz extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    ...state.quiz,
+  }
+}
+
+export default connect(mapStateToProps)(Quiz)

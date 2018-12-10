@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Quiz from '../quiz/Quiz'
+import {Quiz} from '../quiz/Quiz'
 import QuestionBox from '../quiz/QuestionBox'
 import Results from '../quiz/Results'
 
