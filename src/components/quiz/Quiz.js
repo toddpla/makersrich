@@ -16,7 +16,8 @@ export class Quiz extends React.Component {
         question={this.props.question}
         answers={this.props.answers}
         correctAnswer={this.props.correctAnswer}/>
-        <Results />
+        <Results
+        results={this.props.results}/>
       </div>
     )
   }

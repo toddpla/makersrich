@@ -3,7 +3,7 @@ import Question from './Question'
 import Answer from './Answer'
 import { connect } from 'react-redux'
 
-import { loadQuestion } from '../../actions/quiz'
+import { loadQuestion, sendResult } from '../../actions/quiz'
 
 
 export class QuestionBox extends React.Component {
@@ -16,9 +16,8 @@ export class QuestionBox extends React.Component {
       result = true
     }
     //send result
-    // sendResult(result)
+    this.props.sendResult(result)
     //load new question
-    console.log('here1')
     this.props.loadQuestion()
   }
 
@@ -41,7 +40,8 @@ const mapStateToProps = dispatch => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-      loadQuestion: () => dispatch(loadQuestion())
+      loadQuestion: () => dispatch(loadQuestion()),
+      sendResult: (result) => dispatch(sendResult(result)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionBox)

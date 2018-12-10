@@ -9,9 +9,15 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'LOAD_QUESTION':
       return {
+        ...state,
         question: action.payload.question,
         answers: action.payload.answers,
         correctAnswer: action.payload.correctAnswer
+      }
+    case 'SEND_RESULT':
+      state.results.push(action.payload.result)
+      return {
+        ...state
       }
     default:
       return state

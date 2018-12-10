@@ -8,3 +8,10 @@ export const loadQuestion = () => ({
       correctAnswer: 'a revolution'
     }
 })
+
+export const sendResult = (result) => ({
+    type: 'SEND_RESULT',
+    payload: {
+      result: result
+    }
+})
