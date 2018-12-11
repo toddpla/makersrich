@@ -146,7 +146,7 @@
  "tilesets":[
         {
          "firstgid":2353,
-         "source":"..\/..\/..\/Documents\/POWTiles.json"
+         "source":"POWTiles.json"
         }],
  "tilewidth":15,
  "type":"map",
