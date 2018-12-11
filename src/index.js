@@ -8,15 +8,17 @@ import { login, logout } from './actions/auth'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
+import {startSetQuestions} from './actions/questions'
 
 import Quiz from './components/quiz/Quiz'
 
 const store = configureStore()
 
+store.dispatch(startSetQuestions())
+
 const jsx = (
   <Provider store={store}>
     <AppRouter />
-    <Quiz />
   </Provider>
 );
 

@@ -11,12 +11,12 @@ export class Quiz extends React.Component {
   super(props);
   this.state = {
     questionsVisibility: '',
-    resultsVisibility: 'none'
+    resultsVisibility: 'none',
+    currentQuestion: 0
   };
 }
 
   showResults = () => {
-    console.log('cggsgr')
     this.setState({
       questionsVisibility: 'none',
       resultsVisibility: ''
@@ -24,29 +24,26 @@ export class Quiz extends React.Component {
   }
 
   render() {
-
     return(
       <div id='quiz-container'>
         <h1>End of level Quiz</h1>
-        <QuestionBox
-        visible={this.state.questionsVisibility}
-        showResults={this.showResults}
-        questionNumber={this.props.results.length}
-        question={this.props.question}
-        answers={this.props.answers}
-        correctAnswer={this.props.correctAnswer}/>
-        <Results
-        visible={this.state.resultsVisibility}
-        results={this.props.results}/>
+        
       </div>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    ...state.quiz,
-  }
-}
+const mapStateToProps = (state) => ({
+    questions: state.questions
+})
 
 export default connect(mapStateToProps)(Quiz)
+
+// <QuestionBox
+// // visible={this.state.questionsVisibility}
+// // showResults={this.showResults}
+// // question={this.state.currentQuestion}
+// // answers={this.state.currentQuestion.answers}
+// // correctAnswer={this.props.correctAnswer}
+// />
+// <Results />

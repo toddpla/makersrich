@@ -3,7 +3,7 @@ import Question from './Question'
 import Answer from './Answer'
 import { connect } from 'react-redux'
 
-import { loadQuestion, sendResult } from '../../actions/quiz'
+import { loadQuestion, sendResult } from '../../actions/questions'
 
 
 export class QuestionBox extends React.Component {
