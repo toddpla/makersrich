@@ -9,23 +9,23 @@ export const addPlayer = (player) => ({
   }
 })
 
-export const startAddPlayer = (playerData = {}) => {
-  return (dispatch) => {
-    const {
-      top = 0,
-      left = 0
-    } = playerData;
-    const player = {
-      top,
-      left
-    }
-    return database.ref(`players/${currentUser().uid}`).update(player)
-  }
-}
+// export const startAddPlayer = (playerData = {}) => {
+//   return (dispatch) => {
+//     const {
+//       top = 0,
+//       left = 0
+//     } = playerData;
+//     const player = {
+//       top,
+//       left
+//     }
+//     return database.ref(`players/${currentUser().uid}`).update(player)
+//   }
+// }
 
 export const updatePlayer = (updates) => ({
   type: "UPDATE_PLAYER",
-  id: currentUser.uid,
+  id: currentUser().uid,
   updates
 })
 
@@ -33,7 +33,7 @@ export const startUpdatePlayer = (updates) => {
   console.log(updates)
   return (dispatch) => {
     return database.ref(`players/${currentUser().uid}`).update(updates).then(() => {
-      dispatch(updatePlayer(updates))
+      // dispatch(updatePlayer(updates))
     })
   }
 }

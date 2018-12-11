@@ -21,12 +21,15 @@ class Player extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      this.props.handleMovement(this.handleKeyDown(e.keyCode))
-    })
+    if (this.props.currentPlayer) {
+      window.addEventListener('keydown', (e) => {
+        this.props.handleMovement(this.handleKeyDown(e.keyCode))
+      })
+    }
   }
 
   render() {
+    const status = this.props.player.state === 'online' ? 'green' : 'red'
     return (
       <div id={this.props.player.name}
         style={{
@@ -35,7 +38,7 @@ class Player extends Component {
           top: this.props.player.top,
           left: this.props.player.left,
           height: '16px',
-          backgroundColor: 'red'
+          backgroundColor: status
         }}
       >
       {this.props.player.displayName.split(' ')[0]}

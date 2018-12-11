@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Player from './Player'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/players'
+import { currentUser } from '../firebase/firebase'
 
 class GamePage extends Component {
 
@@ -11,9 +12,16 @@ class GamePage extends Component {
   }
 
   render() {
+    const uid = currentUser().uid
     return (
       <div>
-        {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
+        {this.props.players.map((player, i) => (
+          <Player
+            key={i}
+            player={player}
+            currentPlayer={uid === player.id}
+            handleMovement={this.handleMovement} />
+        ))}
       </div>
     );
   }

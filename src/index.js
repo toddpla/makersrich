@@ -12,6 +12,8 @@ import configureStore from './store/configureStore'
 
 const store = configureStore()
 
+store.dispatch(startOnPlayers())
+
 const jsx = (
   <Provider store={store}>
     <AppRouter />
@@ -37,10 +39,9 @@ firebase.auth().onAuthStateChanged(user => {
   if(user) {
     store.dispatch(login(user.uid))
     subscribe()
-    store.dispatch(startOnPlayers())
     renderApp()
     if (history.location.pathname === '/') {
-      history.push('/add-player')
+      history.push('/game')
     }
   } else {
     store.dispatch(logout())

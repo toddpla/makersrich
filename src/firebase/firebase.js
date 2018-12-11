@@ -14,6 +14,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const gitHubAuthProvider = new firebase.auth.GithubAuthProvider();
 
 const currentUser = () => firebase.auth().currentUser;
 
@@ -43,6 +44,7 @@ const subscribe = () => {
 export {
   firebase,
   googleAuthProvider,
+  gitHubAuthProvider,
   database as default,
   subscribe,
   currentUser
