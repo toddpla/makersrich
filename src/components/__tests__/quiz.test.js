@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import {Quiz} from '../quiz/Quiz'
-import QuestionBox from '../quiz/QuestionBox'
 import Results from '../quiz/Results'
 
 describe('Quiz', () => {
@@ -17,16 +16,6 @@ describe('Quiz', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should render a QuestionBox component', () => {
-    const wrapper = shallow(<Quiz results={[1,2,3]} />)
 
-    expect(wrapper.containsMatchingElement(<QuestionBox/>)).toEqual(true);
-  })
-
-  it('should render a Results component', () => {
-    const wrapper = shallow(<Quiz results={[1,2,3]} />)
-
-    expect(wrapper.containsMatchingElement(<Results />)).toEqual(true);
-  })
 
 })

@@ -6,7 +6,6 @@ export const getQuestion = (question) => ({
 })
 
 export const startGetQuestion = (uid) => {
-
   return (dispatch) => {
     return database.ref(`players/${uid}/questions`).once('value').then((playerQuestionsSnapshot) => {
       const playerQuestions = []
@@ -30,7 +29,6 @@ export const startGetQuestion = (uid) => {
         }
       })
     })
-
   }
 }
 
