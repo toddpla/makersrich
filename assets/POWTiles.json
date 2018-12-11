@@ -1,0 +1,14 @@
+{ "columns":57,
+ "image":"..\/Downloads\/Kenney Game Assets (version 40)\/Art\/Archive (2650 assets)\/Roguelike pack 15x (retired, 2125 assets)\/roguelikeSheet_transparent.png",
+ "imageheight":729,
+ "imagewidth":967,
+ "margin":0,
+ "name":"POWTiles",
+ "spacing":2,
+ "tilecount":2451,
+ "tiledversion":"1.2.1",
+ "tileheight":15,
+ "tilewidth":15,
+ "type":"tileset",
+ "version":1.2
+}
