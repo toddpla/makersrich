@@ -23,6 +23,7 @@ class Player extends Component {
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
+      e.preventDefault()
       this.props.handleMovement(this.props.player, this.handleKeyDown(e.keyCode))
     })
   }
@@ -32,10 +33,10 @@ class Player extends Component {
       <div id={this.props.player.name}
         style={{
           position: 'absolute',
-          width: '15px',
+          width: '16px',
           top: this.props.player.top,
           left: this.props.player.left,
-          height: '15px',
+          height: '16px',
           backgroundColor: 'red'
         }}
       >
