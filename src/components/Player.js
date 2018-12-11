@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import { SPRITE_SIZE } from '../constants'
 
 class Player extends Component {
   handleKeyDown = (keyCode) => {
     switch(keyCode) {
       // left key
       case 37:
-        return { left: this.props.player.left - 16 }
+        return { left: this.props.player.left - SPRITE_SIZE }
       // up key
       case 38:
-        return { top: this.props.player.top - 16 }
+        return { top: this.props.player.top - SPRITE_SIZE }
       // right key
       case 39:
-        return { left: this.props.player.left + 16 }
+        return { left: this.props.player.left + SPRITE_SIZE }
       // down key
       case 40:
-        return { top: this.props.player.top + 16 }
+        return { top: this.props.player.top + SPRITE_SIZE }
       default:
         console.log(keyCode);
     }
@@ -31,10 +32,10 @@ class Player extends Component {
       <div id={this.props.player.name}
         style={{
           position: 'absolute',
-          width: '16px',
+          width: '15px',
           top: this.props.player.top,
           left: this.props.player.left,
-          height: '16px',
+          height: '15px',
           backgroundColor: 'red'
         }}
       >
