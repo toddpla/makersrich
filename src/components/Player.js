@@ -32,10 +32,10 @@ class Player extends Component {
       <div id={this.props.player.name}
         style={{
           position: 'absolute',
-          width: '16px',
+          width: '15px',
           top: this.props.player.top,
           left: this.props.player.left,
-          height: '16px',
+          height: '15px',
           backgroundColor: 'red'
         }}
       >
