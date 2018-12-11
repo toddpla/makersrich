@@ -24,6 +24,7 @@ class GamePage extends Component {
   }
 
   checkBoundaries = (updates) => {
+    if (updates === undefined) { return }
     return (updates.left < 0 || updates.top < 0 || updates.left > MAX_WIDTH
             || updates.top > MAX_HEIGHT)
   }
