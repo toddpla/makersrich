@@ -3,6 +3,7 @@ import Player from './Player'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { updatePlayer } from '../actions/players'
+<<<<<<< Updated upstream
 import styled from 'styled-components'
 import { MAX_HEIGHT, MAX_WIDTH } from '../constants'
 
@@ -13,6 +14,9 @@ justify-content: center;
 align-items: center;
 background-color: #1c1117;
 `;
+=======
+import { MapProvider, Map } from "react-tiled";
+>>>>>>> Stashed changes
 
 class GamePage extends Component {
 
@@ -31,9 +35,18 @@ class GamePage extends Component {
 
   render() {
     return (
+<<<<<<< Updated upstream
           <div>
             {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
           </div>
+=======
+      <MapProvider mapUrl={process.env.PUBLIC_URL + "/assets/POW_map.json"}>
+        <Map style={{ transform: "scale(1)" }}/>
+        <div>
+          {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
+        </div>
+        </MapProvider>
+>>>>>>> Stashed changes
     );
   }
 }
