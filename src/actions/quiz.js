@@ -5,19 +5,32 @@ export const getQuestion = (question) => ({
   question
 })
 
-export const startGetQuestion = () => {
+export const startGetQuestion = (uid) => {
+
   return (dispatch) => {
-    return database.ref('questions').once('value').then((snapshot) => {
-      const questions = []
-      snapshot.forEach(childSnapshot => {
-        questions.push({
-          id: childSnapshot.key,
-          ...childSnapshot.val()
-        })
+    return database.ref(`players/${uid}/questions`).once('value').then((playerQuestionsSnapshot) => {
+      const playerQuestions = []
+      playerQuestionsSnapshot.forEach(playerQuestionsChildSnapshot => {
+        playerQuestions.push(playerQuestionsChildSnapshot.key)
       })
-      const index = Math.floor(Math.random() * questions.length)
-      dispatch(getQuestion(questions[index]))
+      return database.ref('questions').once('value').then((snapshot) => {
+        const questions = []
+        snapshot.forEach(childSnapshot => {
+          questions.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val()
+          })
+        })
+        const availableQuestions = questions.filter(question => {
+          return !playerQuestions.includes(question.id)
+        })
+        if(availableQuestions.length > 0) {
+          const index = Math.floor(Math.random() * availableQuestions.length)
+          dispatch(getQuestion(availableQuestions[index]))
+        }
+      })
     })
+
   }
 }
 

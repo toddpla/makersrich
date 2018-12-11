@@ -33,8 +33,6 @@ class AddQuestionPage extends Component {
           <input type='text' id='correctAnswer'  placeholder='correct answer' />
           <input type='submit' value='submit' />
         </form>
-
-
       </div>
     );
   }
