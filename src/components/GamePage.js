@@ -4,6 +4,7 @@ import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { updatePlayer } from '../actions/players'
 import styled from 'styled-components'
+import { MAX_HEIGHT, MAX_WIDTH } from '../constants'
 
 const AppWrapper = styled.div`
 height: 100%;
@@ -16,21 +17,22 @@ background-color: #1c1117;
 class GamePage extends Component {
 
   handleMovement = (player, updates) => {
-    this.props.updatePlayer(player, updates)
-    this.forceUpdate()
+    if (!this.checkBoundaries(updates)) {
+      this.props.updatePlayer(player, updates)
+      this.forceUpdate()
+    }
+  }
+
+  checkBoundaries = (updates) => {
+    return (updates.left < 0 || updates.top < 0 || updates.left > MAX_WIDTH
+            || updates.top > MAX_HEIGHT)
   }
 
   render() {
     return (
-      <MapProvider mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel0.json"}>
-        <AppWrapper>
-          <Map style={{ transform: "scale(2)"}}/>
-          // <div>
-          //   {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
-          // </div>
-        </AppWrapper>
-      </MapProvider>
-
+          <div>
+            {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
+          </div>
     );
   }
 }
