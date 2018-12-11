@@ -38,7 +38,7 @@ firebase.auth().onAuthStateChanged(user => {
     subscribe()
     renderApp()
     if (history.location.pathname === '/') {
-      history.push('/dashboard')
+      history.push('/add-player')
     }
   } else {
     store.dispatch(logout())
