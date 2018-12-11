@@ -28,6 +28,8 @@ const subscribe = () => {
       state: 'online',
       displayName: currentUser().displayName,
       last_changed: firebase.database.ServerValue.TIMESTAMP,
+      top: 0,
+      left: 0
 
   };
   firebase.database().ref('.info/connected').on('value', function(snapshot) {
