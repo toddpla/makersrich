@@ -12,7 +12,7 @@ export class QuestionBox extends React.Component {
 
   handleClick = (e, index) => {
       var result = false
-      if(this.props.answers[index] == this.props.correctAnswer) {
+      if(this.props.answers[index] === this.props.correctAnswer) {
         result = true
       }
       this.props.sendResult(result)
@@ -38,13 +38,9 @@ export class QuestionBox extends React.Component {
   }
 }
 
-const mapStateToProps = dispatch => ({
-
-})
-
 const mapDispatchToProps = dispatch => ({
       loadQuestion: () => dispatch(loadQuestion()),
       sendResult: (result) => dispatch(sendResult(result)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionBox)
+export default connect(undefined, mapDispatchToProps)(QuestionBox)

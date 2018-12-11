@@ -1,5 +1,3 @@
-import store from '../store/configureStore'
-
 export const loadQuestion = () => ({
     type: 'LOAD_QUESTION',
 

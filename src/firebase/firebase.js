@@ -29,7 +29,7 @@ const subscribe = () => {
       last_changed: firebase.database.ServerValue.TIMESTAMP,
   };
   firebase.database().ref('.info/connected').on('value', function(snapshot) {
-      if (snapshot.val() == false) {
+      if (snapshot.val() === false) {
           return;
       };
       userStatusDatabaseRef.onDisconnect().update(isOfflineForDatabase).then(function() {
