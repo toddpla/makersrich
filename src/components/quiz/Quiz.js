@@ -3,18 +3,15 @@ import { connect } from 'react-redux'
 
 import QuestionBox from './QuestionBox'
 import Results from './Results'
+import { startGetQuestion } from '../../actions/quiz'
 
 
 export class Quiz extends React.Component {
 
   constructor(props) {
-  super(props);
-  this.state = {
-    questionsVisibility: '',
-    resultsVisibility: 'none',
-    currentQuestion: 0
-  };
-}
+    super(props);
+    this.props.startGetQuestion()
+  }
 
   showResults = () => {
     this.setState({
@@ -27,17 +24,25 @@ export class Quiz extends React.Component {
     return(
       <div id='quiz-container'>
         <h1>End of level Quiz</h1>
-        
+        { !(Object.keys(this.props.quiz).length === 0 && this.props.quiz.constructor === Object) && (
+          <QuestionBox
+            question={this.props.quiz}
+          />
+        )}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-    questions: state.questions
+    quiz: state.quiz
 })
 
-export default connect(mapStateToProps)(Quiz)
+const mapDispatchToProps = dispatch => ({
+  startGetQuestion: () => dispatch(startGetQuestion())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
 
 // <QuestionBox
 // // visible={this.state.questionsVisibility}

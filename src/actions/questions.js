@@ -21,7 +21,7 @@ export const setQuestions = (questions) => ({
 })
 
 export const startAddQuestion = (question) => {
-  return(dispatch) => {
+  return (dispatch) => {
     return database.ref('questions').push(question).then((ref) => {
       dispatch(addQuestion({
         id: ref.key,
@@ -34,22 +34,4 @@ export const startAddQuestion = (question) => {
 export const addQuestion = (question) => ({
   type: 'ADD_QUESTION',
   question
-})
-
-export const loadQuestion = () => ({
-    type: 'LOAD_QUESTION',
-
-    // THESE WILL COME FROM SOME ASSETS PLACE LADS
-    payload: {
-      question: 'What is a ethereum',
-      answers: ['a fruit', 'a bird', 'a weapon', 'a revolution'],
-      correctAnswer: 'a revolution'
-    }
-})
-
-export const sendResult = (result) => ({
-    type: 'SEND_RESULT',
-    payload: {
-      result: result
-    }
 })

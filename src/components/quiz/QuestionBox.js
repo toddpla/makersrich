@@ -3,44 +3,39 @@ import Question from './Question'
 import Answer from './Answer'
 import { connect } from 'react-redux'
 
-import { loadQuestion, sendResult } from '../../actions/questions'
+import { startSendResult, startGetQuestion } from '../../actions/quiz'
 
 
 export class QuestionBox extends React.Component {
 
-
-
-  handleClick = (e, index) => {
-      var result = false
-      if(this.props.answers[index] === this.props.correctAnswer) {
-        result = true
-      }
-      this.props.sendResult(result)
-      if(this.props.questionNumber < 4){
-        this.props.loadQuestion()
-      } else {
-        this.props.showResults()
-      }
-
+  handleClick = (answerIndex) => {
+    const submission = {
+      uid: this.props.auth.uid,
+      questionId: this.props.question.id,
+      result: answerIndex === this.props.correctAnswer
+    }
+    this.props.startSendResult({...submission})
+    startGetQuestion()
   }
 
   render() {
     return (
-      <div id='question-box-container' style={{display: this.props.visible}}>
+      <div id='question-box-container'>
         <Question
-        question={this.props.question}/>
-        <Answer answer={this.props.answers[0]} onClick={ (e) =>  {this.handleClick(e, 0)}} id='answer-1'/>
-        <Answer answer={this.props.answers[1]} onClick={ (e) =>  {this.handleClick(e, 1)}} id='answer-2'/>
-        <Answer answer={this.props.answers[2]} onClick={ (e) =>  {this.handleClick(e, 2)}} id='answer-3'/>
-        <Answer answer={this.props.answers[3]} onClick={ (e) =>  {this.handleClick(e, 3)}} id='answer-4'/>
+        question={this.props.question.question}/>
+      {this.props.question.answers.map((answer, i) => (<Answer key={i} id={i} answer={answer} handleClick={this.handleClick}/>))}
       </div>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-      loadQuestion: () => dispatch(loadQuestion()),
-      sendResult: (result) => dispatch(sendResult(result)),
+const mapStateToProps = state => ({
+  auth: state.auth
 })
 
-export default connect(undefined, mapDispatchToProps)(QuestionBox)
+const mapDispatchToProps = dispatch => ({
+  startSendResult: (result) => dispatch(startSendResult(result)),
+  startGetQuestion: () => dispatch(startGetQuestion()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionBox)
