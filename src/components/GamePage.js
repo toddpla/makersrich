@@ -94,14 +94,11 @@ class GamePage extends Component {
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
-            {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
+            {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} handlePopupInventory={this.handlePopupInventory}/> )}
           </div>
         </Map>
        </AppWrapper>
       </MapProvider>
-      <button onClick={this.openModal}>Open Modal</button>
-      <button onClick={this.handlePopupQuiz}>Open Quiz</button>
-      <button onClick={this.handlePopupInventory}>Open Invetory</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

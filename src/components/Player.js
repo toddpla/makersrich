@@ -20,6 +20,8 @@ class Player extends Component {
         return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
       case 69:
         this.attemptDig(this.props.player.left, this.props.player.top)
+      case 73:
+        return this.props.handlePopupInventory()
       default:
         console.log(e.keyCode);
     }
