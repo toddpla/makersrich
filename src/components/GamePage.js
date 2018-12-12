@@ -3,8 +3,10 @@ import Player from './Player'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { updatePlayer } from '../actions/players'
+import { uploadMap } from '../actions/map'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
+import { tiles } from '../maps'
 
 
 const AppWrapper = styled.div`
@@ -51,7 +53,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePlayer: (player, direction) => dispatch(updatePlayer(player, direction))
+  updatePlayer: (player, direction) => dispatch(updatePlayer(player, direction)),
+  uploadMap: (tiles) => dispatch(uploadMap(tiles))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

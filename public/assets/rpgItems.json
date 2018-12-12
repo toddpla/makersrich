@@ -1,0 +1,14 @@
+{ "columns":8,
+ "image":"rpgItems.png",
+ "imageheight":128,
+ "imagewidth":128,
+ "margin":0,
+ "name":"rpgItems",
+ "spacing":0,
+ "tilecount":64,
+ "tiledversion":"1.2.1",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":1.2
+}
