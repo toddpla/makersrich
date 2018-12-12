@@ -7,6 +7,7 @@ import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
+import Inventory from './Inventory/Inventory'
 
 import mapJson from '../POWLevel1.json'
 
@@ -17,7 +18,8 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    backgroundColor       : 'rgba(255, 0, 0, 0)'
   }
 };
 
@@ -38,11 +40,10 @@ class GamePage extends Component {
 
     this.state = {
       modalIsOpen: false,
-      modalComponenet: <Quiz />
+      modalComponenet: 'undefined'
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -51,11 +52,6 @@ class GamePage extends Component {
       modalIsOpen: true,
       ...popUpMessage
     });
-  }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
   }
 
   closeModal() {
@@ -85,7 +81,10 @@ class GamePage extends Component {
   }
 
   handlePopupQuiz = () => {
-    this.openModal({modalBody: <Quiz />})
+    this.openModal({modalComponenet: <Quiz />})
+  }
+  handlePopupInventory = () => {
+    this.openModal({modalComponenet: <Inventory />})
   }
 
   render() {
@@ -102,6 +101,7 @@ class GamePage extends Component {
       </MapProvider>
       <button onClick={this.openModal}>Open Modal</button>
       <button onClick={this.handlePopupQuiz}>Open Quiz</button>
+      <button onClick={this.handlePopupInventory}>Open Invetory</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -109,7 +109,6 @@ class GamePage extends Component {
           style={customStyles}
           contentLabel={this.state.modalTitle}
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}>Proof of Work</h2>
           {this.state.modalComponenet}
           <button onClick={this.closeModal}>close</button>
         </Modal>
