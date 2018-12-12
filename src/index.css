@@ -12,3 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.dug-up-tile {
+    width: 16px;
+    height: 16px;
+    background-image: url('./minedtile.png');
+    position: absolute;
+}
