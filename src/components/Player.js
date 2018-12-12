@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
 
+import mapJson from '../POWLevel1.json'
+
 class Player extends Component {
   handleKeyDown = (keyCode) => {
     switch(keyCode) {
@@ -16,9 +18,18 @@ class Player extends Component {
       // down key
       case 40:
         return { top: this.props.player.top + SPRITE_SIZE }
+      case 69:
+        this.attemptDig(this.props.player.left, this.props.player.top)
       default:
         console.log(keyCode);
     }
+  }
+
+  attemptDig = (x, y) => {
+    // check if diggable and find collectable
+    const item = mapJson.layers[0].objects.filter((object) => object.x === x && object.y === y)[0]
+    if(item !== undefined){ console.log(item.name) }
+    // dig
   }
 
   componentDidMount() {
