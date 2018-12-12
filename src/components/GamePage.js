@@ -6,7 +6,7 @@ import { updatePlayer } from '../actions/players'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
-import Quiz from './quiz/quiz'
+import Quiz from './quiz/Quiz'
 
 import mapJson from '../POWLevel1.json'
 
@@ -27,7 +27,9 @@ const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #1c1117;
-`;
+`
+
+Modal.setAppElement('#root')
 
 class GamePage extends Component {
 
@@ -36,8 +38,7 @@ class GamePage extends Component {
 
     this.state = {
       modalIsOpen: false,
-      modalBody: 'undefined',
-      modalTitle: 'undefined'
+      modalComponenet: <Quiz />
     };
 
     this.openModal = this.openModal.bind(this);
@@ -84,9 +85,7 @@ class GamePage extends Component {
   }
 
   handlePopupQuiz = () => {
-    this.setState({
-      modalBody: <Quiz />
-    })
+    this.openModal({modalBody: <Quiz />})
   }
 
   render() {
@@ -102,6 +101,7 @@ class GamePage extends Component {
        </AppWrapper>
       </MapProvider>
       <button onClick={this.openModal}>Open Modal</button>
+      <button onClick={this.handlePopupQuiz}>Open Quiz</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -109,8 +109,8 @@ class GamePage extends Component {
           style={customStyles}
           contentLabel={this.state.modalTitle}
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          {this.props.modalBody}
+          <h2 ref={subtitle => this.subtitle = subtitle}>Proof of Work</h2>
+          {this.state.modalComponenet}
           <button onClick={this.closeModal}>close</button>
         </Modal>
         </div>

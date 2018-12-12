@@ -11,7 +11,7 @@ export const PublicRoute = ({
   <div>
     <Route {...rest} component={(props) => (
       isAuthenticated ? (
-        <Redirect to="/add-player" />
+        <Redirect to="/game" />
       ) : (
         <Component {...props}/>
       )

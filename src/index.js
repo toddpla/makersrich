@@ -41,7 +41,7 @@ firebase.auth().onAuthStateChanged(user => {
     subscribe()
     renderApp()
     if (history.location.pathname === '/') {
-      history.push('/add-player')
+      history.push('/game')
     }
   } else {
     store.dispatch(logout())
