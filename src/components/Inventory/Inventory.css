@@ -1,0 +1,6 @@
+.Inventory {
+  background-image: url(process.env.PUBLIC_URL '../../Inventory.png'); */
+  background-repeat: no-repeat;
+  background-size: 100px;
+  font-weight: bold;
+}
