@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-
+import { connect } from 'react-redux'
 import mapJson from '../POWLevel1.json'
+import { collectItem } from '../actions/map'
 
 class Player extends Component {
   handleKeyDown = (e) => {
@@ -27,8 +28,11 @@ class Player extends Component {
 
   attemptDig = (x, y) => {
     // check if diggable and find collectable
-    const item = mapJson.layers[0].objects.filter((object) => object.x === x && object.y === y)[0]
-    if(item !== undefined){ console.log(item.name) }
+    const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
+    if (item !== undefined) {
+      console.log(item.name)
+      this.props.collectItem(item)
+    }
     // dig
   }
 
@@ -56,5 +60,12 @@ class Player extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  map: state.map
+})
 
-export default Player;
+const mapDispatchToProps = (dispatch) => ({
+  collectItem: (item) => dispatch(collectItem(item))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
