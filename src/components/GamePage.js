@@ -6,6 +6,7 @@ import { updatePlayer } from '../actions/players'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
+import Quiz from './quiz/quiz'
 
 import mapJson from '../POWLevel1.json'
 
@@ -80,6 +81,12 @@ class GamePage extends Component {
     if (updates === undefined) { return }
     return (updates.left < 0 || updates.top < 0 || updates.left > MAX_WIDTH - SPRITE_SIZE
             || updates.top > MAX_HEIGHT - SPRITE_SIZE )
+  }
+
+  handlePopupQuiz = () => {
+    this.setState({
+      modalBody: <Quiz />
+    })
   }
 
   render() {
