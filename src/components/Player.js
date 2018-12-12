@@ -8,16 +8,16 @@ class Player extends Component {
     switch(keyCode) {
       // left key
       case 37:
-        return { left: this.props.player.left - SPRITE_SIZE }
+        return { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top }
       // up key
       case 38:
-        return { top: this.props.player.top - SPRITE_SIZE }
+        return { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  }
       // right key
       case 39:
-        return { left: this.props.player.left + SPRITE_SIZE }
+        return { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  }
       // down key
       case 40:
-        return { top: this.props.player.top + SPRITE_SIZE }
+        return { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  }
       case 69:
         this.attemptDig(this.props.player.left, this.props.player.top)
       default:
