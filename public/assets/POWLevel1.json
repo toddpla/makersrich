@@ -12,6 +12,12 @@
                  "height":16,
                  "id":138,
                  "name":"ruby_2",
+                 "properties":[
+                        {
+                         "name":"Message",
+                         "type":"string",
+                         "value":"Ruby is said to follow the principle of least astonishment (POLA), meaning that the language should behave in such a way as to minimize confusion for experienced users"
+                        }],
                  "rotation":0,
                  "type":"ruby",
                  "visible":false,
@@ -24,6 +30,12 @@
                  "height":16,
                  "id":139,
                  "name":"bean_1",
+                 "properties":[
+                        {
+                         "name":"Message",
+                         "type":"string",
+                         "value":"Javascript was initially developed under the working title 'Mocha'"
+                        }],
                  "rotation":0,
                  "type":"bean",
                  "visible":false,
@@ -36,6 +48,12 @@
                  "height":16,
                  "id":140,
                  "name":"ruby_1",
+                 "properties":[
+                        {
+                         "name":"Message",
+                         "type":"string",
+                         "value":"Ruby is designed for programmer productivity and fun, following the principles of good user interface design"
+                        }],
                  "rotation":0,
                  "type":"ruby",
                  "visible":false,
@@ -814,17 +832,6 @@
                  "width":16,
                  "x":560,
                  "y":176
-                }, 
-                {
-                 "height":16,
-                 "id":2842,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":560,
-                 "y":272
                 }, 
                 {
                  "height":16,
@@ -1831,6 +1838,12 @@
                  "height":16,
                  "id":109,
                  "name":"sign_1",
+                 "properties":[
+                        {
+                         "name":"Message",
+                         "type":"string",
+                         "value":"Wizard's Dwelling. Enter here to test your knowledge."
+                        }],
                  "rotation":0,
                  "type":"sign",
                  "visible":true,
@@ -1842,6 +1855,12 @@
                  "height":16,
                  "id":110,
                  "name":"sign_2",
+                 "properties":[
+                        {
+                         "name":"Message",
+                         "type":"string",
+                         "value":"Welcome to Muxworthy's General Store"
+                        }],
                  "rotation":0,
                  "type":"sign",
                  "visible":true,
