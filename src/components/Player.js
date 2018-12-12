@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-
+import PlayerImg from "./public/assets/player.png"
 import mapJson from '../POWLevel1.json'
 
 class Player extends Component {
@@ -48,7 +48,8 @@ class Player extends Component {
           top: this.props.player.top,
           left: this.props.player.left,
           height: '16px',
-          backgroundColor: 'red'
+          backgroundPosition: 'center',
+          backgroundImage: `url(${PlayerImg})`
         }}
       >
       </div>
