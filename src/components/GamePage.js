@@ -20,7 +20,6 @@ const AppWrapper = styled.div`
 class GamePage extends Component {
 
   handleMovement = (player, updates) => {
-    console.log(player, updates)
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.updatePlayer(player, updates)
       this.forceUpdate()
