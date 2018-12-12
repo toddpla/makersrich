@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addPlayer } from '../actions/players'
 
+
 class AddPlayerPage extends Component {
 
   handleSubmit = (event) => {
