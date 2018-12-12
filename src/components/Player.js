@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-import PlayerImg from "./public/assets/player.png"
+import PlayerImg from "../assets/player.png"
 import mapJson from '../POWLevel1.json'
 
 class Player extends Component {

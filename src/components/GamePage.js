@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Player from './Player'
-import { MapProvider, Map } from '../reactTiles/src'
+import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { updatePlayer } from '../actions/players'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
