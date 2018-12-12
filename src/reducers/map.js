@@ -1,8 +1,9 @@
 export default (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TILES':
+    console.log(action.tiles)
       return {
-        tiles: tiles
+        tiles: action.tiles
       }
     default:
       return state

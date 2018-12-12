@@ -7,7 +7,7 @@ import { uploadMap } from '../actions/map'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import { tiles } from '../maps'
-
+import { saveAs } from '@progress/kendo-file-saver'
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -33,9 +33,15 @@ class GamePage extends Component {
             || updates.top > MAX_HEIGHT - SPRITE_SIZE )
   }
 
+  getMap = () => {
+    console.log(JSON.stringify((tiles)))
+    this.props.uploadMap(tiles)
+    return JSON.stringify(tiles)
+  }
+
   render() {
     return (
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
+      <MapProvider style={{margin: "auto"}}  mapUrl={this.getMap()}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
