@@ -23,8 +23,6 @@ describe('Player Action', function() {
       }, {top: 16}))).toEqual({ type: 'UPDATE_PLAYER',
                                 player: { name: 'player', top: 0, left: 0 },
                                 updates: { top: 16 } });
-
-
     });
   });
 });

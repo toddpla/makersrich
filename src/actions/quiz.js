@@ -5,9 +5,10 @@ export const getQuestion = (question) => ({
   question
 })
 
-export const startGetQuestion = (uid) => {
+export const startGetQuestion = (uid, random) => {
   return (dispatch) => {
     return database.ref(`players/${uid}/questions`).once('value').then((playerQuestionsSnapshot) => {
+      console.log(Object.keys(playerQuestionsSnapshot));
       const playerQuestions = []
       playerQuestionsSnapshot.forEach(playerQuestionsChildSnapshot => {
         playerQuestions.push(playerQuestionsChildSnapshot.key)
@@ -31,11 +32,6 @@ export const startGetQuestion = (uid) => {
     })
   }
 }
-
-export const sendResult = (result) => ({
-    type: 'SEND_RESULT',
-    result
-})
 
 export const startSendResult = ({uid, questionId, result}) => {
   return (dispatch) => {

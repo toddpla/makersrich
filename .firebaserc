@@ -1,5 +1,7 @@
 {
   "projects": {
-    "production": "proof-of-work"
+    "production": "proof-of-work-production",
+    "default": "proof-of-work",
+    "development": "proof-of-work"
   }
 }

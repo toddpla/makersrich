@@ -1,6 +1,7 @@
 export const addPlayer = (player) => ({
   type: "ADD_PLAYER",
-  player: { ...player,
+  player: {
+    ...player,
     top: 0,
     left: 0
   }
