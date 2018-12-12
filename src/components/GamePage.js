@@ -6,6 +6,8 @@ import { updatePlayer } from '../actions/players'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 
+import mapJson from '../POWLevel1.json'
+
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -18,10 +20,19 @@ const AppWrapper = styled.div`
 class GamePage extends Component {
 
   handleMovement = (player, updates) => {
-    if (!this.checkBoundaries(updates)) {
+    console.log(player, updates)
+    if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.updatePlayer(player, updates)
       this.forceUpdate()
     }
+  }
+
+  checkImpassable = (updates) => {
+    const x = updates.left
+    const y = updates.top
+
+    const impassablePos = mapJson.layers[1].objects.filter((object) => object.x === x && object.y === y)[0]
+    return (impassablePos !== undefined) ? false : true
   }
 
   checkBoundaries = (updates) => {
