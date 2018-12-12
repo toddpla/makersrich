@@ -4,24 +4,24 @@ import { SPRITE_SIZE } from '../constants'
 import mapJson from '../POWLevel1.json'
 
 class Player extends Component {
-  handleKeyDown = (keyCode) => {
-    switch(keyCode) {
+  handleKeyDown = (e) => {
+    switch(e.keyCode) {
       // left key
       case 37:
-        return { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top }
+        return this.props.handleMovement(this.props.player, { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
       // up key
       case 38:
-        return { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  }
+        return this.props.handleMovement(this.props.player, { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
       // right key
       case 39:
-        return { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  }
+        return this.props.handleMovement(this.props.player, { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
       // down key
       case 40:
-        return { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  }
+        return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
       case 69:
         this.attemptDig(this.props.player.left, this.props.player.top)
       default:
-        console.log(keyCode);
+        console.log(e.keyCode);
     }
   }
 
@@ -35,7 +35,7 @@ class Player extends Component {
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
       e.preventDefault()
-      this.props.handleMovement(this.props.player, this.handleKeyDown(e.keyCode))
+      this.handleKeyDown(e)
     })
   }
 
