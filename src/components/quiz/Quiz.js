@@ -39,6 +39,7 @@ export class Quiz extends React.Component {
   }
 
   render() {
+
     return(
       <div id='quiz-container'>
         <h1>End of level Quiz</h1>
