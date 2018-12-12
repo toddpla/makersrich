@@ -1,21 +1,25 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import {Quiz} from '../quiz/Quiz'
-import Results from '../quiz/Results'
+import { Quiz } from '../quiz/Quiz'
+import renderer from 'react-test-renderer';
 
-describe('Quiz', () => {
-  it('should have a title box', () => {
-    const wrapper = shallow(<Quiz results={[1,2,3]}/>)
+let auth, quiz, startGetQuestion, wrapper;
 
-    expect(wrapper.text()).toContain('End of level Quiz')
-  })
+beforeEach(() => {
+  auth = {
+    uid: '123'
+  }
+  quiz = {}
+  startGetQuestion = jest.fn()
+  wrapper = renderer.create(
+    <Quiz
+      auth={auth}
+      quiz={quiz}
+      startGetQuestion={startGetQuestion}
+    />
+  )
+})
 
-  it('matches last snapshot', () => {
-    const wrapper = shallow(<Quiz results={[1,2,3]}/>)
-
-    expect(wrapper).toMatchSnapshot()
-  })
-
-
-
+test('should render correctly', () => {
+  expect(wrapper).toMatchSnapshot()
 })

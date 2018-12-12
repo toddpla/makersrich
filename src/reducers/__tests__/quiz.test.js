@@ -1,48 +1,18 @@
 import quizReducer from '../quiz'
+import questions from '../../fixtures/questions'
 
-describe ('quiz reducer', () => {
+describe('quiz reducer', () => {
 
   it('should return the initial state', () => {
     expect((quizReducer(undefined, {}))).toEqual({})
   })
 
   it('should return the new question state', () => {
-    expect((quizReducer(undefined,
-      {
-        type: 'GET_QUESTION',
-        question: {
-          question: 'What is a ethereum',
-          answers: ['a fruit', 'a bird', 'a weapon', 'a revolution'],
-          correctAnswer: 'a revolution'
-        }
-      }
-      ))).toEqual (
-      {
-        results: [],
-        question: 'What is a ethereum',
-        answers: ['a fruit', 'a bird', 'a weapon', 'a revolution'],
-        correctAnswer: 'a revolution'
-      }
-    )
+    const action = {
+      type: 'GET_QUESTION',
+      question: questions[0]
+    }
+    const state = quizReducer(undefined, action)
+    expect(state).toEqual(questions[0])
   })
-
-  it('should add result to results array', () => {
-
-    expect((quizReducer(undefined,
-      {
-        type: 'SEND_RESULT',
-        payload: {
-          result: true
-        }
-      }
-      ))).toEqual (
-      {
-        question: 'What is a bitcoin',
-        answers: ['a fruit', 'a bird', 'a weapon', 'a revolutionary cryptocurrency'],
-        correctAnswer: 'a revolutionary cryptocurrency',
-        results: [true]
-      }
-    )
-  })
-
 })
