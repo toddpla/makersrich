@@ -1,13 +1,15 @@
 import * as firebase from 'firebase';
 
+// development environemnt
 const config = {
   apiKey: "AIzaSyCujvkUHO5pOnh5hQ44JvJILFEoR916zvs",
   authDomain: "proof-of-work.firebaseapp.com",
   databaseURL: "https://proof-of-work.firebaseio.com",
   projectId: "proof-of-work",
-  storageBucket: "proof-of-work.appspot.com",
+  storageBucket: "",
   messagingSenderId: "852831365773"
 };
+
 
 firebase.initializeApp(config);
 
@@ -29,7 +31,7 @@ const subscribe = () => {
       last_changed: firebase.database.ServerValue.TIMESTAMP,
   };
   firebase.database().ref('.info/connected').on('value', function(snapshot) {
-      if (snapshot.val() == false) {
+      if (snapshot.val() === false) {
           return;
       };
       userStatusDatabaseRef.onDisconnect().update(isOfflineForDatabase).then(function() {
@@ -37,7 +39,6 @@ const subscribe = () => {
       });
     })
 }
-
 
 export {
   firebase,
