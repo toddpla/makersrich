@@ -27,13 +27,13 @@ class GamePage extends Component {
 
   checkBoundaries = (updates) => {
     if (updates === undefined) { return }
-    return (updates.left < 0 || updates.top < 0 || updates.left > MAX_WIDTH
-            || updates.top > MAX_HEIGHT - SPRITE_SIZE)
+    return (updates.left < 0 || updates.top < 0 || updates.left > MAX_WIDTH - SPRITE_SIZE
+            || updates.top > MAX_HEIGHT - SPRITE_SIZE )
   }
 
   render() {
     return (
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POW_map.json"}>
+      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
