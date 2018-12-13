@@ -4,7 +4,7 @@ import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
 import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
-import { collectItem, digTile } from '../actions/map'
+import { collectItem, digTile, unDigTile } from '../actions/map'
 
 
 class Player extends Component {
@@ -32,9 +32,17 @@ class Player extends Component {
   digDatDing = (x, y) => {
     var dug = document.createElement("div")
     dug.setAttribute('class', 'dug-up-tile')
+    dug.setAttribute('id', x+y)
     dug.setAttribute('style', `left:${x}px; top:${y}px` )
-
     document.getElementsByClassName('tiled-map')[0].appendChild(dug)
+    setTimeout(this.unDigDatDing, 5000, x, y)
+  }
+
+  unDigDatDing = (x, y) => {
+    const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
+    const element = document.getElementById(x+y)
+    element.parentNode.removeChild(element)
+    this.props.unDigTile(tile)
   }
 
   attemptDig = (x, y) => {
@@ -89,7 +97,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
-  digTile: (tile) => dispatch(digTile(tile))
+  digTile: (tile) => dispatch(digTile(tile)),
+  unDigTile: (tile) => dispatch(unDigTile(tile))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

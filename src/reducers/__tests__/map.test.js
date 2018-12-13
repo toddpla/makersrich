@@ -31,3 +31,11 @@ test('return state array with adjusted minable array', () => {
     minable: [2,3,4]
   })
 })
+
+test('return state array with adjusted minable array', () => {
+  const state = mapReducer(fakeInitialState, {type: 'UN_DIG_TILE', minable: [2,3,4]})
+  expect(state).toEqual({
+    collectables,
+    minable: [2,3,4]
+  })
+})

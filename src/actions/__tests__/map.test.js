@@ -20,3 +20,11 @@ test('should setup digTile action object', () => {
     collectable: 'tile'
   }
 })
+
+test('should setup unDigTile action object', () => {
+  const action = actions.unDigTile('tile')
+  const expectedAction = {
+    type: 'UN_DIG_TILE',
+    collectable: 'tile'
+  }
+})
