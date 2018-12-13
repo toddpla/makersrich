@@ -1,19 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from "styled-components"
 import InvPic from './Inventory.png'
+import InventoryList from './InventoryList'
 
-export default class Inventory extends React.Component {
-
+export class Inventory extends React.Component {
 
   render() {
-  var sectionStyle = {
-    backgroundImage: `url(${InvPic})`,
-    backgroundPosition: 'center',
-    width: 640,
-    height: 560
-  };
+    console.log(this.props.player.inventory);
     return (
-      <div style={sectionStyle}></div>
+      <div>
+        <InventoryList inventory={this.props.player.inventory}/>
+      </div>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  player: state.auth
+})
+
+export default connect(mapStateToProps)(Inventory)

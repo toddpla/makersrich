@@ -7,11 +7,14 @@ export default (state = {}, action) => {
     case 'LOGOUT':
       return {};
     case 'ADD_INVENTORY_ITEM':
-      const items = state[action.itemRef]
-      items.push(action.itemId)
+      const items = state.inventory[action.itemRef]
+      items.push(action.item)
       return {
         ...state,
-        [action.itemRef]: items
+        inventory: {
+          ...state.inventory,
+          [action.itemRef]: items
+        }
       }
     case "UPDATE_PLAYER":
       return {
