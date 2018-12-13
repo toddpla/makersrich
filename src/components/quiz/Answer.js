@@ -8,7 +8,7 @@ export default class Answer extends React.Component {
 
   render() {
     return (
-      <div id={this.props.id} onClick={this.handleClick}>
+      <div id={`answer-${this.props.id}`} className='quiz-answer-box' onClick={this.handleClick}>
         {this.props.answer}
       </div>
     )
