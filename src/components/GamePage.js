@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Player from './Player'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
-import { updatePlayer } from '../actions/players'
+import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
@@ -58,9 +58,9 @@ export class GamePage extends Component {
     this.setState({modalIsOpen: false});
   }
 
-  handleMovement = (player, updates) => {
+  handleMovement = (updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.updatePlayer(player, updates)
+      this.props.startUpdatePlayer(updates)
       this.forceUpdate()
     }
   }
@@ -93,10 +93,10 @@ export class GamePage extends Component {
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
-            {this.props.players.map((player, i) => <Player key={i} player={player}
-            handleMovement={this.handleMovement}
-            handlePopupInventory={this.handlePopupInventory}
-            closeModal={this.closeModal}
+            <Player player={this.props.player}
+              handleMovement={this.handleMovement}
+              handlePopupInventory={this.handlePopupInventory}
+              closeModal={this.closeModal}
             />
           )}
           </div>
@@ -119,11 +119,12 @@ export class GamePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  players: state.players
+  // players: state.players
+  player: state.auth
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePlayer: (player, direction) => dispatch(updatePlayer(player, direction))
+  startUpdatePlayer: (direction) => dispatch(startUpdatePlayer(direction))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
