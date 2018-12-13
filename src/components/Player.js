@@ -3,6 +3,7 @@ import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
 import { connect } from 'react-redux'
 import { collectItem, digTile } from '../actions/map'
+import { updatePlayer, addBean, addRuby } from '../actions/players'
 
 
 class Player extends Component {
@@ -59,7 +60,6 @@ class Player extends Component {
 
   attemptDig = (x, y) => {
     // check if diggable and
-      console.log(x, y);
       const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
       if (tile.visible === false) {
         console.log('you can dig');
@@ -73,8 +73,17 @@ class Player extends Component {
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
-      console.log(item.name)
+      console.log(item.type)
       this.props.collectItem(item)
+
+      switch (item.type) {
+        case 'ruby':
+          return this.props.addRuby(item)
+        case 'bean':
+          return this.props.addBean(item)
+        default:
+          return
+      }
     }
     // dig
   }
@@ -111,7 +120,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
-  digTile: (tile) => dispatch(digTile(tile))
+  digTile: (tile) => dispatch(digTile(tile)),
+  updatePlayer: (player, updates) => dispatch(updatePlayer(player, updates))
+  addRuby: (item) => dispatch(addRuby(item))
+  addBean: (item) => dispatch(addBean(item))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

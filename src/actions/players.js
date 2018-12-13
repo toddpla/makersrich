@@ -3,7 +3,11 @@ export const addPlayer = (player) => ({
   player: {
     ...player,
     top: 0,
-    left: 0
+    left: 0,
+    inventory: {
+      ruby: [],
+      javaBeans: []
+    }
   }
 })
 
