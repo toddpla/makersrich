@@ -1,13 +1,14 @@
-import { firebase, googleAuthProvider, subscribe } from '../firebase/firebase'
+import database, { firebase, googleAuthProvider, subscribe } from '../firebase/firebase'
 
-export const login = (uid) => ({
+export const login = (player) => ({
   type: 'LOGIN',
-  uid
+  player
 })
 
 export const startLogin = () => {
   return () => {
-    return firebase.auth().signInWithPopup(googleAuthProvider).then(() => {
+    return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
+      store.dispatch(login(database.ref(`players/${result.user.uid}`)))
       subscribe()
     })
   }
@@ -20,5 +21,6 @@ export const logout = () => ({
 export const startLogout = () => {
   return () => {
     return firebase.auth().signOut()
+    store.dispatch(logout())
   }
 }

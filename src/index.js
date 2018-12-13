@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
 import {startSetQuestions} from './actions/questions'
 import { addPlayer } from './actions/players'
+import database from './firebase/firebase'
 
 import Quiz from './components/quiz/Quiz'
 
@@ -38,10 +39,10 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged(user => {
   if(user) {
-    store.dispatch(login(user.uid))
+    store.dispatch(login(database.ref(`players/${user.uid}`)))
     subscribe()
     renderApp()
-    store.dispatch(addPlayer('Admin'))
+    // store.dispatch(addPlayer('Admin'))
     if (history.location.pathname === '/') {
       history.push('/game')
     }

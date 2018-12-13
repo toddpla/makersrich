@@ -30,7 +30,7 @@ class Player extends Component {
         case 40:
           return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
-          this.attemptDig(this.props.player.left, this.props.player.top)
+          return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           this.setState({inInventory: true})
           return this.props.handlePopupInventory()
@@ -41,7 +41,7 @@ class Player extends Component {
         return this.inventoryHandleKeyDown(e)
     }
   }
-  
+
   inventoryHandleKeyDown(e) {
     switch(e.keyCode) {
       case 73:
