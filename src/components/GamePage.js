@@ -134,7 +134,7 @@ export class GamePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  map: state.map
+  map: state.map,
   player: state.auth
 })
 
