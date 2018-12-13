@@ -18,7 +18,7 @@ export default () => {
       questions: questionsReducer,
       quiz: quizReducer,
       players: playersReducer,
-      map: mapReducer
+      map: mapReducer,
     }),
     composeEnhancers(applyMiddleware(thunk))
   )
