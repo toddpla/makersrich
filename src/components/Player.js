@@ -118,13 +118,13 @@ class Player extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  map: state.map
+  map: state.map,
 })
 
 const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
   digTile: (tile) => dispatch(digTile(tile)),
-  unDigTile: (tile) => dispatch(unDigTile(tile))
+  unDigTile: (tile) => dispatch(unDigTile(tile)),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startAddInventoryItem: (itemRef, itemId) => dispatch(startAddInventoryItem(itemRef, itemId))
 })
