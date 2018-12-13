@@ -62,10 +62,10 @@ class Player extends Component {
   }
 
   unDigDatDing = (x, y) => {
-    const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
-    const element = document.getElementById(x+y)
-    element.parentNode.removeChild(element)
-    this.props.unDigTile(tile)
+    // const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
+    // const element = document.getElementById(x+y)
+    // element.parentNode.removeChild(element)
+    // this.props.unDigTile(tile)
   }
 
   attemptDig = (x, y) => {
@@ -85,7 +85,7 @@ class Player extends Component {
     if (item !== undefined) {
       this.props.collectItem(item)
       console.log(item);
-      this.props.startAddInventoryItem(item.type, item.id)
+      this.props.startAddInventoryItem(item.type, item)
       }
     }
     // dig
@@ -126,7 +126,7 @@ const mapDispatchToProps = (dispatch) => ({
   digTile: (tile) => dispatch(digTile(tile)),
   unDigTile: (tile) => dispatch(unDigTile(tile)),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startAddInventoryItem: (itemRef, itemId) => dispatch(startAddInventoryItem(itemRef, itemId))
+  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
