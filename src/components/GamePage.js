@@ -17,7 +17,7 @@ const AppWrapper = styled.div`
   background-color: #1c1117;
 `;
 
-class GamePage extends Component {
+export class GamePage extends Component {
 
   handleMovement = (player, updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
