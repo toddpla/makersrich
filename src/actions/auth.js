@@ -8,7 +8,7 @@ export const login = (uid, player) => ({
       left: 0,
       ruby: [],
       javaBeans: [],
-      key: [], 
+      key: [],
       ...player
     }
 })
@@ -42,9 +42,8 @@ export const updatePlayer = (updates) => ({
 
 export const startUpdatePlayer = (updates) => {
   return (dispatch) => {
-    return database.ref(`players/${firebase.auth().currentUser.uid}`).update(updates).then(() => {
-      dispatch(updatePlayer(updates))
-    })
+    dispatch(updatePlayer(updates))
+    return database.ref(`players/${firebase.auth().currentUser.uid}`).update(updates)
   }
 }
 
