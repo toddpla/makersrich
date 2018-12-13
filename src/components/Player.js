@@ -100,7 +100,7 @@ class Player extends Component {
 
   render() {
     return (
-      <div id={this.props.player.name}
+      <div id="player"
         style={{
           position: 'absolute',
           width: '16px',

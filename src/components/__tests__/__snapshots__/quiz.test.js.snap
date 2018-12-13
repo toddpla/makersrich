@@ -5,7 +5,7 @@ exports[`should render correctly 1`] = `
   id="quiz-container"
 >
   <h1>
-    End of level Quiz
+    Welcome to the quiz!
   </h1>
 </div>
 `;

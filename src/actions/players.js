@@ -19,16 +19,3 @@ export const startSetPlayers = () => {
     }).catch((e) => console.log(e))
   }
 }
-
-export const addPlayer = (player) => ({
-  type: "ADD_PLAYER",
-  player: {
-    ...player,
-    top: 0,
-    left: 0,
-    inventory: {
-      ruby: [],
-      javaBeans: []
-    }
-  }
-})

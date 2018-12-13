@@ -6,4 +6,4 @@ exports[`AppWrapper renders correctly 1`] = `
 />
 `;
 
-exports[`gamepage renders correctly 1`] = `null`;
+exports[`gamepage renders correctly 1`] = `<div />`;

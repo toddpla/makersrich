@@ -29,7 +29,8 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-Modal.setAppElement('#root')
+// Modal.setAppElement('#root')
+
 
 export class GamePage extends Component {
 
