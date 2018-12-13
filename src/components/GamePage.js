@@ -93,7 +93,12 @@ export class GamePage extends Component {
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
-            {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} handlePopupInventory={this.handlePopupInventory}/> )}
+            {this.props.players.map((player, i) => <Player key={i} player={player}
+            handleMovement={this.handleMovement}
+            handlePopupInventory={this.handlePopupInventory}
+            closeModal={this.closeModal}
+            />
+          )}
           </div>
         </Map>
        </AppWrapper>
