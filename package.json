@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-loader": "^8.0.4",
     "dotenv": "^6.2.0",
     "firebase": "^5.7.0",
     "history": "^4.7.2",

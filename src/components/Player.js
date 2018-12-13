@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-
 import PlayerImg from "../assets/player.png"
-import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
 import { collectItem, digTile } from '../actions/map'
 
@@ -30,7 +28,7 @@ class Player extends Component {
         case 40:
           return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
-          this.attemptDig(this.props.player.left, this.props.player.top)
+          return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           this.setState({inInventory: true})
           return this.props.handlePopupInventory()
@@ -41,7 +39,7 @@ class Player extends Component {
         return this.inventoryHandleKeyDown(e)
     }
   }
-  
+
   inventoryHandleKeyDown(e) {
     switch(e.keyCode) {
       case 73:
@@ -71,6 +69,7 @@ class Player extends Component {
         console.log('no digging!');
       }
     // find collectable
+
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
