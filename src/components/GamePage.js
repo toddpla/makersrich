@@ -9,8 +9,6 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 
-import mapJson from '../POWLevel1.json'
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -59,6 +57,7 @@ export class GamePage extends Component {
   }
 
   handleMovement = (player, updates) => {
+    this.checkPortal(player.left , player.top- SPRITE_SIZE)
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.updatePlayer(player, updates)
       this.forceUpdate()
@@ -69,7 +68,7 @@ export class GamePage extends Component {
     const x = updates.left
     const y = updates.top
 
-    const impassablePos = mapJson.layers[1].objects.filter((object) => object.x === x && object.y === y)[0]
+    const impassablePos = this.props.map.impassable.filter((object) => object.x === x && object.y === y)[0]
     return (impassablePos !== undefined) ? false : true
   }
 
@@ -77,6 +76,13 @@ export class GamePage extends Component {
     if (updates === undefined) { return }
     return (updates.left < 0 || updates.top < 0 || updates.left > MAX_WIDTH - SPRITE_SIZE
             || updates.top > MAX_HEIGHT - SPRITE_SIZE )
+  }
+
+  checkPortal = (x, y) => {
+    const portal = this.props.map.portals.filter((object) => object.x === x && object.y === y)[0]
+    if (portal !== undefined) {
+      console.log("portal")
+    }
   }
 
   handlePopupQuiz = () => {
@@ -119,7 +125,8 @@ export class GamePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  players: state.players
+  players: state.players,
+  map: state.map
 })
 
 const mapDispatchToProps = (dispatch) => ({
