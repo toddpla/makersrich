@@ -1,7 +1,7 @@
 import collectables from '../data/maps/level1/collectables'
 import minable from '../data/maps/level1/minable'
 
-const mapReducerDefaultState = {
+export const mapReducerDefaultState = {
   collectables,
   minable
 }
