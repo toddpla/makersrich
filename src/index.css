@@ -34,6 +34,25 @@ code {
   src: url('/assets/KenPixel Mini.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
+.modal-button {
+  size: 40px 40px;
+  position: absolute;
+  top: 27px;
+  left: 27px;
+  width: 16px;
+  height: 16px;
+  background-image: url('/assets/exit.png');
+}
+
+.modal-button:hover {
+  box-shadow: 2px 2px black
+
+}
+
+.modal-button:active {
+  box-shadow: 4px 4px black
+}
+
 .quiz-question-box {
   position: absolute;
   top: 150px;

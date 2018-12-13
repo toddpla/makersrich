@@ -126,7 +126,7 @@ export class GamePage extends Component {
           contentLabel={this.state.modalTitle}
         >
           {this.state.modalComponent}
-          <button onClick={this.closeModal}>close</button>
+          <div className="modal-button" onClick={this.closeModal}></div>
         </Modal>
         </div>
     );

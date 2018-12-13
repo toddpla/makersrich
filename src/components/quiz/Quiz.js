@@ -33,8 +33,8 @@ export class Quiz extends React.Component {
     this.setState((prevState) => ({
       questionCount: prevState.questionCount + 1
     }))
-    if (this.state.questionCount === 4) {
-      console.log('done!!!');
+    if (this.state.questionCount === 5) {
+      alert('you did it fam!')
     }
   }
 
@@ -42,7 +42,7 @@ export class Quiz extends React.Component {
 
     return(
       <div id='quiz-container'>
-        <h1>End of level Quiz</h1>
+        <h1>Welcome to the quiz!</h1>
           { !(Object.keys(this.props.quiz).length === 0 && this.props.quiz.constructor === Object) && (
             <div>
               <Question question={this.props.quiz.question}/>
