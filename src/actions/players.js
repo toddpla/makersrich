@@ -32,17 +32,3 @@ export const addPlayer = (player) => ({
     }
   }
 })
-
-export const updatePlayer = (player, updates) => ({
-  type: "UPDATE_PLAYER",
-  player,
-  updates
-})
-
-export const startUpdatePlayer = (player, updates) => {
-  return (dispatch) => {
-    return database.ref(`players/${player.uid}`).update(updates).then(() => {
-      dispatch(updatePlayer(player, updates))
-    })
-  }
-}

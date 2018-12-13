@@ -39,7 +39,7 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged(user => {
   if(user) {
-    store.dispatch(login(database.ref(`players/${user.uid}`)))
+    store.dispatch(login(user.uid, database.ref(`players/${user.uid}`)))
     subscribe()
     renderApp()
     // store.dispatch(addPlayer('Admin'))
