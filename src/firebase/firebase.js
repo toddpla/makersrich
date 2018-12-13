@@ -20,7 +20,7 @@ const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 const subscribe = () => {
   const currentUser = firebase.auth().currentUser;
-  const userStatusDatabaseRef = firebase.database().ref(`/status/${currentUser.uid}`);
+  const userStatusDatabaseRef = firebase.database().ref(`/players/${currentUser.uid}`);
   const isOfflineForDatabase = {
       state: 'offline',
       last_changed: firebase.database.ServerValue.TIMESTAMP,

@@ -118,7 +118,7 @@ class Player extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  map: state.map
+  map: state.map,
 })
 
 const mapDispatchToProps = (dispatch) => ({
