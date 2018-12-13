@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
+import Message from './Message'
 
 const customStyles = {
   content : {
@@ -95,11 +96,31 @@ export class GamePage extends Component {
     return false
   }
 
+  checkSign = (x, y) => {
+    const sign = this.props.map.signs.filter((object) => withinRange(object.x, object.y))[0]
+    if (sign !== undefined) {
+      return this.handlePopupMessage(sign.properties.value)
+    }
+    return false
+  }
+  }
+
+  withinRange = (x, y) => {
+    if ((x + SPRITE_SIZE || x - SPRITE_SIZE) === this.player.left && (y + SPRITE_SIZE || y - SPRITE_SIZE) === this.player.top ) {
+      return true
+    }
+  }
+
+
   handlePopupQuiz = () => {
     this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
+  }
+
+  handlePopupMessage = (message) => {
+    this.openModal({modalComponent: <Message message={message}/>})
   }
 
   render() {
@@ -112,6 +133,7 @@ export class GamePage extends Component {
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
+              checkSign={this.checkSign}
               closeModal={this.closeModal}
             />
           )}
