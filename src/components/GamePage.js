@@ -9,7 +9,7 @@ import styled from "styled-components";
 import mapJson from '../POWLevel1.json'
 
 
-const AppWrapper = styled.div`
+export const AppWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;

@@ -1,3 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `null`;
+exports[`AppWrapper renders correctly 1`] = `
+<div
+  className="sc-ifAKCX jdioGa"
+/>
+`;
+
+exports[`gamepage renders correctly 1`] = `null`;

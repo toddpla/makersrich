@@ -1,10 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
 
-import {GamePage} from '../GamePage'
+import { GamePage, AppWrapper } from '../GamePage'
+import { Player } from '../Player'
 
-
-test('renders correctly', () => {
+test('gamepage renders correctly', () => {
 
   const props = {
     players: ['player']
@@ -12,4 +12,10 @@ test('renders correctly', () => {
 
   const gamePage = renderer.create(<GamePage {...props}/>).toJSON();
   expect(gamePage).toMatchSnapshot();
+});
+
+
+test('AppWrapper renders correctly', () => {
+  const appWrapper = renderer.create(<AppWrapper/>).toJSON();
+  expect(appWrapper).toMatchSnapshot();
 });
