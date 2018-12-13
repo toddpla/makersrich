@@ -9,8 +9,6 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 
-import mapJson from '../POWLevel1.json'
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -63,13 +61,22 @@ export class GamePage extends Component {
       this.props.startUpdatePlayer(updates)
       this.forceUpdate()
     }
+    switch(this.checkPortal(updates.left , updates.top)) {
+    case "quiz":
+      return this.handlePopupQuiz()
+    case 'shop':
+      console.log('shop');
+      return
+    default:
+      return
+    }
   }
 
   checkImpassable = (updates) => {
     const x = updates.left
     const y = updates.top
 
-    const impassablePos = mapJson.layers[1].objects.filter((object) => object.x === x && object.y === y)[0]
+    const impassablePos = this.props.map.impassable.filter((object) => object.x === x && object.y === y)[0]
     return (impassablePos !== undefined) ? false : true
   }
 
@@ -79,11 +86,19 @@ export class GamePage extends Component {
             || updates.top > MAX_HEIGHT - SPRITE_SIZE )
   }
 
+  checkPortal = (x, y) => {
+    const portal = this.props.map.portals.filter((object) => object.x === x && object.y === y)[0]
+    if (portal !== undefined) {
+      return portal.name
+    }
+    return false
+  }
+
   handlePopupQuiz = () => {
-    this.openModal({modalComponenet: <Quiz />})
+    this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
-    this.openModal({modalComponenet: <Inventory />})
+    this.openModal({modalComponent: <Inventory />})
   }
 
   render() {
@@ -110,7 +125,7 @@ export class GamePage extends Component {
           style={customStyles}
           contentLabel={this.state.modalTitle}
         >
-          {this.state.modalComponenet}
+          {this.state.modalComponent}
           <button onClick={this.closeModal}>close</button>
         </Modal>
         </div>
@@ -119,7 +134,7 @@ export class GamePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  // players: state.players
+  map: state.map
   player: state.auth
 })
 

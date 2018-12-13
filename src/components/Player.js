@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-
 import PlayerImg from "../assets/player.png"
-import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
-import { collectItem, digTile } from '../actions/map'
+
+import { collectItem, digTile, unDigTile } from '../actions/map'
+
 import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
+
 
 class Player extends Component {
   constructor() {
@@ -54,9 +55,17 @@ class Player extends Component {
   digDatDing = (x, y) => {
     var dug = document.createElement("div")
     dug.setAttribute('class', 'dug-up-tile')
+    dug.setAttribute('id', x+y)
     dug.setAttribute('style', `left:${x}px; top:${y}px` )
-
     document.getElementsByClassName('tiled-map')[0].appendChild(dug)
+    setTimeout(this.unDigDatDing, 5000, x, y)
+  }
+
+  unDigDatDing = (x, y) => {
+    const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
+    const element = document.getElementById(x+y)
+    element.parentNode.removeChild(element)
+    this.props.unDigTile(tile)
   }
 
   attemptDig = (x, y) => {
@@ -70,6 +79,7 @@ class Player extends Component {
         console.log('no digging!');
       }
     // find collectable
+
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
@@ -114,6 +124,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
   digTile: (tile) => dispatch(digTile(tile)),
+  unDigTile: (tile) => dispatch(unDigTile(tile))
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startAddInventoryItem: (itemRef, itemId) => dispatch(startAddInventoryItem(itemRef, itemId))
 })
