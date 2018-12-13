@@ -21,7 +21,7 @@ code {
 .dug-up-tile {
     width: 16px;
     height: 16px;
-    background-image: url('/public/minedtile.png');
+    background-image: url('/assets/minedtile.png');
     position: absolute;
 }
 
@@ -111,4 +111,63 @@ code {
   position: absolute;
   top: 450px;
   left: 475px;
+}
+
+/* fucking inventory */
+#inventory-box {
+  width: 800px;
+  height: 640px;
+  background-image: url('/assets/quizzical.png');
+}
+
+#inventory-list-box {
+  text-align: center;
+  width: 400px;
+  height: 640px;
+  border: 1px solid black;
+  line-height: 1.5em;
+
+}
+
+.inventory-list-item {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  float: left;
+}
+
+#inventory-item-message {
+  text-align: center;
+  top: 20px;
+  left: 421px;
+  height: 640px;
+  width: 299px;
+  position: absolute;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 1.5em;
+}
+
+.ruby {
+  background-image: url('/assets/ruby.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+
+.bean {
+  background-image: url('/assets/bean.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+
+.key {
+  background-image: url('/assets/player.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
 }
