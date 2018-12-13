@@ -3,14 +3,25 @@ import { connect } from 'react-redux'
 import styled from "styled-components"
 import InvPic from './Inventory.png'
 import InventoryList from './InventoryList'
+import InventoryMessage from './InventoryMessage'
 
 export class Inventory extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      message: undefined
+    }
+  }
+
+  handleMessage = (message) => {
+    this.setState({message: message})
+  }
 
   render() {
-    console.log(this.props.player.inventory);
     return (
-      <div>
-        <InventoryList inventory={this.props.player.inventory}/>
+      <div id="inventory-box">
+        <InventoryList inventory={this.props.player.inventory} handleMessage={this.handleMessage}/>
+        <InventoryMessage message={this.state.message} />
       </div>
     )
   }
