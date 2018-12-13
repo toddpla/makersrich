@@ -1,0 +1,23 @@
+export default [
+       {
+        "height":16,
+        "id":111,
+        "name":"quiz",
+        "rotation":0,
+        "type":"portal",
+        "visible":true,
+        "width":16,
+        "x":288,
+        "y":224
+       },
+       {
+        "height":16,
+        "id":112,
+        "name":"shop",
+        "rotation":0,
+        "type":"portal",
+        "visible":true,
+        "width":16,
+        "x":480,
+        "y":256
+       }]
