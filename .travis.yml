@@ -1,7 +1,12 @@
 language: node_js
 node_js:
 - node
+
+script:
+  - $(npm bin)/cypress run --record
+
 deploy:
   provider: firebase
+  run: firebase use default
   token:
     secure: m+/nncrq8agiiB2uDfkiBdZUHz+QKMD0djUk/BBbyCAXVF7FGqjchBtRA6euV/Rkaws0CSUBM5AYPMwLdRHoMVFDlinKvG5ODR517D4Uwe+6vmwiE7kYWmsZdfwIGhz0HXgnX60QPm1gMyaKkpyPXNHAJ4nedvqPfWVyZmr7R3YUxfjtjYQVdmF5JzzoM/yocpEKIaOOlDMbIOHrtUH2CcIczs58vwuKzE66aDL9ivikwPjc4HwaC3eXqwZ5VQye9mvfaPYM6wJ0Hped5JOY3GUz3/YYQHC5IL9BX6m86v4xOmeaARvAUtqBRAng9NZFyHnxGufFbHi3t9ziZ5v+1jMZh29GlNmsd7d918tRwEd3JWmFkIX46OrkocIPZykpWbEX/ByVslv+mYcV17FkV2nRixkwlb67bwgiELIRuRuKA5paUYAz4xe+4XJz/nCq2ewXE7N+Am3Un7ltXdOMyl5QIHIjYKl3MFmVY6RxHTXonZFEH8qCBloDgR/qiFI+c7lHEy81aY9B7V0mZRTbhcrDN2YHCFkdQudd8sBSAGDPJCiiTwHsUvCKdFoANntN8+Gi+2Rd8wmXmCb0sIaR989b3sDQuP8U7HHTcQckp3iSH6zW9Ki+HZWIWSL+2mhdDDpA1zCS3aLMqOF3dOEKsPUk4f5+LL00sI4ul0MaKmI=
