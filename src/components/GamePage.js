@@ -5,9 +5,23 @@ import { connect } from 'react-redux'
 import { updatePlayer } from '../actions/players'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
+import Modal from 'react-modal'
+import Quiz from './quiz/Quiz'
+import Inventory from './Inventory/Inventory'
 
 import mapJson from '../POWLevel1.json'
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    backgroundColor       : 'rgba(255, 0, 0, 0)'
+  }
+};
 
 export const AppWrapper = styled.div`
   height: 100%;
@@ -15,9 +29,34 @@ export const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #1c1117;
-`;
+`
+
+Modal.setAppElement('#root')
 
 export class GamePage extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      modalIsOpen: false,
+      modalComponenet: 'undefined'
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal(popUpMessage) {
+    this.setState({
+      modalIsOpen: true,
+      ...popUpMessage
+    });
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
   handleMovement = (player, updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
@@ -40,17 +79,41 @@ export class GamePage extends Component {
             || updates.top > MAX_HEIGHT - SPRITE_SIZE )
   }
 
+  handlePopupQuiz = () => {
+    this.openModal({modalComponenet: <Quiz />})
+  }
+  handlePopupInventory = () => {
+    this.openModal({modalComponenet: <Inventory />})
+  }
+
   render() {
     return (
+      <div>
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
-            {this.props.players.map((player, i) => <Player key={i} player={player} handleMovement={this.handleMovement} /> )}
+            {this.props.players.map((player, i) => <Player key={i} player={player}
+            handleMovement={this.handleMovement}
+            handlePopupInventory={this.handlePopupInventory}
+            closeModal={this.closeModal}
+            />
+          )}
           </div>
         </Map>
        </AppWrapper>
       </MapProvider>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel={this.state.modalTitle}
+        >
+          {this.state.modalComponenet}
+          <button onClick={this.closeModal}>close</button>
+        </Modal>
+        </div>
     );
   }
 }

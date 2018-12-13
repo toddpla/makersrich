@@ -2,7 +2,7 @@
 
 [Setup][] | [Testing][]
 
-[![Waffle.io - Issues in progress](https://badge.waffle.io/felixjtdb/Proof-of-Work.png?label=in%20progress&title=In%20Progress)](http://waffle.io/felixjtdb/Proof-of-Work)
+[![Waffle.io - Issues in progress](https://badge.waffle.io/toddpla/Proof-of-Work.png?label=in%20progress&title=In%20Progress)](http://waffle.io/toddpla/Proof-of-Work)
 
 # Setup
 ```
