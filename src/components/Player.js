@@ -62,10 +62,10 @@ class Player extends Component {
   }
 
   unDigDatDing = (x, y) => {
-    // const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
-    // const element = document.getElementById(x+y)
-    // element.parentNode.removeChild(element)
-    // this.props.unDigTile(tile)
+    const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
+    const element = document.getElementById(x+y)
+    element.parentNode.removeChild(element)
+    this.props.unDigTile(tile)
   }
 
   attemptDig = (x, y) => {
