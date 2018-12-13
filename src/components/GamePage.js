@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import Player from './Player'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
-import { updatePlayer } from '../actions/players'
+import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
-
-import mapJson from '../POWLevel1.json'
 
 const customStyles = {
   content : {
@@ -58,10 +56,19 @@ export class GamePage extends Component {
     this.setState({modalIsOpen: false});
   }
 
-  handleMovement = (player, updates) => {
+  handleMovement = (updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.updatePlayer(player, updates)
+      this.props.startUpdatePlayer(updates)
       this.forceUpdate()
+    }
+    switch(this.checkPortal(updates.left , updates.top)) {
+    case "quiz":
+      return this.handlePopupQuiz()
+    case 'shop':
+      console.log('shop');
+      return
+    default:
+      return
     }
   }
 
@@ -69,7 +76,7 @@ export class GamePage extends Component {
     const x = updates.left
     const y = updates.top
 
-    const impassablePos = mapJson.layers[1].objects.filter((object) => object.x === x && object.y === y)[0]
+    const impassablePos = this.props.map.impassable.filter((object) => object.x === x && object.y === y)[0]
     return (impassablePos !== undefined) ? false : true
   }
 
@@ -79,11 +86,19 @@ export class GamePage extends Component {
             || updates.top > MAX_HEIGHT - SPRITE_SIZE )
   }
 
+  checkPortal = (x, y) => {
+    const portal = this.props.map.portals.filter((object) => object.x === x && object.y === y)[0]
+    if (portal !== undefined) {
+      return portal.name
+    }
+    return false
+  }
+
   handlePopupQuiz = () => {
-    this.openModal({modalComponenet: <Quiz />})
+    this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
-    this.openModal({modalComponenet: <Inventory />})
+    this.openModal({modalComponent: <Inventory />})
   }
 
   render() {
@@ -93,10 +108,10 @@ export class GamePage extends Component {
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
           <div>
-            {this.props.players.map((player, i) => <Player key={i} player={player}
-            handleMovement={this.handleMovement}
-            handlePopupInventory={this.handlePopupInventory}
-            closeModal={this.closeModal}
+            <Player player={this.props.player}
+              handleMovement={this.handleMovement}
+              handlePopupInventory={this.handlePopupInventory}
+              closeModal={this.closeModal}
             />
           )}
           </div>
@@ -110,7 +125,7 @@ export class GamePage extends Component {
           style={customStyles}
           contentLabel={this.state.modalTitle}
         >
-          {this.state.modalComponenet}
+          {this.state.modalComponent}
           <button onClick={this.closeModal}>close</button>
         </Modal>
         </div>
@@ -119,11 +134,12 @@ export class GamePage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  players: state.players
+  map: state.map
+  player: state.auth
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePlayer: (player, direction) => dispatch(updatePlayer(player, direction))
+  startUpdatePlayer: (direction) => dispatch(startUpdatePlayer(direction))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

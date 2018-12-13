@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-
 import PlayerImg from "../assets/player.png"
-import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
+
 import { collectItem, digTile, unDigTile } from '../actions/map'
+
+import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
 
 class Player extends Component {
@@ -19,18 +20,18 @@ class Player extends Component {
       switch(e.keyCode) {
         // left key
         case 37:
-          return this.props.handleMovement(this.props.player, { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
+          return this.props.handleMovement({ left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
         // up key
         case 38:
-          return this.props.handleMovement(this.props.player, { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
+          return this.props.handleMovement({ top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
         // right key
         case 39:
-          return this.props.handleMovement(this.props.player, { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
+          return this.props.handleMovement({ left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
         // down key
         case 40:
-          return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
+          return this.props.handleMovement({ top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
-          this.attemptDig(this.props.player.left, this.props.player.top)
+          return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           this.setState({inInventory: true})
           return this.props.handlePopupInventory()
@@ -41,7 +42,7 @@ class Player extends Component {
         return this.inventoryHandleKeyDown(e)
     }
   }
-  
+
   inventoryHandleKeyDown(e) {
     switch(e.keyCode) {
       case 73:
@@ -69,7 +70,6 @@ class Player extends Component {
 
   attemptDig = (x, y) => {
     // check if diggable and
-      console.log(x, y);
       const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
       if (tile.visible === false) {
         console.log('you can dig');
@@ -80,13 +80,16 @@ class Player extends Component {
       }
     // find collectable
 
+
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
-      console.log(item.name)
       this.props.collectItem(item)
+      console.log(item);
+      this.props.startAddInventoryItem(item.type, item.id)
+      }
     }
     // dig
-  }
+
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
@@ -122,6 +125,8 @@ const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
   digTile: (tile) => dispatch(digTile(tile)),
   unDigTile: (tile) => dispatch(unDigTile(tile))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
+  startAddInventoryItem: (itemRef, itemId) => dispatch(startAddInventoryItem(itemRef, itemId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
