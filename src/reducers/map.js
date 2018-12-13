@@ -22,6 +22,11 @@ export default (state=mapReducerDefaultState, action) => {
         ...state,
         minable: action.minable,
       }
+    case 'UN_DIG_TILE':
+      return {
+        ...state,
+        minable: action.minable,
+      }
     default:
       return state
   }
