@@ -2,7 +2,7 @@ export default [
        {
         "height":16,
         "id":111,
-        "name":"door_1",
+        "name":"quiz",
         "rotation":0,
         "type":"portal",
         "visible":true,
@@ -13,7 +13,7 @@ export default [
        {
         "height":16,
         "id":112,
-        "name":"door_2",
+        "name":"shop",
         "rotation":0,
         "type":"portal",
         "visible":true,

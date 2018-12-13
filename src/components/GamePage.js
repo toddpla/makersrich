@@ -57,10 +57,18 @@ export class GamePage extends Component {
   }
 
   handleMovement = (player, updates) => {
-    this.checkPortal(player.left , player.top- SPRITE_SIZE)
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.updatePlayer(player, updates)
       this.forceUpdate()
+    }
+    switch(this.checkPortal(updates.left , updates.top)) {
+    case "quiz":
+      return this.handlePopupQuiz()
+    case 'shop':
+      console.log('shop');
+      return
+    default:
+      return
     }
   }
 
@@ -81,15 +89,16 @@ export class GamePage extends Component {
   checkPortal = (x, y) => {
     const portal = this.props.map.portals.filter((object) => object.x === x && object.y === y)[0]
     if (portal !== undefined) {
-      console.log("portal")
+      return portal.name
     }
+    return false
   }
 
   handlePopupQuiz = () => {
-    this.openModal({modalComponenet: <Quiz />})
+    this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
-    this.openModal({modalComponenet: <Inventory />})
+    this.openModal({modalComponent: <Inventory />})
   }
 
   render() {
@@ -116,7 +125,7 @@ export class GamePage extends Component {
           style={customStyles}
           contentLabel={this.state.modalTitle}
         >
-          {this.state.modalComponenet}
+          {this.state.modalComponent}
           <button onClick={this.closeModal}>close</button>
         </Modal>
         </div>
