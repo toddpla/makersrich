@@ -23,7 +23,7 @@ const customStyles = {
   }
 };
 
-const AppWrapper = styled.div`
+export const AppWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -33,7 +33,7 @@ const AppWrapper = styled.div`
 
 Modal.setAppElement('#root')
 
-class GamePage extends Component {
+export class GamePage extends Component {
 
   constructor() {
     super();
@@ -59,7 +59,6 @@ class GamePage extends Component {
   }
 
   handleMovement = (player, updates) => {
-    console.log(player, updates)
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.updatePlayer(player, updates)
       this.forceUpdate()

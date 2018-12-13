@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
 
+import PlayerImg from "../assets/player.png"
 import mapJson from '../POWLevel1.json'
+import { connect } from 'react-redux'
+import { collectItem, digTile } from '../actions/map'
+
 
 class Player extends Component {
   handleKeyDown = (e) => {
@@ -27,10 +31,32 @@ class Player extends Component {
     }
   }
 
+  digDatDing = (x, y) => {
+    var dug = document.createElement("div")
+    dug.setAttribute('class', 'dug-up-tile')
+    dug.setAttribute('style', `left:${x}px; top:${y}px` )
+
+    document.getElementsByClassName('tiled-map')[0].appendChild(dug)
+  }
+
   attemptDig = (x, y) => {
-    // check if diggable and find collectable
-    const item = mapJson.layers[0].objects.filter((object) => object.x === x && object.y === y)[0]
-    if(item !== undefined){ console.log(item.name) }
+    // check if diggable and
+      console.log(x, y);
+      const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
+      if (tile.visible === false) {
+        console.log('you can dig');
+        this.props.digTile(tile)
+        this.digDatDing(x, y)
+      } else {
+        console.log('no digging!');
+      }
+    // find collectable
+
+    const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
+    if (item !== undefined) {
+      console.log(item.name)
+      this.props.collectItem(item)
+    }
     // dig
   }
 
@@ -50,7 +76,8 @@ class Player extends Component {
           top: this.props.player.top,
           left: this.props.player.left,
           height: '16px',
-          backgroundColor: 'red'
+          backgroundPosition: 'center',
+          backgroundImage: `url(${PlayerImg})`
         }}
       >
       </div>
@@ -58,5 +85,13 @@ class Player extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  map: state.map
+})
 
-export default Player;
+const mapDispatchToProps = (dispatch) => ({
+  collectItem: (item) => dispatch(collectItem(item)),
+  digTile: (tile) => dispatch(digTile(tile))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
