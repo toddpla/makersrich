@@ -26,12 +26,12 @@ code {
   border: 4px solid black;
   background-image: url('/assets/quizzical.png');
   text-align: center;
-  font-family: 'QuizFont'
+  font-family: QuizFont;
 }
 
-@@font-face {
-  font-family: 'QuizFont';
-  src: url('/assets/KenPixel Mini.ttf')  format('truetype'), /* Safari, Android, iOS */
+@font-face {
+  font-family: QuizFont;
+  src: url(/kenpixelmini.ttf)  format('truetype'), /* Safari, Android, iOS */
 }
 
 .modal-button {
@@ -76,11 +76,12 @@ code {
 
 .quiz-answer-box:hover {
   background-color: #c19a6b;
-  border: 1px solid beige
+  border: 1px solid beige;
+  box-shadow: 2px 2px black;
 }
 
 .quiz-answer-box:active {
-  box-shadow: 2px 2px black
+  box-shadow: 4px 4px black
 }
 
 #answer-0 {
