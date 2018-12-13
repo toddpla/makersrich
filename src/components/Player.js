@@ -5,6 +5,7 @@ import PlayerImg from "../assets/player.png"
 import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
 import { collectItem, digTile } from '../actions/map'
+import { updatePlayer, addBean, addRuby } from '../actions/players'
 
 
 class Player extends Component {
@@ -30,7 +31,8 @@ class Player extends Component {
         case 40:
           return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
-          this.attemptDig(this.props.player.left, this.props.player.top)
+          console.log(this.props);
+          return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           this.setState({inInventory: true})
           return this.props.handlePopupInventory()
@@ -41,7 +43,7 @@ class Player extends Component {
         return this.inventoryHandleKeyDown(e)
     }
   }
-  
+
   inventoryHandleKeyDown(e) {
     switch(e.keyCode) {
       case 73:
@@ -61,7 +63,6 @@ class Player extends Component {
 
   attemptDig = (x, y) => {
     // check if diggable and
-      console.log(x, y);
       const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
       if (tile.visible === false) {
         console.log('you can dig');
@@ -74,8 +75,17 @@ class Player extends Component {
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
-      console.log(item.name)
+      console.log(item.type)
       this.props.collectItem(item)
+
+      switch (item.type) {
+        case 'ruby':
+          return this.props.addRuby(item)
+        case 'bean':
+          return this.props.addBean(item)
+        default:
+          return
+      }
     }
     // dig
   }
@@ -112,7 +122,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
-  digTile: (tile) => dispatch(digTile(tile))
+  digTile: (tile) => dispatch(digTile(tile)),
+  updatePlayer: (player, updates) => dispatch(updatePlayer(player, updates))
+  addRuby: (item) => dispatch(addRuby(item))
+  addBean: (item) => dispatch(addBean(item))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
