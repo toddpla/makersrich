@@ -9,6 +9,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
 import {startSetQuestions} from './actions/questions'
+import { addPlayer } from './actions/players'
 
 import Quiz from './components/quiz/Quiz'
 
@@ -40,8 +41,9 @@ firebase.auth().onAuthStateChanged(user => {
     store.dispatch(login(user.uid))
     subscribe()
     renderApp()
+    store.dispatch(addPlayer('Admin'))
     if (history.location.pathname === '/') {
-      history.push('/add-player')
+      history.push('/game')
     }
   } else {
     store.dispatch(logout())
