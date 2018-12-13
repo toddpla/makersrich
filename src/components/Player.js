@@ -5,8 +5,7 @@ import PlayerImg from "../assets/player.png"
 import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
 import { collectItem, digTile } from '../actions/map'
-import { updatePlayer, addBean, addRuby } from '../actions/players'
-
+import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
 class Player extends Component {
   constructor() {
@@ -20,18 +19,17 @@ class Player extends Component {
       switch(e.keyCode) {
         // left key
         case 37:
-          return this.props.handleMovement(this.props.player, { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
+          return this.props.handleMovement({ left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
         // up key
         case 38:
-          return this.props.handleMovement(this.props.player, { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
+          return this.props.handleMovement({ top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
         // right key
         case 39:
-          return this.props.handleMovement(this.props.player, { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
+          return this.props.handleMovement({ left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
         // down key
         case 40:
-          return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
+          return this.props.handleMovement({ top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
-          console.log(this.props);
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           this.setState({inInventory: true})
@@ -75,20 +73,13 @@ class Player extends Component {
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
-      console.log(item.type)
       this.props.collectItem(item)
-
-      switch (item.type) {
-        case 'ruby':
-          return this.props.addRuby(item)
-        case 'bean':
-          return this.props.addBean(item)
-        default:
-          return
+      console.log(item);
+      this.props.startAddInventoryItem(item.type, item.id)
       }
     }
     // dig
-  }
+
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
@@ -123,9 +114,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   collectItem: (item) => dispatch(collectItem(item)),
   digTile: (tile) => dispatch(digTile(tile)),
-  updatePlayer: (player, updates) => dispatch(updatePlayer(player, updates))
-  addRuby: (item) => dispatch(addRuby(item))
-  addBean: (item) => dispatch(addBean(item))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
+  startAddInventoryItem: (itemRef, itemId) => dispatch(startAddInventoryItem(itemRef, itemId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
