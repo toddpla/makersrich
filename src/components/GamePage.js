@@ -9,7 +9,7 @@ import styled from "styled-components";
 import mapJson from '../POWLevel1.json'
 
 
-const AppWrapper = styled.div`
+export const AppWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ const AppWrapper = styled.div`
   background-color: #1c1117;
 `;
 
-class GamePage extends Component {
+export class GamePage extends Component {
 
   handleMovement = (player, updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
