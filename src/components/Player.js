@@ -8,29 +8,49 @@ import { collectItem, digTile } from '../actions/map'
 
 
 class Player extends Component {
-  handleKeyDown = (e) => {
-    switch(e.keyCode) {
-      // left key
-      case 37:
-        return this.props.handleMovement(this.props.player, { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
-      // up key
-      case 38:
-        return this.props.handleMovement(this.props.player, { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
-      // right key
-      case 39:
-        return this.props.handleMovement(this.props.player, { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
-      // down key
-      case 40:
-        return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
-      case 69:
-        this.attemptDig(this.props.player.left, this.props.player.top)
-      case 73:
-        return this.props.handlePopupInventory()
-      default:
-        console.log(e.keyCode);
+  constructor() {
+    super()
+    this.state = {
+      inInventory: false
     }
   }
-
+  handleKeyDown = (e) => {
+    if (!this.state.inInventory) {
+      switch(e.keyCode) {
+        // left key
+        case 37:
+          return this.props.handleMovement(this.props.player, { left: this.props.player.left - SPRITE_SIZE, top: this.props.player.top })
+        // up key
+        case 38:
+          return this.props.handleMovement(this.props.player, { top: this.props.player.top - SPRITE_SIZE, left: this.props.player.left  })
+        // right key
+        case 39:
+          return this.props.handleMovement(this.props.player, { left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
+        // down key
+        case 40:
+          return this.props.handleMovement(this.props.player, { top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
+        case 69:
+          this.attemptDig(this.props.player.left, this.props.player.top)
+        case 73:
+          this.setState({inInventory: true})
+          return this.props.handlePopupInventory()
+        default:
+          console.log(e.keyCode);
+      }
+    } else {
+        return this.inventoryHandleKeyDown(e)
+    }
+  }
+  
+  inventoryHandleKeyDown(e) {
+    switch(e.keyCode) {
+      case 73:
+        this.setState({inInventory: false})
+        return this.props.closeModal()
+      default:
+        console.log(e.keyCode);
+      }
+    }
   digDatDing = (x, y) => {
     var dug = document.createElement("div")
     dug.setAttribute('class', 'dug-up-tile')
