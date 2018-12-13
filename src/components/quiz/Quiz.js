@@ -34,7 +34,7 @@ export class Quiz extends React.Component {
       questionCount: prevState.questionCount + 1
     }))
     if (this.state.questionCount === 4) {
-      this.props.history.push('./game')
+      console.log('done!!!');
     }
   }
 
@@ -56,7 +56,8 @@ export class Quiz extends React.Component {
 
 const mapStateToProps = (state) => ({
     quiz: state.quiz,
-    auth: state.auth
+    auth: state.auth,
+    questions: state.questions
 })
 
 const mapDispatchToProps = dispatch => ({

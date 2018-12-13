@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
-
 import PlayerImg from "../assets/player.png"
-import mapJson from '../POWLevel1.json'
 import { connect } from 'react-redux'
 import { collectItem, digTile } from '../actions/map'
 import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
@@ -70,6 +68,7 @@ class Player extends Component {
         console.log('no digging!');
       }
     // find collectable
+
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
     if (item !== undefined) {
