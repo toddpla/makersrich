@@ -6,9 +6,11 @@ export const login = (uid, player) => ({
       uid,
       top: 0,
       left: 0,
-      ruby: [],
-      javaBeans: [],
-      key: [],
+      inventory: {
+        ruby: [],
+        bean: [],
+        key: [],
+      },
       ...player
     }
 })
@@ -53,10 +55,10 @@ export const addInventoryItem = (itemRef, item) => ({
   item
 })
 
-export const startAddInventoryItem = (itemRef, itemId) => {
+export const startAddInventoryItem = (itemRef, item) => {
   return (dispatch) => {
-    return database.ref(`players/${firebase.auth().currentUser.uid}/${itemRef}/${itemId}`).update({status: 1}).then(() => {
-      dispatch(addInventoryItem(itemRef, itemId))
+    return database.ref(`players/${firebase.auth().currentUser.uid}/inventory/${itemRef}/${item.id}`).update(item).then(() => {
+      dispatch(addInventoryItem(itemRef, item))
     })
   }
 }

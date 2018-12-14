@@ -12,7 +12,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":384,
         "y":448
@@ -30,7 +30,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":240,
         "y":304
@@ -48,10 +48,10 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":560,
-        "y":288
+        "y":304
        },
        {
         "gid":3899,
@@ -60,7 +60,7 @@ export default [
         "name":"key_1",
         "rotation":0,
         "type":"key",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":96,
         "y":320
@@ -72,8 +72,110 @@ export default [
         "name":"swag_1",
         "rotation":0,
         "type":"swag",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":512,
         "y":192
+       },
+       {
+        "gid":3884,
+        "height":16,
+        "id":4842,
+        "name":"bean_2",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Javascript was initially developed under the working title 'Mocha'"
+               }],
+        "rotation":0,
+        "type":"bean",
+        "visible":true,
+        "width":16,
+        "x":352,
+        "y":240
+       },
+       {
+        "gid":3884,
+        "height":16,
+        "id":4843,
+        "name":"bean_2",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Javascript was initially developed under the working title 'Mocha'"
+               }],
+        "rotation":0,
+        "type":"bean",
+        "visible":true,
+        "width":16,
+        "x":352,
+        "y":240
+       },
+       {
+        "gid":3884,
+        "height":16,
+        "id":4844,
+        "name":"bean_3",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Javascript was initially developed under the working title 'Mocha'"
+               }],
+        "rotation":0,
+        "type":"bean",
+        "visible":true,
+        "width":16,
+        "x":240,
+        "y":480
+       },
+       {
+        "gid":3868,
+        "height":16,
+        "id":4845,
+        "name":"ruby_3",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Ruby is said to follow the principle of least astonishment (POLA), meaning that the language should behave in such a way as to minimize confusion for experienced users"
+               }],
+        "rotation":0,
+        "type":"ruby",
+        "visible":true,
+        "width":16,
+        "x":386.948335246843,
+        "y":345.61653272101
+       },
+       {
+        "gid":3868,
+        "height":16,
+        "id":4846,
+        "name":"ruby_4",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Ruby is said to follow the principle of least astonishment (POLA), meaning that the language should behave in such a way as to minimize confusion for experienced users"
+               }],
+        "rotation":0,
+        "type":"ruby",
+        "visible":true,
+        "width":16,
+        "x":560,
+        "y":480
+       },
+       {
+        "gid":3899,
+        "height":16,
+        "id":4847,
+        "name":"key_2",
+        "rotation":0,
+        "type":"key",
+        "visible":true,
+        "width":16,
+        "x":400,
+        "y":288
        }]
