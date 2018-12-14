@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
+import RPS from './RPS/RPS'
 
 const customStyles = {
   content : {
@@ -101,6 +102,9 @@ export class GamePage extends Component {
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
+  handlePopupRPS = () => {
+    this.openModal({modalComponent: <RPS />})
+  }
 
   render() {
     return (
@@ -112,6 +116,7 @@ export class GamePage extends Component {
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
+              handlePopupRPS={this.handlePopupRPS}
               closeModal={this.closeModal}
             />
           )}

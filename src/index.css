@@ -176,3 +176,8 @@ code {
   background-position: center;
   background-size: 40px;
 }
+
+.rps {
+  padding-left: 30px;
+  padding-top: 30px
+}
