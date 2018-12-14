@@ -10,7 +10,6 @@ import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
 import {startSetQuestions} from './actions/questions'
 import { startSetOpponents, startOnOpponents } from './actions/opponents'
-import { addPlayer } from './actions/players'
 import LoadingPage from './components/LoadingPage'
 
 
