@@ -14,8 +14,27 @@ describe('inventory', () => {
   })
 
   it('has a bean into the inventory', () => {
-    cy.get('#player').trigger('keydown', {
-      keyCode: 73
-    })
+    for(var i = 0; i<14;i++){
+      cy.get('#player').trigger('keydown', {
+        keyCode: 39
+      })
+    }
+    for(var i = 0; i<19;i++){
+      cy.get('#player').trigger('keydown', {
+        keyCode: 40
+      })
+    }
+      cy.get('#player').trigger('keydown', {
+        keyCode: 39
+      })
+      cy.get('#player').trigger('keydown', {
+        keyCode: 69
+      })
+      cy.get('#player').trigger('keydown', {
+        keyCode: 73
+      })
+      cy.get('.bean').click()
+      cy.contains('#inventory-item-message', "Javascript was initially developed under the working title 'Mocha'")
+
   })
 })
