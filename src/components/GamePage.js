@@ -10,8 +10,9 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 import Message from './Message'
-import PlayersList from './PlayersList'
-import LoadingPage from './LoadingPage'
+import LevelPlayers from './LevelPlayers'
+import Leaderboard from './Leaderboard'
+
 
 const customStyles = {
   content : {
@@ -32,7 +33,7 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-// Modal.setAppElement('#root')
+Modal.setAppElement('#root')
 
 
 export class GamePage extends Component {
@@ -118,13 +119,18 @@ export class GamePage extends Component {
   }
 
   handlePopupLevelPlayersList = () => {
-    this.openModal({modalComponent: <PlayersList />})
+    this.openModal({modalComponent: <LevelPlayers level={this.props.player.level}/>})
+  }
+
+  handlePopupLeaderboard = () => {
+    this.openModal({modalComponent: <Leaderboard />})
   }
 
   render() {
     return (
       <div>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
+        <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
