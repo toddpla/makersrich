@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter'
 import { history } from './routers/AppRouter'
-import { firebase, subscribe } from './firebase/firebase'
+import database, { firebase } from './firebase/firebase'
 import { startLogin, logout } from './actions/auth'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -11,9 +11,8 @@ import configureStore from './store/configureStore'
 import {startSetQuestions} from './actions/questions'
 import { startSetOpponents, startOnOpponents } from './actions/opponents'
 import { addPlayer } from './actions/players'
-import database from './firebase/firebase'
+import LoadingPage from './components/LoadingPage'
 
-import Quiz from './components/quiz/Quiz'
 
 export const store = configureStore()
 
@@ -28,14 +27,23 @@ const jsx = (
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
+
 let hasRendered = false;
-const renderApp = (user) => {
-  if(!hasRendered) {
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('root'));
+    hasRendered = true;
+  }
+};
+
+let hasLoadedData = false;
+const loadFirebaseData = (user) => {
+  if(!hasLoadedData) {
     store.dispatch(startLogin(user.uid)).then(() => {
-      // store.dispatch(startOnOpponents())
       store.dispatch(startSetOpponents()).then(() => {
-        ReactDOM.render(jsx, document.getElementById('root'));
-        hasRendered = true
+        renderApp()
+        hasLoadedData = true
       })
     })
   }
@@ -43,7 +51,7 @@ const renderApp = (user) => {
 
 firebase.auth().onAuthStateChanged(user => {
   if(user) {
-    renderApp(user)
+    loadFirebaseData(user)
     if (history.location.pathname === '/') {
       history.push('/game')
     }
