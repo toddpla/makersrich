@@ -1,7 +1,7 @@
 
  #muxworthys-bonanza {
    width: 800px;
-   height: 640px;
+   height: 500px;
    background-image: url('/assets/quizzical.png');
    border: 7px solid #e1c699;
  }
@@ -10,7 +10,7 @@
    padding-left: 10px;
    text-align: center;
    width: 390px;
-   height: 580px;
+   height: 440px;
    line-height: 1.5em;
    position: absolute;
    border-right: 7px solid #e1c699
@@ -19,7 +19,7 @@
  #shop-message-box {
    text-align: center;
    left: 427px;
-   height: 580px;
+   height: 440px;
    width: 300px;
    position: absolute;
    padding-left: 50px;
@@ -31,7 +31,7 @@
    position: absolute;
    padding-top: 12px;
    width: 100px;
-   bottom: 20px;
+   bottom: 100px;
    right: 150px;
    height: 35px;
    border-radius: 5px;
@@ -72,7 +72,8 @@
 
 #item-price {
   position: absolute;
-  top: 200px;
+  top: 240px;
+  width: 300px;
 }
 
 #item-type {
@@ -82,6 +83,7 @@
 #muxworthys-opinion {
   position: absolute;
   top: 165px;
+  width: 300px;
 }
 
 .shop-selected-item {
