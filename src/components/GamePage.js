@@ -11,6 +11,8 @@ import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 import RPS from './RPS/RPS'
 import Message from './Message'
+import PlayersList from './PlayersList'
+import LoadingPage from './LoadingPage'
 
 const customStyles = {
   content : {
@@ -105,8 +107,6 @@ export class GamePage extends Component {
     return false
   }
 
-
-
   handlePopupQuiz = () => {
     this.openModal({modalComponent: <Quiz />})
   }
@@ -121,9 +121,14 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Message message={message}/>})
   }
 
+  handlePopupLevelPlayersList = () => {
+    this.openModal({modalComponent: <PlayersList />})
+  }
+
   render() {
     return (
       <div>
+        <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
