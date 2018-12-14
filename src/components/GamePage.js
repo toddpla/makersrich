@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Player from './Player'
-import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
@@ -8,6 +7,7 @@ import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
+import Map from './Map'
 
 const customStyles = {
   content : {
@@ -29,7 +29,7 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-// Modal.setAppElement('#root')
+Modal.setAppElement('#root')
 
 
 export class GamePage extends Component {
@@ -104,21 +104,24 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div>
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
-       <AppWrapper>
-        <Map style={{ transform: "scale(1)", position: 'relative' }}>
-          <div>
-            <Player player={this.props.player}
-              handleMovement={this.handleMovement}
-              handlePopupInventory={this.handlePopupInventory}
-              closeModal={this.closeModal}
-            />
-          )}
-          </div>
+      <div
+        style={{
+            position: 'relative',
+            margin: '20px auto',
+        }}
+        >
+
+
+        <Map>
+
         </Map>
-       </AppWrapper>
-      </MapProvider>
+
+        <Player player={this.props.player}
+          handleMovement={this.handleMovement}
+          handlePopupInventory={this.handlePopupInventory}
+          closeModal={this.closeModal}
+        />
+
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
