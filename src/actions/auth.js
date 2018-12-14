@@ -4,8 +4,8 @@ export const login = (uid, player) => ({
     type: 'LOGIN',
     player: {
       uid,
-      top: 400,
-      left: 320,
+      top: 0,
+      left: 0,
       inventory: {
         ruby: [],
         bean: [],
