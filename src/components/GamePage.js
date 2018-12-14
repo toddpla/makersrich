@@ -18,7 +18,6 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    backgroundColor       : 'rgba(255, 0, 0, 0)'
   }
 };
 
@@ -99,7 +98,7 @@ export class GamePage extends Component {
   checkSign = (x, y) => {
     const sign = this.props.map.signs.filter((object) => object.x === x && object.y + 16 === y)[0]
     if (sign !== undefined) {
-      return this.handlePopupMessage(sign.properties.value)
+      return this.handlePopupMessage(sign.properties[0].value)
     }
     return false
   }
