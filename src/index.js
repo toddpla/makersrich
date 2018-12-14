@@ -4,19 +4,18 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter'
 import { history } from './routers/AppRouter'
 import { firebase, subscribe } from './firebase/firebase'
-import { login, logout } from './actions/auth'
+import { startLogin, logout } from './actions/auth'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
 import {startSetQuestions} from './actions/questions'
+import { startSetOpponents, startOnOpponents } from './actions/opponents'
 import { addPlayer } from './actions/players'
 import database from './firebase/firebase'
 
 import Quiz from './components/quiz/Quiz'
 
-const store = configureStore()
-
-store.dispatch(startSetQuestions())
+export const store = configureStore()
 
 const jsx = (
   <Provider store={store}>
@@ -30,19 +29,21 @@ const jsx = (
 serviceWorker.unregister();
 
 let hasRendered = false;
-const renderApp = () => {
+const renderApp = (user) => {
   if(!hasRendered) {
-    ReactDOM.render(jsx, document.getElementById('root'));
-    hasRendered = true
+    store.dispatch(startLogin(user.uid)).then(() => {
+      // store.dispatch(startOnOpponents())
+      store.dispatch(startSetOpponents()).then(() => {
+        ReactDOM.render(jsx, document.getElementById('root'));
+        hasRendered = true
+      })
+    })
   }
 }
 
 firebase.auth().onAuthStateChanged(user => {
   if(user) {
-    store.dispatch(login(user.uid, database.ref(`players/${user.uid}`)))
-    subscribe()
-    renderApp()
-    // store.dispatch(addPlayer('Admin'))
+    renderApp(user)
     if (history.location.pathname === '/') {
       history.push('/game')
     }

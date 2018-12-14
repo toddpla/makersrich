@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Player from './Player'
+import Player from './Player';
+import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
@@ -114,7 +115,7 @@ export class GamePage extends Component {
               handlePopupInventory={this.handlePopupInventory}
               closeModal={this.closeModal}
             />
-          )}
+          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
         </Map>
        </AppWrapper>
@@ -136,7 +137,8 @@ export class GamePage extends Component {
 
 const mapStateToProps = (state) => ({
   map: state.map,
-  player: state.auth
+  player: state.auth,
+  opponents: state.opponents
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,25 +1,34 @@
 import database, { firebase, googleAuthProvider, subscribe } from '../firebase/firebase'
 
 export const login = (uid, player) => ({
-    type: 'LOGIN',
-    player: {
-      uid,
-      top: 0,
-      left: 0,
-      ruby: [],
-      javaBeans: [],
-      key: [],
-      ...player
-    }
+  type: 'LOGIN',
+  player: {
+    uid,
+    top: 0,
+    left: 0,
+    ruby: [],
+    javaBeans: [],
+    key: [],
+    ...player
+  }
 })
 
-export const startLogin = () => {
+export const startLogin = (uid) => {
+  return (dispatch) => {
+    return database.ref(`players/${uid}`).once('value').then((snapshot) => {
+      dispatch(login(uid, snapshot.val()))
+      subscribe()
+    })
+  }
+}
+
+export const startGoogleLogin = () => {
   return (dispatch) => {
     return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
       database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
         dispatch(login(result.user.uid, snapshot.val()))
+        subscribe()
       })
-      subscribe()
     })
   }
 }
