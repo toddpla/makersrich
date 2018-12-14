@@ -2,12 +2,14 @@ import collectables from '../data/maps/level1/collectables'
 import minable from '../data/maps/level1/minable'
 import portals from '../data/maps/level1/portals'
 import impassable from '../data/maps/level1/impassable'
+import signs from '../data/maps/level1/signs'
 
 export const mapReducerDefaultState = {
   collectables,
   minable,
   portals,
-  impassable
+  impassable,
+  signs
 }
 
 export default (state=mapReducerDefaultState, action) => {

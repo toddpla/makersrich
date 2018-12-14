@@ -37,6 +37,8 @@ class Player extends Component {
         case 73:
           this.setState({inInventory: true})
           return this.props.handlePopupInventory()
+        case 81:
+          return this.props.checkSign(this.props.player.left, this.props.player.top)
         default:
           console.log(e.keyCode);
       }
@@ -87,7 +89,7 @@ class Player extends Component {
     if (item !== undefined) {
       this.props.collectItem(item)
       console.log(item);
-      this.props.startAddInventoryItem(item.type, item.id)
+      this.props.startAddInventoryItem(item.type, item)
       }
     }
     // dig
@@ -128,7 +130,7 @@ const mapDispatchToProps = (dispatch) => ({
   digTile: (tile) => dispatch(digTile(tile)),
   unDigTile: (tile) => dispatch(unDigTile(tile)),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startAddInventoryItem: (itemRef, itemId) => dispatch(startAddInventoryItem(itemRef, itemId))
+  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

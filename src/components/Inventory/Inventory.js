@@ -1,19 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from "styled-components"
 import InvPic from './Inventory.png'
+import InventoryList from './InventoryList'
+import InventoryMessage from './InventoryMessage'
 
-export default class Inventory extends React.Component {
+export class Inventory extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      message: undefined
+    }
+  }
 
+  handleMessage = (message) => {
+    this.setState({message: message})
+  }
 
   render() {
-  var sectionStyle = {
-    backgroundImage: `url(${InvPic})`,
-    backgroundPosition: 'center',
-    width: 640,
-    height: 560
-  };
     return (
-      <div style={sectionStyle}></div>
+      <div id="inventory-box">
+        <InventoryList inventory={this.props.player.inventory} handleMessage={this.handleMessage}/>
+        <InventoryMessage message={this.state.message} />
+      </div>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  player: state.auth
+})
+
+export default connect(mapStateToProps)(Inventory)
