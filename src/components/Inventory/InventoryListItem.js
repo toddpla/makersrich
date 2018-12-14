@@ -11,7 +11,6 @@ class InventoryListItem extends Component {
   }
 
   render() {
-    console.log(this.props.item);
     return (
       <div className="inventory-list-item" onClick={this.changeMessage}>
         <div className={this.props.item.type}></div>
