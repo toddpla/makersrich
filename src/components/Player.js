@@ -9,12 +9,14 @@ import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
 
 class Player extends Component {
+
   constructor() {
     super()
     this.state = {
       inInventory: false
     }
   }
+
   handleKeyDown = (e) => {
     if (!this.state.inInventory) {
       switch(e.keyCode) {

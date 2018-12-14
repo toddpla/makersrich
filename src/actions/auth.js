@@ -1,4 +1,6 @@
 import database, { firebase, googleAuthProvider, subscribe } from '../firebase/firebase'
+import { store } from '../index.js'
+
 
 export const login = (uid, player) => ({
     type: 'LOGIN',
@@ -15,15 +17,25 @@ export const login = (uid, player) => ({
     }
 })
 
-export const startLogin = () => {
+export const startLogin = (uid) => {
   return (dispatch) => {
-    return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
-      database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
-        dispatch(login(result.user.uid, snapshot.val()))
-      })
+    return database.ref(`players/${uid}`).once('value').then((snapshot) => {
+      dispatch(login(uid, snapshot.val()))
       subscribe()
     })
   }
+}
+
+export const startGoogleLogin = () => {
+  console.log('now here');
+  // return (dispatch) => {
+    return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
+      database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
+        store.dispatch(login(result.user.uid, snapshot.val()))
+        subscribe()
+      })
+    })
+  // }
 }
 
 export const logout = () => ({
@@ -32,8 +44,9 @@ export const logout = () => ({
 
 export const startLogout = () => {
   return (dispatch) => {
-    return firebase.auth().signOut()
     dispatch(logout())
+    window.location.reload();
+    return firebase.auth().signOut()
   }
 }
 
@@ -42,10 +55,10 @@ export const updatePlayer = (updates) => ({
   updates
 })
 
-export const startUpdatePlayer = (updates) => {
+export const startUpdatePlayer = (uid, updates) => {
   return (dispatch) => {
     dispatch(updatePlayer(updates))
-    return database.ref(`players/${firebase.auth().currentUser.uid}`).update(updates)
+    return database.ref(`players/${uid}`).update(updates)
   }
 }
 

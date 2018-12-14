@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Player from './Player'
+import Player from './Player';
+import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
@@ -59,7 +60,7 @@ export class GamePage extends Component {
 
   handleMovement = (updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.startUpdatePlayer(updates)
+      this.props.startUpdatePlayer(this.props.player.uid, updates)
       this.forceUpdate()
     }
     switch(this.checkPortal(updates.left , updates.top)) {
@@ -129,7 +130,7 @@ export class GamePage extends Component {
               checkSign={this.checkSign}
               closeModal={this.closeModal}
             />
-          )}
+          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
         </Map>
        </AppWrapper>
@@ -151,11 +152,12 @@ export class GamePage extends Component {
 
 const mapStateToProps = (state) => ({
   map: state.map,
-  player: state.auth
+  player: state.auth,
+  opponents: state.opponents
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startUpdatePlayer: (direction) => dispatch(startUpdatePlayer(direction))
+  startUpdatePlayer: (uid, updates) => dispatch(startUpdatePlayer(uid, updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
