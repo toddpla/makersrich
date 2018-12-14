@@ -17,7 +17,6 @@ const database = firebase.database();
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-
 const subscribe = () => {
   const currentUser = firebase.auth().currentUser;
   const userStatusDatabaseRef = firebase.database().ref(`/players/${currentUser.uid}`);
