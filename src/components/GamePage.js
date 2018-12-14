@@ -7,6 +7,7 @@ import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
+import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
 
 const customStyles = {
@@ -66,7 +67,7 @@ export class GamePage extends Component {
     case "quiz":
       return this.handlePopupQuiz()
     case 'shop':
-      console.log('shop');
+      return this.handlePopupShop()
       return
     default:
       return
@@ -100,6 +101,10 @@ export class GamePage extends Component {
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
+  }
+
+  handlePopupShop = () => {
+    this.openModal({modalComponent: <Shop />})
   }
 
   render() {
