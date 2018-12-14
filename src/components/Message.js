@@ -4,7 +4,7 @@ import signs from '../data/maps/level1/signs'
 class Message extends Component {
   render() {
     return (
-      <div>
+      <div className='message'>
         {this.props.message}
       </div>
     )
