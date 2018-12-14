@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
+import Message from './Message'
 
 const customStyles = {
   content : {
@@ -17,7 +18,6 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    backgroundColor       : 'rgba(255, 0, 0, 0)'
   }
 };
 
@@ -95,11 +95,25 @@ export class GamePage extends Component {
     return false
   }
 
+  checkSign = (x, y) => {
+    const sign = this.props.map.signs.filter((object) => object.x === x && object.y + 16 === y)[0]
+    if (sign !== undefined) {
+      return this.handlePopupMessage(sign.properties[0].value)
+    }
+    return false
+  }
+
+
+
   handlePopupQuiz = () => {
     this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
+  }
+
+  handlePopupMessage = (message) => {
+    this.openModal({modalComponent: <Message message={message}/>})
   }
 
   render() {
@@ -112,6 +126,7 @@ export class GamePage extends Component {
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
+              checkSign={this.checkSign}
               closeModal={this.closeModal}
             />
           )}
