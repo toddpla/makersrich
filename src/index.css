@@ -176,3 +176,71 @@ code {
   background-position: center;
   background-size: 40px;
 }
+
+ /* SHOP CSS  */
+
+ .popup-header {
+   width: 800px;
+   padding-top: 10px;
+   text-align: center;
+   height: 50px;
+   font-size: 1.5em;
+   font-weight: bold;
+ }
+
+ #muxworthys-bonanza {
+   width: 800px;
+   height: 640px;
+   background-image: url('/assets/quizzical.png');
+   border: 7px solid #e1c699;
+ }
+
+ #shop-list-box {
+   text-align: center;
+   width: 400px;
+   height: 580px;
+   line-height: 1.5em;
+   position: absolute;
+   border-right: 7px solid #e1c699
+ }
+
+ #shop-message-box {
+   text-align: center;
+   left: 427px;
+   height: 580px;
+   width: 300px;
+   position: absolute;
+   padding-left: 50px;
+   padding-right: 50px;
+   line-height: 1.5em;
+ }
+
+ #purchase-item-button {
+   position: absolute;
+   padding-top: 12px;
+   width: 100px;
+   bottom: 20px;
+   right: 150px;
+   height: 35px;
+   border-radius: 5px;
+   background-color: #e1c699;
+ }
+
+ #purchase-item-button:hover {
+   background-color: #c19a6b;
+   border: 1px solid beige;
+   box-shadow: 2px 2px black;
+ }
+
+ #purchase-item-button:active {
+   box-shadow: 4px 4px black
+ }
+
+ .shop-item {
+   display: inline-block;
+   position: relative;
+   padding-top: 10px;
+   width: 50px;
+   height: 50px;
+   float: left;
+ }
