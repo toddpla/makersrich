@@ -35,6 +35,8 @@ class Player extends Component {
         case 73:
           this.setState({inInventory: true})
           return this.props.handlePopupInventory()
+        case 82:
+          return this.props.handlePopupRPS()
         default:
           console.log(e.keyCode);
       }
