@@ -1,0 +1,44 @@
+.apple {
+  background-image: url('/assets/shopitems/apple.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.bluepotion {
+  background-image: url('/assets/shopitems/bluepotion.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.bluering {
+  background-image: url('/assets/shopitems/bluering.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.boomerang {
+  background-image: url('/assets/shopitems/boomerang.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.boots {
+  background-image: url('/assets/shopitems/boots.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { startAddInventoryItem } from '../../actions/auth'
+import './shop.css'
 
 import ShopList from './ShopList'
 import ShopMessage from './ShopMessage'
