@@ -11,20 +11,17 @@ class Shop extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: undefined,
-      selected: undefined,
-      buttonDisplay: 'none'
+      selected: undefined
     }
   }
 
   handlePurchase = () => {
-    console.log(this.state.selected);
     startAddInventoryItem(this.state.selected.type, this.state.selected)
   }
 
   handleSelect = (item) => {
     this.setState({
-      message: item.properties[0].value,
+      properties: item.properties,
       selected: item,
       buttonDisplay: ''
     })
@@ -35,7 +32,7 @@ class Shop extends Component {
       <div id="muxworthys-bonanza">
         <div className="popup-header">Welcome to Muxworthy's General Store!</div>
         <ShopList inventory={this.props.shop.inventory} handleSelect={this.handleSelect}/>
-        <ShopMessage message={this.state.message} buttonDisplay={this.state.buttonDisplay} handlePurchase={this.handlePurchase}/>
+        <ShopMessage item={this.state.selected} handlePurchase={this.handlePurchase}/>
       </div>
     );
   }
