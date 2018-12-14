@@ -97,19 +97,13 @@ export class GamePage extends Component {
   }
 
   checkSign = (x, y) => {
-    const sign = this.props.map.signs.filter((object) => withinRange(object.x, object.y))[0]
+    const sign = this.props.map.signs.filter((object) => object.x === x && object.y + 16 === y)[0]
     if (sign !== undefined) {
       return this.handlePopupMessage(sign.properties.value)
     }
     return false
   }
-  }
 
-  withinRange = (x, y) => {
-    if ((x + SPRITE_SIZE || x - SPRITE_SIZE) === this.player.left && (y + SPRITE_SIZE || y - SPRITE_SIZE) === this.player.top ) {
-      return true
-    }
-  }
 
 
   handlePopupQuiz = () => {
