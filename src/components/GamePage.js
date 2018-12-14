@@ -16,6 +16,7 @@ import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import opponentsSelector from '../selectors/opponents'
+import Map from './Map'
 
 const customStyles = {
   content : {
@@ -35,6 +36,9 @@ export const AppWrapper = styled.div`
   align-items: center;
   background-color: #1c1117;
 `
+
+Modal.setAppElement('#root')
+
 
 export class GamePage extends Component {
 
@@ -143,27 +147,28 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
-        <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
-       <AppWrapper>
-        <Map style={{ transform: "scale(1)", position: 'relative' }}>
-          <div>
-            <Player player={this.props.player}
-              handleMovement={this.handleMovement}
-              handlePopupInventory={this.handlePopupInventory}
-              handlePopupRPS={this.handlePopupRPS}
-              handlePopupMessage={this.handlePopupMessage}
-              checkSign={this.checkSign}
-              closeModal={this.closeModal}
-              notOnMap={this.state.modalIsOpen}
-            />
-          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
-          </div>
+      <div
+        style={{
+            position: 'relative',
+            margin: '20px auto',
+        }}
+        >
+
+
+        <Map>
+
         </Map>
-       </AppWrapper>
-      </MapProvider>
+
+        <Player player={this.props.player}
+        handleMovement={this.handleMovement}
+        handlePopupInventory={this.handlePopupInventory}
+        handlePopupRPS={this.handlePopupRPS}
+        handlePopupMessage={this.handlePopupMessage}
+        checkSign={this.checkSign}
+        closeModal={this.closeModal}
+        notOnMap={this.state.modalIsOpen}
+        />
+
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
