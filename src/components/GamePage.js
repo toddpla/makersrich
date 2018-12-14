@@ -143,27 +143,24 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
-        <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
-       <AppWrapper>
-        <Map style={{ transform: "scale(1)", position: 'relative' }}>
-          <div>
-            <Player player={this.props.player}
-              handleMovement={this.handleMovement}
-              handlePopupInventory={this.handlePopupInventory}
-              handlePopupRPS={this.handlePopupRPS}
-              handlePopupMessage={this.handlePopupMessage}
-              checkSign={this.checkSign}
-              closeModal={this.closeModal}
-              notOnMap={this.state.modalIsOpen}
-            />
-          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
-          </div>
+      <div
+        style={{
+            position: 'relative',
+            margin: '20px auto',
+        }}
+        >
+
+
+        <Map>
+
         </Map>
-       </AppWrapper>
-      </MapProvider>
+
+        <Player player={this.props.player}
+          handleMovement={this.handleMovement}
+          handlePopupInventory={this.handlePopupInventory}
+          closeModal={this.closeModal}
+        />
+
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}

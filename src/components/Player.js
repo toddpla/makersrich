@@ -66,7 +66,7 @@ class Player extends Component {
     dug.setAttribute('class', 'dug-up-tile')
     dug.setAttribute('id', x+y)
     dug.setAttribute('style', `left:${x}px; top:${y}px` )
-    document.getElementsByClassName('tiled-map')[0].appendChild(dug)
+    document.getElementsByClassName("map")[0].appendChild(dug)
     setTimeout(this.unDigDatDing, 5000, x, y)
   }
 
