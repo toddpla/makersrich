@@ -1,44 +1,91 @@
-.apple {
-  background-image: url('/assets/shopitems/apple.png');
+.shop-item {
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
   background-size: 40px;
   background-position: center;
+}
+
+.apple {
+  background-image: url('/assets/shopitems/apple.png');
 }
 
 .bluepotion {
   background-image: url('/assets/shopitems/bluepotion.png');
-  width: 40px;
-  height: 40px;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: center;
 }
 
 .bluering {
   background-image: url('/assets/shopitems/bluering.png');
-  width: 40px;
-  height: 40px;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: center;
 }
 
 .boomerang {
   background-image: url('/assets/shopitems/boomerang.png');
-  width: 40px;
-  height: 40px;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: center;
 }
 
 .boots {
   background-image: url('/assets/shopitems/boots.png');
-  width: 40px;
-  height: 40px;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: center;
+}
+
+.butter {
+  background-image: url('/assets/shopitems/butter.png');
+}
+
+.cheese {
+  background-image: url('/assets/shopitems/cheese.png');
+}
+
+.cherry {
+  background-image: url('/assets/shopitems/cherry.png');
+}
+
+.cookie {
+  background-image: url('/assets/shopitems/cookie.png');
+}
+
+.eggs {
+  background-image: url('/assets/shopitems/eggs.png');
+}
+
+.gloves {
+  background-image: url('/assets/shopitems/gloves.png');
+}
+
+.grape {
+  background-image: url('/assets/shopitems/grape.png');
+}
+
+.greenpotion {
+  background-image: url('/assets/shopitems/greenpotion.png');
+}
+
+.jambon {
+  background-image: url('/assets/shopitems/jambon.png');
+}
+
+.lemon {
+  background-image: url('/assets/shopitems/lemon.png');
+}
+
+.pengpick {
+  background-image: url('/assets/shopitems/pengpick.png');
+}
+
+.redpotion {
+  background-image: url('/assets/shopitems/redpotion.png');
+}
+
+.redring {
+  background-image: url('/assets/shopitems/redring.png');
+}
+
+.shield {
+  background-image: url('/assets/shopitems/shield.png');
+}
+
+.strawberry {
+  background-image: url('/assets/shopitems/strawberry.png');
+}
+
+.yellowpotion {
+  background-image: url('/assets/shopitems/yellowpotion.png');
 }
