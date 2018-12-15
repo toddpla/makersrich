@@ -13,12 +13,12 @@ class Player extends Component {
   constructor() {
     super()
     this.state = {
-      inInventory: false
+      inPopUp: false
     }
   }
 
   handleKeyDown = (e) => {
-    if (!this.state.inInventory) {
+    if (!this.state.inPopUp) {
       switch(e.keyCode) {
         // left key
         case 37:
@@ -35,7 +35,7 @@ class Player extends Component {
         case 69:
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
-          this.setState({inInventory: true})
+          this.setState({inPopUp: true})
           return this.props.handlePopupInventory()
         case 82:
           return this.props.handlePopupRPS()
@@ -45,19 +45,21 @@ class Player extends Component {
           console.log(e.keyCode);
       }
     } else {
-        return this.inventoryHandleKeyDown(e)
+        return this.popUpHandleKeyDown(e)
     }
   }
 
-  inventoryHandleKeyDown(e) {
+  popUpHandleKeyDown(e) {
     switch(e.keyCode) {
       case 73:
-        this.setState({inInventory: false})
+      case 32:
+        this.setState({inPopUp: false})
         return this.props.closeModal()
       default:
         console.log(e.keyCode);
-      }
     }
+  }
+
   digDatDing = (x, y) => {
     var dug = document.createElement("div")
     dug.setAttribute('class', 'dug-up-tile')
@@ -92,6 +94,7 @@ class Player extends Component {
     if (item !== undefined) {
       this.props.collectItem(item)
       this.props.startAddInventoryItem(item.type, item)
+      this.setState({inPopUp: true})
       this.props.handlePopupMessage(`You found a ${item.type}!`)
     }
   }
