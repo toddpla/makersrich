@@ -107,6 +107,14 @@
   background-position: center;
 }
 
+.miscellaneous-item {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
 .apple {
   background-image: url('/assets/shopitems/apple.png');
 }
