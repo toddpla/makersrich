@@ -15,7 +15,6 @@ class RPS extends Component {
       </div>
     );
   }
-
 }
 
 export default RPS;

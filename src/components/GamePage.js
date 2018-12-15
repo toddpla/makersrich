@@ -14,6 +14,7 @@ import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -38,8 +39,8 @@ Modal.setAppElement('#root')
 
 export class GamePage extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false,
@@ -62,18 +63,24 @@ export class GamePage extends Component {
   }
 
   handleMovement = (updates) => {
+    const player = this.props.player
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.startUpdatePlayer(this.props.player.uid, updates)
+      this.props.startUpdatePlayer(player.uid, updates)
       this.forceUpdate()
     }
+    this.props.opponents.forEach(opponent => {
+      if (opponent.left === player.left && opponent.top === player.top) {
+        this.handlePopupRPS()
+      }
+    })
     switch(this.checkPortal(updates.left , updates.top)) {
-    case "quiz":
-      return this.handlePopupQuiz()
-    case 'shop':
-      console.log('shop');
-      return
-    default:
-      return
+      case "quiz":
+        return this.handlePopupQuiz()
+      case 'shop':
+        console.log('shop');
+        return
+      default:
+        return
     }
   }
 
