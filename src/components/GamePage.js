@@ -9,6 +9,7 @@ import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
+import RPS from './RPS/RPS'
 import Message from './Message'
 
 const customStyles = {
@@ -112,6 +113,9 @@ export class GamePage extends Component {
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
+  handlePopupRPS = () => {
+    this.openModal({modalComponent: <RPS />})
+  }
 
   handlePopupMessage = (message) => {
     this.openModal({modalComponent: <Message message={message}/>})
@@ -127,6 +131,7 @@ export class GamePage extends Component {
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
+              handlePopupRPS={this.handlePopupRPS}
               checkSign={this.checkSign}
               closeModal={this.closeModal}
             />
