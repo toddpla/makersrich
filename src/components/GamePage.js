@@ -10,9 +10,8 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 import Message from './Message'
-import LevelPlayers from './LevelPlayers'
-import Leaderboard from './Leaderboard'
-
+import LevelPlayers from './leaderboards/LevelPlayers'
+import Leaderboard from './leaderboards/Leaderboard'
 
 const customStyles = {
   content : {

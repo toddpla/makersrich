@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import database from '../firebase/firebase'
+import database from '../../firebase/firebase'
 import PlayersList from './PlayersList'
 
 
@@ -19,9 +19,9 @@ class Leaderboard extends Component {
             id: childSnapshot.key,
             ...childSnapshot.val()
           })
-          this.setState({
-            players: players.reverse()
-          })
+        })
+        this.setState({
+          players: players.reverse()
         })
       })
   }

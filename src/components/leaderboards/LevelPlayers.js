@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import database from '../firebase/firebase'
+import database from '../../firebase/firebase'
 import PlayersList from './PlayersList'
 
 
