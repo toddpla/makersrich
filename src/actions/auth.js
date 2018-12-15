@@ -1,7 +1,6 @@
 import database, { firebase, googleAuthProvider, subscribe } from '../firebase/firebase'
 import { store } from '../index.js'
 
-
 export const login = (uid, player) => ({
     type: 'LOGIN',
     player: {
@@ -47,15 +46,12 @@ export const startLogin = (uid) => {
 }
 
 export const startGoogleLogin = () => {
-  console.log('now here');
-  // return (dispatch) => {
-    return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
-      database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
-        store.dispatch(login(result.user.uid, snapshot.val()))
-        subscribe()
-      })
+  return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
+    database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
+      store.dispatch(login(result.user.uid, snapshot.val()))
+      subscribe()
     })
-  // }
+  })
 }
 
 export const logout = () => ({
