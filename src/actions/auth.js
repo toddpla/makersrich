@@ -20,7 +20,27 @@ export const login = (uid, player) => ({
 export const startLogin = (uid) => {
   return (dispatch) => {
     return database.ref(`players/${uid}`).once('value').then((snapshot) => {
-      dispatch(login(uid, snapshot.val()))
+      const playerData = snapshot.val()
+
+      if (playerData.inventory !== undefined) {
+        const inventory = {
+          ruby: playerData.inventory.ruby !== undefined ?
+                  Object.keys(playerData.inventory.ruby).map((rubyKey) => {
+                    return playerData.inventory.ruby[rubyKey]
+                  }) : [],
+          bean: playerData.inventory.bean !== undefined ?
+                  Object.keys(playerData.inventory.bean).map((beanKey) => {
+                    return playerData.inventory.bean[beanKey]
+                  }) : [],
+          key: playerData.inventory.key !== undefined ?
+                Object.keys(playerData.inventory.key).map((keyKey) => {
+                  return playerData.inventory.key[keyKey]
+                }) : []
+        }
+        playerData.inventory = inventory
+      }
+
+      dispatch(login(uid, playerData))
       subscribe()
     })
   }
@@ -70,8 +90,9 @@ export const addInventoryItem = (itemRef, item) => ({
 
 export const startAddInventoryItem = (itemRef, item) => {
   return (dispatch) => {
-    return database.ref(`players/${firebase.auth().currentUser.uid}/inventory/${itemRef}/${item.id}`).update(item).then(() => {
-      dispatch(addInventoryItem(itemRef, item))
-    })
+    return database.ref(`players/${firebase.auth().currentUser.uid}/inventory/${itemRef}/${item.id}`).update(item)
+      .then(() => {
+        dispatch(addInventoryItem(itemRef, item))
+      })
   }
 }
