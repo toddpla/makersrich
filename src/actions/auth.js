@@ -19,10 +19,11 @@ export const login = (uid, player) => ({
 })
 
 export const startLogin = (uid) => {
-  return (dispatch) => {
+
+  return (dispatch, getState) => {
+    // const uid = getState().auth.uid
     return database.ref(`players/${uid}`).once('value').then((snapshot) => {
       const playerData = snapshot.val()
-
       if (playerData.inventory !== undefined) {
         const inventory = {
           ruby: playerData.inventory.ruby !== undefined ?
@@ -40,7 +41,6 @@ export const startLogin = (uid) => {
         }
         playerData.inventory = inventory
       }
-
       dispatch(login(uid, playerData))
       subscribe()
     })
@@ -48,11 +48,9 @@ export const startLogin = (uid) => {
 }
 
 export const startGoogleLogin = () => {
+  console.log('google login');
   return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
-    database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
-      store.dispatch(login(result.user.uid, snapshot.val()))
-      subscribe()
-    })
+    store.dispatch(startLogin())
   })
 }
 
