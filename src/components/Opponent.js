@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import database, { firebase } from '../firebase/firebase'
+import database from '../firebase/firebase'
 import PlayerImg from "../assets/player.png"
 
 class Opponent extends Component {

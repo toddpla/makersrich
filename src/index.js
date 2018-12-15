@@ -26,7 +26,7 @@ const jsx = (
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-ReactDOM.render(<LoadingPage />, document.getElementById('root'));
+// ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
 let hasRendered = false;
 const renderApp = () => {
