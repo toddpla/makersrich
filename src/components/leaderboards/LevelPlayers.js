@@ -28,6 +28,7 @@ class LevelPlayers extends Component {
   render() {
     return (
       <div>
+        <h3>Players on this Level</h3>
         <PlayersList players={this.state.players} />
       </div>
     );

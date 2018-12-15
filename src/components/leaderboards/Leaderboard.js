@@ -29,6 +29,7 @@ class Leaderboard extends Component {
   render() {
     return (
       <div>
+        <h3>Leaderboard for All Players</h3>
         <PlayersList players={this.state.players} />
       </div>
     );
