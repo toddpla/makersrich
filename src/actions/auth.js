@@ -23,7 +23,7 @@ export const startLogin = (uid) => {
   return (dispatch, getState) => {
     // const uid = getState().auth.uid
     return database.ref(`players/${uid}`).once('value').then((snapshot) => {
-      const playerData = snapshot.val()
+      const playerData = snapshot.val() || {}
       if (playerData.inventory !== undefined) {
         const inventory = {
           ruby: playerData.inventory.ruby !== undefined ?
