@@ -1,10 +1,13 @@
 import database, { firebase } from '../firebase/firebase'
 import { store } from '../index'
 
-export const setOpponents = (opponents) => ({
-  type: 'SET_OPPONENTS',
-  opponents
-})
+export const setOpponents = (opponents) => {
+  const player = store.getState().auth
+  return {
+    type: 'SET_OPPONENTS',
+    opponents: opponents.filter(opponent => opponent.level && player.level && opponent.state === 'online' )
+  }
+}
 
 export const startSetOpponents = () => {
   return (dispatch) => {
@@ -32,9 +35,6 @@ export const startOnOpponents = () => {
       snapshot.forEach((childSnapshot) => {
         const opponent = childSnapshot.val()
         opponent.id = childSnapshot.key
-        if (opponent.id !== player.uid && opponent.top === player.top && opponent.left === player.left) {
-          database.ref('battles/rps')
-        }
         if(opponent.id !== player.uid) {
           opponents.push({
             ...opponent
