@@ -75,27 +75,26 @@ class Player extends Component {
   }
 
   attemptDig = (x, y) => {
-    // check if diggable and
-      const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
-      if (tile.visible === false) {
-        console.log('you can dig');
-        this.props.digTile(tile)
-        this.digDatDing(x, y)
-      } else {
-        console.log('no digging!');
-      }
-    // find collectable
-
+    const tile = this.props.map.minable.filter((object) => object.x === x && object.y === y)[0]
+    if (tile.visible === false) {
+      console.log('you can dig');
+      this.props.digTile(tile)
+      this.digDatDing(x, y)
+    } else {
+      console.log('no digging!');
+    }
 
     const item = this.props.map.collectables.filter((object) => object.x === x && object.y === y)[0]
+    this.checkItem(item)
+  }
+
+  checkItem(item) {
     if (item !== undefined) {
       this.props.collectItem(item)
-      console.log(item);
       this.props.startAddInventoryItem(item.type, item)
-      }
+      this.props.handlePopupMessage(`You found a ${item.type}!`)
     }
-    // dig
-
+  }
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
