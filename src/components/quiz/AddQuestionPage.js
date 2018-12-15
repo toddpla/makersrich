@@ -17,7 +17,6 @@ class AddQuestionPage extends Component {
       ],
       correctAnswer: e.target.correctAnswer.value
     }
-    console.log('here')
     this.props.startAddQuestion(question)
   }
 
@@ -25,13 +24,14 @@ class AddQuestionPage extends Component {
     return (
       <div>
         <form onSubmit={this.handleAddQuestion}>
-          <input type='text' id='question' placeholder='question' />
-          <input type='text' id='answer1' placeholder='answer 1' />
-          <input type='text' id='answer2' placeholder='answer 2' />
-          <input type='text' id='answer3' placeholder='answer 3' />
-          <input type='text' id='answer4' placeholder='answer 4' />
-          <input type='text' id='correctAnswer'  placeholder='correct answer' />
-          <input type='submit' value='submit' />
+          <textarea type='text' id='question' placeholder='Information' ></textarea>
+          <textarea type='text' id='question' placeholder='Question' ></textarea>
+          <input type='text' id='answer1' placeholder='Answer 1' />
+          <input type='text' id='answer2' placeholder='Anwser 2' />
+          <input type='text' id='answer3' placeholder='Anwser 3' />
+          <input type='text' id='answer4' placeholder='Answer 4' />
+          <input type='number' id='correctAnswer'  placeholder='Correct answer' />
+          <input type='submit' value='Submits' />
         </form>
       </div>
     );

@@ -46,10 +46,11 @@ export class GamePage extends Component {
       modalIsOpen: false,
       modalComponenet: 'undefined'
     };
-
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+
 
   openModal(popUpMessage) {
     this.setState({
