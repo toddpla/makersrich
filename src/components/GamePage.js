@@ -137,12 +137,6 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Leaderboard />})
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      this.closeModal()
-    })
-  }
-
   render() {
     return (
       <div>
