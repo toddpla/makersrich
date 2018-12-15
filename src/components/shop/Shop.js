@@ -16,7 +16,7 @@ class Shop extends Component {
   }
 
   handlePurchase = () => {
-    startAddInventoryItem(this.state.selected.type, this.state.selected)
+    this.props.startAddInventoryItem(this.state.selected.type, this.state.selected)
   }
 
   handleSelect = (item) => {

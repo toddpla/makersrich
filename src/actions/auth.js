@@ -36,7 +36,12 @@ export const startLogin = (uid) => {
           key: playerData.inventory.key !== undefined ?
                 Object.keys(playerData.inventory.key).map((keyKey) => {
                   return playerData.inventory.key[keyKey]
+                }) : [],
+          miscellaneous: playerData.inventory.miscellaneous !== undefined ?
+                Object.keys(playerData.inventory.miscellaneous).map((miscellaneousKey) => {
+                  return playerData.inventory.miscellaneous[miscellaneousKey]
                 }) : []
+
         }
         playerData.inventory = inventory
       }
