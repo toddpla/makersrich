@@ -2,10 +2,12 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import { connect } from 'react-redux'
 import { startLogout } from '../actions/auth'
+import { history } from '../routers/AppRouter'
 
 export const Header = ({ startLogout }) => (
   <header>
-    <button onClick={startLogout}>Logout</button>
+      <NavLink to="/game" className='nav-link' activeClassName="is-active"> Game </NavLink>
+      <NavLink to="/add-question" className='nav-link' activeClassName="is-active"> Contribute </NavLink>
   </header>
 )
 

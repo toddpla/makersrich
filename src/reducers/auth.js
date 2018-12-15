@@ -8,6 +8,7 @@ export default (state = {}, action) => {
       return {};
     case 'ADD_INVENTORY_ITEM':
       const items = state.inventory[action.itemRef]
+      console.log('items', items);
       items.push(action.item)
       return {
         ...state,

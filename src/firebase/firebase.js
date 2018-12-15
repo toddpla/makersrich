@@ -10,13 +10,11 @@ const config = {
   messagingSenderId: "852831365773"
 };
 
-
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-
 
 const subscribe = () => {
   const currentUser = firebase.auth().currentUser;

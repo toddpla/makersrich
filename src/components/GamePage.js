@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Player from './Player'
+import Player from './Player';
+import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
@@ -9,6 +10,11 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
+import RPS from './RPS/RPS'
+import Message from './Message'
+import LevelPlayers from './leaderboards/LevelPlayers'
+import Leaderboard from './leaderboards/Leaderboard'
+
 
 const customStyles = {
   content : {
@@ -18,7 +24,6 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    backgroundColor       : 'rgba(255, 0, 0, 0)'
   }
 };
 
@@ -30,22 +35,23 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-// Modal.setAppElement('#root')
+Modal.setAppElement('#root')
 
 
 export class GamePage extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false,
       modalComponenet: 'undefined'
     };
-
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+
 
   openModal(popUpMessage) {
     this.setState({
@@ -59,11 +65,18 @@ export class GamePage extends Component {
   }
 
   handleMovement = (updates) => {
+    const player = this.props.player
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.startUpdatePlayer(updates)
+      this.props.startUpdatePlayer(player.uid, updates)
       this.forceUpdate()
     }
+    this.props.opponents.forEach(opponent => {
+      if (opponent.left === player.left && opponent.top === player.top) {
+        this.handlePopupRPS()
+      }
+    })
     switch(this.checkPortal(updates.left , updates.top)) {
+
     case "quiz":
       return this.handlePopupQuiz()
     case 'shop':
@@ -71,6 +84,7 @@ export class GamePage extends Component {
       return
     default:
       return
+
     }
   }
 
@@ -96,11 +110,34 @@ export class GamePage extends Component {
     return false
   }
 
+  checkSign = (x, y) => {
+    const sign = this.props.map.signs.filter((object) => object.x === x && object.y + 16 === y)[0]
+    if (sign !== undefined) {
+      return this.handlePopupMessage(sign.properties[0].value)
+    }
+    return false
+  }
+
   handlePopupQuiz = () => {
     this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
+  }
+  handlePopupRPS = () => {
+    this.openModal({modalComponent: <RPS />})
+  }
+
+  handlePopupMessage = (message) => {
+    this.openModal({modalComponent: <Message message={message}/>})
+  }
+
+  handlePopupLevelPlayersList = () => {
+    this.openModal({modalComponent: <LevelPlayers level={this.props.player.level}/>})
+  }
+
+  handlePopupLeaderboard = () => {
+    this.openModal({modalComponent: <Leaderboard />})
   }
 
   handlePopupShop = () => {
@@ -110,6 +147,8 @@ export class GamePage extends Component {
   render() {
     return (
       <div>
+        <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
+        <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
@@ -117,9 +156,12 @@ export class GamePage extends Component {
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
+              handlePopupRPS={this.handlePopupRPS}
+              checkSign={this.checkSign}
+              handlePopupMessage={this.handlePopupMessage}
               closeModal={this.closeModal}
             />
-          )}
+          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
         </Map>
        </AppWrapper>
@@ -141,11 +183,12 @@ export class GamePage extends Component {
 
 const mapStateToProps = (state) => ({
   map: state.map,
-  player: state.auth
+  player: state.auth,
+  opponents: state.opponents
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startUpdatePlayer: (direction) => dispatch(startUpdatePlayer(direction))
+  startUpdatePlayer: (uid, updates) => dispatch(startUpdatePlayer(uid, updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

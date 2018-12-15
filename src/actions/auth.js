@@ -1,4 +1,5 @@
 import database, { firebase, googleAuthProvider, subscribe } from '../firebase/firebase'
+import { store } from '../index.js'
 
 export const login = (uid, player) => ({
     type: 'LOGIN',
@@ -6,6 +7,8 @@ export const login = (uid, player) => ({
       uid,
       top: 0,
       left: 0,
+      level: 1,
+      cash: 0,
       inventory: {
         ruby: [],
         bean: [],
@@ -15,15 +18,42 @@ export const login = (uid, player) => ({
     }
 })
 
-export const startLogin = () => {
+export const startLogin = (uid) => {
   return (dispatch) => {
-    return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
-      database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
-        dispatch(login(result.user.uid, snapshot.val()))
-      })
+    return database.ref(`players/${uid}`).once('value').then((snapshot) => {
+      const playerData = snapshot.val()
+
+      if (playerData.inventory !== undefined) {
+        const inventory = {
+          ruby: playerData.inventory.ruby !== undefined ?
+                  Object.keys(playerData.inventory.ruby).map((rubyKey) => {
+                    return playerData.inventory.ruby[rubyKey]
+                  }) : [],
+          bean: playerData.inventory.bean !== undefined ?
+                  Object.keys(playerData.inventory.bean).map((beanKey) => {
+                    return playerData.inventory.bean[beanKey]
+                  }) : [],
+          key: playerData.inventory.key !== undefined ?
+                Object.keys(playerData.inventory.key).map((keyKey) => {
+                  return playerData.inventory.key[keyKey]
+                }) : []
+        }
+        playerData.inventory = inventory
+      }
+
+      dispatch(login(uid, playerData))
       subscribe()
     })
   }
+}
+
+export const startGoogleLogin = () => {
+  return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
+    database.ref(`players/${result.user.uid}`).once('value').then((snapshot) => {
+      store.dispatch(login(result.user.uid, snapshot.val()))
+      subscribe()
+    })
+  })
 }
 
 export const logout = () => ({
@@ -32,8 +62,9 @@ export const logout = () => ({
 
 export const startLogout = () => {
   return (dispatch) => {
-    return firebase.auth().signOut()
     dispatch(logout())
+    window.location.reload();
+    return firebase.auth().signOut()
   }
 }
 
@@ -42,10 +73,10 @@ export const updatePlayer = (updates) => ({
   updates
 })
 
-export const startUpdatePlayer = (updates) => {
+export const startUpdatePlayer = (uid, updates) => {
   return (dispatch) => {
     dispatch(updatePlayer(updates))
-    return database.ref(`players/${firebase.auth().currentUser.uid}`).update(updates)
+    return database.ref(`players/${uid}`).update(updates)
   }
 }
 
@@ -57,8 +88,9 @@ export const addInventoryItem = (itemRef, item) => ({
 
 export const startAddInventoryItem = (itemRef, item) => {
   return (dispatch) => {
-    return database.ref(`players/${firebase.auth().currentUser.uid}/inventory/${itemRef}/${item.id}`).update(item).then(() => {
-      dispatch(addInventoryItem(itemRef, item))
-    })
+    return database.ref(`players/${firebase.auth().currentUser.uid}/inventory/${itemRef}/${item.id}`).update(item)
+      .then(() => {
+        dispatch(addInventoryItem(itemRef, item))
+      })
   }
 }
