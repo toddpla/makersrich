@@ -11,9 +11,8 @@ import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 import RPS from './RPS/RPS'
 import Message from './Message'
-import LevelPlayers from './LevelPlayers'
-import Leaderboard from './Leaderboard'
-
+import LevelPlayers from './leaderboards/LevelPlayers'
+import Leaderboard from './leaderboards/Leaderboard'
 
 const customStyles = {
   content : {

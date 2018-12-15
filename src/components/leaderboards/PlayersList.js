@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import database from '../firebase/firebase'
 import PlayersListItem from './PlayersListItem'
 
 
 class PlayersList extends Component {
 
   render() {
+    console.log('players list', this.props.players);
     return (
       <table>
         <tr>
