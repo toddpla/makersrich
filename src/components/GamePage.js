@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Player from './Player'
+import Player from './Player';
+import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
@@ -9,6 +10,7 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Inventory from './Inventory/Inventory'
 import RPS from './RPS/RPS'
+import Message from './Message'
 
 const customStyles = {
   content : {
@@ -18,7 +20,6 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    backgroundColor       : 'rgba(255, 0, 0, 0)'
   }
 };
 
@@ -60,7 +61,7 @@ export class GamePage extends Component {
 
   handleMovement = (updates) => {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.startUpdatePlayer(updates)
+      this.props.startUpdatePlayer(this.props.player.uid, updates)
       this.forceUpdate()
     }
     switch(this.checkPortal(updates.left , updates.top)) {
@@ -96,6 +97,16 @@ export class GamePage extends Component {
     return false
   }
 
+  checkSign = (x, y) => {
+    const sign = this.props.map.signs.filter((object) => object.x === x && object.y + 16 === y)[0]
+    if (sign !== undefined) {
+      return this.handlePopupMessage(sign.properties[0].value)
+    }
+    return false
+  }
+
+
+
   handlePopupQuiz = () => {
     this.openModal({modalComponent: <Quiz />})
   }
@@ -104,6 +115,10 @@ export class GamePage extends Component {
   }
   handlePopupRPS = () => {
     this.openModal({modalComponent: <RPS />})
+  }
+
+  handlePopupMessage = (message) => {
+    this.openModal({modalComponent: <Message message={message}/>})
   }
 
   render() {
@@ -117,9 +132,10 @@ export class GamePage extends Component {
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
               handlePopupRPS={this.handlePopupRPS}
+              checkSign={this.checkSign}
               closeModal={this.closeModal}
             />
-          )}
+          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
         </Map>
        </AppWrapper>
@@ -141,11 +157,12 @@ export class GamePage extends Component {
 
 const mapStateToProps = (state) => ({
   map: state.map,
-  player: state.auth
+  player: state.auth,
+  opponents: state.opponents
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startUpdatePlayer: (direction) => dispatch(startUpdatePlayer(direction))
+  startUpdatePlayer: (uid, updates) => dispatch(startUpdatePlayer(uid, updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
