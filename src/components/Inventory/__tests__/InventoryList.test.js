@@ -9,7 +9,8 @@ test('it renders InventoryListItems', () => {
   const inventory = {
     ruby: ['ruby1'],
     bean: [],
-    key: []
+    key: [],
+    miscellaneous: []
   }
 
   renderer.render(<InventoryList inventory={inventory}/>)
