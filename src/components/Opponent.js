@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import database, { firebase } from '../firebase/firebase'
+import database from '../firebase/firebase'
 import PlayerImg from "../assets/player.png"
 
 class Opponent extends Component {
@@ -11,7 +11,6 @@ class Opponent extends Component {
 
   componentDidMount() {
     database.ref(`/players/${this.props.opponent.id}`).on('value', (snapshot) => {
-      console.log('here');
       this.setState({
         ...snapshot.val()
       })
