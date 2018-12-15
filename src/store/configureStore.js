@@ -4,7 +4,6 @@ import authReducer from '../reducers/auth'
 import questionsReducer from '../reducers/questions'
 import quizReducer from '../reducers/quiz'
 import mapReducer from '../reducers/map'
-import playersReducer from '../reducers/players'
 import shopReducer from '../reducers/shop'
 
 import opponentsReducer from '../reducers/opponents'
