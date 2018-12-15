@@ -20,7 +20,7 @@ beforeEach((done) => {
       correctAnswer
     }
   })
-  database.ref('questions').set(questionsData).then(() => done())
+  database.ref('questions').set(questionsData).then(() => done()).catch(e => console.log(e))
 })
 
 test('should setup getQuestion action object', () => {

@@ -177,6 +177,7 @@ code {
   background-size: 40px;
 }
 
+
  /* SHOP CSS  */
 
  .popup-header {
@@ -187,3 +188,19 @@ code {
    font-size: 1.5em;
    font-weight: bold;
  }
+
+.rps {
+  padding-left: 30px;
+  padding-top: 30px
+}
+
+.message {
+  width: 160px;
+  height: 96px;
+  padding-left: 25px;
+  padding-top: 25px;
+  background-image: url('/assets/signs.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
