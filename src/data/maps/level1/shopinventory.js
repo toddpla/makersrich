@@ -1,156 +1,201 @@
 export default [
       {
-        "type": "apple",
-        "properties": [{
-          "value": "A nice granny apple",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Apple",
+          "type":"apple",
+          "message": "A nice granny apple",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "bluepotion",
-        "properties": [{
-          "value": "This'll make you wavey!",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Blue Potion",
+          "type":"bluepotion",
+          "message": "This'll make you wavey!",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "boomerang",
-        "properties": [{
-          "value": "Fling this around",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Boomerang",
+          "type":"boomerang",
+          "message": "Fling this around",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "bluering",
-        "properties": [{
-          "value": "For that special someone",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Blue Ring",
+          "type":"bluering",
+          "message": "For that special someone",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "butter",
-        "properties": [{
-          "value": "Goes well with cheese and bread, I have no bread though.",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Butter",
+          "type":"butter",
+          "message": "Goes well with cheese and bread, I have no bread though.",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "greenpotion",
-        "properties": [{
-          "value": "Grow potion",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Green Potion",
+          "type":"greenpotion",
+          "message": "Grow potion",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "redpotion",
-        "properties": [{
-          "value": "Shrink potion",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Red Potion",
+          "type":"redpotion",
+          "message": "Shrink potion",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "pengpick",
-        "properties": [{
-          "value": "For those hard to dig spots",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Pick",
+          "type":"pengpick",
+          "message": "For those hard to dig spots",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "butter",
-        "properties": [{
-          "value": "A cheap lube alternative",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Butter",
+          "type":"butter",
+          "message": "A cheap lube alternative",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "cheese",
-        "properties": [{
-          "value": "Deliciously mature cheddar",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Cheese",
+          "type":"cheese",
+          "message": "Deliciously mature cheddar",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "cherry",
-        "properties": [{
-          "value": "Put on your birthday cake",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Cherry",
+          "type":"cherry",
+          "message": "Put on your birthday cake",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "cookie",
-        "properties": [{
-          "value": "Yummy",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Cookie",
+          "type":"cookie",
+          "message": "Yummy",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "eggs",
-        "properties": [{
-          "value": "Throw them at people",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Eggs",
+          "type":"eggs",
+          "message": "Throw them at people",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "gloves",
-        "properties": [{
-          "value": "Keep your hands warm",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Gloves",
+          "type":"gloves",
+          "message": "Keep your hands warm",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "grape",
-        "properties": [{
-          "value": "Juicy juicy",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Grapes",
+          "type":"grape",
+          "message": "Juicy juicy",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "greenpotion",
-        "properties": [{
-          "value": "Not sure what this does",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Green Potion",
+          "type":"greenpotion",
+          "message": "Not sure what this does",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "jambon",
-        "properties": [{
-          "value": "I'm vegetarian, so is this jambon",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Jambon",
+          "type":"jambon",
+          "message": "I'm vegetarian, so is this jambon",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "lemon",
-        "properties": [{
-          "value": "Make lemonade I guess",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Lemon",
+          "type":"lemon",
+          "message": "Make lemonade I guess",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "redring",
-        "properties": [{
-          "value": "For that VERY special someone",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Red Ring",
+          "type":"redring",
+          "message": "For that VERY special someone",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "strawberry",
-        "properties": [{
-          "value": "mmmmm",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Strawberry",
+          "type":"strawberry",
+          "message": "mmmmm",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "yellowpotion",
-        "properties": [{
-          "value": "Dangerous",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Yellow Potion",
+          "type":"yellowpotion",
+          "message": "Dangerous",
           "price":"10"
-        }]
+        }
       },
       {
-        "type": "shield",
-        "properties": [{
-          "value": "...",
+        "type": "miscellaneous",
+        "properties": {
+          "name":"Shield",
+          "type":"shield",
+          "message": "...",
           "price":"10"
-        }]
+        }
       }
-    ]
+
+]
