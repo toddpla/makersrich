@@ -34,7 +34,6 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-Modal.setAppElement('#root')
 
 
 export class GamePage extends Component {
@@ -49,8 +48,6 @@ export class GamePage extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
-
 
   openModal(popUpMessage) {
     this.setState({
@@ -160,6 +157,7 @@ export class GamePage extends Component {
        </AppWrapper>
       </MapProvider>
         <Modal
+          ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}

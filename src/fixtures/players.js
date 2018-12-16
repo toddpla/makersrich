@@ -1,14 +1,15 @@
 const players = [{
+  cash: 0,
   displayName: 'Frankie',
-  top: 0,
   left: 0,
   level: 1,
-  cash: 0,
   inventory: {
     ruby: [],
     bean: [],
     key: [],
   },
+  top: 0,
+  uid: '1',
 }]
 
 export default players
