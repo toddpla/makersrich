@@ -57,5 +57,9 @@ describe('Quiz', () => {
     it('calls #startSendResult', () => {
       expect(startSendResult).toHaveBeenLastCalledWith(submission)
     });
+
+    it('calls #startGetQuestion', () => {
+      expect(startGetQuestion).toHaveBeenLastCalledWith(submission.uid)
+    });
   });
 })
