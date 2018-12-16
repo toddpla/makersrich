@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders Inventory 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Inventory
+    player={
+      Object {
+        "cash": 0,
+        "displayName": "Frankie",
+        "inventory": Object {
+          "bean": Array [
+            Object {
+              "properties": Array [
+                Object {
+                  "value": "This is a bean",
+                },
+              ],
+              "type": "bean",
+            },
+          ],
+          "key": Array [
+            Object {
+              "properties": Array [
+                Object {
+                  "value": "This is a key",
+                },
+              ],
+              "type": "key",
+            },
+          ],
+          "ruby": Array [
+            Object {
+              "properties": Array [
+                Object {
+                  "value": "This is a ruby",
+                },
+              ],
+              "type": "ruby",
+            },
+          ],
+        },
+        "left": 0,
+        "level": 1,
+        "state": "online",
+        "top": 0,
+        "uid": "1",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <InventoryList
+          handleMessage={[Function]}
+          inventory={
+            Object {
+              "bean": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a bean",
+                    },
+                  ],
+                  "type": "bean",
+                },
+              ],
+              "key": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a key",
+                    },
+                  ],
+                  "type": "key",
+                },
+              ],
+              "ruby": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a ruby",
+                    },
+                  ],
+                  "type": "ruby",
+                },
+              ],
+            }
+          }
+        />,
+        <InventoryMessage />,
+      ],
+      "id": "inventory-box",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleMessage": [Function],
+          "inventory": Object {
+            "bean": Array [
+              Object {
+                "properties": Array [
+                  Object {
+                    "value": "This is a bean",
+                  },
+                ],
+                "type": "bean",
+              },
+            ],
+            "key": Array [
+              Object {
+                "properties": Array [
+                  Object {
+                    "value": "This is a key",
+                  },
+                ],
+                "type": "key",
+              },
+            ],
+            "ruby": Array [
+              Object {
+                "properties": Array [
+                  Object {
+                    "value": "This is a ruby",
+                  },
+                ],
+                "type": "ruby",
+              },
+            ],
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "message": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <InventoryList
+            handleMessage={[Function]}
+            inventory={
+              Object {
+                "bean": Array [
+                  Object {
+                    "properties": Array [
+                      Object {
+                        "value": "This is a bean",
+                      },
+                    ],
+                    "type": "bean",
+                  },
+                ],
+                "key": Array [
+                  Object {
+                    "properties": Array [
+                      Object {
+                        "value": "This is a key",
+                      },
+                    ],
+                    "type": "key",
+                  },
+                ],
+                "ruby": Array [
+                  Object {
+                    "properties": Array [
+                      Object {
+                        "value": "This is a ruby",
+                      },
+                    ],
+                    "type": "ruby",
+                  },
+                ],
+              }
+            }
+          />,
+          <InventoryMessage />,
+        ],
+        "id": "inventory-box",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleMessage": [Function],
+            "inventory": Object {
+              "bean": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a bean",
+                    },
+                  ],
+                  "type": "bean",
+                },
+              ],
+              "key": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a key",
+                    },
+                  ],
+                  "type": "key",
+                },
+              ],
+              "ruby": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a ruby",
+                    },
+                  ],
+                  "type": "ruby",
+                },
+              ],
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "message": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
