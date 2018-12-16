@@ -44,22 +44,6 @@ export const startLogin = (uid) => {
   }
 }
 
-export const startGoogleLogin = () => {
-  return (dispatch) => {
-    return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
-      dispatch(startLogin(result.user.uid))
-    })
-  }
-}
-
-export const startGithubLogin = () => {
-  return (dispatch) => {
-    return firebase.auth().signInWithPopup(githubAuthProvider).then((result) => {
-      dispatch(startLogin(result.user.uid))
-    })
-  }
-}
-
 export const logout = () => ({
   type: 'LOGOUT'
 })
