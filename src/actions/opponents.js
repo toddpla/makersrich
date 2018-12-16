@@ -1,5 +1,4 @@
 import database from '../firebase/firebase'
-// import { store } from '../index'
 
 export const setOpponents = (opponents) => {
   return {
@@ -29,9 +28,9 @@ export const startSetOpponents = () => {
 }
 
 export const startOnOpponents = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     return database.ref('players').on('value', (snapshot) => {
-      const player = store.getState().auth
+      const player = getState().auth
       const opponents = [];
       snapshot.forEach((childSnapshot) => {
         const opponent = childSnapshot.val()

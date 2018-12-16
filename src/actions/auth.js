@@ -1,5 +1,4 @@
 import database, { firebase, googleAuthProvider, githubAuthProvider } from '../firebase/firebase'
-import { store } from '../index.js'
 
 export const login = (uid, player) => ({
     type: 'LOGIN',

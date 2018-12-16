@@ -63,7 +63,7 @@ export class GamePage extends Component {
   handleMovement = (updates) => {
     const player = this.props.player
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.startUpdatePlayer(player.uid, updates)
+      this.props.startUpdatePlayer(updates)
       this.forceUpdate()
     }
     this.props.opponents.forEach(opponent => {
@@ -179,7 +179,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startUpdatePlayer: (uid, updates) => dispatch(startUpdatePlayer(uid, updates))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
