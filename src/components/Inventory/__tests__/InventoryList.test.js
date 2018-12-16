@@ -5,6 +5,7 @@ import player from '../../../test/fixtures/playerWithInventory'
 
 let wrapper
 
+
 beforeEach(function() {
   const inventory = player.inventory
   wrapper = shallow(
@@ -13,6 +14,16 @@ beforeEach(function() {
     />
   )
 });
+
+test('it renders InventoryListItems', () => {
+  const renderer = new ShallowRenderer()
+  const inventory = {
+    ruby: ['ruby1'],
+    bean: [],
+    key: [],
+    miscellaneous: []
+  }
+
 
 test('it renders InventoryList', () => {
   expect(wrapper).toMatchSnapshot();

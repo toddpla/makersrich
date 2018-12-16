@@ -13,7 +13,7 @@ class InventoryListItem extends Component {
   render() {
     return (
       <div className="inventory-list-item" onClick={this.changeMessage}>
-        <div className={this.props.item.type}></div>
+        <div className={`${this.props.item.type}`}></div>
       </div>
     );
   }
