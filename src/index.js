@@ -36,10 +36,10 @@ const renderApp = () => {
 let hasLoadedData = false;
 const loadFirebaseData = (user) => {
   if(!hasLoadedData) {
+    subscribe()
     store.dispatch(startLogin(user.uid)).then(() => {
       store.dispatch(startOnAddOpponent())
       store.dispatch(startOnRemoveOpponent())
-      subscribe()
       renderApp()
       hasLoadedData = true
     })
