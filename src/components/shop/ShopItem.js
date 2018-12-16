@@ -8,8 +8,8 @@ class ShopItem extends Component {
 
   render() {
     return (
-      <div className='shop-item-container' onClick={this.changeSelected}>
-        <div className={`shop-item ${this.props.item.properties.type}`}>
+      <div className='shop-item-container'>
+        <div className={`shop-item ${this.props.item.properties.type}`} onClick={this.changeSelected}>
         </div>
       </div>
     );
