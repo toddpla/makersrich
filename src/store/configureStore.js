@@ -4,6 +4,7 @@ import authReducer from '../reducers/auth'
 import questionsReducer from '../reducers/questions'
 import quizReducer from '../reducers/quiz'
 import mapReducer from '../reducers/map'
+import shopReducer from '../reducers/shop'
 import opponentsReducer from '../reducers/opponents'
 
 import thunk from 'redux-thunk'
@@ -19,6 +20,7 @@ export default () => {
       quiz: quizReducer,
       opponents: opponentsReducer,
       map: mapReducer,
+      shop: shopReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   )

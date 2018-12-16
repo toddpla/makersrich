@@ -8,6 +8,7 @@ import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
+import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
 import RPS from './RPS/RPS'
 import Message from './Message'
@@ -72,13 +73,15 @@ export class GamePage extends Component {
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
-      case "quiz":
-        return this.handlePopupQuiz()
-      case 'shop':
-        console.log('shop');
-        return
-      default:
-        return
+
+    case "quiz":
+      return this.handlePopupQuiz()
+    case 'shop':
+      return this.handlePopupShop()
+      return
+    default:
+      return
+
     }
   }
 
@@ -132,6 +135,10 @@ export class GamePage extends Component {
 
   handlePopupLeaderboard = () => {
     this.openModal({modalComponent: <Leaderboard />})
+  }
+
+  handlePopupShop = () => {
+    this.openModal({modalComponent: <Shop />})
   }
 
   render() {
