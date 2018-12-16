@@ -15,9 +15,6 @@ export default {
     }],
     key: [{
       type: 'key',
-      properties: [{
-        value: 'This is a key'
-      }]
     }],
     ruby: [{
       type: 'ruby',

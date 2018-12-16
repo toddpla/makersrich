@@ -21,11 +21,6 @@ ShallowWrapper {
           ],
           "key": Array [
             Object {
-              "properties": Array [
-                Object {
-                  "value": "This is a key",
-                },
-              ],
               "type": "key",
             },
           ],
@@ -78,11 +73,6 @@ ShallowWrapper {
               ],
               "key": Array [
                 Object {
-                  "properties": Array [
-                    Object {
-                      "value": "This is a key",
-                    },
-                  ],
                   "type": "key",
                 },
               ],
@@ -124,11 +114,6 @@ ShallowWrapper {
             ],
             "key": Array [
               Object {
-                "properties": Array [
-                  Object {
-                    "value": "This is a key",
-                  },
-                ],
                 "type": "key",
               },
             ],
@@ -185,11 +170,6 @@ ShallowWrapper {
                 ],
                 "key": Array [
                   Object {
-                    "properties": Array [
-                      Object {
-                        "value": "This is a key",
-                      },
-                    ],
                     "type": "key",
                   },
                 ],
@@ -231,11 +211,6 @@ ShallowWrapper {
               ],
               "key": Array [
                 Object {
-                  "properties": Array [
-                    Object {
-                      "value": "This is a key",
-                    },
-                  ],
                   "type": "key",
                 },
               ],
