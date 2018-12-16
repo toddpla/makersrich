@@ -67,7 +67,6 @@ export const logout = () => ({
 export const startLogout = () => {
   return (dispatch) => {
     dispatch(logout())
-    window.location.reload();
     return firebase.auth().signOut()
   }
 }
