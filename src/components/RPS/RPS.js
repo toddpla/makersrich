@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { firebase } from '../../firebase/firebase'
 import RPSChoice from './RPSChoice'
 
 class RPS extends Component {
-  sendChoice = (choice) => {
 
+  state = {
+    useWeapon: firebase.functions().httpsCallable('useWeapon')
+  }
+
+  sendChoice = (weapon) => {
+    this.state.useWeapon({weapon})
+    console.log('weapon used', weapon);
   }
 
   render() {

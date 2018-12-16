@@ -68,7 +68,9 @@ export class GamePage extends Component {
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
-        this.startBattle({playerOneUid: player.uid, playerTwoUid: opponent.uid})
+        console.log('here');
+        let startBattle = firebase.functions().httpsCallable('startBattle')
+        startBattle({playerOneUid: player.uid, playerTwoUid: opponent.uid})
         this.handlePopupRPS()
       }
     })
@@ -78,7 +80,6 @@ export class GamePage extends Component {
       return this.handlePopupQuiz()
     case 'shop':
       return this.handlePopupShop()
-      return
     default:
       return
 
