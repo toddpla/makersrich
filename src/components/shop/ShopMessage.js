@@ -4,7 +4,6 @@ class ShopMessage extends Component {
 
   render() {
     if(this.props.item !== undefined){
-      console.log(this.props.item);
       return (
         <div id="shop-message-box">
           <div id="item-type">{this.props.item.properties.name}</div>

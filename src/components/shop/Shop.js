@@ -6,7 +6,7 @@ import './shop.css'
 import ShopList from './ShopList'
 import ShopMessage from './ShopMessage'
 
-class Shop extends Component {
+export class Shop extends Component {
 
   constructor(props) {
     super(props)
