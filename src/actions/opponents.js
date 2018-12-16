@@ -1,24 +1,25 @@
 import database from '../firebase/firebase'
-import { store } from '../index'
+// import { store } from '../index'
 
 export const setOpponents = (opponents) => {
-  const player = store.getState().auth
   return {
     type: 'SET_OPPONENTS',
-    opponents: opponents.filter(opponent => opponent.level && player.level && opponent.state === 'online' )
+    opponents
   }
 }
 
 export const startSetOpponents = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     return database.ref('players').once('value').then((snapshot) => {
-      const player = store.getState().auth
+      const player = getState().auth
       const opponents = [];
       snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.key !== player.uid) {
+        const opponent = childSnapshot.val()
+        if (childSnapshot.key !== player.uid && opponent.level === player.level && opponent.state === 'online') {
+          console.log('opponent', opponent);
           opponents.push({
-            id: childSnapshot.key,
-            ...childSnapshot.val()
+            uid: childSnapshot.key,
+            ...opponent
           });
         }
       });
@@ -34,9 +35,9 @@ export const startOnOpponents = () => {
       const opponents = [];
       snapshot.forEach((childSnapshot) => {
         const opponent = childSnapshot.val()
-        opponent.id = childSnapshot.key
-        if(opponent.id !== player.uid) {
+        if(childSnapshot.key !== player.uid && opponent.level === player.level && opponent.state === 'online') {
           opponents.push({
+            uid: childSnapshot.key,
             ...opponent
           });
         }

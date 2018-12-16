@@ -8,7 +8,7 @@ export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
-    this.props.startGetQuestion(this.props.auth.uid)
+    this.props.startGetQuestion()
   }
 
   state = {
@@ -62,7 +62,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   startSendResult: (result) => dispatch(startSendResult(result)),
-  startGetQuestion: (uid) => dispatch(startGetQuestion(uid))
+  startGetQuestion: () => dispatch(startGetQuestion())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz)

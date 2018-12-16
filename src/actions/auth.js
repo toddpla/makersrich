@@ -78,9 +78,10 @@ export const updatePlayer = (updates) => ({
   updates
 })
 
-export const startUpdatePlayer = (uid, updates) => {
-  return (dispatch) => {
+export const startUpdatePlayer = (updates) => {
+  return (dispatch, getState) => {
     dispatch(updatePlayer(updates))
+    const uid = getState().auth.uid
     return database.ref(`players/${uid}`).update(updates)
   }
 }
