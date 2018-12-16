@@ -59,7 +59,7 @@ ShallowWrapper {
         />
         <input
           type="submit"
-          value="Submits"
+          value="Submit"
         />
       </form>,
     },
@@ -107,7 +107,7 @@ ShallowWrapper {
           />,
           <input
             type="submit"
-            value="Submits"
+            value="Submit"
           />,
         ],
         "onSubmit": [Function],
@@ -211,7 +211,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "type": "submit",
-            "value": "Submits",
+            "value": "Submit",
           },
           "ref": null,
           "rendered": null,
@@ -268,7 +268,7 @@ ShallowWrapper {
           />
           <input
             type="submit"
-            value="Submits"
+            value="Submit"
           />
         </form>,
       },
@@ -316,7 +316,7 @@ ShallowWrapper {
             />,
             <input
               type="submit"
-              value="Submits"
+              value="Submit"
             />,
           ],
           "onSubmit": [Function],
@@ -420,7 +420,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "type": "submit",
-              "value": "Submits",
+              "value": "Submit",
             },
             "ref": null,
             "rendered": null,
