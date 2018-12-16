@@ -9,16 +9,17 @@ import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
 
 class Player extends Component {
-
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      inPopUp: false
+      onMap: props.onMap,
+      inInventory: false
     }
   }
 
   handleKeyDown = (e) => {
-    if (!this.state.inPopUp) {
+    console.log(this.state);
+    if (this.state.onMap && !this.state.inInventory ) {
       switch(e.keyCode) {
         // left key
         case 37:
@@ -35,7 +36,7 @@ class Player extends Component {
         case 69:
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
-          this.setState({inPopUp: true})
+          this.setState({ inInventory: true })
           return this.props.handlePopupInventory()
         case 82:
           return this.props.handlePopupRPS()
@@ -49,14 +50,16 @@ class Player extends Component {
     }
   }
 
-  popUpHandleKeyDown(e) {
-    switch(e.keyCode) {
-      case 73:
-      case 32:
-        this.setState({inPopUp: false})
-        return this.props.closeModal()
-      default:
-        console.log(e.keyCode);
+  inventoryHandleKeyDown(e) {
+    if (this.state.onMap) {
+      switch(e.keyCode) {
+        case 73:
+          this.setState({ inInventory: false })
+          return this.props.closeModal()
+        default:
+          console.log(e.keyCode);
+        }
+      }
     }
   }
 

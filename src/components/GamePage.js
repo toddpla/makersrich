@@ -43,6 +43,7 @@ export class GamePage extends Component {
     this.state = {
       modalIsOpen: false,
       modalComponenet: 'undefined',
+      playerOnMap: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -57,7 +58,10 @@ export class GamePage extends Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({
+      modalIsOpen: false,
+      PlayerOnMap: true
+    });
   }
 
   handleMovement = (updates) => {
@@ -75,6 +79,7 @@ export class GamePage extends Component {
     switch(this.checkPortal(updates.left , updates.top)) {
 
     case "quiz":
+      this.setState({ playerOnMap: false })
       return this.handlePopupQuiz()
     case 'shop':
       return this.handlePopupShop()
@@ -157,6 +162,7 @@ export class GamePage extends Component {
               checkSign={this.checkSign}
               handlePopupMessage={this.handlePopupMessage}
               closeModal={this.closeModal}
+              onMap={this.state.playerOnMap}
             />
           {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
