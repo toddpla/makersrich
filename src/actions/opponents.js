@@ -15,7 +15,6 @@ export const startSetOpponents = () => {
       snapshot.forEach((childSnapshot) => {
         const opponent = childSnapshot.val()
         if (childSnapshot.key !== player.uid && opponent.level === player.level && opponent.state === 'online') {
-          console.log('opponent', opponent);
           opponents.push({
             uid: childSnapshot.key,
             ...opponent

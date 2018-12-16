@@ -7,7 +7,8 @@ import { Player } from '../Player'
 test('gamepage renders correctly', () => {
 
   const props = {
-    players: ['player']
+    players: ['player'],
+    opponents: []
   }
 
   const gamePage = renderer.create(<GamePage {...props}/>).toJSON();

@@ -1,5 +1,5 @@
 import quizReducer from '../quiz'
-import questions from '../../fixtures/questions'
+import questions from '../../test/fixtures/questions'
 
 describe('quiz reducer', () => {
 
