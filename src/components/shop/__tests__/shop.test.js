@@ -7,6 +7,8 @@ import ShopMessage from '../ShopMessage'
 
 import { shallow } from 'enzyme'
 
+  let startAddInventoryItem = jest.fn()
+
   const player = {
     inventory: {
       ruby: [],
@@ -50,6 +52,7 @@ test('#handleSelect changes selected state', () => {
     <Shop
       player={player}
       shop={shop}
+      startAddInventoryItem={startAddInventoryItem}
     />
   )
 
@@ -57,4 +60,20 @@ test('#handleSelect changes selected state', () => {
   expect(wrapper.state.selected).toEqual(undefined)
   instance.handleSelect(item)
   expect(instance.state.selected).toEqual(item)
+})
+
+test('#handlePurchase calls action to change player state', () => {
+
+  let wrapper = shallow(
+    <Shop
+      player={player}
+      shop={shop}
+      startAddInventoryItem={startAddInventoryItem}
+    />
+  )
+
+  const instance = wrapper.instance()
+  instance.handleSelect(item)
+  instance.handlePurchase()
+  expect(startAddInventoryItem).toHaveBeenLastCalledWith('miscellaneous', item)
 })
