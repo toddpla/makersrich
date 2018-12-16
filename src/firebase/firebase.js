@@ -1,16 +1,5 @@
 import * as firebase from 'firebase';
 
-// development environemnt
-// const config = {
-//   apiKey: "AIzaSyCujvkUHO5pOnh5hQ44JvJILFEoR916zvs",
-//   authDomain: "proof-of-work.firebaseapp.com",
-//   databaseURL: "https://proof-of-work.firebaseio.com",
-//   projectId: "proof-of-work",
-//   storageBucket: "",
-//   messagingSenderId: "852831365773"
-// };
-
-// environemnt variables
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
