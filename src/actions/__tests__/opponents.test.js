@@ -21,24 +21,18 @@ afterAll((done) => {
   database.ref('/players').remove().then(() => done())
 })
 
-test('should create set opponents action object', () => {
-  const action = actions.setOpponents(players)
-  // players.shift()
+test('should create add opponent action object', () => {
+  const action = actions.addOpponent(players[0])
   expect(action).toEqual({
-    type: "SET_OPPONENTS",
-    opponents: players
+    type: "ADD_OPPONENT",
+    opponent: players[0]
   })
 })
 
-test('should get opponents from database', (done) => {
-  store.dispatch(actions.startSetOpponents()).then(() => {
-    const actions = store.getActions()
-    players.shift()
-    players.pop()
-    expect(actions[0]).toEqual({
-      type: "SET_OPPONENTS",
-      opponents: players
-    })
-    done()
+test('should create add opponent action object', () => {
+  const action = actions.removeOpponent(players[0].uid)
+  expect(action).toEqual({
+    type: "REMOVE_OPPONENT",
+    uid: players[0].uid
   })
 })
