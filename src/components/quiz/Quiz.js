@@ -15,13 +15,6 @@ export class Quiz extends React.Component {
     questionCount: 0,
   }
 
-  showResults = () => {
-    this.setState({
-      questionsVisibility: 'none',
-      resultsVisibility: ''
-    })
-  }
-
   handleClick = (answerIndex) => {
     const submission = {
       uid: this.props.auth.uid,
