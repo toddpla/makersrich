@@ -8,7 +8,8 @@
     "!**/coverage/**",
     "!**/public/**",
     "!**/serviceWorker.js",
-    "!**/cypress/**"
+    "!**/cypress/**",
+    "!**/build/**"
     ]
   },
   "version": "0.1.0",
