@@ -16,7 +16,6 @@ test('it displays all info when item selected', () => {
 
   renderer.render(<ShopMessage item={selected}/>)
   const result = renderer.getRenderOutput()
-  console.log(result.props)
   expect(result.props.children[0].props.children).toEqual('Cheese')
   expect(result.props.children[1].props.className).toEqual('shop-selected-item cheese')
   expect(result.props.children[2].props.children).toEqual('Message!')
@@ -30,7 +29,6 @@ test('it displays a welcome message when item is not selected', () => {
 
   renderer.render(<ShopMessage item={undefined}/>)
   const result = renderer.getRenderOutput()
-  console.log(result.props)
   expect(result.props.children.props.children).toEqual('Welcome to my shop! Take a look at my fineee as wares')
 
 })
