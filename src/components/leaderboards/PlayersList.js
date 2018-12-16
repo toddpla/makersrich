@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PlayersListItem from './PlayersListItem'
 
-
-class PlayersList extends Component {
+export class PlayersList extends Component {
 
   render() {
-    console.log('players list', this.props.players);
     return (
       <table>
         <tr>

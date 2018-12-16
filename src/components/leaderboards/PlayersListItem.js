@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PlayersListItem extends Component {
+export class PlayersListItem extends Component {
 
   render() {
     return (

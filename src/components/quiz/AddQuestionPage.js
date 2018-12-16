@@ -31,7 +31,7 @@ export class AddQuestionPage extends Component {
           <input type='text' id='answer3' placeholder='Anwser 3' />
           <input type='text' id='answer4' placeholder='Answer 4' />
           <input type='number' id='correctAnswer'  placeholder='Correct answer' />
-          <input type='submit' value='Submits' />
+          <input type='submit' value='Submit' />
         </form>
       </div>
     );

@@ -1,4 +1,5 @@
 import authReducer from '../auth'
+import player from '../../test/fixtures/playerWithInventory'
 
 test('should set default state', () => {
   const state = authReducer(undefined, {type: '@@INIT'})
@@ -6,14 +7,6 @@ test('should set default state', () => {
 })
 
 test('should login user', () => {
-  const player = {
-        uid: 123,
-        top: 0,
-        left: 0,
-        ruby: [],
-        javaBeans: [],
-        key: [],
-      }
   const action = {
     type: 'LOGIN',
     player
@@ -28,4 +21,27 @@ test('should logout user', () => {
   }
   const state = authReducer(undefined, action)
   expect(state).toEqual({})
+})
+
+test('should update user', () => {
+  const updates = {left: 16}
+  const action = {
+    type: "UPDATE_PLAYER",
+    updates
+  }
+  const state = authReducer(player, action)
+  expect(state.left).toEqual(updates.left)
+})
+
+test('should add an inventory item', () => {
+  const itemRef = 'ruby'
+  const item = {'value': 100}
+  const action = {
+    type: "ADD_INVENTORY_ITEM",
+    itemRef,
+    item
+  }
+  const state = authReducer(player, action)
+  player.inventory[itemRef].push(item)
+  expect(state).toEqual(player)
 })
