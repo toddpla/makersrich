@@ -10,7 +10,7 @@ class Opponent extends Component {
   }
 
   componentDidMount() {
-    database.ref(`/players/${this.props.opponent.id}`).on('value', (snapshot) => {
+    database.ref(`/players/${this.props.opponent.uid}`).on('value', (snapshot) => {
       this.setState({
         ...snapshot.val()
       })

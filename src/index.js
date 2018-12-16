@@ -8,7 +8,7 @@ import { startLogin, logout } from './actions/auth'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
-import { startSetOpponents } from './actions/opponents'
+import { startOnAddOpponent, startOnRemoveOpponent } from './actions/opponents'
 // import LoadingPage from './components/LoadingPage'
 import Modal from 'react-modal'
 
@@ -37,14 +37,15 @@ let hasLoadedData = false;
 const loadFirebaseData = (user) => {
   if(!hasLoadedData) {
     store.dispatch(startLogin(user.uid)).then(() => {
+      store.dispatch(startOnAddOpponent())
+      store.dispatch(startOnRemoveOpponent())
       subscribe()
-      store.dispatch(startSetOpponents()).then(() => {
-        renderApp()
-        hasLoadedData = true
-      })
+      renderApp()
+      hasLoadedData = true
     })
   }
 }
+
 
 firebase.auth().onAuthStateChanged(user => {
   if(user) {
