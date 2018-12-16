@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it renders Quiz 1`] = `
+exports[`Quiz it renders Quiz 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Quiz
+    auth={
+      Object {
+        "uid": "123",
+      }
+    }
     quiz={
       Object {
         "answers": Array [
@@ -30,6 +35,7 @@ ShallowWrapper {
         ],
       }
     }
+    startSendResult={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
