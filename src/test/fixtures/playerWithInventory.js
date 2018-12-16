@@ -22,5 +22,11 @@ export default {
         value: 'This is a ruby'
       }]
     }],
+    miscellaneous: [{
+      type: 'ruby',
+      properties: [{
+        value: 'This is a ruby'
+      }]
+    }]
   }
 }

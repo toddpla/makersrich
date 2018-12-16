@@ -24,6 +24,16 @@ ShallowWrapper {
               "type": "key",
             },
           ],
+          "miscellaneous": Array [
+            Object {
+              "properties": Array [
+                Object {
+                  "value": "This is a ruby",
+                },
+              ],
+              "type": "ruby",
+            },
+          ],
           "ruby": Array [
             Object {
               "properties": Array [
@@ -76,6 +86,16 @@ ShallowWrapper {
                   "type": "key",
                 },
               ],
+              "miscellaneous": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a ruby",
+                    },
+                  ],
+                  "type": "ruby",
+                },
+              ],
               "ruby": Array [
                 Object {
                   "properties": Array [
@@ -115,6 +135,16 @@ ShallowWrapper {
             "key": Array [
               Object {
                 "type": "key",
+              },
+            ],
+            "miscellaneous": Array [
+              Object {
+                "properties": Array [
+                  Object {
+                    "value": "This is a ruby",
+                  },
+                ],
+                "type": "ruby",
               },
             ],
             "ruby": Array [
@@ -173,6 +203,16 @@ ShallowWrapper {
                     "type": "key",
                   },
                 ],
+                "miscellaneous": Array [
+                  Object {
+                    "properties": Array [
+                      Object {
+                        "value": "This is a ruby",
+                      },
+                    ],
+                    "type": "ruby",
+                  },
+                ],
                 "ruby": Array [
                   Object {
                     "properties": Array [
@@ -212,6 +252,16 @@ ShallowWrapper {
               "key": Array [
                 Object {
                   "type": "key",
+                },
+              ],
+              "miscellaneous": Array [
+                Object {
+                  "properties": Array [
+                    Object {
+                      "value": "This is a ruby",
+                    },
+                  ],
+                  "type": "ruby",
                 },
               ],
               "ruby": Array [
