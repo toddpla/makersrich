@@ -1,4 +1,4 @@
-import database, { firebase } from '../firebase/firebase'
+import database from '../firebase/firebase'
 import { store } from '../index'
 
 export const setOpponents = (opponents) => {
