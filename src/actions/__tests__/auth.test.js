@@ -1,4 +1,3 @@
-import players from '../../fixtures/players'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import database, {firebase} from '../../firebase/firebase'
@@ -14,47 +13,54 @@ import {
   addInventoryItem,
   startAddInventoryItem
  } from '../auth'
+import playersData from '../../test/fixtures/players'
+import rubies from '../../test/fixtures/rubies'
+import { firebaseLoad } from '../../test/firebase-helper'
 
-const testUid = 'thisismytestuid'
-const defaultAuthState = { auth: { testUid } };
 const createMockStore = configureMockStore([thunk]);
 
-let getState, store, uid;
-
-beforeAll(() => {
-  getState = jest.fn().mockReturnValue({
-    auth: {
-      uid: players[0].uid
-    },
-  })
-})
+let players, currentPlayer, uid, defaultAuthState, store;
 
 beforeEach(done => {
+  players = firebaseLoad(playersData, done)
+  currentPlayer = players[0]
+  uid = currentPlayer.uid
+  defaultAuthState = { auth: { uid } };
   store = createMockStore(defaultAuthState)
-  uid = players[0].uid
-  const playersData = {};
-  players.forEach(({uid, cash, top, left, inventory, level,displayName}) => {
-    playersData[uid] = {cash, top, left, inventory, level, displayName}
-  })
-  database.ref(`players`).set(playersData).then(() => done());
 })
 
-test('should create the login action object', () => {
-  const action = login(players[0].uid, players[0])
+afterAll((done) => {
+  database.ref('/players').remove().then(() => done())
+})
+
+test('should create the login action object with defaults', () => {
+  const action = login(uid, currentPlayer)
   expect(action).toEqual({
     type: 'LOGIN',
     player: {
-      ...players[0]
+      inventory: {
+        ruby: [],
+        bean: [],
+        key: [],
+      },
+      ...currentPlayer,
     }
   })
 })
 
-test('should get player data from database', (done) => {
+test('should get player data from database and initialise with deafults', (done) => {
   store.dispatch(startLogin(uid)).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({
       type: "LOGIN",
-      player: {...players[0]}
+      player: {
+        inventory: {
+          ruby: [],
+          bean: [],
+          key: [],
+        },
+        ...currentPlayer
+      }
     })
     done();
   })
@@ -109,7 +115,7 @@ test('should create update player action object', () => {
 
 test('should update the player in the database', (done) => {
   const updates = {left: 150}
-  store.dispatch(startUpdatePlayer(uid, updates)).then(() => {
+  store.dispatch(startUpdatePlayer(updates)).then(() => {
     const actions = store.getActions()
     expect(actions[0]).toEqual({
       type: "UPDATE_PLAYER",
@@ -133,14 +139,9 @@ test('should create add inventory item action object', () => {
   })
 })
 
-test('should add the item to the players inventory', (done) => {
+test('should add a ruby to the player inventory', (done) => {
   const itemRef = 'ruby';
-  const item = {'testKey': 'testValue'}
-  const getState = jest.fn().mockReturnValue({
-    auth: {
-      uid
-    },
-  })
+  const item = rubies[0]
   store.dispatch(startAddInventoryItem(itemRef, item)).then(() => {
     const actions = store.getActions()
     expect(actions[0]).toEqual({
@@ -148,9 +149,9 @@ test('should add the item to the players inventory', (done) => {
       itemRef,
       item
     })
-    return database.ref(`players/${uid}/inventory/ruby`).once('value')
+    return database.ref(`players/${uid}/inventory/ruby/${item.id}`).once('value')
   }).then((snapshot) => {
-    expect(snapshot.val()).toBe(1)
+    expect(snapshot.val()).toEqual(item)
     done()
   })
 })
