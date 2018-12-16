@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
@@ -45,6 +46,7 @@ export class GamePage extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
   openModal(popUpMessage) {
@@ -66,6 +68,7 @@ export class GamePage extends Component {
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
+        this.startBattle({playerOneUid: player.uid, playerTwoUid: opponent.uid})
         this.handlePopupRPS()
       }
     })
@@ -179,7 +182,7 @@ export class GamePage extends Component {
 const mapStateToProps = (state) => ({
   map: state.map,
   player: state.auth,
-  opponents: opponentsSelector(state.opponents, 'online', state.auth.level)
+  opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid)
 })
 
 const mapDispatchToProps = (dispatch) => ({

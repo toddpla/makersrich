@@ -1,3 +1,3 @@
-export default (opponents, filterState, filterLevel) => {
-  return opponents.filter(({state, level}) => state === filterState && level === filterLevel)
+export default (opponents, filterState, filterLevel, authUid) => {
+  return opponents.filter(({uid, state, level}) => uid !== authUid && state === filterState && level === filterLevel)
 }
