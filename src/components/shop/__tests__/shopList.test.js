@@ -18,5 +18,4 @@ test('it displays all info when item selected', () => {
   expect(result.props.children[0].props.item.type).toEqual('item')
   expect(result.props.children[0].props.handleSelect).toEqual('handleselect')
 
-
 })
