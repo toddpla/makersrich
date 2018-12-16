@@ -29,3 +29,7 @@ beforeEach(function() {
 test('it renders Quiz', () => {
   expect(wrapper).toMatchSnapshot()
 })
+
+test('it calls #startGetQuestion', () => {
+  expect(startGetQuestion).toHaveBeenCalled()
+})
