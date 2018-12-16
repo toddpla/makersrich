@@ -6,7 +6,7 @@ class PlayersListItem extends Component {
     return (
       <tr>
 
-        <td><img style={{height: "10px"}}src={`images/${this.props.state}.png`}/></td>
+        <td><img style={{height: "10px"}}src={`images/${this.props.state}.png`} alt="status"/></td>
         <td>{this.props.displayName}</td>
         <td>{this.props.cash}</td>
         <td>{this.props.inventory && this.props.inventory.ruby && this.props.inventory.ruby.length}</td>

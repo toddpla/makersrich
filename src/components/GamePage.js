@@ -34,7 +34,6 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-Modal.setAppElement('#root')
 
 
 export class GamePage extends Component {
@@ -50,8 +49,6 @@ export class GamePage extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-
-
   openModal(popUpMessage) {
     this.setState({
       modalIsOpen: true,
@@ -66,7 +63,7 @@ export class GamePage extends Component {
   handleMovement = (updates) => {
     const player = this.props.player
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
-      this.props.startUpdatePlayer(player.uid, updates)
+      this.props.startUpdatePlayer(updates)
       this.forceUpdate()
     }
     this.props.opponents.forEach(opponent => {
@@ -160,6 +157,7 @@ export class GamePage extends Component {
        </AppWrapper>
       </MapProvider>
         <Modal
+          ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
@@ -181,7 +179,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startUpdatePlayer: (uid, updates) => dispatch(startUpdatePlayer(uid, updates))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
