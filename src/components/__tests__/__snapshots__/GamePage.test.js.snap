@@ -6,4 +6,17 @@ exports[`AppWrapper renders correctly 1`] = `
 />
 `;
 
-exports[`gamepage renders correctly 1`] = `<div />`;
+exports[`gamepage renders correctly 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Level PLayers
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Leaderboard
+  </button>
+</div>
+`;

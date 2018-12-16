@@ -2,10 +2,11 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <button
-    onClick={[Function]}
-  >
-    Login
+  <button>
+    Google Login
+  </button>
+  <button>
+    Github Login
   </button>
 </div>
 `;

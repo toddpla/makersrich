@@ -24,4 +24,6 @@ yarn-error.log*
 
 functions/node_modules
 
-notes.txt
+x.notes
+
+/.firebase

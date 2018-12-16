@@ -5,10 +5,11 @@ export const getQuestion = (question) => ({
   question
 })
 
-export const startGetQuestion = (uid, random) => {
-  return (dispatch) => {
+// needs to be moved to firebase function
+export const startGetQuestion = () => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
     return database.ref(`players/${uid}/questions`).once('value').then((playerQuestionsSnapshot) => {
-      console.log(Object.keys(playerQuestionsSnapshot));
       const playerQuestions = []
       playerQuestionsSnapshot.forEach(playerQuestionsChildSnapshot => {
         playerQuestions.push(playerQuestionsChildSnapshot.key)
@@ -29,10 +30,11 @@ export const startGetQuestion = (uid, random) => {
           dispatch(getQuestion(availableQuestions[index]))
         }
       })
-    })
+    }).catch(e => console.log(e))
   }
 }
 
+// needs to be moved to firebase function
 export const startSendResult = ({uid, questionId, result}) => {
   return (dispatch) => {
     return database.ref(`players/${uid}/questions/${questionId}`).update({result})

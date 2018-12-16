@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import InvPic from './Inventory.png'
+
 import InventoryList from './InventoryList'
 import InventoryMessage from './InventoryMessage'
 
