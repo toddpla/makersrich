@@ -32,5 +32,6 @@ You will need to sign in to your Google account within the Cypress window for th
 # Deployment
 ```
 yarn build
+firebase use production
 firebase deploy
 ```

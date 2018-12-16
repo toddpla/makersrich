@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { startGoogleLogin } from '../actions/auth'
+import { startGoogleLogin, startGithubLogin } from '../actions/auth'
 
-export const LoginPage = ({ startLogin }) => (
+export const LoginPage = (props) => (
   <div>
-    <button onClick={startGoogleLogin}>Login</button>
+    <button onClick={props.startGoogleLogin}>Google Login</button>
+    <button onClick={props.startGithubLogin}>Github Login</button>
   </div>
 )
 
 const mapDispatchToProps = (dispatch) => ({
-  startGoogleLogin: () => dispatch(startGoogleLogin())
+  startGoogleLogin: () => dispatch(startGoogleLogin()),
+  startGithubLogin: () => dispatch(startGithubLogin())
 })
 
 export default connect(undefined, mapDispatchToProps)(LoginPage)
