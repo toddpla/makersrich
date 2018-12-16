@@ -1,0 +1,200 @@
+
+ #muxworthys-bonanza {
+   width: 800px;
+   height: 500px;
+   background-image: url('/assets/quizzical.png');
+   border: 7px solid #e1c699;
+ }
+
+ #shop-list-box {
+   padding-left: 10px;
+   text-align: center;
+   width: 390px;
+   height: 440px;
+   line-height: 1.5em;
+   position: absolute;
+   border-right: 7px solid #e1c699
+ }
+
+ #shop-message-box {
+   text-align: center;
+   left: 427px;
+   height: 440px;
+   width: 300px;
+   position: absolute;
+   padding-left: 50px;
+   padding-right: 50px;
+   line-height: 1.5em;
+ }
+
+ #purchase-item-button {
+   position: absolute;
+   padding-top: 12px;
+   width: 100px;
+   bottom: 100px;
+   right: 150px;
+   height: 35px;
+   border-radius: 5px;
+   background-color: #e1c699;
+ }
+
+ #purchase-item-button:hover {
+   background-color: #c19a6b;
+   border: 1px solid beige;
+   box-shadow: 2px 2px black;
+ }
+
+ #purchase-item-button:active {
+   box-shadow: 4px 4px black
+ }
+
+ .shop-item {
+   display: inline-block;
+   position: relative;
+   padding-top: 10px;
+   width: 55px;
+   height: 55px;
+   margin: 5px;
+   float: left;
+   border: 2px solid transparent;
+
+ }
+
+ .shop-item:hover {
+   border: 1px solid brown;
+   box-shadow: 2px 2px black;
+   border-radius: 5px;
+ }
+
+ .shop-item:active {
+   border: 2px solid brown;
+   box-shadow: 3px 3px black;
+   border-radius: 5px;
+ }
+
+#item-price {
+  position: absolute;
+  top: 240px;
+  width: 300px;
+}
+
+#item-type {
+  font-size: 1.3em;
+}
+
+#muxworthys-opinion {
+  position: absolute;
+  top: 165px;
+  width: 300px;
+}
+
+.shop-selected-item {
+  position: absolute;
+  top:50px;
+  right: 165px;
+  width: 70px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: 70px;
+  background-position: center;
+}
+
+.shop-item {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.miscellaneous-item {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.apple {
+  background-image: url('/assets/shopitems/apple.png');
+}
+
+.bluepotion {
+  background-image: url('/assets/shopitems/bluepotion.png');
+}
+
+.bluering {
+  background-image: url('/assets/shopitems/bluering.png');
+}
+
+.boomerang {
+  background-image: url('/assets/shopitems/boomerang.png');
+}
+
+.boots {
+  background-image: url('/assets/shopitems/boots.png');
+}
+
+.butter {
+  background-image: url('/assets/shopitems/butter.png');
+}
+
+.cheese {
+  background-image: url('/assets/shopitems/cheese.png');
+}
+
+.cherry {
+  background-image: url('/assets/shopitems/cherry.png');
+}
+
+.cookie {
+  background-image: url('/assets/shopitems/cookie.png');
+}
+
+.eggs {
+  background-image: url('/assets/shopitems/eggs.png');
+}
+
+.gloves {
+  background-image: url('/assets/shopitems/gloves.png');
+}
+
+.grape {
+  background-image: url('/assets/shopitems/grape.png');
+}
+
+.greenpotion {
+  background-image: url('/assets/shopitems/greenpotion.png');
+}
+
+.jambon {
+  background-image: url('/assets/shopitems/jambon.png');
+}
+
+.lemon {
+  background-image: url('/assets/shopitems/lemon.png');
+}
+
+.pengpick {
+  background-image: url('/assets/shopitems/pengpick.png');
+}
+
+.redpotion {
+  background-image: url('/assets/shopitems/redpotion.png');
+}
+
+.redring {
+  background-image: url('/assets/shopitems/redring.png');
+}
+
+.shield {
+  background-image: url('/assets/shopitems/shield.png');
+}
+
+.strawberry {
+  background-image: url('/assets/shopitems/strawberry.png');
+}
+
+.yellowpotion {
+  background-image: url('/assets/shopitems/yellowpotion.png');
+}

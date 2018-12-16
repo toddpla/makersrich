@@ -1,21 +1,25 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme'
+import { Inventory } from '../Inventory'
+import player from '../../../test/fixtures/playerWithInventory'
 
-import {Inventory} from '../Inventory'
-import InventoryList from '../InventoryList'
-import InventoryMessage from '../InventoryMessage'
+let wrapper
 
-test('it renders with an InventoryList and InventoryMessage', () => {
-  const player = {
-    inventory: {
-      ruby: [],
-      bean: [],
-      key: [],
-    }
-  }
-  const renderer = new ShallowRenderer()
-  renderer.render(<Inventory player={player}/>)
-  const result = renderer.getRenderOutput()
-  expect(result.props.children[0].type).toEqual(InventoryList)
-  expect(result.props.children[1].type).toEqual(InventoryMessage)
+beforeEach(function() {
+  wrapper = shallow(
+    <Inventory
+      player={player}
+    />
+  )
+});
+
+test('it renders Inventory', () => {
+  expect(wrapper).toMatchSnapshot()
+})
+
+test('#handleMessage changes message state', () => {
+  const instance = wrapper.instance()
+  expect(wrapper.state.message).toEqual(undefined)
+  instance.handleMessage("message")
+  expect(instance.state.message).toEqual('message')
 })

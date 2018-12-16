@@ -1,19 +1,19 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme'
 import InventoryList from '../InventoryList'
-import InventoryListItem from '../InventoryListItem'
+import player from '../../../test/fixtures/playerWithInventory'
 
+let wrapper
 
-test('it renders InventoryListItems', () => {
-  const renderer = new ShallowRenderer()
-  const inventory = {
-    ruby: ['ruby1'],
-    bean: [],
-    key: []
-  }
+beforeEach(function() {
+  const inventory = player.inventory
+  wrapper = shallow(
+    <InventoryList
+      inventory={inventory}
+    />
+  )
+});
 
-  renderer.render(<InventoryList inventory={inventory}/>)
-  const result = renderer.getRenderOutput()
-  expect(result.props.children[0].type).toEqual('h1');
-  expect(result.props.children[1][0].type).toEqual(InventoryListItem);
+test('it renders InventoryList', () => {
+  expect(wrapper).toMatchSnapshot();
 })

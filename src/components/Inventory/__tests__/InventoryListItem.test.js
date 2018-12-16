@@ -1,15 +1,36 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme'
 import InventoryListItem from '../InventoryListItem'
+import player from '../../../test/fixtures/playerWithInventory'
 
+let wrapper, item, handleMessage
 
-test('it renders a div with class matching the type of the item', () => {
-  const renderer = new ShallowRenderer()
-  const item = {
-    type: 'ruby'
-  }
+beforeEach(function() {
+  handleMessage = jest.fn();
+  item = player.inventory.bean[0]
+  wrapper = shallow(
+    <InventoryListItem item={item} handleMessage={handleMessage}/>
+  )
+});
 
-  renderer.render(<InventoryListItem item={item}/>)
-  const result = renderer.getRenderOutput()
-  expect(result.props.children.props.className).toEqual('ruby');
+test('it renders InventoryListItem', () => {
+  expect(wrapper).toMatchSnapshot()
+})
+
+test('#changeMessage changes message in inventory with item messsage', () => {
+  item = player.inventory.bean[0]
+  wrapper = shallow(
+    <InventoryListItem item={item} handleMessage={handleMessage}/>
+  )
+  wrapper.find('.inventory-list-item').simulate('click')
+  expect(handleMessage).toHaveBeenLastCalledWith("This is a bean")
+})
+
+test('#changeMessage shows type of item when item has no message', () => {
+  item = player.inventory.key[0]
+  wrapper = shallow(
+    <InventoryListItem item={item} handleMessage={handleMessage}/>
+  )
+  wrapper.find('.inventory-list-item').simulate('click')
+  expect(handleMessage).toHaveBeenLastCalledWith("This is a key")
 })
