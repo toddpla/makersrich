@@ -1,46 +1,32 @@
 import database from '../firebase/firebase'
 
-export const setOpponents = (opponents) => {
-  return {
-    type: 'SET_OPPONENTS',
-    opponents
+export const addOpponent = (opponent) => ({
+  type: 'ADD_OPPONENT',
+  opponent
+})
+
+export const startOnAddOpponent = () => {
+  return (dispatch, getState) => {
+    const player = getState().auth
+    return database.ref('players').on('child_added', (snapshot) => {
+      dispatch(addOpponent({
+        uid: snapshot.key,
+        ...snapshot.val()
+      }))
+    })
   }
 }
 
-export const startSetOpponents = () => {
-  return (dispatch, getState) => {
-    return database.ref('players').once('value').then((snapshot) => {
-      const player = getState().auth
-      const opponents = [];
-      snapshot.forEach((childSnapshot) => {
-        const opponent = childSnapshot.val()
-        if (childSnapshot.key !== player.uid && opponent.level === player.level && opponent.state === 'online') {
-          opponents.push({
-            uid: childSnapshot.key,
-            ...opponent
-          });
-        }
-      });
-      dispatch(setOpponents(opponents));
-    }).catch((e) => console.log(e))
-  }
-}
+export const removeOpponent = (uid) => ({
+  type: 'REMOVE_OPPONENT',
+  uid
+})
 
-export const startOnOpponents = () => {
+export const startOnRemoveOpponent = () => {
   return (dispatch, getState) => {
-    return database.ref('players').on('value', (snapshot) => {
-      const player = getState().auth
-      const opponents = [];
-      snapshot.forEach((childSnapshot) => {
-        const opponent = childSnapshot.val()
-        if(childSnapshot.key !== player.uid && opponent.level === player.level && opponent.state === 'online') {
-          opponents.push({
-            uid: childSnapshot.key,
-            ...opponent
-          });
-        }
-      });
-      dispatch(setOpponents(opponents));
+    const player = getState().auth
+    return database.ref('players').on('child_removed', (snapshot) => {
+      dispatch(removeOpponent(snapshot.key))
     })
   }
 }

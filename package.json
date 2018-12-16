@@ -1,5 +1,16 @@
 {
   "name": "proof-of-concept",
+  "jest": {
+    "collectCoverageFrom": [
+    "**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/routers/**",
+    "!**/coverage/**",
+    "!**/public/**",
+    "!**/serviceWorker.js",
+    "!**/cypress/**"
+    ]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

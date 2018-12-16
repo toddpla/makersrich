@@ -14,7 +14,7 @@ import RPS from './RPS/RPS'
 import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
-
+import opponentsSelector from '../selectors/opponents'
 
 const customStyles = {
   content : {
@@ -35,16 +35,13 @@ export const AppWrapper = styled.div`
   background-color: #1c1117;
 `
 
-
-
 export class GamePage extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       modalIsOpen: false,
-      modalComponenet: 'undefined'
+      modalComponenet: 'undefined',
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -182,11 +179,11 @@ export class GamePage extends Component {
 const mapStateToProps = (state) => ({
   map: state.map,
   player: state.auth,
-  opponents: state.opponents
+  opponents: opponentsSelector(state.opponents, 'online', state.auth.level)
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

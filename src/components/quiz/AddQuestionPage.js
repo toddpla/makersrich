@@ -36,7 +36,6 @@ export class AddQuestionPage extends Component {
       </div>
     );
   }
-
 }
 
 const mapDispatchToProps = (dispatch) => ({
