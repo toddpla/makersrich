@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
-import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
-import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
@@ -16,6 +14,7 @@ import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import opponentsSelector from '../selectors/opponents'
+import Map from './Map'
 
 const customStyles = {
   content : {
@@ -28,13 +27,6 @@ const customStyles = {
   }
 };
 
-export const AppWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1117;
-`
 
 export class GamePage extends Component {
 
@@ -143,13 +135,15 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{width:'100%'}}>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
         <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
-       <AppWrapper>
-        <Map style={{ transform: "scale(1)", position: 'relative' }}>
-          <div>
+        </div>
+
+            <div>
+          <Map>
+
+          </Map>
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
@@ -159,11 +153,8 @@ export class GamePage extends Component {
               closeModal={this.closeModal}
               notOnMap={this.state.modalIsOpen}
             />
-          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
-          </div>
-        </Map>
-       </AppWrapper>
-      </MapProvider>
+            {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
+
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
@@ -175,6 +166,7 @@ export class GamePage extends Component {
           {this.state.modalComponent}
           <div className="modal-button" onClick={this.closeModal}></div>
         </Modal>
+
         </div>
     );
   }

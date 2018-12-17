@@ -111,7 +111,7 @@ class Player extends Component {
     return (
       <div id="player"
         style={{
-          position: 'absolute',
+          position: 'relative',
           width: '16px',
           top: this.props.player.top,
           left: this.props.player.left,
