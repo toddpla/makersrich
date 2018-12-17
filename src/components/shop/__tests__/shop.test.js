@@ -8,6 +8,7 @@ import ShopMessage from '../ShopMessage'
 import { shallow } from 'enzyme'
 
   let startAddInventoryItem = jest.fn()
+  let startDebitPlayer = jest.fn()
 
   const player = {
     inventory: {
@@ -53,6 +54,7 @@ test('#handleSelect changes selected state', () => {
       player={player}
       shop={shop}
       startAddInventoryItem={startAddInventoryItem}
+      startDebitPlayer={startDebitPlayer}
     />
   )
 
@@ -69,6 +71,7 @@ test('#handlePurchase calls action to change player state', () => {
       player={player}
       shop={shop}
       startAddInventoryItem={startAddInventoryItem}
+      startDebitPlayer={startDebitPlayer}
     />
   )
 
@@ -76,4 +79,5 @@ test('#handlePurchase calls action to change player state', () => {
   instance.handleSelect(item)
   instance.handlePurchase()
   expect(startAddInventoryItem).toHaveBeenLastCalledWith('miscellaneous', item)
+  expect(startDebitPlayer).toHaveBeenLastCalledWith(item.properties.price)
 })

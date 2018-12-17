@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { startAddInventoryItem } from '../../actions/auth'
+import { startAddInventoryItem, startDebitPlayer } from '../../actions/auth'
 import './shop.css'
 
 import ShopList from './ShopList'
@@ -17,6 +17,7 @@ export class Shop extends Component {
 
   handlePurchase = () => {
     this.props.startAddInventoryItem(this.state.selected.type, this.state.selected)
+    this.props.startDebitPlayer(this.state.selected.properties.price)
   }
 
   handleSelect = (item) => {
@@ -40,7 +41,8 @@ export class Shop extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef,item))
+  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef,item)),
+  startDebitPlayer: (cash) => dispatch(startDebitPlayer(cash))
 })
 
 const mapStateToProps = (state) => ({
