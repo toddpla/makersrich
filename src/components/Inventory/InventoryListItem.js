@@ -15,8 +15,6 @@ class InventoryListItem extends Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.getType());
     return (
       <div className="inventory-list-item" onClick={this.changeSelect}>
         <div className={this.getType()}></div>
