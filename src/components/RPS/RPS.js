@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import database, { firebase } from '../../firebase/firebase'
 import RPSChoice from './RPSChoice'
 import selectRandom from '../../utils/selectRandom'
+import { startCreditPlayer } from '../../actions/auth'
+import { startDebitPlayer } from '../../actions/auth'
 
 class RPS extends Component {
 
@@ -38,9 +40,11 @@ class RPS extends Component {
           })
           return
         } else if (weaponsMatrix[weapon].includes(opponentWeapon)) {
+          this.props.startCreditPlayer(25)
           playerInfoMessage = selectRandom(winningStatements)
           opponentInfoMessage = selectRandom(losingStatements)
         } else {
+          this.props.startDebitPlayer(25)
           opponentInfoMessage = selectRandom(losingStatements)
           playerInfoMessage = selectRandom(winningStatements)
         }
@@ -50,7 +54,7 @@ class RPS extends Component {
         database.ref(`/battles/${this.props.player.uid}`).remove()
 
       } else {
-        console.log('no oponent weapon');
+        console.log('no opponent weapon');
       }
     })
   }
@@ -72,8 +76,13 @@ class RPS extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  startDebitPlayer: (cash) => dispatch(startDebitPlayer(cash)),
+  startCreditPlayer: (cash) => dispatch(startCreditPlayer(cash))
+})
+
 const mapStateToProps = (state) => ({
   player: state.auth
 })
 
-export default connect(mapStateToProps)(RPS);
+export default connect(mapStateToProps, mapDispatchToProps)(RPS);
