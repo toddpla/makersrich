@@ -63,14 +63,15 @@ export class GamePage extends Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({
+      modalIsOpen: false,
+    });
   }
 
   handleMovement = (updates) => {
     const player = this.props.player
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.startUpdatePlayer(updates)
-      this.forceUpdate()
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
@@ -80,14 +81,12 @@ export class GamePage extends Component {
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
-
     case "quiz":
       return this.handlePopupQuiz()
     case 'shop':
       return this.handlePopupShop()
     default:
       return
-
     }
   }
 
@@ -162,9 +161,10 @@ export class GamePage extends Component {
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
               handlePopupRPS={this.handlePopupRPS}
-              checkSign={this.checkSign}
               handlePopupMessage={this.handlePopupMessage}
+              checkSign={this.checkSign}
               closeModal={this.closeModal}
+              notOnMap={this.state.modalIsOpen}
             />
           {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
