@@ -43,16 +43,22 @@ export class GamePage extends Component {
     this.state = {
       modalIsOpen: false,
       modalComponenet: 'undefined',
+      battle: props.player.battle
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
-  openModal(popUpMessage) {
+  componentDidUpdate() {
+    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <RPS />})
+  }
+
+  // modal tings
+  openModal(params) {
     this.setState({
       modalIsOpen: true,
-      ...popUpMessage
+      ...params
     });
   }
 
@@ -88,7 +94,6 @@ export class GamePage extends Component {
   checkImpassable = (updates) => {
     const x = updates.left
     const y = updates.top
-
     const impassablePos = this.props.map.impassable.filter((object) => object.x === x && object.y === y)[0]
     return (impassablePos !== undefined) ? false : true
   }
@@ -141,7 +146,10 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Shop />})
   }
 
+
+
   render() {
+    console.log('rendering');
     return (
       <div>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
