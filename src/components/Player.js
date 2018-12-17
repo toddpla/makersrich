@@ -7,8 +7,7 @@ import { collectItem, digTile, unDigTile } from '../actions/map'
 
 import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
-
-class Player extends Component {
+export class Player extends Component {
 
   constructor(props) {
     super(props)
