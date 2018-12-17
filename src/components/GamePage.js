@@ -17,6 +17,7 @@ import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import NewsFeed from './NewsFeed'
 import opponentsSelector from '../selectors/opponents'
+import { startSendNewsfeedMessage } from '../actions/newsfeed'
 
 const customStyles = {
   content : {
@@ -116,12 +117,14 @@ export class GamePage extends Component {
   }
 
   handlePopupQuiz = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} entered the Quiz house thing!`)
     this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
   handlePopupRPS = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} joined a RPS showdown!!`)
     this.openModal({modalComponent: <RPS />})
   }
 
@@ -138,6 +141,7 @@ export class GamePage extends Component {
   }
 
   handlePopupShop = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} is shopping in Muxworthy's!`)
     this.openModal({modalComponent: <Shop />})
   }
 
@@ -188,6 +192,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
