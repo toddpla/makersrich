@@ -75,9 +75,14 @@ export class GamePage extends Component {
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
-        database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
-        database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
-        this.handlePopupRPS()
+        const playerInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+        const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+        Promise.all([playerInBattle, opponentInBattle]).then((values) => {
+          if(values.filter(value => value).length === 0) {
+            database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
+            database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
+          }
+        })
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
@@ -144,8 +149,6 @@ export class GamePage extends Component {
   handlePopupShop = () => {
     this.openModal({modalComponent: <Shop />})
   }
-
-
 
   render() {
     return (

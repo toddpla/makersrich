@@ -18,8 +18,8 @@ class RPS extends Component {
 
   sendChoice = (weapon) => {
     const drawingStatements = ["It's === have another go", "Its a draw, go again!", "You chose the same. Have another go!"]
-    const winningStatements = ["Winner winer chicken dinner!", "Booyakasha - you da boss!", "YEEEEAASS! Win win win!"]
-    const losingStatements = ["You are a LOOOSER!", "Better luck next some Maker", "Oh dear, what have you done!"]
+    // const winningStatements = ["Winner winer chicken dinner!", "Booyakasha - you da boss!", "YEEEEAASS! Win win win!"]
+    // const losingStatements = ["You are a LOOOSER!", "Better luck next some Maker", "Oh dear, what have you done!"]
     database.ref(`/battles/${this.props.player.uid}`).update({weapon})
     database.ref(`/battles/${this.props.player.battle.opponentUid}/weapon`).once('value').then(snap => {
       const opponentWeapon = snap.val()
@@ -41,18 +41,17 @@ class RPS extends Component {
           return
         } else if (weaponsMatrix[weapon].includes(opponentWeapon)) {
           this.props.startCreditPlayer(25)
-          playerInfoMessage = selectRandom(winningStatements)
-          opponentInfoMessage = selectRandom(losingStatements)
+          // playerInfoMessage = selectRandom(winningStatements)
+          // opponentInfoMessage = selectRandom(losingStatements)
         } else {
           this.props.startDebitPlayer(25)
-          opponentInfoMessage = selectRandom(losingStatements)
-          playerInfoMessage = selectRandom(winningStatements)
+          // opponentInfoMessage = selectRandom(losingStatements)
+          // playerInfoMessage = selectRandom(winningStatements)
         }
         // database.ref(`/battles/${this.props.player.battle.opponentUid}`).update({infoMessage: opponentInfoMessage})
         // database.ref(`/battles/${this.props.player.uid}`).update({infoMessage: playerInfoMessage})
         database.ref(`/battles/${this.props.player.battle.opponentUid}`).remove()
         database.ref(`/battles/${this.props.player.uid}`).remove()
-
       } else {
         console.log('no opponent weapon');
       }
@@ -62,14 +61,16 @@ class RPS extends Component {
   render() {
     return (
       <div>
-        {this.props.player.battle && (
+        {this.props.player.battle ? (
           <div className='rps'>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
             <RPSChoice value='Rock' sendMove={this.sendChoice}/> <br/>
             <RPSChoice value='Paper' sendMove={this.sendChoice}/> <br/>
             <RPSChoice value='Scissors' sendMove={this.sendChoice}/>
           </div>
-          )
+        ) : (
+          <h1>Game over</h1>
+        )
         }
       </div>
     );
