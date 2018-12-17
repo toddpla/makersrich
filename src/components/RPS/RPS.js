@@ -14,14 +14,6 @@ class RPS extends Component {
     }
   }
 
-  // componentDidUpdate() {
-  //   if (this.props.battle !== undefined && this.props.infoMessage !== undefined) {
-  //     this.setState({
-  //       infoMessage: this.props.battle.infoMessage
-  //     })
-  //   }
-  // }
-
   sendChoice = (weapon) => {
     const drawingStatements = ["It's === have another go", "Its a draw, go again!", "You chose the same. Have another go!"]
     const winningStatements = ["Winner winer chicken dinner!", "Booyakasha - you da boss!", "YEEEEAASS! Win win win!"]
@@ -62,7 +54,6 @@ class RPS extends Component {
       }
     })
   }
-
 
   render() {
     return (
