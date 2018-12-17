@@ -28,3 +28,10 @@ test('#changeMessage changes message in inventory with item messsage', () => {
   wrapper.find('.inventory-list-item').simulate('click')
   expect(handleMessage).toHaveBeenLastCalledWith("This is tasty")
 })
+
+test('matches last snapshot', () => {
+  let wrapper = shallow(
+    <InventoryListMiscItem item={item} handleMessage={handleMessage}/>
+  )
+  expect(wrapper).toMatchSnapshot()
+})
