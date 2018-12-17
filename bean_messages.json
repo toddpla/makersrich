@@ -1,0 +1,59 @@
+{
+  "name":"bean_1",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"SRP stands for the Single Responsibility Principle"
+    }
+  ]
+},
+{
+  "name":"bean_2",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"JavaScript is differnt from Ruby in that it demonstrates asynchronous behaviour. An example of this would be the fetch() function"
+    }
+  ]
+},
+{
+  "name":"bean_3",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"Asynchronous behaviour is when a program is executed line by line but it does not wait for functions to complete and return a value"
+    }
+  ]
+},
+{
+  "name":"bean_4",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"HTTP defines a set of request methods to indicate the desired action. They include:
+GET,
+HEAD,
+POST,
+PUT,
+DELETE,
+CONNECT,
+OPTIONS,
+TRACE,
+PATCH"
+    }
+  ]
+},
+{
+  "name":"bean_5",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"All information on the web in transferred as a string. The most common format for transferring data is JSON"
+    }
+  ]
+}
