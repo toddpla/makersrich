@@ -148,7 +148,6 @@ export class GamePage extends Component {
 
 
   render() {
-    console.log('rendering');
     return (
       <div>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
