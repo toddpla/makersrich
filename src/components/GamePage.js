@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { firebase } from '../firebase/firebase'
+import database, { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
@@ -68,9 +68,8 @@ export class GamePage extends Component {
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
-        console.log('here');
-        let startBattle = firebase.functions().httpsCallable('startBattle')
-        startBattle({playerOneUid: player.uid, playerTwoUid: opponent.uid})
+        database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
+        database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
         this.handlePopupRPS()
       }
     })

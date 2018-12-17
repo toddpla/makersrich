@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import { firebase } from '../../firebase/firebase'
+import { connect } from 'react-redux'
+import database, { firebase } from '../../firebase/firebase'
 import RPSChoice from './RPSChoice'
 
 class RPS extends Component {
 
-  state = {
-    useWeapon: firebase.functions().httpsCallable('useWeapon')
-  }
-
   sendChoice = (weapon) => {
-    this.state.useWeapon({weapon})
-    console.log('weapon used', weapon);
+    database.ref(`/battles/${this.props.player.uid}`).update({weapon})
   }
 
   render() {
@@ -24,4 +20,8 @@ class RPS extends Component {
   }
 }
 
-export default RPS;
+const mapStateToProps = (state) => ({
+  player: state.auth
+})
+
+export default connect(mapStateToProps)(RPS);
