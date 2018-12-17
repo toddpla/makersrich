@@ -88,3 +88,23 @@ export const startAddInventoryItem = (itemRef, item) => {
       })
   }
 }
+
+export const startDebitPlayer = (amount) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`players/${uid}/cash`).once('value').then((snapshot) => {
+      const currentCash = snapshot.val() || 0
+      dispatch(startUpdatePlayer({cash: currentCash - amount}))
+    })
+  }
+}
+
+export const startCreditPlayer = (amount) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`players/${uid}/cash`).once('value').then((snapshot) => {
+      const currentCash = snapshot.val() || 0
+      dispatch(startUpdatePlayer({cash: currentCash + amount}))
+    })
+  }
+}
