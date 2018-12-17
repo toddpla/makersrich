@@ -50,14 +50,18 @@ export class GamePage extends Component {
   }
 
   openModal(popUpMessage) {
-    this.setState({
-      modalIsOpen: true,
-      ...popUpMessage
-    });
+    if (!this.state.modalIsOpen) {
+      this.setState({
+        modalIsOpen: true,
+        ...popUpMessage
+      });
+    }
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({
+      modalIsOpen: false,
+    });
   }
 
   handleMovement = (updates) => {
@@ -72,15 +76,12 @@ export class GamePage extends Component {
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
-
     case "quiz":
       return this.handlePopupQuiz()
     case 'shop':
       return this.handlePopupShop()
-      return
     default:
       return
-
     }
   }
 
@@ -153,9 +154,10 @@ export class GamePage extends Component {
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
               handlePopupRPS={this.handlePopupRPS}
-              checkSign={this.checkSign}
               handlePopupMessage={this.handlePopupMessage}
+              checkSign={this.checkSign}
               closeModal={this.closeModal}
+              notOnMap={this.state.modalIsOpen}
             />
           {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>

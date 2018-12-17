@@ -1,0 +1,50 @@
+{
+  "name":"ruby_1",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"The process of test-driven development(TDD) involves writing your tests before any code. It acts as a plan for the code you intend to write and validates its completion"
+     }
+  ]
+},
+{
+  "name":"ruby_2",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"If every class or module of a program is responsibile for only one part of functionality of a program, it has adhered to the Single Responsibility Principle"
+     }
+  ]
+},
+{
+  "name":"ruby_3",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"OOD stands for Object-Oriented Design"
+     }
+  ]
+},
+{
+  "name":"ruby_4",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"Synchronous behaviour is when a program is executed line by line but it waits for functions to complete and return a value"
+     }
+  ]
+},
+{
+  "name":"ruby_5",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"CRUD stands for Create, Read, Update, Delete"
+     }
+  ]
+}
