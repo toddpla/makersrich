@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { firebase } from '../firebase/firebase'
+import database, { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
 import { MapProvider, Map } from 'react-tiled'
@@ -43,19 +43,23 @@ export class GamePage extends Component {
     this.state = {
       modalIsOpen: false,
       modalComponenet: 'undefined',
+      battle: props.player.battle
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
-  openModal(popUpMessage) {
-    if (!this.state.modalIsOpen) {
-      this.setState({
-        modalIsOpen: true,
-        ...popUpMessage
-      });
-    }
+  componentDidUpdate() {
+    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <RPS />})
+  }
+
+  // modal tings
+  openModal(params) {
+    this.setState({
+      modalIsOpen: true,
+      ...params
+    });
   }
 
   closeModal() {
@@ -71,8 +75,14 @@ export class GamePage extends Component {
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
-        this.startBattle({playerOneUid: player.uid, playerTwoUid: opponent.uid})
-        this.handlePopupRPS()
+        const playerInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+        const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+        Promise.all([playerInBattle, opponentInBattle]).then((values) => {
+          if(values.filter(value => value).length === 0) {
+            database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
+            database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
+          }
+        })
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
@@ -88,7 +98,6 @@ export class GamePage extends Component {
   checkImpassable = (updates) => {
     const x = updates.left
     const y = updates.top
-
     const impassablePos = this.props.map.impassable.filter((object) => object.x === x && object.y === y)[0]
     return (impassablePos !== undefined) ? false : true
   }

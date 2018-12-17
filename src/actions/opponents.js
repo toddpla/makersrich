@@ -8,6 +8,7 @@ export const addOpponent = (opponent) => ({
 export const startOnAddOpponent = () => {
   return (dispatch, getState) => {
     const player = getState().auth
+    console.log('startOnAddOpponent is running');
     return database.ref('players').on('child_added', (snapshot) => {
       dispatch(addOpponent({
         uid: snapshot.key,
