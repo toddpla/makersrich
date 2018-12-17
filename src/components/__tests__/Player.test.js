@@ -41,5 +41,16 @@ describe('Player', function() {
         top: player.top
       })
     });
+
+    it('responds to right', function() {
+      const rightEvent = {
+        keyCode: 39,
+      }
+      instance.handleKeyDown(rightEvent)
+      expect(handleMovement).toHaveBeenLastCalledWith({
+        left: player.left + SPRITE_SIZE,
+        top: player.top
+      })
+    });
   });
 });
