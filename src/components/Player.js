@@ -9,17 +9,16 @@ import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
 
 class Player extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
-      onMap: props.onMap,
-      inInventory: false
+      inInventory: false,
     }
   }
 
   handleKeyDown = (e) => {
-    console.log(this.state);
-    if (this.state.onMap && !this.state.inInventory ) {
+    if (!this.state.inInventory && !this.props.notOnMap) {
       switch(e.keyCode) {
         // left key
         case 37:
@@ -50,15 +49,14 @@ class Player extends Component {
     }
   }
 
-  inventoryHandleKeyDown(e) {
-    if (this.state.onMap) {
+  popUpHandleKeyDown(e) {
+    if (this.state.inInventory ) {
       switch(e.keyCode) {
         case 73:
           this.setState({ inInventory: false })
           return this.props.closeModal()
         default:
           console.log(e.keyCode);
-        }
       }
     }
   }

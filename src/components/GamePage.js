@@ -43,7 +43,6 @@ export class GamePage extends Component {
     this.state = {
       modalIsOpen: false,
       modalComponenet: 'undefined',
-      playerOnMap: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -51,16 +50,17 @@ export class GamePage extends Component {
   }
 
   openModal(popUpMessage) {
-    this.setState({
-      modalIsOpen: true,
-      ...popUpMessage
-    });
+    if (!this.state.modalIsOpen) {
+      this.setState({
+        modalIsOpen: true,
+        ...popUpMessage
+      });
+    }
   }
 
   closeModal() {
     this.setState({
       modalIsOpen: false,
-      PlayerOnMap: true
     });
   }
 
@@ -77,16 +77,12 @@ export class GamePage extends Component {
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
-
     case "quiz":
-      this.setState({ playerOnMap: false })
       return this.handlePopupQuiz()
     case 'shop':
       return this.handlePopupShop()
-      return
     default:
       return
-
     }
   }
 
@@ -159,10 +155,10 @@ export class GamePage extends Component {
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
               handlePopupRPS={this.handlePopupRPS}
-              checkSign={this.checkSign}
               handlePopupMessage={this.handlePopupMessage}
+              checkSign={this.checkSign}
               closeModal={this.closeModal}
-              onMap={this.state.playerOnMap}
+              notOnMap={this.state.modalIsOpen}
             />
           {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
           </div>
