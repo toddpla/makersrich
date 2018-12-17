@@ -4,10 +4,11 @@ exports[`Player renders 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Player
+    handleMovement={[MockFunction]}
     player={
       Object {
-        "left": 0,
-        "top": 0,
+        "left": 400,
+        "top": 336,
       }
     }
   />,
@@ -29,9 +30,9 @@ ShallowWrapper {
         "backgroundImage": "url(player.png)",
         "backgroundPosition": "center",
         "height": "16px",
-        "left": 0,
+        "left": 400,
         "position": "absolute",
-        "top": 0,
+        "top": 336,
         "width": "16px",
         "zIndex": 1,
       },
@@ -51,9 +52,9 @@ ShallowWrapper {
           "backgroundImage": "url(player.png)",
           "backgroundPosition": "center",
           "height": "16px",
-          "left": 0,
+          "left": 400,
           "position": "absolute",
-          "top": 0,
+          "top": 336,
           "width": "16px",
           "zIndex": 1,
         },
