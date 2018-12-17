@@ -64,7 +64,6 @@ export class GamePage extends Component {
     const player = this.props.player
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.startUpdatePlayer(updates)
-      this.forceUpdate()
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
