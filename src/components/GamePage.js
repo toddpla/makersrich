@@ -15,6 +15,7 @@ import RPS from './RPS/RPS'
 import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
+import NewsFeed from './NewsFeed'
 import opponentsSelector from '../selectors/opponents'
 
 const customStyles = {
@@ -145,6 +146,7 @@ export class GamePage extends Component {
       <div>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
         <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
+      <NewsFeed />
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>
