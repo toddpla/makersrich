@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { collectItem, digTile, unDigTile } from '../actions/map'
 
 import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
+import { startSendNewsfeedMessage } from '../actions/newsfeed'
 
 
 class Player extends Component {
@@ -95,6 +96,7 @@ class Player extends Component {
       this.props.collectItem(item)
       this.props.startAddInventoryItem(item.type, item)
       this.setState({inPopUp: true})
+      this.props.startSendNewsfeedMessage(`${this.props.player.displayName} found a ${item.type}!`)
       this.props.handlePopupMessage(`You found a ${item.type}!`)
     }
   }
@@ -127,6 +129,7 @@ class Player extends Component {
 
 const mapStateToProps = (state) => ({
   map: state.map,
+  player: state.auth
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -134,7 +137,8 @@ const mapDispatchToProps = (dispatch) => ({
   digTile: (tile) => dispatch(digTile(tile)),
   unDigTile: (tile) => dispatch(unDigTile(tile)),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item))
+  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item)),
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

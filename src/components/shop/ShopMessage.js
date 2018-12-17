@@ -9,7 +9,7 @@ class ShopMessage extends Component {
           <div id="item-type">{this.props.item.properties.name}</div>
           <div id="item-image" className={`shop-selected-item ${this.props.item.properties.type}`}></div>
           <div id="muxworthys-opinion">{this.props.item.properties.message}</div>
-          <div id="item-price">Price: {this.props.item.properties.price}Cash</div>
+          <div id="item-price">Price: {this.props.item.properties.price} cash</div>
           <div id="purchase-item-button" onClick={this.props.handlePurchase}>BUY</div>
         </div>
       )
