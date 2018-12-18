@@ -9,9 +9,9 @@ import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
-import Inventory from './Inventory/Inventory'
+import Inventory from './inventory/Inventory'
 import RPS from './RPS/RPS'
-import Message from './Message'
+import InformationMessage from './InformationMessage'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
@@ -139,7 +139,7 @@ export class GamePage extends Component {
   }
 
   handlePopupMessage = (message) => {
-    this.openModal({modalComponent: <Message message={message}/>})
+    this.openModal({modalComponent: <InformationMessage message={message}/>})
   }
 
   handlePopupLeaderboard = () => {
