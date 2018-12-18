@@ -198,3 +198,8 @@
 .yellowpotion {
   background-image: url('/assets/shopitems/yellowpotion.png');
 }
+
+.coins {
+  background-image: url('/assets/spinning_coin.gif');
+  background-repeat: no-repeat;
+}

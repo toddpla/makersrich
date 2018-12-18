@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 
 class RPSChoice extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      choice : props.value
-    }
-  }
-  click = () => {
-    this.props.sendMove(this.state.choice)
+
+  handleClick = () => {
+    this.props.sendMove(this.props.value)
   }
 
   render() {
     return (
-      <button value={this.props.value} onClick={this.click}> {this.props.value}</button>
+      <button value={this.props.value} onClick={this.handleClick}> {this.props.value}</button>
     );
   }
 }

@@ -3,15 +3,17 @@ import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
 import { connect } from 'react-redux'
 import { collectItem, digTile, unDigTile } from '../actions/map'
-import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
+import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
+import { startSendNewsfeedMessage } from '../actions/newsfeed'
+import SpinningCoin from '../assets/spinning_coin_16px.gif'
 
 
-class Player extends Component {
+export class Player extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      inInventory: false,
+      inInventory: false
     }
   }
 
@@ -39,6 +41,8 @@ class Player extends Component {
           return this.props.handlePopupRPS()
         case 81:
           return this.props.checkSign(this.props.player.left, this.props.player.top)
+        case 88:
+          return this.props.handlePopupInstructions()
         default:
           console.log(e.keyCode);
       }
@@ -59,7 +63,34 @@ class Player extends Component {
     }
   }
 
+  coinAnimation = () => {
+    var timeout = 2;
+    this.setState({coinCollected: true})
+    setTimeout(this.hideAnimation, 1600)
+  }
+
+  hideAnimation = () => {
+    this.setState({coinCollected: false})
+  }
+
+  possibleCash(chance = Math.random()) {
+    var coinCount = 0
+    if (chance < 0.01) {
+      coinCount += 25
+    } else if (chance < 0.1) {
+      coinCount += 5
+    } else if (chance < 0.25) {
+      coinCount += 1
+    }
+    if (coinCount !== 0) {
+      this.props.startCreditPlayer(coinCount)
+      this.coinAnimation()
+    }
+  }
+
   digDatDing = (x, y) => {
+    this.possibleCash()
+
     var dug = document.createElement("div")
     dug.setAttribute('class', 'dug-up-tile')
     dug.setAttribute('id', x+y)
@@ -94,6 +125,7 @@ class Player extends Component {
       this.props.collectItem(item)
       this.props.startAddInventoryItem(item.type, item)
       this.setState({inPopUp: true})
+      this.props.startSendNewsfeedMessage(`${this.props.player.displayName} found a ${item.type}!`)
       this.props.handlePopupMessage(`You found a ${item.type}!`)
     }
   }
@@ -106,7 +138,27 @@ class Player extends Component {
   }
 
   render() {
-    return (
+      if (this.state.coinCollected) {
+        var button = <div id="coinContainer"
+                  style={{
+                    position: 'absolute',
+                    width: '16px',
+                    height: '16px',
+                    backgroundImage: `url(${SpinningCoin})`,
+                    backgroundPosition: 'center',
+                    zIndex: 1,
+                    top: this.props.player.top - 16,
+                    left: this.props.player.left
+                  }}
+                 >
+        </div>
+      } else { var button = undefined }
+
+      return (
+      <div>
+
+      {button}
+
       <div id="player"
         style={{
           position: 'absolute',
@@ -119,12 +171,14 @@ class Player extends Component {
         }}
       >
       </div>
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
   map: state.map,
+  player: state.auth
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -132,7 +186,9 @@ const mapDispatchToProps = (dispatch) => ({
   digTile: (tile) => dispatch(digTile(tile)),
   unDigTile: (tile) => dispatch(unDigTile(tile)),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item))
+  startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item)),
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
+  startCreditPlayer: (amount) => dispatch(startCreditPlayer(amount))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

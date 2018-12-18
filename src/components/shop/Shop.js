@@ -17,7 +17,7 @@ export class Shop extends Component {
 
   handlePurchase = () => {
     this.props.startAddInventoryItem(this.state.selected.type, this.state.selected)
-    this.props.startDebitPlayer(this.state.selected.properties.price)
+    this.props.startDebitPlayer(this.state.selected.properties[0].price)
   }
 
   handleSelect = (item) => {
@@ -40,12 +40,12 @@ export class Shop extends Component {
 
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef,item)),
   startDebitPlayer: (cash) => dispatch(startDebitPlayer(cash))
 })
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   player: state.auth,
   shop: state.shop
 })

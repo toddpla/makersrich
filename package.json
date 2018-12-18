@@ -2,22 +2,24 @@
   "name": "proof-of-concept",
   "jest": {
     "collectCoverageFrom": [
-    "**/*.{js,jsx}",
-    "!**/node_modules/**",
-    "!**/routers/**",
-    "!**/coverage/**",
-    "!**/public/**",
-    "!**/serviceWorker.js",
-    "!**/cypress/**",
-    "!**/build/**",
-    "!**/store/**",
-    "!**/firebase/**"
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/index.js",
+      "!**/routers/**",
+      "!**/coverage/**",
+      "!**/public/**",
+      "!**/serviceWorker.js",
+      "!**/cypress/**",
+      "!**/build/**",
+      "!**/store/**",
+      "!**/firebase/**"
     ]
   },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "babel-loader": "^8.0.4",
+    "chai": "^4.2.0",
     "dotenv": "^6.2.0",
     "firebase": "^5.7.0",
     "history": "^4.7.2",

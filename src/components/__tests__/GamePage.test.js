@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme'
-import { GamePage, AppWrapper } from '../GamePage'
+import { GamePage, AppWrapper, mapStateToProps, mapDispatchToProps } from '../GamePage'
 import { Player } from '../Player'
 
 let startUpdatePlayer = jest.fn()
@@ -23,7 +23,7 @@ let props = {
 let updates = {left: 0, top: 0}
 
 test('gamepage renders correctly', () => {
-  const gamePage = renderer.create(<GamePage {...props}/>).toJSON();
+  const gamePage = shallow(<GamePage {...props}/>)
   expect(gamePage).toMatchSnapshot();
 });
 
@@ -83,4 +83,29 @@ test('#checkImpassable returns false when impassable', () => {
   let wrapper = shallow( <GamePage {...props}/> )
   const instance = wrapper.instance()
   expect(instance.checkImpassable({left: 15, top: 30})).toEqual(false)
+})
+
+test('mapStateToProps', () => {
+
+  let state = {
+    auth: 'fake auth state',
+    map: 'fake map state',
+    opponents: ['fake opponent state']
+  }
+  expect(mapStateToProps(state).player).toEqual('fake auth state')
+  expect(mapStateToProps(state).map).toEqual('fake map state')
+})
+
+test('mapDispatchToProps', () => {
+
+  const dispatch = jest.fn()
+  const startSendNewsfeedMessagePlayer = jest.fn()
+  const startUpdatePlayer = jest.fn()
+
+  expect(mapDispatchToProps(dispatch).startUpdatePlayer('updates'))
+  expect(mapDispatchToProps(dispatch).startSendNewsfeedMessage('message'))
+
+  expect(dispatch.mock.calls[0][0]).toEqual(expect.any(Function))
+  expect(dispatch.mock.calls[1][0]).toEqual(expect.any(Function))
+
 })

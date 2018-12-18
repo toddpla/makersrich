@@ -5,6 +5,8 @@ import {Shop} from '../Shop'
 import ShopList from '../ShopList'
 import ShopMessage from '../ShopMessage'
 
+import { mapDispatchToProps, mapStateToProps } from '../Shop'
+
 import { shallow } from 'enzyme'
 
   let startAddInventoryItem = jest.fn()
@@ -21,10 +23,10 @@ import { shallow } from 'enzyme'
 
   const item = {
     type: 'miscellaneous',
-    properties: {
+    properties: [{
       price: 10,
       name: 'item'
-    }
+    }]
   }
 
   const shop = {
@@ -79,5 +81,29 @@ test('#handlePurchase calls action to change player state', () => {
   instance.handleSelect(item)
   instance.handlePurchase()
   expect(startAddInventoryItem).toHaveBeenLastCalledWith('miscellaneous', item)
-  expect(startDebitPlayer).toHaveBeenLastCalledWith(item.properties.price)
+  expect(startDebitPlayer).toHaveBeenLastCalledWith(item.properties[0].price)
+})
+
+test('mapStateToProps', () => {
+
+  let state = {
+    auth: 'fake auth state',
+    shop: 'fake shop state'
+  }
+  expect(mapStateToProps(state).player).toEqual('fake auth state')
+  expect(mapStateToProps(state).shop).toEqual('fake shop state')
+})
+
+test('mapDispatchToProps', () => {
+
+  const dispatch = jest.fn()
+  const addInventoryItem = jest.fn()
+  const startUpdatePlayer = jest.fn()
+
+  expect(mapDispatchToProps(dispatch).startAddInventoryItem(0,0))
+  expect(mapDispatchToProps(dispatch).startDebitPlayer(0))
+
+  expect(dispatch.mock.calls[0][0]).toEqual(expect.any(Function))
+  expect(dispatch.mock.calls[1][0]).toEqual(expect.any(Function))
+
 })

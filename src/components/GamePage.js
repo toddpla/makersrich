@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import { firebase } from '../firebase/firebase'
 import Player from './Player';
@@ -14,7 +15,10 @@ import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
+import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
+import { startSendNewsfeedMessage } from '../actions/newsfeed'
+import Instructions from './Instructions'
 
 
 const customStyles = {
@@ -25,6 +29,8 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
+    background            : 'none',
+    border                : 'none'
   }
 };
 
@@ -36,19 +42,23 @@ export class GamePage extends Component {
     this.state = {
       modalIsOpen: false,
       modalComponent: 'undefined',
+      battle: props.player.battle
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
-  openModal(popUpMessage) {
-    if (!this.state.modalIsOpen) {
-      this.setState({
-        modalIsOpen: true,
-        ...popUpMessage
-      });
-    }
+  componentDidUpdate() {
+    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <RPS />})
+  }
+
+  // modal tings
+  openModal(params) {
+    this.setState({
+      modalIsOpen: true,
+      ...params
+    });
   }
 
   closeModal() {
@@ -64,8 +74,14 @@ export class GamePage extends Component {
     }
     this.props.opponents.forEach(opponent => {
       if (opponent.left === player.left && opponent.top === player.top) {
-        this.startBattle({playerOneUid: player.uid, playerTwoUid: opponent.uid})
-        this.handlePopupRPS()
+        const playerInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+        const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+        Promise.all([playerInBattle, opponentInBattle]).then((values) => {
+          if(values.filter(value => value).length === 0) {
+            database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
+            database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
+          }
+        })
       }
     })
     switch(this.checkPortal(updates.left , updates.top)) {
@@ -81,7 +97,6 @@ export class GamePage extends Component {
   checkImpassable = (updates) => {
     const x = updates.left
     const y = updates.top
-
     const impassablePos = this.props.map.impassable.filter((object) => object.x === x && object.y === y)[0]
     return (impassablePos !== undefined) ? false : true
   }
@@ -109,12 +124,14 @@ export class GamePage extends Component {
   }
 
   handlePopupQuiz = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} entered the Quiz house thing!`)
     this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
   handlePopupRPS = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} joined a RPS showdown!!`)
     this.openModal({modalComponent: <RPS />})
   }
 
@@ -131,7 +148,18 @@ export class GamePage extends Component {
   }
 
   handlePopupShop = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} is shopping in Muxworthy's!`)
     this.openModal({modalComponent: <Shop />})
+  }
+
+  handlePopupInstructions = () => {
+    this.openModal({modalComponent: <Instructions />})
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.closeModal() }
+    })
   }
 
   render() {
@@ -145,7 +173,6 @@ export class GamePage extends Component {
 
 
         <Map>
-
         </Map>
 
         <Player player={this.props.player}
@@ -176,14 +203,15 @@ export class GamePage extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   map: state.map,
   player: state.auth,
   opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid)
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
