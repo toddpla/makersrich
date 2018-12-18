@@ -14,7 +14,6 @@ export class Inventory extends React.Component {
 
   handleSelect = (item) => {
     this.setState({selected: item})
-    console.log(this.state);
   }
 
   render() {

@@ -209,13 +209,13 @@ export class GamePage extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   map: state.map,
   player: state.auth,
   opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid)
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
 })
