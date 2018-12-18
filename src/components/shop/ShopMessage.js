@@ -10,6 +10,7 @@ class ShopMessage extends Component {
           <div id="item-image" className={`shop-selected-item ${this.props.item.properties[0].type}`}></div>
           <div id="muxworthys-opinion">{this.props.item.properties[0].value}</div>
           <div id="item-price">Price: {this.props.item.properties[0].price}Cash</div>
+
           <div id="purchase-item-button" onClick={this.props.handlePurchase}>BUY</div>
         </div>
       )
