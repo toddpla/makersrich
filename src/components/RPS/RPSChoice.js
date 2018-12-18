@@ -8,7 +8,7 @@ class RPSChoice extends Component {
 
   render() {
     return (
-      <button value={this.props.value} onClick={this.handleClick}> {this.props.value}</button>
+      <div className={`rps-choice ${this.props.value}`} value={this.props.value} onClick={this.handleClick}></div>
     );
   }
 }
