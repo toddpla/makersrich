@@ -29,6 +29,10 @@ const customStyles = {
   }
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Changes impassable, mineable, portals and signs layers
 
 export class GamePage extends Component {
 
