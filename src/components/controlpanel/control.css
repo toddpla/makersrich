@@ -1,0 +1,82 @@
+#control-panel {
+  position: absolute;
+  width: 295px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-left: 5px solid darkgoldenrod
+}
+
+
+.control-panel-button {
+  color: darkgoldenrod;
+  background-color: black;
+  width: 50%;
+  height: 30px;
+  font-family: inherit;
+  font-size: 1.3em;
+}
+
+.control-panel-button:hover {
+  box-shadow: 2px 2px darkgoldenrod
+}
+
+
+/* STATUS BAR */
+
+#player-status-bar {
+  text-align: center;
+  color: white;
+}
+
+.status-bar-image {
+  background-size: 30px;
+  width: 50px;
+  height: 29px;
+  text-align: right;
+  background-position: left;
+}
+
+.cash-status {
+  background-size: 20px;
+  width: 60px;
+  height: 29px;
+  text-align: right;
+  background-position: left;
+}
+
+.status-count {
+  text-align: center;
+  width: 73px;
+  height: 40px;
+  float: right;
+  font-size: 1.4em;
+}
+
+/* NEWSFEED SECTION */
+
+#newsfeed-assemble {
+  position: absolute;
+  text-align: center;
+  color: white;
+  height: 150px;
+  width: 95%;
+  top: 100px;
+}
+
+.newsfeed-message {
+  padding: 2px;
+}
+
+.control-panel-button {
+  color: darkgoldenrod;
+  background-color: black;
+  width: 50%;
+  height: 30px;
+  font-family: inherit;
+  font-size: 1.3em;
+}
+
+.control-panel-button:hover {
+  box-shadow: 2px 2px darkgoldenrod
+}
