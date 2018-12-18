@@ -18,5 +18,8 @@ exports[`gamepage renders correctly 1`] = `
   >
     Leaderboard
   </button>
+  <div
+    className="newsfeed-assemble"
+  />
 </div>
 `;
