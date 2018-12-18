@@ -1,35 +1,52 @@
 export default [
        {
         "height":16,
-        "id":109,
-        "name":"quiz",
+        "id":19824,
+        "name":"sign_1",
         "properties":[
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Wizard's Dwelling. Enter here to test your knowledge."
+                "value":"Wizard's Dwelling. Please complete your thesis before entering"
                }],
         "rotation":0,
         "type":"sign",
         "visible":true,
         "width":16,
-        "x":256,
-        "y":224
+        "x":272,
+        "y":368
        },
        {
         "height":16,
-        "id":110,
-        "name":"shop",
+        "id":19825,
+        "name":"sign_2",
         "properties":[
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Welcome to Muxworthy's General Store"
+                "value":"In this grave does lie our fallen comrade Nikolai"
                }],
         "rotation":0,
         "type":"sign",
         "visible":true,
         "width":16,
-        "x":448,
-        "y":256
+        "x":688,
+        "y":208
+       },
+       {
+        "height":16,
+        "id":19826,
+        "name":"sign_3",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Console Logging Co. Increasing visibility since 2018"
+               }],
+        "rotation":0,
+        "type":"sign",
+        "visible":true,
+        "width":16,
+        "x":672,
+        "y":592
        }]

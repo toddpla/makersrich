@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppWrapper renders correctly 1`] = `
-<div
-  className="sc-ifAKCX jdioGa"
-/>
-`;
-
 exports[`gamepage renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
@@ -55,43 +49,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <ControlPanel
-          handlePopupLeaderboard={[Function]}
-          handlePopupLevelPlayersList={[Function]}
+        <Map />,
+        <Connect(Player)
+          checkSign={[Function]}
+          closeModal={[Function]}
+          handleMovement={[Function]}
+          handlePopupInstructions={[Function]}
+          handlePopupInventory={[Function]}
+          handlePopupMessage={[Function]}
+          handlePopupRPS={[Function]}
+          notOnMap={false}
+          player="player"
         />,
-        <MapProvider
-          mapUrl="/assets/POWLevel1.json"
-          style={
-            Object {
-              "margin": "auto",
-            }
-          }
-        >
-          <ForwardRef>
-            <Unknown
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "scale(1)",
-                }
-              }
-            >
-              <div>
-                <Connect(Player)
-                  checkSign={[Function]}
-                  closeModal={[Function]}
-                  handleMovement={[Function]}
-                  handlePopupInstructions={[Function]}
-                  handlePopupInventory={[Function]}
-                  handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
-                  notOnMap={false}
-                  player="player"
-                />
-              </div>
-            </Unknown>
-          </ForwardRef>
-        </MapProvider>,
         <Modal
           ariaHideApp={false}
           bodyOpenClassName="ReactModal__Body--open"
@@ -120,12 +89,17 @@ ShallowWrapper {
             }
           }
         >
+          undefined
           <div
             className="modal-button"
             onClick={[Function]}
           />
         </Modal>,
       ],
+      "style": Object {
+        "margin": "20px auto",
+        "position": "relative",
+      },
     },
     "ref": null,
     "rendered": Array [
@@ -133,9 +107,25 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
         "props": Object {
-          "handlePopupLeaderboard": [Function],
-          "handlePopupLevelPlayersList": [Function],
+          "checkSign": [Function],
+          "closeModal": [Function],
+          "handleMovement": [Function],
+          "handlePopupInstructions": [Function],
+          "handlePopupInventory": [Function],
+          "handlePopupMessage": [Function],
+          "handlePopupRPS": [Function],
+          "notOnMap": false,
+          "player": "player",
         },
         "ref": null,
         "rendered": null,
@@ -146,172 +136,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <ForwardRef>
-            <Unknown
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "scale(1)",
-                }
-              }
-            >
-              <div>
-                <Connect(Player)
-                  checkSign={[Function]}
-                  closeModal={[Function]}
-                  handleMovement={[Function]}
-                  handlePopupInstructions={[Function]}
-                  handlePopupInventory={[Function]}
-                  handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
-                  notOnMap={false}
-                  player="player"
-                />
-              </div>
-            </Unknown>
-          </ForwardRef>,
-          "mapUrl": "/assets/POWLevel1.json",
-          "style": Object {
-            "margin": "auto",
-          },
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <Unknown
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "scale(1)",
-                }
-              }
-            >
-              <div>
-                <Connect(Player)
-                  checkSign={[Function]}
-                  closeModal={[Function]}
-                  handleMovement={[Function]}
-                  handlePopupInstructions={[Function]}
-                  handlePopupInventory={[Function]}
-                  handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
-                  notOnMap={false}
-                  player="player"
-                />
-              </div>
-            </Unknown>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <div>
-                <Connect(Player)
-                  checkSign={[Function]}
-                  closeModal={[Function]}
-                  handleMovement={[Function]}
-                  handlePopupInstructions={[Function]}
-                  handlePopupInventory={[Function]}
-                  handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
-                  notOnMap={false}
-                  player="player"
-                />
-              </div>,
-              "style": Object {
-                "position": "relative",
-                "transform": "scale(1)",
-              },
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <Connect(Player)
-                    checkSign={[Function]}
-                    closeModal={[Function]}
-                    handleMovement={[Function]}
-                    handlePopupInstructions={[Function]}
-                    handlePopupInventory={[Function]}
-                    handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
-                    notOnMap={false}
-                    player="player"
-                  />,
-                  Array [],
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "checkSign": [Function],
-                    "closeModal": [Function],
-                    "handleMovement": [Function],
-                    "handlePopupInstructions": [Function],
-                    "handlePopupInventory": [Function],
-                    "handlePopupMessage": [Function],
-                    "handlePopupRPS": [Function],
-                    "notOnMap": false,
-                    "player": "player",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": "div",
-            },
-            "type": [Function],
-          },
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "sc-ifAKCX",
-              "isStatic": true,
-              "rules": Array [
-                "
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1117;
-",
-              ],
-            },
-            "displayName": "styled.div",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-ifAKCX",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          },
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
           "ariaHideApp": false,
           "bodyOpenClassName": "ReactModal__Body--open",
           "children": Array [
-            undefined,
+            "undefined",
             <div
               className="modal-button"
               onClick={[Function]}
@@ -344,7 +172,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          undefined,
+          "undefined",
           Object {
             "instance": null,
             "key": undefined,
@@ -370,43 +198,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <ControlPanel
-            handlePopupLeaderboard={[Function]}
-            handlePopupLevelPlayersList={[Function]}
+          <Map />,
+          <Connect(Player)
+            checkSign={[Function]}
+            closeModal={[Function]}
+            handleMovement={[Function]}
+            handlePopupInstructions={[Function]}
+            handlePopupInventory={[Function]}
+            handlePopupMessage={[Function]}
+            handlePopupRPS={[Function]}
+            notOnMap={false}
+            player="player"
           />,
-          <MapProvider
-            mapUrl="/assets/POWLevel1.json"
-            style={
-              Object {
-                "margin": "auto",
-              }
-            }
-          >
-            <ForwardRef>
-              <Unknown
-                style={
-                  Object {
-                    "position": "relative",
-                    "transform": "scale(1)",
-                  }
-                }
-              >
-                <div>
-                  <Connect(Player)
-                    checkSign={[Function]}
-                    closeModal={[Function]}
-                    handleMovement={[Function]}
-                    handlePopupInstructions={[Function]}
-                    handlePopupInventory={[Function]}
-                    handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
-                    notOnMap={false}
-                    player="player"
-                  />
-                </div>
-              </Unknown>
-            </ForwardRef>
-          </MapProvider>,
           <Modal
             ariaHideApp={false}
             bodyOpenClassName="ReactModal__Body--open"
@@ -435,12 +238,17 @@ ShallowWrapper {
               }
             }
           >
+            undefined
             <div
               className="modal-button"
               onClick={[Function]}
             />
           </Modal>,
         ],
+        "style": Object {
+          "margin": "20px auto",
+          "position": "relative",
+        },
       },
       "ref": null,
       "rendered": Array [
@@ -448,9 +256,25 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
           "props": Object {
-            "handlePopupLeaderboard": [Function],
-            "handlePopupLevelPlayersList": [Function],
+            "checkSign": [Function],
+            "closeModal": [Function],
+            "handleMovement": [Function],
+            "handlePopupInstructions": [Function],
+            "handlePopupInventory": [Function],
+            "handlePopupMessage": [Function],
+            "handlePopupRPS": [Function],
+            "notOnMap": false,
+            "player": "player",
           },
           "ref": null,
           "rendered": null,
@@ -461,172 +285,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <ForwardRef>
-              <Unknown
-                style={
-                  Object {
-                    "position": "relative",
-                    "transform": "scale(1)",
-                  }
-                }
-              >
-                <div>
-                  <Connect(Player)
-                    checkSign={[Function]}
-                    closeModal={[Function]}
-                    handleMovement={[Function]}
-                    handlePopupInstructions={[Function]}
-                    handlePopupInventory={[Function]}
-                    handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
-                    notOnMap={false}
-                    player="player"
-                  />
-                </div>
-              </Unknown>
-            </ForwardRef>,
-            "mapUrl": "/assets/POWLevel1.json",
-            "style": Object {
-              "margin": "auto",
-            },
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <Unknown
-                style={
-                  Object {
-                    "position": "relative",
-                    "transform": "scale(1)",
-                  }
-                }
-              >
-                <div>
-                  <Connect(Player)
-                    checkSign={[Function]}
-                    closeModal={[Function]}
-                    handleMovement={[Function]}
-                    handlePopupInstructions={[Function]}
-                    handlePopupInventory={[Function]}
-                    handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
-                    notOnMap={false}
-                    player="player"
-                  />
-                </div>
-              </Unknown>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": <div>
-                  <Connect(Player)
-                    checkSign={[Function]}
-                    closeModal={[Function]}
-                    handleMovement={[Function]}
-                    handlePopupInstructions={[Function]}
-                    handlePopupInventory={[Function]}
-                    handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
-                    notOnMap={false}
-                    player="player"
-                  />
-                </div>,
-                "style": Object {
-                  "position": "relative",
-                  "transform": "scale(1)",
-                },
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <Connect(Player)
-                      checkSign={[Function]}
-                      closeModal={[Function]}
-                      handleMovement={[Function]}
-                      handlePopupInstructions={[Function]}
-                      handlePopupInventory={[Function]}
-                      handlePopupMessage={[Function]}
-                      handlePopupRPS={[Function]}
-                      notOnMap={false}
-                      player="player"
-                    />,
-                    Array [],
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "checkSign": [Function],
-                      "closeModal": [Function],
-                      "handleMovement": [Function],
-                      "handlePopupInstructions": [Function],
-                      "handlePopupInventory": [Function],
-                      "handlePopupMessage": [Function],
-                      "handlePopupRPS": [Function],
-                      "notOnMap": false,
-                      "player": "player",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": "div",
-              },
-              "type": [Function],
-            },
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "attrs": Array [],
-              "componentStyle": ComponentStyle {
-                "componentId": "sc-ifAKCX",
-                "isStatic": true,
-                "rules": Array [
-                  "
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1117;
-",
-                ],
-              },
-              "displayName": "styled.div",
-              "foldedComponentIds": Array [],
-              "render": [Function],
-              "styledComponentId": "sc-ifAKCX",
-              "target": "div",
-              "toString": [Function],
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
-            },
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
             "ariaHideApp": false,
             "bodyOpenClassName": "ReactModal__Body--open",
             "children": Array [
-              undefined,
+              "undefined",
               <div
                 className="modal-button"
                 onClick={[Function]}
@@ -659,7 +321,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            undefined,
+            "undefined",
             Object {
               "instance": null,
               "key": undefined,
