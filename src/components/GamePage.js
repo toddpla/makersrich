@@ -152,6 +152,12 @@ export class GamePage extends Component {
           handleMovement={this.handleMovement}
           handlePopupInventory={this.handlePopupInventory}
           closeModal={this.closeModal}
+          handlePopupRPS={this.handlePopupRPS}
+          handlePopupMessage={this.handlePopupMessage}
+          handlePopupInstructions={this.handlePopupInstructions}
+          checkSign={this.checkSign}
+          closeModal={this.closeModal}
+          notOnMap={this.state.modalIsOpen}
         />
 
         <Modal
