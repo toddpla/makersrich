@@ -125,7 +125,7 @@ export class Player extends Component {
       this.props.collectItem(item)
       this.props.startAddInventoryItem(item.type, item)
       this.setState({inPopUp: true})
-      this.props.startSendNewsfeedMessage(`${this.props.player.displayName} found a ${item.type}!`)
+      this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} found a ${item.type}!`)
       this.props.handlePopupMessage(`You found a ${item.type}!`)
     }
   }
