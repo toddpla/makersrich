@@ -99,7 +99,7 @@ ShallowWrapper {
           />,
         ],
         Array [
-          <InventoryListMiscItem
+          <InventoryListItem
             item={
               Object {
                 "properties": Array [
@@ -133,7 +133,7 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "class",
         "props": Object {
-          "handleMessage": undefined,
+          "handleSelect": undefined,
           "item": Object {
             "properties": Array [
               Object {
@@ -152,7 +152,7 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "class",
         "props": Object {
-          "handleMessage": undefined,
+          "handleSelect": undefined,
           "item": Object {
             "properties": Array [
               Object {
@@ -171,7 +171,7 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "class",
         "props": Object {
-          "handleMessage": undefined,
+          "handleSelect": undefined,
           "item": Object {
             "type": "key",
           },
@@ -185,7 +185,7 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "class",
         "props": Object {
-          "handleMessage": undefined,
+          "handleSelect": undefined,
           "item": Object {
             "properties": Array [
               Object {
@@ -250,7 +250,7 @@ ShallowWrapper {
             />,
           ],
           Array [
-            <InventoryListMiscItem
+            <InventoryListItem
               item={
                 Object {
                   "properties": Array [
@@ -284,7 +284,7 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "class",
           "props": Object {
-            "handleMessage": undefined,
+            "handleSelect": undefined,
             "item": Object {
               "properties": Array [
                 Object {
@@ -303,7 +303,7 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "class",
           "props": Object {
-            "handleMessage": undefined,
+            "handleSelect": undefined,
             "item": Object {
               "properties": Array [
                 Object {
@@ -322,7 +322,7 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "class",
           "props": Object {
-            "handleMessage": undefined,
+            "handleSelect": undefined,
             "item": Object {
               "type": "key",
             },
@@ -336,7 +336,7 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "class",
           "props": Object {
-            "handleMessage": undefined,
+            "handleSelect": undefined,
             "item": Object {
               "properties": Array [
                 Object {

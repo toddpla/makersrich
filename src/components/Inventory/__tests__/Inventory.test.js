@@ -19,7 +19,7 @@ test('it renders Inventory', () => {
 
 test('#handleMessage changes message state', () => {
   const instance = wrapper.instance()
-  expect(wrapper.state.message).toEqual(undefined)
-  instance.handleMessage("message")
-  expect(instance.state.message).toEqual('message')
+  expect(wrapper.state.selected).toEqual(undefined)
+  instance.handleSelect("item")
+  expect(instance.state.selected).toEqual('item')
 })

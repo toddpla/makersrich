@@ -8,12 +8,12 @@ test('it displays all info when item selected', () => {
 
   const item = {
     type: 'miscellaneous',
-    properties: {
+    properties: [{
       message: 'Message!',
       price: 10,
       name: 'Cheese',
       type: 'cheese'
-    }
+    }]
   }
 
   renderer.render(<ShopItem item={item}/>)
@@ -28,12 +28,12 @@ test('#changeSelected changes item selected', () => {
 
   const item = {
     type: 'miscellaneous',
-    properties: {
+    properties: [{
       message: 'Message!',
       price: 10,
       name: 'Cheese',
       type: 'cheese'
-    }
+    }]
   }
 
   let wrapper = shallow(

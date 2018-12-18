@@ -3,13 +3,13 @@ import { shallow } from 'enzyme'
 import InventoryListItem from '../InventoryListItem'
 import player from '../../../test/fixtures/playerWithInventory'
 
-let wrapper, item, handleMessage
+let wrapper, item, handleSelect
 
 beforeEach(function() {
-  handleMessage = jest.fn();
+  handleSelect = jest.fn();
   item = player.inventory.bean[0]
   wrapper = shallow(
-    <InventoryListItem item={item} handleMessage={handleMessage}/>
+    <InventoryListItem item={item} handleSelect={handleSelect}/>
   )
 });
 
@@ -17,20 +17,20 @@ test('it renders InventoryListItem', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
-test('#changeMessage changes message in inventory with item messsage', () => {
+test('#changeSelect changes message in inventory with item messsage', () => {
   item = player.inventory.bean[0]
   wrapper = shallow(
-    <InventoryListItem item={item} handleMessage={handleMessage}/>
+    <InventoryListItem item={item} handleSelect={handleSelect}/>
   )
   wrapper.find('.inventory-list-item').simulate('click')
-  expect(handleMessage).toHaveBeenLastCalledWith("This is a bean")
+  expect(handleSelect).toHaveBeenLastCalledWith(item)
 })
 
-test('#changeMessage shows type of item when item has no message', () => {
+test('#changeSelect shows type of item when item has no message', () => {
   item = player.inventory.key[0]
   wrapper = shallow(
-    <InventoryListItem item={item} handleMessage={handleMessage}/>
+    <InventoryListItem item={item} handleSelect={handleSelect}/>
   )
   wrapper.find('.inventory-list-item').simulate('click')
-  expect(handleMessage).toHaveBeenLastCalledWith("This is a key")
+  expect(handleSelect).toHaveBeenLastCalledWith(item)
 })

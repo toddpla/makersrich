@@ -17,7 +17,7 @@ export class Shop extends Component {
 
   handlePurchase = () => {
     this.props.startAddInventoryItem(this.state.selected.type, this.state.selected)
-    this.props.startDebitPlayer(this.state.selected.properties.price)
+    this.props.startDebitPlayer(this.state.selected.properties[0].price)
   }
 
   handleSelect = (item) => {
