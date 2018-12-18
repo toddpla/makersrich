@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
-import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
@@ -29,10 +28,6 @@ const customStyles = {
   }
 };
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Changes impassable, mineable, portals and signs layers
 
 export class GamePage extends Component {
 
