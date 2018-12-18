@@ -7,7 +7,7 @@ import { collectItem, digTile, unDigTile } from '../actions/map'
 
 import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
-import coin from '../assets/spinning_coin.gif'
+import SpinningCoin from '../assets/spinning_coin_16px.gif'
 
 export class Player extends Component {
 
@@ -135,6 +135,20 @@ export class Player extends Component {
 
   render() {
     return (
+      <div>
+      <div id="coinContainer"
+        style={{
+          position: 'absolute',
+          width: '16px',
+          height: '16px',
+          backgroundImage: `url(${SpinningCoin})`,
+          backgroundPosition: 'center',
+          zIndex: 1,
+          top: this.props.player.top - 16,
+          left: this.props.player.left
+        }}>
+      </div>
+
       <div id="player"
         style={{
           position: 'absolute',
@@ -147,6 +161,7 @@ export class Player extends Component {
           zIndex: 1
         }}
       >
+      </div>
       </div>
     );
   }
