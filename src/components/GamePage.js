@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
-import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
@@ -16,6 +15,7 @@ import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import opponentsSelector from '../selectors/opponents'
+import Map from './Map'
 
 const customStyles = {
   content : {
@@ -35,6 +35,9 @@ export const AppWrapper = styled.div`
   align-items: center;
   background-color: #1c1117;
 `
+
+Modal.setAppElement('#root')
+
 
 export class GamePage extends Component {
 
