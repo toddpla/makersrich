@@ -43,12 +43,13 @@ test('should create the login action object with defaults', () => {
         bean: [],
         key: [],
       },
+      questions: [],
       ...currentPlayer,
     }
   })
 })
 
-test('should get player data from database and initialise with deafults', (done) => {
+test('should get player data from database and initialise with defaults', (done) => {
   store.dispatch(startLogin(uid)).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({
@@ -59,6 +60,7 @@ test('should get player data from database and initialise with deafults', (done)
           bean: [],
           key: [],
         },
+        questions: [],
         ...currentPlayer
       }
     })
