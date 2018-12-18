@@ -14,6 +14,7 @@ export class Header extends React.Component {
     return (
       <header>
         <button className="logout-button" onClick={this.handleLogout}>Logout</button>
+        <h1 className="title-heading">MAKERSRICH</h1>
       </header>
     )
   }
