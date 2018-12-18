@@ -43,6 +43,9 @@ ShallowWrapper {
         <p>
           Press 'I' to open/close your inventory
         </p>,
+        <p>
+          Press 'Spacebar' to close any pop-ups
+        </p>,
       ],
     },
     "ref": null,
@@ -152,6 +155,17 @@ ShallowWrapper {
         "rendered": "Press 'I' to open/close your inventory",
         "type": "p",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Press 'Spacebar' to close any pop-ups",
+        },
+        "ref": null,
+        "rendered": "Press 'Spacebar' to close any pop-ups",
+        "type": "p",
+      },
     ],
     "type": "div",
   },
@@ -186,6 +200,9 @@ ShallowWrapper {
           </p>,
           <p>
             Press 'I' to open/close your inventory
+          </p>,
+          <p>
+            Press 'Spacebar' to close any pop-ups
           </p>,
         ],
       },
@@ -294,6 +311,17 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": "Press 'I' to open/close your inventory",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Press 'Spacebar' to close any pop-ups",
+          },
+          "ref": null,
+          "rendered": "Press 'Spacebar' to close any pop-ups",
           "type": "p",
         },
       ],
