@@ -16,10 +16,6 @@ body {
   font-style:normal;
 }
 
-.map {
-  border: 5px solid darkgoldenrod;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

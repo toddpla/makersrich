@@ -169,8 +169,7 @@ export class GamePage extends Component {
 
         <ControlPanel handlePopupLeaderboard={this.handlePopupLeaderboard}/>
 
-        <Map>
-        </Map>
+        <Map />
 
         <Player player={this.props.player}
           handleMovement={this.handleMovement}
