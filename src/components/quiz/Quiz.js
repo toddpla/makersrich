@@ -3,16 +3,17 @@ import { connect } from 'react-redux'
 import Question from './Question'
 import Answer from './Answer'
 import { startSendResult, startGetQuestion } from '../../actions/quiz'
+import { startUpdatePlayer } from '../../actions/auth'
 
 export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
     this.props.startGetQuestion()
-  }
-
-  state = {
-    questionCount: 0,
+    this.state = {
+      questionCount: 1,
+      correctQuestions: Object.keys(this.props.auth.questions).length
+    }
   }
 
   handleClick = (answerIndex) => {
@@ -21,11 +22,20 @@ export class Quiz extends React.Component {
       questionId: this.props.quiz.id,
       result: answerIndex.toString() === this.props.quiz.correctAnswer
     }
-    this.props.startSendResult({...submission})
+    if (submission.result === true) {
+      this.props.startSendResult({...submission})
+      this.setState({
+        correctQuestions: this.state.correctQuestions + 1
+      })
+    }
+    if (this.state.questionCount % 5 === 0 && this.state.questionCount > 0) {
+      var newLevel = this.state.questionCount / 5
+      this.props.startUpdatePlayer({ level: newLevel })
+    }
     this.props.startGetQuestion(submission.uid)
-    this.setState((prevState) => ({
-      questionCount: prevState.questionCount + 1
-    }))
+    this.setState({
+      questionCount: this.state.questionCount + 1
+    })
     if (this.state.questionCount === 5) {
       alert('you did it fam!')
     }
@@ -55,7 +65,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   startSendResult: (result) => dispatch(startSendResult(result)),
-  startGetQuestion: () => dispatch(startGetQuestion())
+  startGetQuestion: () => dispatch(startGetQuestion()),
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
