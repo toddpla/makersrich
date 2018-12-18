@@ -7,6 +7,7 @@ import { collectItem, digTile, unDigTile } from '../actions/map'
 
 import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
+import coin from '../assets/spinning_coin.gif'
 
 export class Player extends Component {
 
@@ -62,12 +63,25 @@ export class Player extends Component {
       }
     }
   }
-  
+
+  coinAnimation() {
+    console.log(this.props.player.cash);
+  }
+
   possibleCash() {
-    if (Math.random() < 0.25) {
-      this.props.startCreditPlayer(1)
-      console.log("cashcash");
+    var coinCount = 1
+    var chance = Math.random()
+    if (chance < 0.01) {
+      coinCount += 24
+    } else if (chance < 0.1) {
+      coinCount += 9
+    } else if (chance < 0.2) {
+        coinCount += 4
+    } else if (chance < 0.5) {
+        coinCount += 1
     }
+    this.props.startCreditPlayer(coinCount)
+    this.coinAnimation()
   }
 
   digDatDing = (x, y) => {
