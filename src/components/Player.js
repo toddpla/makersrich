@@ -64,8 +64,14 @@ export class Player extends Component {
     }
   }
 
-  coinAnimation() {
-    console.log(this.props.player.cash);
+  coinAnimation = () => {
+    var timeout = 2;
+    this.setState({coinCollected: true})
+    setTimeout(this.hideAnimation, 2000)
+  }
+
+  hideAnimation = () => {
+    this.setState({coinCollected: false})
   }
 
   possibleCash() {
@@ -134,20 +140,26 @@ export class Player extends Component {
   }
 
   render() {
-    return (
+      if (this.state.coinCollected) {
+        var button = <div id="coinContainer"
+                  style={{
+                    position: 'absolute',
+                    width: '16px',
+                    height: '16px',
+                    backgroundImage: `url(${SpinningCoin})`,
+                    backgroundPosition: 'center',
+                    zIndex: 1,
+                    top: this.props.player.top - 16,
+                    left: this.props.player.left
+                  }}
+                 >
+        </div>
+      } else { var button = undefined }
+
+      return (
       <div>
-      <div id="coinContainer"
-        style={{
-          position: 'absolute',
-          width: '16px',
-          height: '16px',
-          backgroundImage: `url(${SpinningCoin})`,
-          backgroundPosition: 'center',
-          zIndex: 1,
-          top: this.props.player.top - 16,
-          left: this.props.player.left
-        }}>
-      </div>
+
+      {button}
 
       <div id="player"
         style={{
