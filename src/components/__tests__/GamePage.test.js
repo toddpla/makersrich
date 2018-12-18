@@ -23,7 +23,7 @@ let props = {
 let updates = {left: 0, top: 0}
 
 test('gamepage renders correctly', () => {
-  const gamePage = renderer.create(<GamePage {...props}/>).toJSON();
+  const gamePage = shallow(<GamePage {...props}/>)
   expect(gamePage).toMatchSnapshot();
 });
 
