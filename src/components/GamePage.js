@@ -11,7 +11,7 @@ import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
-import RPS from './RPS/RPS'
+import Battle from './battle/Battle'
 import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
@@ -53,7 +53,7 @@ export class GamePage extends Component {
   }
 
   componentDidUpdate() {
-    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <RPS />})
+    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
   }
 
   // modal tings
@@ -133,9 +133,9 @@ export class GamePage extends Component {
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
-  handlePopupRPS = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} joined a RPS showdown!!`)
-    this.openModal({modalComponent: <RPS />})
+  handlePopupBattle = () => {
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} joined a Battle showdown!!`)
+    this.openModal({modalComponent: <Battle />})
   }
 
   handlePopupMessage = (message) => {
@@ -156,6 +156,7 @@ export class GamePage extends Component {
   }
 
   render() {
+    console.log('GamePage render', this.props.opponents);
     return (
       <div>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
@@ -168,7 +169,7 @@ export class GamePage extends Component {
             <Player player={this.props.player}
               handleMovement={this.handleMovement}
               handlePopupInventory={this.handlePopupInventory}
-              handlePopupRPS={this.handlePopupRPS}
+              handlePopupBattle={this.handlePopupBattle}
               handlePopupMessage={this.handlePopupMessage}
               checkSign={this.checkSign}
               closeModal={this.closeModal}
