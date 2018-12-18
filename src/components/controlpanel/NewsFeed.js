@@ -23,7 +23,8 @@ class NewsFeed extends Component {
 
   render() {
     return (
-      <div id="newsfeed-assemble" >Newsfeed
+      <div id="newsfeed-assemble" >
+      <h1>Newsfeed</h1>
         {this.state.newsfeed.map((item, i) => {
           return (
             <div key={i} className="newsfeed-message">
