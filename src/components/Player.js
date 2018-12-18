@@ -67,7 +67,7 @@ export class Player extends Component {
   coinAnimation = () => {
     var timeout = 2;
     this.setState({coinCollected: true})
-    setTimeout(this.hideAnimation, 2000)
+    setTimeout(this.hideAnimation, 1600)
   }
 
   hideAnimation = () => {
@@ -75,19 +75,19 @@ export class Player extends Component {
   }
 
   possibleCash() {
-    var coinCount = 1
+    var coinCount = 0
     var chance = Math.random()
     if (chance < 0.01) {
       coinCount += 24
     } else if (chance < 0.1) {
       coinCount += 9
-    } else if (chance < 0.2) {
-        coinCount += 4
-    } else if (chance < 0.5) {
-        coinCount += 1
+    } else if (chance < 0.25) {
+      coinCount += 1
     }
-    this.props.startCreditPlayer(coinCount)
-    this.coinAnimation()
+    if (coinCount != 0) {
+      this.props.startCreditPlayer(coinCount)
+      this.coinAnimation()
+    }
   }
 
   digDatDing = (x, y) => {
