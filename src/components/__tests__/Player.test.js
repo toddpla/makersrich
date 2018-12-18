@@ -3,11 +3,12 @@ import { Player } from '../Player'
 import { shallow } from 'enzyme'
 import { SPRITE_SIZE } from '../../constants'
 
-let wrapper, player, handleMovement, handlePopupInstructions
+let wrapper, player, handleMovement, handlePopupInstructions, startCreditPlayer
 
 beforeEach(function() {
   handleMovement = jest.fn()
   handlePopupInstructions = jest.fn()
+  startCreditPlayer= jest.fn()
   player = {
     top: 336,
     left: 400
@@ -17,6 +18,7 @@ beforeEach(function() {
       player={player}
       handleMovement={handleMovement}
       handlePopupInstructions={handlePopupInstructions}
+      startCreditPlayer={startCreditPlayer}
     />
   )
 });
@@ -33,7 +35,6 @@ describe('Player', function() {
   });
 
   describe('movement', function() {
-
 
     it('responds to left', function() {
       const leftEvent = {
@@ -88,4 +89,19 @@ describe('Player', function() {
       expect(handlePopupInstructions).toHaveBeenCalled()
     });
   });
+
+  describe('Collect Coins', function() {
+    it('can recieve 25 coins', function() {
+      instance.possibleCash(0.001)
+      expect(startCreditPlayer).toHaveBeenCalledWith(25)
+    });
+    it('can recieve 5 coins', function() {
+      instance.possibleCash(0.09)
+      expect(startCreditPlayer).toHaveBeenCalledWith(5)
+    });
+    it('can recieve a coins', function() {
+      instance.possibleCash(0.24)
+      expect(startCreditPlayer).toHaveBeenCalledWith(1)
+    });
+  })
 });

@@ -12,6 +12,7 @@ ShallowWrapper {
         "top": 336,
       }
     }
+    startCreditPlayer={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -26,20 +27,50 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "id": "player",
-      "style": Object {
-        "backgroundImage": "url(player.png)",
-        "backgroundPosition": "center",
-        "height": "16px",
-        "left": 400,
-        "position": "absolute",
-        "top": 336,
-        "width": "16px",
-        "zIndex": 1,
-      },
+      "children": Array [
+        undefined,
+        <div
+          id="player"
+          style={
+            Object {
+              "backgroundImage": "url(player.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": 400,
+              "position": "absolute",
+              "top": 336,
+              "width": "16px",
+              "zIndex": 1,
+            }
+          }
+        />,
+      ],
     },
     "ref": null,
-    "rendered": null,
+    "rendered": Array [
+      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": "player",
+          "style": Object {
+            "backgroundImage": "url(player.png)",
+            "backgroundPosition": "center",
+            "height": "16px",
+            "left": 400,
+            "position": "absolute",
+            "top": 336,
+            "width": "16px",
+            "zIndex": 1,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -48,20 +79,50 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "id": "player",
-        "style": Object {
-          "backgroundImage": "url(player.png)",
-          "backgroundPosition": "center",
-          "height": "16px",
-          "left": 400,
-          "position": "absolute",
-          "top": 336,
-          "width": "16px",
-          "zIndex": 1,
-        },
+        "children": Array [
+          undefined,
+          <div
+            id="player"
+            style={
+              Object {
+                "backgroundImage": "url(player.png)",
+                "backgroundPosition": "center",
+                "height": "16px",
+                "left": 400,
+                "position": "absolute",
+                "top": 336,
+                "width": "16px",
+                "zIndex": 1,
+              }
+            }
+          />,
+        ],
       },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": "player",
+            "style": Object {
+              "backgroundImage": "url(player.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": 400,
+              "position": "absolute",
+              "top": 336,
+              "width": "16px",
+              "zIndex": 1,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],
