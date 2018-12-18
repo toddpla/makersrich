@@ -171,6 +171,7 @@ export class GamePage extends Component {
         }}
         >
 
+        <ControlPanel />
 
         <Map>
         </Map>
