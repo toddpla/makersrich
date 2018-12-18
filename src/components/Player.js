@@ -17,6 +17,7 @@ export class Player extends Component {
     super(props)
     this.state = {
       inInventory: false,
+      messageOnFocus: false
       level: this.getPlayerLevel(props)
     }
   }
