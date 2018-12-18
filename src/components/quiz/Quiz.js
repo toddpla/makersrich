@@ -19,7 +19,7 @@ export class Quiz extends React.Component {
     const submission = {
       uid: this.props.auth.uid,
       questionId: this.props.quiz.id,
-      result: answerIndex === this.props.correctAnswer
+      result: answerIndex.toString() === this.props.quiz.correctAnswer
     }
     this.props.startSendResult({...submission})
     this.props.startGetQuestion(submission.uid)
