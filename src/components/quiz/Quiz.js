@@ -3,45 +3,72 @@ import { connect } from 'react-redux'
 import Question from './Question'
 import Answer from './Answer'
 import { startSendResult, startGetQuestion } from '../../actions/quiz'
-import { startUpdatePlayer } from '../../actions/auth'
+import { startUpdatePlayer, startDebitPlayer } from '../../actions/auth'
 import { QUESTION_PRICE } from '../../constants'
 
 export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
-    if (this.props.auth.cash >= QUESTION_PRICE ) { this.props.startGetQuestion() }
+    console.log(props);
+
+    if ( this.canAffordQuestion() ) { this.props.startGetQuestion() }
 
     this.state = {
       questionCount: 1,
       correctQuestions: Object.keys(this.props.auth.questions).length
     }
-    console.log(this.props.auth);
   }
 
-  handleClick = (answerIndex) => {
-    const submission = {
-      uid: this.props.auth.uid,
-      questionId: this.props.quiz.id,
-      result: answerIndex.toString() === this.props.quiz.correctAnswer
-    }
+  canAffordQuestion = () => {
+    return this.props.auth.cash >= QUESTION_PRICE
+  }
+
+  sendResultToFirebase = (submission) => {
     if (submission.result === true) {
       this.props.startSendResult({...submission})
       this.setState({
         correctQuestions: this.state.correctQuestions + 1
       })
     }
-    if (this.state.questionCount % 5 === 0 && this.state.questionCount > 0) {
-      var newLevel = this.state.questionCount / 5
-      this.props.startUpdatePlayer({ level: newLevel })
-    }
-    this.props.startGetQuestion(submission.uid)
-    this.setState({
-      questionCount: this.state.questionCount + 1
+  }
+
+  removeQuiz = () => {
+    var quizContainer = document.getElementById('quiz-container')
+    var quiz = document.getElementById('quiz')
+    quizContainer.removeChild(quiz)
+  }
+
+  handleClick = (answerIndex) => {
+    this.props.startDebitPlayer(QUESTION_PRICE).then(() => {
+      const submission = {
+        uid: this.props.auth.uid,
+        questionId: this.props.quiz.id,
+        result: answerIndex.toString() === this.props.quiz.correctAnswer
+      }
+
+      this.sendResultToFirebase(submission)
+
+      if (this.state.questionCount % 5 === 0 && this.state.questionCount > 0) {
+        var newLevel = this.state.questionCount / 5
+        this.props.startUpdatePlayer({ level: newLevel })
+      }
+
+
+      if (this.canAffordQuestion()) {
+        this.props.startGetQuestion(submission.uid)
+      } else {
+        this.removeQuiz()
+        this.render()
+      }
+
+      this.setState({
+        questionCount: this.state.questionCount + 1
+      })
+      if (this.state.questionCount === 5) {
+        alert('you did it fam!')
+      }
     })
-    if (this.state.questionCount === 5) {
-      alert('you did it fam!')
-    }
   }
 
   render() {
@@ -50,12 +77,12 @@ export class Quiz extends React.Component {
       <div id='quiz-container'>
         <h1>Welcome to the quiz!</h1>
           { !(Object.keys(this.props.quiz).length === 0 && this.props.quiz.constructor === Object) && (
-            <div>
+            <div id='quiz'>
               <Question question={this.props.quiz.question}/>
               {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} />)}
             </div>
           )}
-          { (Object.keys(this.props.quiz).length === 0) && (
+          { !(this.canAffordQuestion()) && (
             <div>
               <h2>Come back when you have more money</h2>
             </div>
@@ -74,7 +101,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
   startSendResult: (result) => dispatch(startSendResult(result)),
   startGetQuestion: () => dispatch(startGetQuestion()),
-  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates))
+  startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
+  startDebitPlayer: (amount) => dispatch(startDebitPlayer(amount))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
