@@ -9,7 +9,7 @@ class ShopItem extends Component {
   render() {
     return (
       <div className='shop-item-container'>
-        <div className={`shop-item ${this.props.item.properties.type}`} onClick={this.changeSelected}>
+        <div className={`shop-item ${this.props.item.properties[0].type}`} onClick={this.changeSelected}>
         </div>
       </div>
     );
