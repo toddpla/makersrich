@@ -169,9 +169,7 @@ export class GamePage extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
-        <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
-      <ControlPanel />
+      <ControlPanel handlePopupLeaderboard={this.handlePopupLeaderboard} handlePopupLevelPlayersList={this.handlePopupLevelPlayersList}/>
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>

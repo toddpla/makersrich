@@ -7,19 +7,686 @@ exports[`AppWrapper renders correctly 1`] = `
 `;
 
 exports[`gamepage renders correctly 1`] = `
-<div>
-  <button
-    onClick={[Function]}
-  >
-    Level PLayers
-  </button>
-  <button
-    onClick={[Function]}
-  >
-    Leaderboard
-  </button>
-  <div
-    className="newsfeed-assemble"
-  />
-</div>
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GamePage
+    map={
+      Object {
+        "impassable": Array [
+          Object {
+            "x": 15,
+            "y": 30,
+          },
+        ],
+        "portals": Array [
+          Object {
+            "name": "Shop",
+            "x": 15,
+            "y": 30,
+          },
+        ],
+        "signs": Array [
+          Object {
+            "properties": Array [
+              Object {
+                "value": "This is a sign",
+              },
+            ],
+            "x": 15,
+            "y": 14,
+          },
+        ],
+      }
+    }
+    opponents={Array []}
+    player="player"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <ControlPanel
+          handlePopupLeaderboard={[Function]}
+          handlePopupLevelPlayersList={[Function]}
+        />,
+        <MapProvider
+          mapUrl="/assets/POWLevel1.json"
+          style={
+            Object {
+              "margin": "auto",
+            }
+          }
+        >
+          <ForwardRef>
+            <Unknown
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "scale(1)",
+                }
+              }
+            >
+              <div>
+                <Connect(Player)
+                  checkSign={[Function]}
+                  closeModal={[Function]}
+                  handleMovement={[Function]}
+                  handlePopupInstructions={[Function]}
+                  handlePopupInventory={[Function]}
+                  handlePopupMessage={[Function]}
+                  handlePopupRPS={[Function]}
+                  notOnMap={false}
+                  player="player"
+                />
+              </div>
+            </Unknown>
+          </ForwardRef>
+        </MapProvider>,
+        <Modal
+          ariaHideApp={false}
+          bodyOpenClassName="ReactModal__Body--open"
+          closeTimeoutMS={0}
+          isOpen={false}
+          onRequestClose={[Function]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          role="dialog"
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={true}
+          shouldFocusAfterRender={true}
+          shouldReturnFocusAfterClose={true}
+          style={
+            Object {
+              "content": Object {
+                "bottom": "auto",
+                "left": "50%",
+                "marginRight": "-50%",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
+            }
+          }
+        >
+          <div
+            className="modal-button"
+            onClick={[Function]}
+          />
+        </Modal>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handlePopupLeaderboard": [Function],
+          "handlePopupLevelPlayersList": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <ForwardRef>
+            <Unknown
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "scale(1)",
+                }
+              }
+            >
+              <div>
+                <Connect(Player)
+                  checkSign={[Function]}
+                  closeModal={[Function]}
+                  handleMovement={[Function]}
+                  handlePopupInstructions={[Function]}
+                  handlePopupInventory={[Function]}
+                  handlePopupMessage={[Function]}
+                  handlePopupRPS={[Function]}
+                  notOnMap={false}
+                  player="player"
+                />
+              </div>
+            </Unknown>
+          </ForwardRef>,
+          "mapUrl": "/assets/POWLevel1.json",
+          "style": Object {
+            "margin": "auto",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Unknown
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "scale(1)",
+                }
+              }
+            >
+              <div>
+                <Connect(Player)
+                  checkSign={[Function]}
+                  closeModal={[Function]}
+                  handleMovement={[Function]}
+                  handlePopupInstructions={[Function]}
+                  handlePopupInventory={[Function]}
+                  handlePopupMessage={[Function]}
+                  handlePopupRPS={[Function]}
+                  notOnMap={false}
+                  player="player"
+                />
+              </div>
+            </Unknown>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <div>
+                <Connect(Player)
+                  checkSign={[Function]}
+                  closeModal={[Function]}
+                  handleMovement={[Function]}
+                  handlePopupInstructions={[Function]}
+                  handlePopupInventory={[Function]}
+                  handlePopupMessage={[Function]}
+                  handlePopupRPS={[Function]}
+                  notOnMap={false}
+                  player="player"
+                />
+              </div>,
+              "style": Object {
+                "position": "relative",
+                "transform": "scale(1)",
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Connect(Player)
+                    checkSign={[Function]}
+                    closeModal={[Function]}
+                    handleMovement={[Function]}
+                    handlePopupInstructions={[Function]}
+                    handlePopupInventory={[Function]}
+                    handlePopupMessage={[Function]}
+                    handlePopupRPS={[Function]}
+                    notOnMap={false}
+                    player="player"
+                  />,
+                  Array [],
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "checkSign": [Function],
+                    "closeModal": [Function],
+                    "handleMovement": [Function],
+                    "handlePopupInstructions": [Function],
+                    "handlePopupInventory": [Function],
+                    "handlePopupMessage": [Function],
+                    "handlePopupRPS": [Function],
+                    "notOnMap": false,
+                    "player": "player",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            "type": [Function],
+          },
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-ifAKCX",
+              "isStatic": true,
+              "rules": Array [
+                "
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1117;
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-ifAKCX",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "ariaHideApp": false,
+          "bodyOpenClassName": "ReactModal__Body--open",
+          "children": Array [
+            undefined,
+            <div
+              className="modal-button"
+              onClick={[Function]}
+            />,
+          ],
+          "closeTimeoutMS": 0,
+          "contentLabel": undefined,
+          "isOpen": false,
+          "onAfterOpen": undefined,
+          "onRequestClose": [Function],
+          "parentSelector": [Function],
+          "portalClassName": "ReactModalPortal",
+          "role": "dialog",
+          "shouldCloseOnEsc": true,
+          "shouldCloseOnOverlayClick": true,
+          "shouldFocusAfterRender": true,
+          "shouldReturnFocusAfterClose": true,
+          "style": Object {
+            "content": Object {
+              "bottom": "auto",
+              "left": "50%",
+              "marginRight": "-50%",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "modal-button",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <ControlPanel
+            handlePopupLeaderboard={[Function]}
+            handlePopupLevelPlayersList={[Function]}
+          />,
+          <MapProvider
+            mapUrl="/assets/POWLevel1.json"
+            style={
+              Object {
+                "margin": "auto",
+              }
+            }
+          >
+            <ForwardRef>
+              <Unknown
+                style={
+                  Object {
+                    "position": "relative",
+                    "transform": "scale(1)",
+                  }
+                }
+              >
+                <div>
+                  <Connect(Player)
+                    checkSign={[Function]}
+                    closeModal={[Function]}
+                    handleMovement={[Function]}
+                    handlePopupInstructions={[Function]}
+                    handlePopupInventory={[Function]}
+                    handlePopupMessage={[Function]}
+                    handlePopupRPS={[Function]}
+                    notOnMap={false}
+                    player="player"
+                  />
+                </div>
+              </Unknown>
+            </ForwardRef>
+          </MapProvider>,
+          <Modal
+            ariaHideApp={false}
+            bodyOpenClassName="ReactModal__Body--open"
+            closeTimeoutMS={0}
+            isOpen={false}
+            onRequestClose={[Function]}
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            role="dialog"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+            style={
+              Object {
+                "content": Object {
+                  "bottom": "auto",
+                  "left": "50%",
+                  "marginRight": "-50%",
+                  "right": "auto",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                },
+              }
+            }
+          >
+            <div
+              className="modal-button"
+              onClick={[Function]}
+            />
+          </Modal>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handlePopupLeaderboard": [Function],
+            "handlePopupLevelPlayersList": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <ForwardRef>
+              <Unknown
+                style={
+                  Object {
+                    "position": "relative",
+                    "transform": "scale(1)",
+                  }
+                }
+              >
+                <div>
+                  <Connect(Player)
+                    checkSign={[Function]}
+                    closeModal={[Function]}
+                    handleMovement={[Function]}
+                    handlePopupInstructions={[Function]}
+                    handlePopupInventory={[Function]}
+                    handlePopupMessage={[Function]}
+                    handlePopupRPS={[Function]}
+                    notOnMap={false}
+                    player="player"
+                  />
+                </div>
+              </Unknown>
+            </ForwardRef>,
+            "mapUrl": "/assets/POWLevel1.json",
+            "style": Object {
+              "margin": "auto",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Unknown
+                style={
+                  Object {
+                    "position": "relative",
+                    "transform": "scale(1)",
+                  }
+                }
+              >
+                <div>
+                  <Connect(Player)
+                    checkSign={[Function]}
+                    closeModal={[Function]}
+                    handleMovement={[Function]}
+                    handlePopupInstructions={[Function]}
+                    handlePopupInventory={[Function]}
+                    handlePopupMessage={[Function]}
+                    handlePopupRPS={[Function]}
+                    notOnMap={false}
+                    player="player"
+                  />
+                </div>
+              </Unknown>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <div>
+                  <Connect(Player)
+                    checkSign={[Function]}
+                    closeModal={[Function]}
+                    handleMovement={[Function]}
+                    handlePopupInstructions={[Function]}
+                    handlePopupInventory={[Function]}
+                    handlePopupMessage={[Function]}
+                    handlePopupRPS={[Function]}
+                    notOnMap={false}
+                    player="player"
+                  />
+                </div>,
+                "style": Object {
+                  "position": "relative",
+                  "transform": "scale(1)",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Connect(Player)
+                      checkSign={[Function]}
+                      closeModal={[Function]}
+                      handleMovement={[Function]}
+                      handlePopupInstructions={[Function]}
+                      handlePopupInventory={[Function]}
+                      handlePopupMessage={[Function]}
+                      handlePopupRPS={[Function]}
+                      notOnMap={false}
+                      player="player"
+                    />,
+                    Array [],
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "checkSign": [Function],
+                      "closeModal": [Function],
+                      "handleMovement": [Function],
+                      "handlePopupInstructions": [Function],
+                      "handlePopupInventory": [Function],
+                      "handlePopupMessage": [Function],
+                      "handlePopupRPS": [Function],
+                      "notOnMap": false,
+                      "player": "player",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+              "type": [Function],
+            },
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-ifAKCX",
+                "isStatic": true,
+                "rules": Array [
+                  "
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1117;
+",
+                ],
+              },
+              "displayName": "styled.div",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-ifAKCX",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "ariaHideApp": false,
+            "bodyOpenClassName": "ReactModal__Body--open",
+            "children": Array [
+              undefined,
+              <div
+                className="modal-button"
+                onClick={[Function]}
+              />,
+            ],
+            "closeTimeoutMS": 0,
+            "contentLabel": undefined,
+            "isOpen": false,
+            "onAfterOpen": undefined,
+            "onRequestClose": [Function],
+            "parentSelector": [Function],
+            "portalClassName": "ReactModalPortal",
+            "role": "dialog",
+            "shouldCloseOnEsc": true,
+            "shouldCloseOnOverlayClick": true,
+            "shouldFocusAfterRender": true,
+            "shouldReturnFocusAfterClose": true,
+            "style": Object {
+              "content": Object {
+                "bottom": "auto",
+                "left": "50%",
+                "marginRight": "-50%",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "modal-button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;
