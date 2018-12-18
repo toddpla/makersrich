@@ -49,7 +49,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <ControlPanel />,
+        <ControlPanel
+          handlePopupLeaderboard={[Function]}
+        />,
         <Map />,
         <Connect(Player)
           checkSign={[Function]}
@@ -108,7 +110,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "handlePopupLeaderboard": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -208,7 +212,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <ControlPanel />,
+          <ControlPanel
+            handlePopupLeaderboard={[Function]}
+          />,
           <Map />,
           <Connect(Player)
             checkSign={[Function]}
@@ -267,7 +273,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "handlePopupLeaderboard": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
