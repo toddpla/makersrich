@@ -183,6 +183,11 @@ export class GamePage extends Component {
           notOnMap={this.state.modalIsOpen}
         />
 
+        <div>
+        <ControlPanel
+          handlePopupLeaderboard={this.handlePopupLeaderboard}/>
+          </div>
+      
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
@@ -195,10 +200,6 @@ export class GamePage extends Component {
           <div className="modal-button" onClick={this.closeModal}></div>
         </Modal>
 
-        <div>
-        <ControlPanel
-          handlePopupLeaderboard={this.handlePopupLeaderboard}/>
-          </div>
         </div>
     );
   }
