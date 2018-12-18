@@ -1,6 +1,73 @@
-.Inventory {
-  background-image: url(process.env.PUBLIC_URL '../../Inventory.png'); */
+#inventory-box {
+  width: 800px;
+  height: 640px;
+  background-image: url('/assets/quizzical.png');
+  border: 7px solid #e1c699;
+}
+
+#inventory-list-box {
+  text-align: center;
+  width: 400px;
+  height: 640px;
+  line-height: 1.5em;
+  position: absolute;
+  border-right: 7px solid #e1c699
+}
+
+.inventory-list-item {
+  display: inline-block;
+  position: relative;
+  padding-top: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.inventory-item-message {
+  text-align: center;
+  left: 427px;
+  height: 640px;
+  width: 300px;
+  position: absolute;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 1.5em;
+}
+
+.ruby {
+  background-image: url('/assets/ruby.png');
+  width: 40px;
+  height: 40px;
   background-repeat: no-repeat;
-  background-size: 100px;
-  font-weight: bold;
+  background-size: 40px;
+  background-position: center;
+}
+
+.bean {
+  background-image: url('/assets/bean.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+}
+
+.key {
+  background-image: url('/assets/key.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+}
+
+.inventory-selected-item {
+  position: absolute;
+  top:230px;
+  right: 162px;
+  width: 70px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: 70px;
+  background-position: center;
 }

@@ -6,7 +6,7 @@ let wrapper
 
 beforeEach(function() {
   wrapper = shallow(
-    <InventoryMessage message={'message'}/>
+    <InventoryMessage selected={'item'}/>
   )
 });
 

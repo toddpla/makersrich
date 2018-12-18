@@ -4,6 +4,7 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
+      "!**/index.js",
       "!**/routers/**",
       "!**/coverage/**",
       "!**/public/**",

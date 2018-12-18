@@ -68,7 +68,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <InventoryList
-          handleMessage={[Function]}
+          handleSelect={[Function]}
           inventory={
             Object {
               "bean": Array [
@@ -120,7 +120,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "handleMessage": [Function],
+          "handleSelect": [Function],
           "inventory": Object {
             "bean": Array [
               Object {
@@ -168,7 +168,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "message": undefined,
+          "selected": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -185,7 +185,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <InventoryList
-            handleMessage={[Function]}
+            handleSelect={[Function]}
             inventory={
               Object {
                 "bean": Array [
@@ -237,7 +237,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "handleMessage": [Function],
+            "handleSelect": [Function],
             "inventory": Object {
               "bean": Array [
                 Object {
@@ -285,7 +285,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "message": undefined,
+            "selected": undefined,
           },
           "ref": null,
           "rendered": null,
