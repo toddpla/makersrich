@@ -52,3 +52,16 @@
 .newsfeed-message {
   padding: 2px;
 }
+
+.control-panel-button {
+  color: darkgoldenrod;
+  background-color: black;
+  width: 50%;
+  height: 30px;
+  font-family: inherit;
+  font-size: 1.3em;
+}
+
+.control-panel-button:hover {
+  box-shadow: 2px 2px darkgoldenrod
+}
