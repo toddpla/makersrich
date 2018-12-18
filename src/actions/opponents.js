@@ -6,13 +6,13 @@ export const addOpponent = (opponent) => ({
 })
 
 export const startOnAddOpponent = () => {
-  return (dispatch, getState) => {
-    const player = getState().auth
-    console.log('startOnAddOpponent is running');
+  return (dispatch) => {
     return database.ref('players').on('child_added', (snapshot) => {
       dispatch(addOpponent({
         uid: snapshot.key,
-        ...snapshot.val()
+        connection: database.ref(`players/${snapshot.key}`).on('value', (childSnap) => ({
+          ...childSnap.val()
+        }))
       }))
     })
   }
@@ -24,8 +24,7 @@ export const removeOpponent = (uid) => ({
 })
 
 export const startOnRemoveOpponent = () => {
-  return (dispatch, getState) => {
-    const player = getState().auth
+  return (dispatch) => {
     return database.ref('players').on('child_removed', (snapshot) => {
       dispatch(removeOpponent(snapshot.key))
     })
