@@ -6,6 +6,8 @@ import './leaderboards.css'
 
 export class Leaderboard extends Component {
 
+
+
   render() {
     return (
       <div id="leaderboard-container">
