@@ -10,11 +10,18 @@ class Opponent extends Component {
   }
 
   componentDidMount() {
-    database.ref(`/players/${this.props.opponent.uid}`).on('value', (snapshot) => {
+    const connection = database.ref(`/players/${this.props.opponent.uid}`).on('value', (snapshot) => {
       this.setState({
         ...snapshot.val()
       })
     })
+    this.setState({
+      connection
+    })
+  }
+
+  componentWillUnmount() {
+    database.ref(`/players/${this.props.opponent.uid}`).off("value", this.state.connection); 
   }
 
   render() {
