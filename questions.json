@@ -6,7 +6,7 @@
       "2": "Writing the tests and code side by side",
       "3": "Writing all of the test after the all of the code is written"
     },
-    "correctAnswers": "0",
+    "correctAnswer": "0",
     "question": "What statement best describes test-driven development?"
   },
   "2": {
@@ -16,7 +16,7 @@
       "2": "Simulataneous reaction probability",
       "3": "Single rows pass"
     },
-    "correctAnswers": "1",
+    "correctAnswer": "1",
     "question": "What does SRP stand for?"
   },
   "3": {
@@ -26,7 +26,7 @@
       "2": "Every line should be responsibile for one part of the program",
       "3": "Every variable should be responsibile for one part of the program"
     },
-    "correctAnswers": "1",
+    "correctAnswer": "1",
     "question": "What is the single responsibility principle?"
   },
   "4": {
@@ -36,7 +36,7 @@
       "2": "Object Of Desire",
       "3": "Object Oriented Design"
     },
-    "correctAnswers": "3",
+    "correctAnswer": "3",
     "question": "What does OOD stand for?"
   },
   "5": {
@@ -46,7 +46,7 @@
       "2": "window.fetch()",
       "3": "window.alert()"
     },
-    "correctAnswers": "2",
+    "correctAnswer": "2",
     "question": "Which of the following JavaScript functions are asynchronous?"
   },
   "6": {
@@ -56,7 +56,7 @@
       "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
       "3": "Program is executed line by line. Exection is stopped by errors"
     },
-    "correctAnswers": "2",
+    "correctAnswer": "2",
     "question": "Which of the following best describes asynchronous behaviour?"
   },
   "7": {
@@ -66,7 +66,7 @@
       "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
       "3": "Program is executed line by line. Exection is stopped by errors"
     },
-    "correctAnswers": "1",
+    "correctAnswer": "1",
     "question": "Which of the following best describes synchronous behaviour?"
   },
   "8": {
@@ -76,7 +76,7 @@
       "2": "Create, Read, Update, Delete",
       "3": "Create, Read, Update, Destroy"
     },
-    "correctAnswers": "2",
+    "correctAnswer": "2",
     "question": "What does CRUD stand for?"
   },
   "9": {
@@ -86,7 +86,7 @@
       "2": "Patch",
       "3": "Get"
     },
-    "correctAnswers": "0",
+    "correctAnswer": "0",
     "question": "Which of the following is not a HTTP method?"
   },
   "10": {
@@ -96,7 +96,7 @@
       "2": "CSV",
       "3": "SQL"
     },
-    "correctAnswers": "0",
+    "correctAnswer": "0",
     "question": "What is the most common format for data retrieved from a server by a client?"
   }
 }
