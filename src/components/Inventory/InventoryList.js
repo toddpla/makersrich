@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import InventoryListItem from './InventoryListItem'
-import InventoryListMiscItem from './InventoryListMiscItem'
 
 class InventoryList extends Component {
 
