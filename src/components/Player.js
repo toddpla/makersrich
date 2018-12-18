@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import { collectItem, digTile, unDigTile } from '../actions/map'
 
-import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
+import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 
 export class Player extends Component {
@@ -13,7 +13,7 @@ export class Player extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      inInventory: false,
+      inInventory: false
     }
   }
 
@@ -62,8 +62,17 @@ export class Player extends Component {
       }
     }
   }
+  
+  possibleCash() {
+    if (Math.random() < 0.25) {
+      this.props.startCreditPlayer(1)
+      console.log("cashcash");
+    }
+  }
 
   digDatDing = (x, y) => {
+    this.possibleCash()
+
     var dug = document.createElement("div")
     dug.setAttribute('class', 'dug-up-tile')
     dug.setAttribute('id', x+y)
@@ -140,7 +149,8 @@ const mapDispatchToProps = (dispatch) => ({
   unDigTile: (tile) => dispatch(unDigTile(tile)),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item)),
-  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
+  startCreditPlayer: (amount) => dispatch(startCreditPlayer(amount))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
