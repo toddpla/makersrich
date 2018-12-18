@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
 import { connect } from 'react-redux'
-
 import { collectItem, digTile, unDigTile } from '../actions/map'
-
 import { startAddInventoryItem, startUpdatePlayer } from '../actions/auth'
 
 

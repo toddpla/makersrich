@@ -28,7 +28,6 @@ const customStyles = {
   }
 };
 
-Modal.setAppElement('#root')
 
 export class GamePage extends Component {
 
@@ -36,7 +35,7 @@ export class GamePage extends Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      modalComponenet: 'undefined',
+      modalComponent: 'undefined',
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);

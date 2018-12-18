@@ -28,11 +28,6 @@ test('gamepage renders correctly', () => {
 });
 
 
-test('AppWrapper renders correctly', () => {
-  const appWrapper = renderer.create(<AppWrapper/>).toJSON();
-  expect(appWrapper).toMatchSnapshot();
-});
-
 test('#handleMovement calls action to update player state', () => {
   let wrapper = shallow( <GamePage {...props} startUpdatePlayer={startUpdatePlayer}/> )
   const instance = wrapper.instance()
