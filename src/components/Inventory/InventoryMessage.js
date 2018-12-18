@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Inventory.css'
 
 class InventoryMessage extends Component {
 
@@ -29,16 +30,16 @@ class InventoryMessage extends Component {
   render() {
     if(this.props.selected !== undefined){
       return (
-        <div id="inventory-item-message">
+        <div className="inventory-item-message">
           <h1>Information</h1>
-          <div id="item-type">{this.getName()}</div>
-          <div id="item-image" className={`shop-selected-item ${this.getType()}`}></div>
-          <div>{this.handleMessage()}</div>
+          <div id="inventory-item-type"><h2>{this.getName()}</h2></div>
+          <div id="inventory-item-image" className={`inventory-selected-item ${this.getType()}`}></div>
+          <div className="item-message">{this.handleMessage()}</div>
         </div>
       )
     } else {
       return (
-        <div id="inventory-item-message">This is your inventory</div>
+        <div className="inventory-item-message"><h2>Click on your items to see more</h2></div>
       )
     }
   }
