@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Question from './Question'
 import Answer from './Answer'
 import { startSendResult, startGetQuestion, clearQuiz } from '../../actions/quiz'
-import { startUpdatePlayer, startDebitPlayer } from '../../actions/auth'
+import { startUpdatePlayer, startDebitPlayer, updatePlayer } from '../../actions/auth'
 import { QUESTION_PRICE } from '../../constants'
 
 export class Quiz extends React.Component {
@@ -15,8 +15,7 @@ export class Quiz extends React.Component {
     if ( this.canAffordQuestion() ) { this.props.startGetQuestion() }
 
     this.state = {
-      questionCount: 1,
-      correctQuestions: Object.keys(this.props.auth.questions).length
+      questionCount: 0,
     }
   }
 
@@ -26,12 +25,13 @@ export class Quiz extends React.Component {
 
   sendResultToFirebase = (submission) => {
     if (submission.result === true) {
+      this.props.auth.sessionQuestions.push(submission)
       this.props.startSendResult({...submission})
       this.setState({
         correctQuestions: this.state.correctQuestions + 1
       })
+      }
     }
-  }
 
   removeQuiz = () => {
     var quizContainer = document.getElementById('quiz-container')
@@ -40,27 +40,18 @@ export class Quiz extends React.Component {
   }
 
   handleClick = (answerIndex) => {
-    console.log(this.state);
     this.props.startDebitPlayer(QUESTION_PRICE).then(() => {
       const submission = {
         uid: this.props.auth.uid,
         questionId: this.props.quiz.id,
         result: answerIndex.toString() === this.props.quiz.correctAnswer
       }
-
       this.sendResultToFirebase(submission)
 
-      if (this.state.questionCount % 5 === 0 && this.state.questionCount > 0) {
-        var newLevel = this.state.questionCount / 5
-        this.props.startUpdatePlayer({ level: newLevel })
-      }
-
       this.props.clearQuiz()
-
       if (this.canAffordQuestion()) {
         this.props.startGetQuestion(submission.uid)
       }
-
       this.setState({
         questionCount: this.state.questionCount + 1
       })
@@ -103,7 +94,8 @@ const mapDispatchToProps = dispatch => ({
   startGetQuestion: () => dispatch(startGetQuestion()),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startDebitPlayer: (amount) => dispatch(startDebitPlayer(amount)),
-  clearQuiz: () => dispatch(clearQuiz())
+  clearQuiz: () => dispatch(clearQuiz()),
+  updatePlayer: (updates) => dispatch(updatePlayer(updates))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
