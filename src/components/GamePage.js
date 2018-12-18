@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { firebase } from '../firebase/firebase'
+import database, { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
 import { connect } from 'react-redux'
