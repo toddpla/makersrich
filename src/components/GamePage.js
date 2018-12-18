@@ -164,14 +164,12 @@ export class GamePage extends Component {
         style={{
             position: 'relative',
             margin: '20px auto',
+            border: '5px solid darkgoldenrod'
         }}
         >
 
-        <ControlPanel handlePopupLeaderboard={this.handlePopupLeaderboard}/>
-
         <Map>
         </Map>
-
         <Player player={this.props.player}
           handleMovement={this.handleMovement}
           handlePopupInventory={this.handlePopupInventory}
@@ -183,6 +181,15 @@ export class GamePage extends Component {
           closeModal={this.closeModal}
           notOnMap={this.state.modalIsOpen}
         />
+
+
+        <div>
+        <ControlPanel
+          handlePopupLeaderboard={this.handlePopupLeaderboard}/>
+          </div>
+
+
+
 
         <Modal
           ariaHideApp={false}
