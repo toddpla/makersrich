@@ -7,7 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {font-family:"Munro";src:url("/munro.eot") format("eot"),url("/iimunro.woff") format("woff"),url("/iimunro.ttf") format("truetype"),url("/iimunro.svg#Munro") format("svg");font-weight:normal;font-style:normal;}
+@font-face {
+  font-family:"Munro";
+  src:url("/munro.eot") format("eot"),url("/iimunro.woff") format("woff"),url("/iimunro.ttf") format("truetype"),url("/iimunro.svg#Munro") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
 
 
 .sc-ifAKCX {
