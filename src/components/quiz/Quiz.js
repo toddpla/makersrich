@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
 import Answer from './Answer'
-import { startSendResult, startGetQuestion } from '../../actions/quiz'
+import { startSendResult, startGetQuestion, clearQuiz } from '../../actions/quiz'
 import { startUpdatePlayer, startDebitPlayer } from '../../actions/auth'
 import { QUESTION_PRICE } from '../../constants'
 
@@ -40,6 +40,7 @@ export class Quiz extends React.Component {
   }
 
   handleClick = (answerIndex) => {
+    console.log(this.state);
     this.props.startDebitPlayer(QUESTION_PRICE).then(() => {
       const submission = {
         uid: this.props.auth.uid,
@@ -54,12 +55,10 @@ export class Quiz extends React.Component {
         this.props.startUpdatePlayer({ level: newLevel })
       }
 
+      this.props.clearQuiz()
 
       if (this.canAffordQuestion()) {
         this.props.startGetQuestion(submission.uid)
-      } else {
-        this.removeQuiz()
-        this.render()
       }
 
       this.setState({
@@ -76,13 +75,14 @@ export class Quiz extends React.Component {
     return(
       <div id='quiz-container'>
         <h1>Welcome to the quiz!</h1>
-          { !(Object.keys(this.props.quiz).length === 0 && this.props.quiz.constructor === Object) && (
+          { (Object.keys(this.props.quiz).length !== 0 && this.props.quiz.constructor === Object) ? (
             <div id='quiz'>
               <Question question={this.props.quiz.question}/>
               {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} />)}
             </div>
-          )}
-          { !(this.canAffordQuestion()) && (
+          )
+            :
+          (
             <div>
               <h2>Come back when you have more money</h2>
             </div>
@@ -102,7 +102,8 @@ const mapDispatchToProps = dispatch => ({
   startSendResult: (result) => dispatch(startSendResult(result)),
   startGetQuestion: () => dispatch(startGetQuestion()),
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startDebitPlayer: (amount) => dispatch(startDebitPlayer(amount))
+  startDebitPlayer: (amount) => dispatch(startDebitPlayer(amount)),
+  clearQuiz: () => dispatch(clearQuiz())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
