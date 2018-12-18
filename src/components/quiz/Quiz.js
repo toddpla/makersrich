@@ -4,16 +4,19 @@ import Question from './Question'
 import Answer from './Answer'
 import { startSendResult, startGetQuestion } from '../../actions/quiz'
 import { startUpdatePlayer } from '../../actions/auth'
+import { QUESTION_PRICE } from '../../constants'
 
 export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
-    this.props.startGetQuestion()
+    if (this.props.auth.cash >= QUESTION_PRICE ) { this.props.startGetQuestion() }
+
     this.state = {
       questionCount: 1,
       correctQuestions: Object.keys(this.props.auth.questions).length
     }
+    console.log(this.props.auth);
   }
 
   handleClick = (answerIndex) => {
@@ -50,6 +53,11 @@ export class Quiz extends React.Component {
             <div>
               <Question question={this.props.quiz.question}/>
               {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} />)}
+            </div>
+          )}
+          { (Object.keys(this.props.quiz).length === 0) && (
+            <div>
+              <h2>Come back when you have more money</h2>
             </div>
           )}
       </div>
