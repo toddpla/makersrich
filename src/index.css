@@ -157,3 +157,10 @@ code {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+#player-status-bar {
+  display: inline;
+  float: left;
+  color: white
+
+}
