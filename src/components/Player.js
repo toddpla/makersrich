@@ -74,17 +74,16 @@ export class Player extends Component {
     this.setState({coinCollected: false})
   }
 
-  possibleCash() {
+  possibleCash(chance = Math.random()) {
     var coinCount = 0
-    var chance = Math.random()
     if (chance < 0.01) {
-      coinCount += 24
+      coinCount += 25
     } else if (chance < 0.1) {
-      coinCount += 9
+      coinCount += 5
     } else if (chance < 0.25) {
       coinCount += 1
     }
-    if (coinCount != 0) {
+    if (coinCount !== 0) {
       this.props.startCreditPlayer(coinCount)
       this.coinAnimation()
     }
