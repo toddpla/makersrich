@@ -102,7 +102,6 @@ test('mapDispatchToProps', () => {
 
   expect(mapDispatchToProps(dispatch).startAddInventoryItem(0,0))
   expect(mapDispatchToProps(dispatch).startDebitPlayer(0))
-  console.log(mapDispatchToProps(dispatch.mock.calls));
 
   expect(dispatch.mock.calls[0][0]).toEqual(expect.any(Function))
   expect(dispatch.mock.calls[1][0]).toEqual(expect.any(Function))
