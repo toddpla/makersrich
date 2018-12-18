@@ -15,8 +15,7 @@ import RPS from './RPS/RPS'
 import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
-import NewsFeed from './NewsFeed'
-import StatusBar from './StatusBar'
+import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import Instructions from './Instructions'
@@ -172,8 +171,7 @@ export class GamePage extends Component {
       <div>
         <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
         <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
-      <NewsFeed />
-      <StatusBar />
+      <ControlPanel />
       <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
        <AppWrapper>
         <Map style={{ transform: "scale(1)", position: 'relative' }}>

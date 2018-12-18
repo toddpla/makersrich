@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import database from '../firebase/firebase'
+import database from '../../firebase/firebase'
 
 class NewsFeed extends Component {
 
@@ -23,7 +23,7 @@ class NewsFeed extends Component {
 
   render() {
     return (
-      <div className="newsfeed-assemble" >
+      <div id="newsfeed-assemble" >Newsfeed
         {this.state.newsfeed.map((item, i) => {
           return (
             <div key={i} className="newsfeed-message">
