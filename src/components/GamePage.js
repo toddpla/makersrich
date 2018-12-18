@@ -168,8 +168,10 @@ export class GamePage extends Component {
         }}
         >
 
+
         <Map>
         </Map>
+
         <Player player={this.props.player}
           handleMovement={this.handleMovement}
           handlePopupInventory={this.handlePopupInventory}

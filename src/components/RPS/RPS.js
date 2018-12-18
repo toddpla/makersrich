@@ -5,6 +5,7 @@ import RPSChoice from './RPSChoice'
 import selectRandom from '../../utils/selectRandom'
 import { startCreditPlayer } from '../../actions/auth'
 import { startDebitPlayer } from '../../actions/auth'
+import './rps.css'
 
 class RPS extends Component {
 
@@ -60,13 +61,15 @@ class RPS extends Component {
 
   render() {
     return (
-      <div>
+      <div id="rps-battle-container">
         {this.props.player.battle ? (
           <div className='rps'>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
-            <RPSChoice value='Rock' sendMove={this.sendChoice}/> <br/>
-            <RPSChoice value='Paper' sendMove={this.sendChoice}/> <br/>
-            <RPSChoice value='Scissors' sendMove={this.sendChoice}/>
+            <div id="rps-choices">
+              <RPSChoice value='Rock' sendMove={this.sendChoice}/>
+              <RPSChoice value='Paper' sendMove={this.sendChoice}/>
+              <RPSChoice value='Scissors' sendMove={this.sendChoice}/>
+            </div>
           </div>
         ) : (
           <h1>Game over</h1>

@@ -18,8 +18,6 @@ body {
   font-style:normal;
 }
 
-.map {
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -147,11 +145,6 @@ header {
    font-size: 1.5em;
    font-weight: bold;
  }
-
-.rps {
-  padding-left: 30px;
-  padding-top: 30px
-}
 
 .message {
   width: 160px;
