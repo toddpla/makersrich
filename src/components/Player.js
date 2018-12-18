@@ -41,6 +41,8 @@ export class Player extends Component {
           return this.props.handlePopupRPS()
         case 81:
           return this.props.checkSign(this.props.player.left, this.props.player.top)
+        case 88:
+          return this.props.handlePopupInstructions()
         default:
           console.log(e.keyCode);
       }
