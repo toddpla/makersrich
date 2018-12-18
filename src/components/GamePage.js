@@ -5,7 +5,6 @@ import Opponent from './Opponent'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
-import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
@@ -14,8 +13,9 @@ import RPS from './RPS/RPS'
 import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
-import opponentsSelector from '../selectors/opponents'
 import Map from './Map'
+import opponentsSelector from '../selectors/opponents'
+
 
 const customStyles = {
   content : {
@@ -28,16 +28,7 @@ const customStyles = {
   }
 };
 
-export const AppWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1117;
-`
-
 Modal.setAppElement('#root')
-
 
 export class GamePage extends Component {
 
