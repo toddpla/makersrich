@@ -21,10 +21,10 @@ import { shallow } from 'enzyme'
 
   const item = {
     type: 'miscellaneous',
-    properties: {
+    properties: [{
       price: 10,
       name: 'item'
-    }
+    }]
   }
 
   const shop = {
@@ -79,5 +79,5 @@ test('#handlePurchase calls action to change player state', () => {
   instance.handleSelect(item)
   instance.handlePurchase()
   expect(startAddInventoryItem).toHaveBeenLastCalledWith('miscellaneous', item)
-  expect(startDebitPlayer).toHaveBeenLastCalledWith(item.properties.price)
+  expect(startDebitPlayer).toHaveBeenLastCalledWith(item.properties[0].price)
 })
