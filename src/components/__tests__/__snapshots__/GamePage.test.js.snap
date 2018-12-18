@@ -81,10 +81,10 @@ ShallowWrapper {
                   checkSign={[Function]}
                   closeModal={[Function]}
                   handleMovement={[Function]}
+                  handlePopupBattle={[Function]}
                   handlePopupInstructions={[Function]}
                   handlePopupInventory={[Function]}
                   handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
                   notOnMap={false}
                   player="player"
                 />
@@ -160,10 +160,10 @@ ShallowWrapper {
                   checkSign={[Function]}
                   closeModal={[Function]}
                   handleMovement={[Function]}
+                  handlePopupBattle={[Function]}
                   handlePopupInstructions={[Function]}
                   handlePopupInventory={[Function]}
                   handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
                   notOnMap={false}
                   player="player"
                 />
@@ -194,10 +194,10 @@ ShallowWrapper {
                   checkSign={[Function]}
                   closeModal={[Function]}
                   handleMovement={[Function]}
+                  handlePopupBattle={[Function]}
                   handlePopupInstructions={[Function]}
                   handlePopupInventory={[Function]}
                   handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
                   notOnMap={false}
                   player="player"
                 />
@@ -215,10 +215,10 @@ ShallowWrapper {
                   checkSign={[Function]}
                   closeModal={[Function]}
                   handleMovement={[Function]}
+                  handlePopupBattle={[Function]}
                   handlePopupInstructions={[Function]}
                   handlePopupInventory={[Function]}
                   handlePopupMessage={[Function]}
-                  handlePopupRPS={[Function]}
                   notOnMap={false}
                   player="player"
                 />
@@ -239,10 +239,10 @@ ShallowWrapper {
                     checkSign={[Function]}
                     closeModal={[Function]}
                     handleMovement={[Function]}
+                    handlePopupBattle={[Function]}
                     handlePopupInstructions={[Function]}
                     handlePopupInventory={[Function]}
                     handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
                     notOnMap={false}
                     player="player"
                   />,
@@ -259,10 +259,10 @@ ShallowWrapper {
                     "checkSign": [Function],
                     "closeModal": [Function],
                     "handleMovement": [Function],
+                    "handlePopupBattle": [Function],
                     "handlePopupInstructions": [Function],
                     "handlePopupInventory": [Function],
                     "handlePopupMessage": [Function],
-                    "handlePopupRPS": [Function],
                     "notOnMap": false,
                     "player": "player",
                   },
@@ -396,10 +396,10 @@ ShallowWrapper {
                     checkSign={[Function]}
                     closeModal={[Function]}
                     handleMovement={[Function]}
+                    handlePopupBattle={[Function]}
                     handlePopupInstructions={[Function]}
                     handlePopupInventory={[Function]}
                     handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
                     notOnMap={false}
                     player="player"
                   />
@@ -475,10 +475,10 @@ ShallowWrapper {
                     checkSign={[Function]}
                     closeModal={[Function]}
                     handleMovement={[Function]}
+                    handlePopupBattle={[Function]}
                     handlePopupInstructions={[Function]}
                     handlePopupInventory={[Function]}
                     handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
                     notOnMap={false}
                     player="player"
                   />
@@ -509,10 +509,10 @@ ShallowWrapper {
                     checkSign={[Function]}
                     closeModal={[Function]}
                     handleMovement={[Function]}
+                    handlePopupBattle={[Function]}
                     handlePopupInstructions={[Function]}
                     handlePopupInventory={[Function]}
                     handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
                     notOnMap={false}
                     player="player"
                   />
@@ -530,10 +530,10 @@ ShallowWrapper {
                     checkSign={[Function]}
                     closeModal={[Function]}
                     handleMovement={[Function]}
+                    handlePopupBattle={[Function]}
                     handlePopupInstructions={[Function]}
                     handlePopupInventory={[Function]}
                     handlePopupMessage={[Function]}
-                    handlePopupRPS={[Function]}
                     notOnMap={false}
                     player="player"
                   />
@@ -554,10 +554,10 @@ ShallowWrapper {
                       checkSign={[Function]}
                       closeModal={[Function]}
                       handleMovement={[Function]}
+                      handlePopupBattle={[Function]}
                       handlePopupInstructions={[Function]}
                       handlePopupInventory={[Function]}
                       handlePopupMessage={[Function]}
-                      handlePopupRPS={[Function]}
                       notOnMap={false}
                       player="player"
                     />,
@@ -574,10 +574,10 @@ ShallowWrapper {
                       "checkSign": [Function],
                       "closeModal": [Function],
                       "handleMovement": [Function],
+                      "handlePopupBattle": [Function],
                       "handlePopupInstructions": [Function],
                       "handlePopupInventory": [Function],
                       "handlePopupMessage": [Function],
-                      "handlePopupRPS": [Function],
                       "notOnMap": false,
                       "player": "player",
                     },

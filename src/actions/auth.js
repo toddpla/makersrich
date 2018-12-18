@@ -13,6 +13,7 @@ export const login = (uid, player) => ({
         bean: [],
         key: [],
       },
+      questions: [],
       ...player
     }
 })

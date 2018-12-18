@@ -4,5 +4,6 @@ import { shallow } from 'enzyme'
 import { Battle } from '../Battle'
 
 test('renders correctly', () => {
-  const battle = Battle
+  const battle = shallow(<Battle />)
+  expect(battle).toMatchSnapshot()
 })
