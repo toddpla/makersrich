@@ -23,15 +23,10 @@ let props = {
 let updates = {left: 0, top: 0}
 
 test('gamepage renders correctly', () => {
-  const gamePage = renderer.create(<GamePage {...props}/>).toJSON();
+  const gamePage = shallow(<GamePage {...props}/>)
   expect(gamePage).toMatchSnapshot();
 });
 
-
-test('AppWrapper renders correctly', () => {
-  const appWrapper = renderer.create(<AppWrapper/>).toJSON();
-  expect(appWrapper).toMatchSnapshot();
-});
 
 test('#handleMovement calls action to update player state', () => {
   let wrapper = shallow( <GamePage {...props} startUpdatePlayer={startUpdatePlayer}/> )

@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
 import { connect } from 'react-redux'
-
 import { collectItem, digTile, unDigTile } from '../actions/map'
-
 import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import SpinningCoin from '../assets/spinning_coin_16px.gif'
+
 
 export class Player extends Component {
 
@@ -118,7 +117,7 @@ export class Player extends Component {
     dug.setAttribute('class', 'dug-up-tile')
     dug.setAttribute('id', x+y)
     dug.setAttribute('style', `left:${x}px; top:${y}px` )
-    document.getElementsByClassName('tiled-map')[0].appendChild(dug)
+    document.getElementsByClassName("map")[0].appendChild(dug)
     setTimeout(this.unDigDatDing, 5000, x, y)
   }
 
@@ -148,7 +147,7 @@ export class Player extends Component {
       this.props.collectItem(item)
       this.props.startAddInventoryItem(item.type, item)
       this.setState({inPopUp: true})
-      this.props.startSendNewsfeedMessage(`${this.props.player.displayName} found a ${item.type}!`)
+      this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} found a ${item.type}!`)
       this.props.handlePopupMessage(`You found a ${item.type}!`)
     }
   }
@@ -190,8 +189,7 @@ export class Player extends Component {
           left: this.props.player.left,
           height: '16px',
           backgroundPosition: 'center',
-          backgroundImage: `url(${PlayerImg})`,
-          zIndex: 1
+          backgroundImage: `url(${PlayerImg})`
         }}
       >
       </div>

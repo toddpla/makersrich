@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+
+import React, { Component } from 'react'
 import database, { firebase } from '../firebase/firebase'
 import Player from './Player';
 import Opponent from './Opponent'
-import { MapProvider, Map } from 'react-tiled'
 import { connect } from 'react-redux'
 import { startUpdatePlayer } from '../actions/auth'
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
-import styled from "styled-components";
 import Modal from 'react-modal'
 import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
@@ -15,10 +14,12 @@ import RPS from './RPS/RPS'
 import Message from './Message'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
-import NewsFeed from './NewsFeed'
+import Map from './Map'
+import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import Instructions from './Instructions'
+
 
 const customStyles = {
   content : {
@@ -33,13 +34,6 @@ const customStyles = {
   }
 };
 
-export const AppWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1117;
-`
 
 export class GamePage extends Component {
 
@@ -47,7 +41,7 @@ export class GamePage extends Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      modalComponenet: 'undefined',
+      modalComponent: 'undefined',
       battle: props.player.battle
     };
     this.openModal = this.openModal.bind(this);
@@ -130,14 +124,14 @@ export class GamePage extends Component {
   }
 
   handlePopupQuiz = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} entered the Quiz house thing!`)
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} entered the Quiz house thing!`)
     this.openModal({modalComponent: <Quiz />})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
   handlePopupRPS = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} joined a RPS showdown!!`)
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} joined a RPS showdown!!`)
     this.openModal({modalComponent: <RPS />})
   }
 
@@ -145,16 +139,12 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Message message={message}/>})
   }
 
-  handlePopupLevelPlayersList = () => {
-    this.openModal({modalComponent: <LevelPlayers level={this.props.player.level}/>})
-  }
-
   handlePopupLeaderboard = () => {
     this.openModal({modalComponent: <Leaderboard />})
   }
 
   handlePopupShop = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} is shopping in Muxworthy's!`)
+    this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} is shopping in Muxworthy's!`)
     this.openModal({modalComponent: <Shop />})
   }
 
@@ -170,29 +160,29 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.handlePopupLevelPlayersList}>Level PLayers</button>
-        <button onClick={this.handlePopupLeaderboard}>Leaderboard</button>
-      <NewsFeed />
-      <MapProvider style={{margin: "auto"}}  mapUrl={process.env.PUBLIC_URL + "/assets/POWLevel1.json"}>
-       <AppWrapper>
-        <Map style={{ transform: "scale(1)", position: 'relative' }}>
-          <div>
-            <Player player={this.props.player}
-              handleMovement={this.handleMovement}
-              handlePopupInventory={this.handlePopupInventory}
-              handlePopupRPS={this.handlePopupRPS}
-              handlePopupMessage={this.handlePopupMessage}
-              handlePopupInstructions={this.handlePopupInstructions}
-              checkSign={this.checkSign}
-              closeModal={this.closeModal}
-              notOnMap={this.state.modalIsOpen}
-            />
-          {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
-          </div>
-        </Map>
-       </AppWrapper>
-      </MapProvider>
+      <div
+        style={{
+            position: 'relative',
+            margin: '20px auto',
+        }}
+        >
+
+        <ControlPanel handlePopupLeaderboard={this.handlePopupLeaderboard}/>
+
+        <Map />
+
+        <Player player={this.props.player}
+          handleMovement={this.handleMovement}
+          handlePopupInventory={this.handlePopupInventory}
+          closeModal={this.closeModal}
+          handlePopupRPS={this.handlePopupRPS}
+          handlePopupMessage={this.handlePopupMessage}
+          handlePopupInstructions={this.handlePopupInstructions}
+          checkSign={this.checkSign}
+          closeModal={this.closeModal}
+          notOnMap={this.state.modalIsOpen}
+        />
+
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
