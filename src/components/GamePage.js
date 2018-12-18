@@ -18,6 +18,7 @@ import Leaderboard from './leaderboards/Leaderboard'
 import NewsFeed from './NewsFeed'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
+import Instructions from './Instructions'
 
 const customStyles = {
   content : {
@@ -155,6 +156,10 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Shop />})
   }
 
+  handlePopupInstructions = () => {
+    this.openModal({modalComponent: <Instructions />})
+  }
+
   render() {
     return (
       <div>
@@ -170,6 +175,7 @@ export class GamePage extends Component {
               handlePopupInventory={this.handlePopupInventory}
               handlePopupRPS={this.handlePopupRPS}
               handlePopupMessage={this.handlePopupMessage}
+              handlePopupInstructions={this.handlePopupInstructions}
               checkSign={this.checkSign}
               closeModal={this.closeModal}
               notOnMap={this.state.modalIsOpen}

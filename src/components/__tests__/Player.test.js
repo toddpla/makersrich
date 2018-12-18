@@ -3,10 +3,11 @@ import { Player } from '../Player'
 import { shallow } from 'enzyme'
 import { SPRITE_SIZE } from '../../constants'
 
-let wrapper, player, handleMovement
+let wrapper, player, handleMovement, handlePopupInstructions
 
 beforeEach(function() {
   handleMovement = jest.fn()
+  handlePopupInstructions = jest.fn()
   player = {
     top: 336,
     left: 400
@@ -15,21 +16,24 @@ beforeEach(function() {
     <Player
       player={player}
       handleMovement={handleMovement}
+      handlePopupInstructions={handlePopupInstructions}
     />
   )
 });
 
 describe('Player', function() {
+  let instance
+
+  beforeEach(function() {
+    instance = wrapper.instance()
+  });
+
   it('renders', function() {
     expect(wrapper).toMatchSnapshot();
   });
 
   describe('movement', function() {
-    let instance
 
-    beforeEach(function() {
-      instance = wrapper.instance()
-    });
 
     it('responds to left', function() {
       const leftEvent = {
@@ -73,6 +77,15 @@ describe('Player', function() {
         left: player.left,
         top: player.top + SPRITE_SIZE
       })
+    });
+  });
+  describe('Instructions', function() {
+    it('opens when x is pressed', function() {
+      const instructionsEvent = {
+        keyCode: 88
+      }
+      instance.handleKeyDown(instructionsEvent)
+      expect(handlePopupInstructions).toHaveBeenCalled()
     });
   });
 });
