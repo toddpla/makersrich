@@ -108,6 +108,8 @@ ShallowWrapper {
           style={
             Object {
               "content": Object {
+                "background": "none",
+                "border": "none",
                 "bottom": "auto",
                 "left": "50%",
                 "marginRight": "-50%",
@@ -329,6 +331,8 @@ ShallowWrapper {
           "shouldReturnFocusAfterClose": true,
           "style": Object {
             "content": Object {
+              "background": "none",
+              "border": "none",
               "bottom": "auto",
               "left": "50%",
               "marginRight": "-50%",
@@ -419,6 +423,8 @@ ShallowWrapper {
             style={
               Object {
                 "content": Object {
+                  "background": "none",
+                  "border": "none",
                   "bottom": "auto",
                   "left": "50%",
                   "marginRight": "-50%",
@@ -640,6 +646,8 @@ ShallowWrapper {
             "shouldReturnFocusAfterClose": true,
             "style": Object {
               "content": Object {
+                "background": "none",
+                "border": "none",
                 "bottom": "auto",
                 "left": "50%",
                 "marginRight": "-50%",
