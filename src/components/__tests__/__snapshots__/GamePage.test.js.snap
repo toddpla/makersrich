@@ -49,9 +49,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <ControlPanel
-          handlePopupLeaderboard={[Function]}
-        />,
         <Map />,
         <Connect(Player)
           checkSign={[Function]}
@@ -64,6 +61,11 @@ ShallowWrapper {
           notOnMap={false}
           player="player"
         />,
+        <div>
+          <ControlPanel
+            handlePopupLeaderboard={[Function]}
+          />
+        </div>,
         <Modal
           ariaHideApp={false}
           bodyOpenClassName="ReactModal__Body--open"
@@ -100,23 +102,13 @@ ShallowWrapper {
         </Modal>,
       ],
       "style": Object {
+        "border": "5px solid darkgoldenrod",
         "margin": "20px auto",
         "position": "relative",
       },
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "handlePopupLeaderboard": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -144,6 +136,29 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ControlPanel
+            handlePopupLeaderboard={[Function]}
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handlePopupLeaderboard": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -212,9 +227,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <ControlPanel
-            handlePopupLeaderboard={[Function]}
-          />,
           <Map />,
           <Connect(Player)
             checkSign={[Function]}
@@ -227,6 +239,11 @@ ShallowWrapper {
             notOnMap={false}
             player="player"
           />,
+          <div>
+            <ControlPanel
+              handlePopupLeaderboard={[Function]}
+            />
+          </div>,
           <Modal
             ariaHideApp={false}
             bodyOpenClassName="ReactModal__Body--open"
@@ -263,23 +280,13 @@ ShallowWrapper {
           </Modal>,
         ],
         "style": Object {
+          "border": "5px solid darkgoldenrod",
           "margin": "20px auto",
           "position": "relative",
         },
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "handlePopupLeaderboard": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -307,6 +314,29 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ControlPanel
+              handlePopupLeaderboard={[Function]}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "handlePopupLeaderboard": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
         },
         Object {
           "instance": null,
