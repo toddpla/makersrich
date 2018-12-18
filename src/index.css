@@ -39,6 +39,18 @@ code {
   text-align: center;
 }
 
+.logout-button {
+  color: darkgoldenrod;
+  background-color: black;
+  width: 100px;
+  height: 30px;
+  font-family: inherit;
+  font-size: 1.3em;
+}
+
+.logout-button:hover {
+  box-shadow: 2px 2px darkgoldenrod
+}
 .modal-button {
   size: 40px 40px;
   position: absolute;

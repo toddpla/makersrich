@@ -13,9 +13,7 @@ export class Header extends React.Component {
   render() {
     return (
       <header>
-        <NavLink to="/game" className='nav-link' activeClassName="is-active"> Game </NavLink>
-        <NavLink to="/add-question" className='nav-link' activeClassName="is-active"> Contribute </NavLink>
-        <button onClick={this.handleLogout}>Logout</button>
+        <button className="logout-button" onClick={this.handleLogout}>Logout</button>
       </header>
     )
   }
