@@ -160,6 +160,12 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Instructions />})
   }
 
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.closeModal() }
+    })
+  }
+
   render() {
     return (
       <div>
