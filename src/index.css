@@ -58,6 +58,7 @@ header {
 .logout-button:hover {
   box-shadow: 2px 2px darkgoldenrod
 }
+
 .modal-button {
   size: 40px 40px;
   position: absolute;
@@ -132,8 +133,6 @@ header {
   left: 475px;
 }
 
- /* SHOP CSS  */
-
  .popup-header {
    width: 800px;
    padding-top: 10px;
@@ -142,6 +141,31 @@ header {
    font-size: 1.5em;
    font-weight: bold;
  }
+
+ /* LOGIN PAGE */
+
+ #login-page {
+   width: 400px;
+   margin: auto;
+   padding-top: 200px;
+   color: darkgoldenrod;
+   text-align: center;
+ }
+
+.login-button {
+  color: darkgoldenrod;
+  background-color: black;
+  width: 100px;
+  height: 60px;
+  font-family: inherit;
+  font-size: 1.3em;
+  margin: auto;
+  margin: 20px;
+}
+
+.login-button:hover {
+  box-shadow: 2px 2px darkgoldenrod
+}
 
 .message {
   width: 160px;
