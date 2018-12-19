@@ -41,12 +41,13 @@ ShallowWrapper {
           Press 'E' to dig
         </p>,
         <p>
-          Press 'I' to open/close your inventory
+          Press 'I' to open
         </p>,
         <p>
           Press 'Spacebar' to close any pop-ups
         </p>,
       ],
+      "id": "instructions-container",
     },
     "ref": null,
     "rendered": Array [
@@ -149,10 +150,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Press 'I' to open/close your inventory",
+          "children": "Press 'I' to open",
         },
         "ref": null,
-        "rendered": "Press 'I' to open/close your inventory",
+        "rendered": "Press 'I' to open",
         "type": "p",
       },
       Object {
@@ -199,12 +200,13 @@ ShallowWrapper {
             Press 'E' to dig
           </p>,
           <p>
-            Press 'I' to open/close your inventory
+            Press 'I' to open
           </p>,
           <p>
             Press 'Spacebar' to close any pop-ups
           </p>,
         ],
+        "id": "instructions-container",
       },
       "ref": null,
       "rendered": Array [
@@ -307,10 +309,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Press 'I' to open/close your inventory",
+            "children": "Press 'I' to open",
           },
           "ref": null,
-          "rendered": "Press 'I' to open/close your inventory",
+          "rendered": "Press 'I' to open",
           "type": "p",
         },
         Object {
