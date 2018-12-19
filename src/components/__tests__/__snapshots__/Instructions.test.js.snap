@@ -44,6 +44,9 @@ ShallowWrapper {
           Press 'I' to open/close your inventory
         </p>,
         <p>
+          Press 'T' to start writing a message
+        </p>,
+        <p>
           Press 'Spacebar' to close any pop-ups
         </p>,
       ],
@@ -160,6 +163,17 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Press 'T' to start writing a message",
+        },
+        "ref": null,
+        "rendered": "Press 'T' to start writing a message",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": "Press 'Spacebar' to close any pop-ups",
         },
         "ref": null,
@@ -200,6 +214,9 @@ ShallowWrapper {
           </p>,
           <p>
             Press 'I' to open/close your inventory
+          </p>,
+          <p>
+            Press 'T' to start writing a message
           </p>,
           <p>
             Press 'Spacebar' to close any pop-ups
@@ -311,6 +328,17 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": "Press 'I' to open/close your inventory",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Press 'T' to start writing a message",
+          },
+          "ref": null,
+          "rendered": "Press 'T' to start writing a message",
           "type": "p",
         },
         Object {

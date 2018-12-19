@@ -16,6 +16,7 @@ class Instructions extends Component {
         <p>Press 'Q' to interact with signs</p>
         <p>Press 'E' to dig</p>
         <p>Press 'I' to open/close your inventory</p>
+        <p>Press 'T' to start writing a message</p>
         <p>Press 'Spacebar' to close any pop-ups</p>
       </div>
     );

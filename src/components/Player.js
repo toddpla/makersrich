@@ -68,6 +68,8 @@ export class Player extends Component {
           return this.props.checkSign(this.props.player.left, this.props.player.top)
         case 88:
           return this.props.handlePopupInstructions()
+        case 84:
+          return document.getElementById('messagebox').focus()
         default:
           console.log(e.keyCode);
       }
