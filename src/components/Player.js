@@ -153,8 +153,10 @@ export class Player extends Component {
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
-      e.preventDefault()
-      this.handleKeyDown(e)
+      if(!this.props.onFocus){
+        e.preventDefault()
+        this.handleKeyDown(e)
+      }
     })
   }
 
