@@ -4,6 +4,12 @@ exports[`gamepage renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GamePage
+    egg={
+      Object {
+        "left": 0,
+        "top": 0,
+      }
+    }
     map={
       Object {
         "impassable": Array [
@@ -62,6 +68,7 @@ ShallowWrapper {
           player="player"
         />,
         Array [],
+        <Connect(Egg) />,
         <div>
           <ControlPanel
             handleOffFocus={[Function]}
@@ -133,6 +140,15 @@ ShallowWrapper {
           "onFocus": false,
           "player": "player",
         },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -244,6 +260,7 @@ ShallowWrapper {
             player="player"
           />,
           Array [],
+          <Connect(Egg) />,
           <div>
             <ControlPanel
               handleOffFocus={[Function]}
@@ -315,6 +332,15 @@ ShallowWrapper {
             "onFocus": false,
             "player": "player",
           },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
