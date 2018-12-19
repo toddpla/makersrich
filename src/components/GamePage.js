@@ -153,8 +153,8 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Battle />})
   }
 
-  handlePopupMessage = (message) => {
-    this.openModal({modalComponent: <Message message={message}/>})
+  handlePopupMessage = (message, item) => {
+    this.openModal({modalComponent: <Message message={message} item={item}/>})
   }
 
   handlePopupLeaderboard = () => {
