@@ -7,6 +7,8 @@ import { collectItem, digTile, unDigTile } from '../actions/map'
 import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import SpinningCoin from '../assets/spinning_coin_16px.gif'
+import MessageForm from './messages/MessageForm'
+import MessageFeed from './messages/MessageFeed'
 
 
 export class Player extends Component {
@@ -15,6 +17,7 @@ export class Player extends Component {
     super(props)
     this.state = {
       inInventory: false,
+      messageOnFocus: false,
       level: this.getPlayerLevel(props)
     }
   }
@@ -151,11 +154,17 @@ export class Player extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     window.addEventListener('keydown', (e) => {
-      e.preventDefault()
-      this.handleKeyDown(e)
+      if (!this.state.messageOnFocus) {
+        e.preventDefault()
+        this.handleKeyDown(e)
+      }
     })
+  }
+
+  handleOnFocus = () => {
+    this.setState({messageOnFocus: true})
   }
 
   render() {
@@ -177,7 +186,6 @@ export class Player extends Component {
 
       return (
       <div>
-
       {button}
       <div id="pick"
         style={{
@@ -204,6 +212,9 @@ export class Player extends Component {
         }}
       >
       </div>
+
+      <MessageForm handleOnFocus={this.handleOnFocus}  style= {{zIndex: 0, width: '40px', height: '40px'}}/>
+      <MessageFeed  />
 
       </div>
     );

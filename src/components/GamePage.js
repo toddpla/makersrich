@@ -11,7 +11,7 @@ import Quiz from './quiz/Quiz'
 import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
 import Battle from './battle/Battle'
-import Message from './Message'
+import InformationMessage from './InformationMessage'
 import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
@@ -128,7 +128,7 @@ export class GamePage extends Component {
 
   handlePopupQuiz = () => {
     this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} entered the Quiz house thing!`)
-    this.openModal({modalComponent: <Quiz />})
+    this.openModal({modalComponent: <Quiz closeModal={this.closeModal}/>})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
@@ -139,7 +139,7 @@ export class GamePage extends Component {
   }
 
   handlePopupMessage = (message) => {
-    this.openModal({modalComponent: <Message message={message}/>})
+    this.openModal({modalComponent: <InformationMessage message={message}/>})
   }
 
   handlePopupLeaderboard = () => {
