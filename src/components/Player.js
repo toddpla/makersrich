@@ -213,8 +213,10 @@ export class Player extends Component {
         }}
       >
       </div>
+
       <MessageForm handleOnFocus={this.handleOnFocus}  style= {{zIndex: 0, width: '40px', height: '40px'}}/>
       <MessageFeed  />
+
       </div>
     );
   }
