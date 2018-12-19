@@ -58,8 +58,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <tr>
+      "children": <tbody>
+        <tr
+          className="leaderboard-table-headings"
+        >
           <th />
           <th>
             Player
@@ -73,207 +75,56 @@ ShallowWrapper {
           <th>
             Beans
           </th>
-        </tr>,
-        Array [
-          <PlayersListItem
-            cash={0}
-            displayName="Frankie"
-            left={0}
-            level={1}
-            state="online"
-            top={0}
-            uid="1"
-          />,
-          <PlayersListItem
-            cash={0}
-            displayName="Stanley"
-            left={0}
-            level={1}
-            state="online"
-            top={0}
-            uid="2"
-          />,
-          <PlayersListItem
-            cash={0}
-            displayName="Anna"
-            left={0}
-            level={1}
-            state="online"
-            top={0}
-            uid="3"
-          />,
-          <PlayersListItem
-            cash={0}
-            displayName="Jenny"
-            left={0}
-            level={1}
-            state="offline"
-            top={0}
-            uid="4"
-          />,
-        ],
-      ],
+        </tr>
+        <PlayersListItem
+          cash={0}
+          displayName="Frankie"
+          left={0}
+          level={1}
+          state="online"
+          top={0}
+          uid="1"
+        />
+        <PlayersListItem
+          cash={0}
+          displayName="Stanley"
+          left={0}
+          level={1}
+          state="online"
+          top={0}
+          uid="2"
+        />
+        <PlayersListItem
+          cash={0}
+          displayName="Anna"
+          left={0}
+          level={1}
+          state="online"
+          top={0}
+          uid="3"
+        />
+        <PlayersListItem
+          cash={0}
+          displayName="Jenny"
+          left={0}
+          level={1}
+          state="offline"
+          top={0}
+          uid="4"
+        />
+      </tbody>,
+      "id": "leaderboard-table",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <th />,
-            <th>
-              Player
-            </th>,
-            <th>
-              Cash
-            </th>,
-            <th>
-              Rubies
-            </th>,
-            <th>
-              Beans
-            </th>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": "th",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Player",
-            },
-            "ref": null,
-            "rendered": "Player",
-            "type": "th",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Cash",
-            },
-            "ref": null,
-            "rendered": "Cash",
-            "type": "th",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Rubies",
-            },
-            "ref": null,
-            "rendered": "Rubies",
-            "type": "th",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Beans",
-            },
-            "ref": null,
-            "rendered": "Beans",
-            "type": "th",
-          },
-        ],
-        "type": "tr",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "cash": 0,
-          "displayName": "Frankie",
-          "left": 0,
-          "level": 1,
-          "state": "online",
-          "top": 0,
-          "uid": "1",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "cash": 0,
-          "displayName": "Stanley",
-          "left": 0,
-          "level": 1,
-          "state": "online",
-          "top": 0,
-          "uid": "2",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "cash": 0,
-          "displayName": "Anna",
-          "left": 0,
-          "level": 1,
-          "state": "online",
-          "top": 0,
-          "uid": "3",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "cash": 0,
-          "displayName": "Jenny",
-          "left": 0,
-          "level": 1,
-          "state": "offline",
-          "top": 0,
-          "uid": "4",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "table",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <tr>
+          <tr
+            className="leaderboard-table-headings"
+          >
             <th />
             <th>
               Player
@@ -350,6 +201,7 @@ ShallowWrapper {
                 Beans
               </th>,
             ],
+            "className": "leaderboard-table-headings",
           },
           "ref": null,
           "rendered": Array [
@@ -478,6 +330,290 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
+      "type": "tbody",
+    },
+    "type": "table",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <tbody>
+          <tr
+            className="leaderboard-table-headings"
+          >
+            <th />
+            <th>
+              Player
+            </th>
+            <th>
+              Cash
+            </th>
+            <th>
+              Rubies
+            </th>
+            <th>
+              Beans
+            </th>
+          </tr>
+          <PlayersListItem
+            cash={0}
+            displayName="Frankie"
+            left={0}
+            level={1}
+            state="online"
+            top={0}
+            uid="1"
+          />
+          <PlayersListItem
+            cash={0}
+            displayName="Stanley"
+            left={0}
+            level={1}
+            state="online"
+            top={0}
+            uid="2"
+          />
+          <PlayersListItem
+            cash={0}
+            displayName="Anna"
+            left={0}
+            level={1}
+            state="online"
+            top={0}
+            uid="3"
+          />
+          <PlayersListItem
+            cash={0}
+            displayName="Jenny"
+            left={0}
+            level={1}
+            state="offline"
+            top={0}
+            uid="4"
+          />
+        </tbody>,
+        "id": "leaderboard-table",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <tr
+              className="leaderboard-table-headings"
+            >
+              <th />
+              <th>
+                Player
+              </th>
+              <th>
+                Cash
+              </th>
+              <th>
+                Rubies
+              </th>
+              <th>
+                Beans
+              </th>
+            </tr>,
+            Array [
+              <PlayersListItem
+                cash={0}
+                displayName="Frankie"
+                left={0}
+                level={1}
+                state="online"
+                top={0}
+                uid="1"
+              />,
+              <PlayersListItem
+                cash={0}
+                displayName="Stanley"
+                left={0}
+                level={1}
+                state="online"
+                top={0}
+                uid="2"
+              />,
+              <PlayersListItem
+                cash={0}
+                displayName="Anna"
+                left={0}
+                level={1}
+                state="online"
+                top={0}
+                uid="3"
+              />,
+              <PlayersListItem
+                cash={0}
+                displayName="Jenny"
+                left={0}
+                level={1}
+                state="offline"
+                top={0}
+                uid="4"
+              />,
+            ],
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <th />,
+                <th>
+                  Player
+                </th>,
+                <th>
+                  Cash
+                </th>,
+                <th>
+                  Rubies
+                </th>,
+                <th>
+                  Beans
+                </th>,
+              ],
+              "className": "leaderboard-table-headings",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Player",
+                },
+                "ref": null,
+                "rendered": "Player",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Cash",
+                },
+                "ref": null,
+                "rendered": "Cash",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Rubies",
+                },
+                "ref": null,
+                "rendered": "Rubies",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Beans",
+                },
+                "ref": null,
+                "rendered": "Beans",
+                "type": "th",
+              },
+            ],
+            "type": "tr",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "cash": 0,
+              "displayName": "Frankie",
+              "left": 0,
+              "level": 1,
+              "state": "online",
+              "top": 0,
+              "uid": "1",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "cash": 0,
+              "displayName": "Stanley",
+              "left": 0,
+              "level": 1,
+              "state": "online",
+              "top": 0,
+              "uid": "2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "cash": 0,
+              "displayName": "Anna",
+              "left": 0,
+              "level": 1,
+              "state": "online",
+              "top": 0,
+              "uid": "3",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "cash": 0,
+              "displayName": "Jenny",
+              "left": 0,
+              "level": 1,
+              "state": "offline",
+              "top": 0,
+              "uid": "4",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "tbody",
+      },
       "type": "table",
     },
   ],
