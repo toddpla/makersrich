@@ -42,7 +42,8 @@ export class GamePage extends Component {
     this.state = {
       modalIsOpen: false,
       modalComponent: 'undefined',
-      battle: props.player.battle
+      battle: props.player.battle,
+      onFocus: false
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -65,6 +66,20 @@ export class GamePage extends Component {
     this.setState({
       modalIsOpen: false,
     });
+  }
+
+  handleOnFocus = () => {
+    console.log('FOCESEDDD');
+    this.setState({
+      onFocus: true
+    })
+  }
+
+  handleOffFocus = () => {
+    console.log('UNFOCUSING FAM');
+    this.setState({
+      onFocus: false
+    })
   }
 
   handleMovement = (updates) => {
@@ -177,11 +192,14 @@ export class GamePage extends Component {
           handlePopupInstructions={this.handlePopupInstructions}
           checkSign={this.checkSign}
           notOnMap={this.state.modalIsOpen}
+          onFocus={this.state.onFocus}
         />
         {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
 
         <div>
         <ControlPanel
+          handleOnFocus={this.handleOnFocus}
+          handleOffFocus={this.handleOffFocus}
           handlePopupLeaderboard={this.handlePopupLeaderboard}/>
           </div>
 

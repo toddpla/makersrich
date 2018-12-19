@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
 import { startOnAddOpponent, startOnRemoveOpponent } from './actions/opponents'
 import { startOnBattle} from './actions/battle'
+import { startOnMessages} from './actions/messages'
 // import LoadingPage from './components/LoadingPage'
 import Modal from 'react-modal'
 
@@ -42,6 +43,7 @@ const loadFirebaseData = (user) => {
       store.dispatch(startOnAddOpponent())
       store.dispatch(startOnRemoveOpponent())
       store.dispatch(startOnBattle())
+      store.dispatch(startOnMessages())
       renderApp()
       hasLoadedData = true
     })
