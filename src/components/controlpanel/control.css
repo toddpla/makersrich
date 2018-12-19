@@ -1,6 +1,6 @@
 #control-panel {
-  position: absolute;
-  width: 295px;
+  position: relative;
+  display: block;
   height: 100%;
   right: 0;
   top: 0;
@@ -11,7 +11,6 @@
 .control-panel-button {
   color: darkgoldenrod;
   background-color: black;
-  width: 50%;
   height: 30px;
   font-family: inherit;
   font-size: 1.3em;
@@ -25,6 +24,7 @@
 /* STATUS BAR */
 
 #player-status-bar {
+  display: inline-block;
   text-align: center;
   color: white;
 }

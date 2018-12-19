@@ -5,7 +5,14 @@ class Map extends Component {
 
   render() {
     return (
-      <div className="map" style={{backgroundImage: `url('${map}')`, height: '672px', width: '950px', position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
+      <div className="map"
+        style={{backgroundImage: `url('${map}')`,
+                height: '672px',
+                width: '1024px',
+                position: 'relative',
+                display: 'block',
+                margin: 'auto'
+              }}>
 
       </div>
     );

@@ -164,13 +164,14 @@ export class GamePage extends Component {
         style={{
             position: 'relative',
             margin: '20px auto',
-            border: '5px solid darkgoldenrod'
+            border: '5px solid darkgoldenrod',
+            maxWidth: '1400px',
+            display: 'flex'
         }}
         >
 
 
-        <Map>
-        </Map>
+        <Map />
 
         <Player player={this.props.player}
           handleMovement={this.handleMovement}
