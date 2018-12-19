@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
+import PickImg from "../assets/pick.png"
 import { connect } from 'react-redux'
 import { collectItem, digTile, unDigTile } from '../actions/map'
 import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
@@ -13,8 +14,27 @@ export class Player extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      inInventory: false
+      inInventory: false,
+      level: this.getPlayerLevel(props)
     }
+  }
+
+  getPlayerLevel = (props) => {
+    var questions = 0
+
+    if (props.player.questions !== undefined ) {
+      questions = Object.keys(props.player.questions).length
+    }
+
+    var sessionQuestions = this.props.player.sessionQuestions.length
+    var level =  (questions + sessionQuestions) / 5
+    return Math.floor(level)
+  }
+
+  updatePlayerLevel = (props) => {
+    this.setState({
+      level: this.getPlayerLevel(props)
+    })
   }
 
   handleKeyDown = (e) => {
@@ -31,11 +51,12 @@ export class Player extends Component {
           return this.props.handleMovement({ left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
         // down key
         case 40:
+          this.updatePlayerLevel(this.props)
           return this.props.handleMovement({ top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
-          this.setState({ inInventory: true })
+          this.updatePlayerLevel(this.props)
           return this.props.handlePopupInventory()
         case 82:
           return this.props.handlePopupRPS()
@@ -158,7 +179,19 @@ export class Player extends Component {
       <div>
 
       {button}
-
+      <div id="pick"
+        style={{
+          position: 'absolute',
+          width: '16px',
+          top: this.props.player.top,
+          left: this.props.player.left + 8,
+          height: '16px',
+          backgroundPosition: 'center',
+          rotate: 90,
+          backgroundImage: `url(${PickImg})`
+        }}
+      >
+      </div>
       <div id="player"
         style={{
           position: 'absolute',
@@ -167,10 +200,12 @@ export class Player extends Component {
           left: this.props.player.left,
           height: '16px',
           backgroundPosition: 'center',
-          backgroundImage: `url(${PlayerImg})`
+          backgroundImage: `url(${PlayerImg})`,
+          zIndex: 1
         }}
       >
       </div>
+
       </div>
     );
   }
