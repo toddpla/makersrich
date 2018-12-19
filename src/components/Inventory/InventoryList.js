@@ -4,7 +4,6 @@ import InventoryListItem from './InventoryListItem'
 class InventoryList extends Component {
 
   render() {
-    console.log(this.props);
     return (
       <div id="inventory-list-box">
         <h1>Inventory</h1>

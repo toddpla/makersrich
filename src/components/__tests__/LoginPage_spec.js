@@ -11,10 +11,3 @@ test('renders correctly', () => {
   const loginPage = renderer.create(<LoginPage />).toJSON();
   expect(loginPage).toMatchSnapshot();
 });
-
-test('should call startLogin on button click', () => {
-  const wrapper = shallow(<LoginPage />);
-  console.log(wrapper.find('button'));
-  wrapper.find('#google-login').simulate('click');
-  expect(handleGoogleLogin).toHaveBeenCalled();
-});
