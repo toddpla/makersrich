@@ -3,13 +3,23 @@ import { shallow } from 'enzyme'
 import { Quiz } from '../Quiz'
 
 describe('Quiz', () => {
-  let wrapper, startSendResult, startGetQuestion, quiz, auth
+  let wrapper, startSendResult, startGetQuestion, quiz, auth, startDebitPlayer,
+      clearQuiz
 
   beforeEach(function() {
+    clearQuiz = jest.fn()
     startGetQuestion = jest.fn()
     startSendResult = jest.fn()
+    startDebitPlayer= jest.fn(() => {
+      return new Promise((resolve, reject) => {
+        resolve(true)
+        reject(false)
+      });
+    })
     auth = {
-      uid:'123'
+      uid:'123',
+      cash: 200,
+      sessionQuestions: []
     }
     quiz = {
       id: 8,
@@ -19,7 +29,7 @@ describe('Quiz', () => {
         'three',
         'four'
       ],
-      correctAnswer: 'two',
+      correctAnswer: '1',
       question: 'What comes after one?'
     }
     wrapper = shallow(
@@ -28,6 +38,8 @@ describe('Quiz', () => {
         auth={auth}
         startGetQuestion={startGetQuestion}
         startSendResult={startSendResult}
+        startDebitPlayer={startDebitPlayer}
+        clearQuiz={clearQuiz}
       />
     )
   });
@@ -51,11 +63,11 @@ describe('Quiz', () => {
       }
 
       instance = wrapper.instance()
-      instance.handleClick()
+      instance.handleClick(1)
     });
 
     it('calls #startSendResult', () => {
-      expect(startSendResult).toHaveBeenLastCalledWith(submission)
+      expect(startSendResult).toHaveBeenCalled()
     });
 
     it('calls #startGetQuestion', () => {

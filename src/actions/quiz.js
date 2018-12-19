@@ -5,6 +5,11 @@ export const getQuestion = (question) => ({
   question
 })
 
+export const clearQuiz = () => ({
+  type: 'CLEAR_QUIZ',
+  quiz: {}
+})
+
 // needs to be moved to firebase function
 export const startGetQuestion = () => {
   return (dispatch, getState) => {
