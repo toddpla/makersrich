@@ -6,7 +6,8 @@ export const startSendNewsfeedMessage = (message) => {
     database.ref('newsfeed').push({
       created_at: firebase.database.ServerValue.TIMESTAMP,
       message: message,
-      created_by: player.uid
+      created_by: player.uid,
+      displayName: player.displayName
     })
   }
 }

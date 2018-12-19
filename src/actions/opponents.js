@@ -6,10 +6,12 @@ export const addOpponent = (opponent) => ({
 })
 
 export const startOnAddOpponent = () => {
-  return (dispatch, getState) => {
-    const player = getState().auth
-    console.log('startOnAddOpponent is running');
-    return database.ref('players').on('child_added', (snapshot) => {
+  return (dispatch) => {
+    return database.ref('players')
+      .orderByChild('state')
+      .equalTo('online')
+      .on('child_added', (snapshot) => {
+        console.log('startOnAddOpponent', snapshot.val());
       dispatch(addOpponent({
         uid: snapshot.key,
         ...snapshot.val()
@@ -24,10 +26,56 @@ export const removeOpponent = (uid) => ({
 })
 
 export const startOnRemoveOpponent = () => {
-  return (dispatch, getState) => {
-    const player = getState().auth
-    return database.ref('players').on('child_removed', (snapshot) => {
+  return (dispatch) => {
+    return database.ref('players')
+      .orderByChild('state')
+      .equalTo('online')
+      .on('child_removed', (snapshot) => {
       dispatch(removeOpponent(snapshot.key))
     })
   }
 }
+
+// export const startOnOnlinePlayers = () => {
+//   return (dispatch) => {
+//     return database.ref('players')
+//       .orderByChild('state')
+//       .equalTo('online')
+//       .on('value', (snap) => {
+//
+//       })
+//   }
+// }
+
+//
+// export const startOnAddOpponent = () => {
+//   return (dispatch) => {
+//     return database.ref('players')
+//       .orderByChild('state')
+//       .equalTo('online')
+//       .on('child_added', (snapshot) => {
+//         const connection = database.ref(`players/${snapshot.key}`).on('value', (childSnap) => {
+//           // dispatch(updateOpponent())
+//           return {
+//             ...childSnap.val()
+//           }})
+//       dispatch(addOpponent({
+//         uid: snapshot.key,
+//         connection
+//       }))
+//     })
+//   }
+// }
+//
+//
+// export const startOnRemoveOpponent = () => {
+//   return (dispatch) => {
+//     return database.ref('players')
+//     .orderByChild('state')
+//     .equalTo('online')
+//     .on('child_removed', (snapshot) => {
+//       // console.log('startOnRemoveOpponent', snapshot.val());
+//       dispatch(removeOpponent(snapshot.key))
+//     })
+//   }
+// }

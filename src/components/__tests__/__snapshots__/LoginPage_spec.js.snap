@@ -1,15 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  id="login-page"
+>
+  <h1>
+    MAKERSRICH
+  </h1>
   <button
-    id="google-login"
+    className="login-button"
     onClick={[Function]}
   >
     Google Login
   </button>
   <button
-    id="github-login"
+    className="login-button"
     onClick={[Function]}
   >
     Github Login

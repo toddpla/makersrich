@@ -57,10 +57,10 @@ ShallowWrapper {
           handlePopupInstructions={[Function]}
           handlePopupInventory={[Function]}
           handlePopupMessage={[Function]}
-          handlePopupRPS={[Function]}
           notOnMap={false}
           player="player"
         />,
+        Array [],
         <div>
           <ControlPanel
             handlePopupLeaderboard={[Function]}
@@ -131,7 +131,7 @@ ShallowWrapper {
           "handlePopupInstructions": [Function],
           "handlePopupInventory": [Function],
           "handlePopupMessage": [Function],
-          "handlePopupRPS": [Function],
+          "handlePopupRPS": undefined,
           "notOnMap": false,
           "player": "player",
         },
@@ -237,10 +237,10 @@ ShallowWrapper {
             handlePopupInstructions={[Function]}
             handlePopupInventory={[Function]}
             handlePopupMessage={[Function]}
-            handlePopupRPS={[Function]}
             notOnMap={false}
             player="player"
           />,
+          Array [],
           <div>
             <ControlPanel
               handlePopupLeaderboard={[Function]}
@@ -311,7 +311,7 @@ ShallowWrapper {
             "handlePopupInstructions": [Function],
             "handlePopupInventory": [Function],
             "handlePopupMessage": [Function],
-            "handlePopupRPS": [Function],
+            "handlePopupRPS": undefined,
             "notOnMap": false,
             "player": "player",
           },
