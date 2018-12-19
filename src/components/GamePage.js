@@ -128,7 +128,7 @@ export class GamePage extends Component {
 
   handlePopupQuiz = () => {
     this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} entered the Quiz house thing!`)
-    this.openModal({modalComponent: <Quiz />})
+    this.openModal({modalComponent: <Quiz closeModal={this.closeModal}/>})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})

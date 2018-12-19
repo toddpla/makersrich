@@ -66,21 +66,25 @@ ShallowWrapper {
           />
           <Answer
             answer="one"
+            correct={false}
             handleClick={[Function]}
             id={0}
           />
           <Answer
             answer="two"
+            correct={true}
             handleClick={[Function]}
             id={1}
           />
           <Answer
             answer="three"
+            correct={false}
             handleClick={[Function]}
             id={2}
           />
           <Answer
             answer="four"
+            correct={false}
             handleClick={[Function]}
             id={3}
           />
@@ -113,21 +117,25 @@ ShallowWrapper {
             Array [
               <Answer
                 answer="one"
+                correct={false}
                 handleClick={[Function]}
                 id={0}
               />,
               <Answer
                 answer="two"
+                correct={true}
                 handleClick={[Function]}
                 id={1}
               />,
               <Answer
                 answer="three"
+                correct={false}
                 handleClick={[Function]}
                 id={2}
               />,
               <Answer
                 answer="four"
+                correct={false}
                 handleClick={[Function]}
                 id={3}
               />,
@@ -154,6 +162,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "answer": "one",
+              "correct": false,
               "handleClick": [Function],
               "id": 0,
             },
@@ -167,6 +176,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "answer": "two",
+              "correct": true,
               "handleClick": [Function],
               "id": 1,
             },
@@ -180,6 +190,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "answer": "three",
+              "correct": false,
               "handleClick": [Function],
               "id": 2,
             },
@@ -193,6 +204,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "answer": "four",
+              "correct": false,
               "handleClick": [Function],
               "id": 3,
             },
@@ -224,21 +236,25 @@ ShallowWrapper {
             />
             <Answer
               answer="one"
+              correct={false}
               handleClick={[Function]}
               id={0}
             />
             <Answer
               answer="two"
+              correct={true}
               handleClick={[Function]}
               id={1}
             />
             <Answer
               answer="three"
+              correct={false}
               handleClick={[Function]}
               id={2}
             />
             <Answer
               answer="four"
+              correct={false}
               handleClick={[Function]}
               id={3}
             />
@@ -271,21 +287,25 @@ ShallowWrapper {
               Array [
                 <Answer
                   answer="one"
+                  correct={false}
                   handleClick={[Function]}
                   id={0}
                 />,
                 <Answer
                   answer="two"
+                  correct={true}
                   handleClick={[Function]}
                   id={1}
                 />,
                 <Answer
                   answer="three"
+                  correct={false}
                   handleClick={[Function]}
                   id={2}
                 />,
                 <Answer
                   answer="four"
+                  correct={false}
                   handleClick={[Function]}
                   id={3}
                 />,
@@ -312,6 +332,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "answer": "one",
+                "correct": false,
                 "handleClick": [Function],
                 "id": 0,
               },
@@ -325,6 +346,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "answer": "two",
+                "correct": true,
                 "handleClick": [Function],
                 "id": 1,
               },
@@ -338,6 +360,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "answer": "three",
+                "correct": false,
                 "handleClick": [Function],
                 "id": 2,
               },
@@ -351,6 +374,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "answer": "four",
+                "correct": false,
                 "handleClick": [Function],
                 "id": 3,
               },
