@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ShopMessage extends Component {
 
   hasEnoughMoney = (price) => {
-    return this.props.cash > price
+    return this.props.cash >= price
   }
 
   render() {
