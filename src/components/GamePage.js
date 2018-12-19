@@ -69,14 +69,12 @@ export class GamePage extends Component {
   }
 
   handleOnFocus = () => {
-    console.log('FOCESEDDD');
     this.setState({
       onFocus: true
     })
   }
 
   handleOffFocus = () => {
-    console.log('UNFOCUSING FAM');
     this.setState({
       onFocus: false
     })
@@ -142,14 +140,14 @@ export class GamePage extends Component {
   }
 
   handlePopupQuiz = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} entered the Quiz house thing!`)
+    this.props.startSendNewsfeedMessage(`entered the Quiz house thing!`)
     this.openModal({modalComponent: <Quiz closeModal={this.closeModal}/>})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
   }
   handlePopupBattle = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName} joined a Battle showdown!!`)
+    this.props.startSendNewsfeedMessage(`joined a Battle showdown!!`)
     this.openModal({modalComponent: <Battle />})
   }
 
@@ -162,7 +160,7 @@ export class GamePage extends Component {
   }
 
   handlePopupShop = () => {
-    this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} is shopping in Muxworthy's!`)
+    this.props.startSendNewsfeedMessage(`is shopping in Muxworthy's!`)
     this.openModal({modalComponent: <Shop />})
   }
 

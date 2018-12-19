@@ -37,7 +37,7 @@ export class Player extends Component {
     if (newLevel > currentLevel) {
       this.props.startUpdatePlayer({ level: newLevel} )
       this.props.startSendNewsfeedMessage(
-        `${this.props.player.displayName.split(' ')[0]} has levelled up!!`
+        `has levelled up!!`
       )
     }
   }
@@ -62,8 +62,6 @@ export class Player extends Component {
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           return this.props.handlePopupInventory()
-        case 82:
-          return this.props.handlePopupRPS()
         case 81:
           return this.props.checkSign(this.props.player.left, this.props.player.top)
         case 88:
@@ -152,7 +150,7 @@ export class Player extends Component {
       this.props.collectItem(item)
       this.props.startAddInventoryItem(item.type, item)
       this.setState({inPopUp: true})
-      this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} found a ${item.type}!`)
+      this.props.startSendNewsfeedMessage(`found a ${item.type}!`)
       this.props.handlePopupMessage(`You found a ${item.type}!`, item)
     }
   }
