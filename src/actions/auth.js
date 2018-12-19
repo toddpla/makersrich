@@ -8,6 +8,7 @@ export const login = (uid, player) => ({
       top: 0,
       left: 0,
       cash: 0,
+      level: 0,
       inventory: {
         ruby: [],
         bean: [],
