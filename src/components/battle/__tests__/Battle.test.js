@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 import { Battle } from '../Battle'
-import playersData from '../../test/fixtures/players'
+import playersData from '../../../test/fixtures/players'
 
 let battle, player, startCreditPlayer, startDebitPlayer;
 
