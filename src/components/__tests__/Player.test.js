@@ -3,30 +3,28 @@ import { Player } from '../Player'
 import { shallow } from 'enzyme'
 import { SPRITE_SIZE } from '../../constants'
 
-let wrapper, player, handleMovement, handlePopupInstructions, startCreditPlayer
-
-beforeEach(function() {
-  handleMovement = jest.fn()
-  handlePopupInstructions = jest.fn()
-  startCreditPlayer= jest.fn()
-  player = {
-    top: 336,
-    left: 400
-  }
-  wrapper = shallow(
-    <Player
-      player={player}
-      handleMovement={handleMovement}
-      handlePopupInstructions={handlePopupInstructions}
-      startCreditPlayer={startCreditPlayer}
-    />
-  )
-});
-
 describe('Player', function() {
+  let wrapper, player, handleMovement, handlePopupInstructions, startCreditPlayer
   let instance
 
   beforeEach(function() {
+    handleMovement = jest.fn()
+    handlePopupInstructions = jest.fn()
+    startCreditPlayer= jest.fn()
+    player = {
+      top: 336,
+      left: 400,
+      sessionQuestions: []
+    }
+    wrapper = shallow(
+      <Player
+        player={player}
+        handleMovement={handleMovement}
+        handlePopupInstructions={handlePopupInstructions}
+        startCreditPlayer={startCreditPlayer}
+      />
+    )
+
     instance = wrapper.instance()
   });
 
@@ -35,8 +33,8 @@ describe('Player', function() {
   });
 
   describe('movement', function() {
-
     it('responds to left', function() {
+      console.log(instance);
       const leftEvent = {
         keyCode: 37,
       }
