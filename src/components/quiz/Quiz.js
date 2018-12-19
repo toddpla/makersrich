@@ -79,7 +79,7 @@ export class Quiz extends React.Component {
           { (this.props.quiz.constructor === Object && Object.keys(this.props.quiz).length !== 0  ) ? (
             <div id='quiz'>
               <Question question={this.props.quiz.question}/>
-              {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} />)}
+              {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} correct={i.toString() === this.props.quiz.correctAnswer} />)}
             </div>
           )
             :
