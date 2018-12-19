@@ -103,7 +103,9 @@ ShallowWrapper {
       ],
       "style": Object {
         "border": "5px solid darkgoldenrod",
+        "display": "flex",
         "margin": "20px auto",
+        "maxWidth": "1440px",
         "position": "relative",
       },
     },
@@ -281,7 +283,9 @@ ShallowWrapper {
         ],
         "style": Object {
           "border": "5px solid darkgoldenrod",
+          "display": "flex",
           "margin": "20px auto",
+          "maxWidth": "1440px",
           "position": "relative",
         },
       },
