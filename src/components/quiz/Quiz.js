@@ -10,7 +10,6 @@ export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
 
     if ( this.canAffordQuestion() ) { this.props.startGetQuestion() }
 
