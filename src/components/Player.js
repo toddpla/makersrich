@@ -34,7 +34,12 @@ export class Player extends Component {
   updatePlayerLevel = () => {
     var currentLevel = this.props.player.level
     var newLevel = this.getPlayerLevel()
-    if (newLevel > currentLevel) { this.props.startUpdatePlayer({ level: newLevel} )}
+    if (newLevel > currentLevel) {
+      this.props.startUpdatePlayer({ level: newLevel} )
+      this.props.startSendNewsfeedMessage(
+        `${this.props.player.displayName.split(' ')[0]} has levelled up!!`
+      )
+    }
   }
 
   handleKeyDown = (e) => {
@@ -221,7 +226,7 @@ const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item)),
   startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
-  startCreditPlayer: (amount) => dispatch(startCreditPlayer(amount))
+  startCreditPlayer: (amount) => dispatch(startCreditPlayer(amount)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
