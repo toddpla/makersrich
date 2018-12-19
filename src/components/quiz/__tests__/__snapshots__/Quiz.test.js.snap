@@ -6,9 +6,12 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Quiz
     auth={
       Object {
+        "cash": 200,
+        "sessionQuestions": Array [],
         "uid": "123",
       }
     }
+    clearQuiz={[MockFunction]}
     quiz={
       Object {
         "answers": Array [
@@ -17,11 +20,12 @@ ShallowWrapper {
           "three",
           "four",
         ],
-        "correctAnswer": "two",
+        "correctAnswer": "1",
         "id": 8,
         "question": "What comes after one?",
       }
     }
+    startDebitPlayer={[MockFunction]}
     startGetQuestion={
       [MockFunction] {
         "calls": Array [
@@ -54,7 +58,9 @@ ShallowWrapper {
         <h1>
           Welcome to the quiz!
         </h1>,
-        <div>
+        <div
+          id="quiz"
+        >
           <Question
             question="What comes after one?"
           />
@@ -127,6 +133,7 @@ ShallowWrapper {
               />,
             ],
           ],
+          "id": "quiz",
         },
         "ref": null,
         "rendered": Array [
@@ -209,7 +216,9 @@ ShallowWrapper {
           <h1>
             Welcome to the quiz!
           </h1>,
-          <div>
+          <div
+            id="quiz"
+          >
             <Question
               question="What comes after one?"
             />
@@ -282,6 +291,7 @@ ShallowWrapper {
                 />,
               ],
             ],
+            "id": "quiz",
           },
           "ref": null,
           "rendered": Array [

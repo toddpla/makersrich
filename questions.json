@@ -1,104 +1,102 @@
 {
-  "questions": {
-    "1": {
-      "answers": {
-        "0": "Writing tests before the code is written",
-        "1": "Writing tests after the code is written",
-        "2": "Writing the tests and code side by side",
-        "3": "Writing all of the test after the all of the code is written"
-      },
-      "correctAnswers": "0",
-      "question": "What statement best describes test-driven development?"
+  "1": {
+    "answers": {
+      "0": "Writing tests before the code is written",
+      "1": "Writing tests after the code is written",
+      "2": "Writing the tests and code side by side",
+      "3": "Writing all of the test after the all of the code is written"
     },
-    "2": {
-      "answers": {
-        "0": "Small responsibility please?",
-        "1": "Single responsibility principle",
-        "2": "Simulataneous reaction probability",
-        "3": "Single rows pass"
-      },
-      "correctAnswers": "1",
-      "question": "What does SRP stand for?"
+    "correctAnswer": "0",
+    "question": "What statement best describes test-driven development?"
+  },
+  "2": {
+    "answers": {
+      "0": "Small responsibility please?",
+      "1": "Single responsibility principle",
+      "2": "Simulataneous reaction probability",
+      "3": "Single rows pass"
     },
-    "3": {
-      "answers": {
-        "0": "Every file should be responsibile for one part of the program",
-        "1": "Every class should be responsibile for one part of the program",
-        "2": "Every line should be responsibile for one part of the program",
-        "3": "Every variable should be responsibile for one part of the program"
-      },
-      "correctAnswers": "1",
-      "question": "What is the single responsibility principle?"
+    "correctAnswer": "1",
+    "question": "What does SRP stand for?"
+  },
+  "3": {
+    "answers": {
+      "0": "Every file should be responsibile for one part of the program",
+      "1": "Every class should be responsibile for one part of the program",
+      "2": "Every line should be responsibile for one part of the program",
+      "3": "Every variable should be responsibile for one part of the program"
     },
-    "4": {
-      "answers": {
-        "0": "Out Of Date",
-        "1": "Orthogonally Objective Design",
-        "2": "Object Of Desire",
-        "3": "Object Oriented Design"
-      },
-      "correctAnswers": "3",
-      "question": "What does OOD stand for?"
+    "correctAnswer": "1",
+    "question": "What is the single responsibility principle?"
+  },
+  "4": {
+    "answers": {
+      "0": "Out Of Date",
+      "1": "Orthogonally Objective Design",
+      "2": "Object Of Desire",
+      "3": "Object Oriented Design"
     },
-    "5": {
-      "answers": {
-        "0": "String.concat()",
-        "1": "Array.splice()",
-        "2": "window.fetch()",
-        "3": "window.alert()"
-      },
-      "correctAnswers": "2",
-      "question": "Which of the following JavaScript functions are asynchronous?"
+    "correctAnswer": "3",
+    "question": "What does OOD stand for?"
+  },
+  "5": {
+    "answers": {
+      "0": "String.concat()",
+      "1": "Array.splice()",
+      "2": "window.fetch()",
+      "3": "window.alert()"
     },
-    "6": {
-      "answers": {
-        "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
-        "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
-        "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
-        "3": "Program is executed line by line. Exection is stopped by errors"
-      },
-      "correctAnswers": "2",
-      "question": "Which of the following best describes asynchronous behaviour?"
+    "correctAnswer": "2",
+    "question": "Which of the following JavaScript functions are asynchronous?"
+  },
+  "6": {
+    "answers": {
+      "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
+      "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
+      "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
+      "3": "Program is executed line by line. Exection is stopped by errors"
     },
-    "7": {
-      "answers": {
-        "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
-        "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
-        "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
-        "3": "Program is executed line by line. Exection is stopped by errors"
-      },
-      "correctAnswers": "1",
-      "question": "Which of the following best describes synchronous behaviour?"
+    "correctAnswer": "2",
+    "question": "Which of the following best describes asynchronous behaviour?"
+  },
+  "7": {
+    "answers": {
+      "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
+      "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
+      "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
+      "3": "Program is executed line by line. Exection is stopped by errors"
     },
-    "8": {
-      "answers": {
-        "0": "Copy, Read, Understand, Destroy",
-        "1": "Copy, Read, Update, Delete",
-        "2": "Create, Read, Update, Delete",
-        "3": "Create, Read, Update, Destroy"
-      },
-      "correctAnswers": "2",
-      "question": "What does CRUD stand for?"
+    "correctAnswer": "1",
+    "question": "Which of the following best describes synchronous behaviour?"
+  },
+  "8": {
+    "answers": {
+      "0": "Copy, Read, Understand, Destroy",
+      "1": "Copy, Read, Update, Delete",
+      "2": "Create, Read, Update, Delete",
+      "3": "Create, Read, Update, Destroy"
     },
-    "9": {
-      "answers": {
-        "0": "Send",
-        "1": "Post",
-        "2": "Patch",
-        "3": "Get"
-      },
-      "correctAnswers": "0",
-      "question": "Which of the following is not a HTTP method?"
+    "correctAnswer": "2",
+    "question": "What does CRUD stand for?"
+  },
+  "9": {
+    "answers": {
+      "0": "Send",
+      "1": "Post",
+      "2": "Patch",
+      "3": "Get"
     },
-    "10": {
-      "answers": {
-        "0": "JSON",
-        "1": "XML",
-        "2": "CSV",
-        "3": "SQL"
-      },
-      "correctAnswers": "0",
-      "question": "What is the most common format for data retrieved from a server by a client?"
+    "correctAnswer": "0",
+    "question": "Which of the following is not a HTTP method?"
+  },
+  "10": {
+    "answers": {
+      "0": "JSON",
+      "1": "XML",
+      "2": "CSV",
+      "3": "SQL"
     },
+    "correctAnswer": "0",
+    "question": "What is the most common format for data retrieved from a server by a client?"
   }
 }

@@ -13,8 +13,27 @@ export class Player extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      inInventory: false
+      inInventory: false,
+      level: this.getPlayerLevel(props)
     }
+  }
+
+  getPlayerLevel = (props) => {
+    var questions = 0
+
+    if (props.player.questions !== undefined ) {
+      questions = Object.keys(props.player.questions).length
+    }
+
+    var sessionQuestions = this.props.player.sessionQuestions.length
+    var level =  (questions + sessionQuestions) / 5
+    return Math.floor(level)
+  }
+
+  updatePlayerLevel = (props) => {
+    this.setState({
+      level: this.getPlayerLevel(props)
+    })
   }
 
   handleKeyDown = (e) => {
@@ -31,11 +50,12 @@ export class Player extends Component {
           return this.props.handleMovement({ left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
         // down key
         case 40:
+          this.updatePlayerLevel(this.props)
           return this.props.handleMovement({ top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
-          this.setState({ inInventory: true })
+          this.updatePlayerLevel(this.props)
           return this.props.handlePopupInventory()
         case 82:
           return this.props.handlePopupRPS()
