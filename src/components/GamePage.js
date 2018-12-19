@@ -19,7 +19,6 @@ import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import Instructions from './Instructions'
 
-
 const customStyles = {
   content : {
     top                   : '50%',

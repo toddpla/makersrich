@@ -74,11 +74,13 @@ export class Battle extends Component {
       if (Object.keys(weaponsMatrix).includes(opponentWeapon)) {
         if (weapon === opponentWeapon) {
           this.updateBattle(this.state.opponentUid, {
-            infoMessage: selectRandom(this.state.drawingStatements),
+            infoMessage: "Its a draw, go again!",
+            // infoMessage: selectRandom(this.state.drawingStatements),
             weapon: null
           })
           this.updateBattle(this.state.uid, {
-            infoMessage: selectRandom(this.state.drawingStatements),
+            infoMessage: "Its a draw, go again!",
+            // infoMessage: selectRandom(this.state.drawingStatements),
             weapon: null
           })
           return
@@ -88,7 +90,8 @@ export class Battle extends Component {
         }
       } else {
         this.updateBattle(this.state.uid, {
-          infoMessage: selectRandom(this.state.waitingStatemnets),
+          infoMessage: "Winner winer chicken dinner!",
+          // infoMessage: selectRandom(this.state.waitingStatemnets),
           weapon
         })
       }
@@ -97,9 +100,7 @@ export class Battle extends Component {
 
   handleTimeout = () => {
     this.getPlayerWeapon().then(snap => {
-      console.log('snap val', snap.val());
       if(snap.exists()) {
-        console.log('player should win');
         this.finishGame('player')
       } else {
         this.finishGame()
