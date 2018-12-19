@@ -59,9 +59,9 @@ export class Battle extends Component {
         {this.props.player.battle ? (
           <div className='rps'>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
-            <button value='Rock' onClick={this.sendChoice}>Rock</button> <br/>
-            <button value='Paper' onClick={this.sendChoice}>Paper</button> <br/>
-            <button value='Scissors' onClick={this.sendChoice}>Scissors</button>
+            <button className="rps-choice Rock" value='Rock' onClick={this.sendChoice}></button> <br/>
+            <button className="rps-choice Paper" value='Paper' onClick={this.sendChoice}></button> <br/>
+            <button className="rps-choice Scissors" value='Scissors' onClick={this.sendChoice}></button>
           </div>
         ) : (
           <h1>Game over</h1>
