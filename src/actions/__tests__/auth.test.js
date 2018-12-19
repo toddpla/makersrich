@@ -46,6 +46,7 @@ test('should create the login action object with defaults', () => {
         bean: [],
         key: []
       },
+      sessionQuestions: [],
       ...currentPlayer,
     }
   })
