@@ -165,7 +165,7 @@ export class GamePage extends Component {
             position: 'relative',
             margin: '20px auto',
             border: '5px solid darkgoldenrod',
-            maxWidth: '1400px',
+            maxWidth: '1440px',
             display: 'flex'
         }}
         >
@@ -188,7 +188,7 @@ export class GamePage extends Component {
         <ControlPanel
           handlePopupLeaderboard={this.handlePopupLeaderboard}/>
           </div>
-      
+
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}

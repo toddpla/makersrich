@@ -8,7 +8,10 @@ class Map extends Component {
       <div className="map"
         style={{backgroundImage: `url('${map}')`,
                 height: '672px',
+                maxHeight: '672px',
                 width: '1024px',
+                maxWidth: '1024px',
+                overflow: 'auto',
                 position: 'relative',
                 display: 'block',
                 margin: 'auto'
