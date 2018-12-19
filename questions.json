@@ -128,5 +128,75 @@
     },
     "correctAnswer": "0",
     "question": "Which of these is a Javascript data type"
+  },
+  "14": {
+    "answers": {
+      "0": "Java & Python",
+      "1": "Python & CSS",
+      "2": "HTML & CSS",
+      "3": "Ruby & HTML"
+    },
+    "correctAnswer": "2",
+    "question": "Which of these languages are often used with Javascript?"
+  },
+  "15": {
+    "answers": {
+      "0": "array.push()",
+      "1": "array.pull()",
+      "2": "array.pop()",
+      "3": "array.peace()"
+    },
+    "correctAnswer": "2",
+    "question": "How do you remove and return the last element in an array?"
+  },
+  "16": {
+    "answers": {
+      "0": "Application",
+      "1": "None of These",
+      "2": "Programming",
+      "3": "Scripting"
+    },
+    "correctAnswer": "3",
+    "question": "JavaScript is a ________ language?"
+  },
+  "17": {
+    "answers": {
+      "0": "ISP",
+      "1": "Server",
+      "2": "Browser",
+      "3": "None of These"
+    },
+    "correctAnswer": "2",
+    "question": "JavaScript is _______ Side Scripting Language?"
+  },
+  "18": {
+    "answers": {
+      "0": "ISP",
+      "1": "Server",
+      "2": "Browser",
+      "3": "None of These"
+    },
+    "correctAnswer": "2",
+    "question": "JavaScript is _______ Side Scripting Language?"
+  },
+  "19": {
+    "answers": {
+      "0": "an Interpreted",
+      "1": "a Compiled",
+      "2": "a Transfered",
+      "3": "a Rubish"
+    },
+    "correctAnswer": "0",
+    "question": "JavaScript is ________ language?"
+  },
+  "20": {
+    "answers": {
+      "0": "slash",
+      "1": "full stop",
+      "2": "comma",
+      "3": "semicolon"
+    },
+    "correctAnswer": "3",
+    "question": "JavaScript statements are terminated by what?"
   }
 }
