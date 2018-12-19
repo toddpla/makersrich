@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import database, { firebase } from '../../firebase/firebase'
-import RPSChoice from './RPSChoice'
 import selectRandom from '../../utils/selectRandom'
 import { startCreditPlayer } from '../../actions/auth'
 import { startDebitPlayer } from '../../actions/auth'
 import './rps.css'
 
-class RPS extends Component {
+export class Battle extends Component {
 
   constructor(props) {
     const openingStatements = ["Time to fight", "Choose your weapon", "What's it gonna to be Maker..."]
@@ -17,44 +16,39 @@ class RPS extends Component {
     }
   }
 
-  sendChoice = (weapon) => {
+  sendChoice = (e) => {
+    e.preventDefault()
+    const weapon = e.target.value
     const drawingStatements = ["It's === have another go", "Its a draw, go again!", "You chose the same. Have another go!"]
+    const waitingStatemnets = ["Weapon selected!", ["Waiting for opponent!", "Here we go!"]]
     // const winningStatements = ["Winner winer chicken dinner!", "Booyakasha - you da boss!", "YEEEEAASS! Win win win!"]
     // const losingStatements = ["You are a LOOOSER!", "Better luck next some Maker", "Oh dear, what have you done!"]
-    database.ref(`/battles/${this.props.player.uid}`).update({weapon})
     database.ref(`/battles/${this.props.player.battle.opponentUid}/weapon`).once('value').then(snap => {
       const opponentWeapon = snap.val()
       const weaponsMatrix = {'Rock': ['Scissors'], 'Paper': ['Rock'], 'Scissors': ['Paper']}
       if (Object.keys(weaponsMatrix).includes(opponentWeapon)) {
-        let playerInfoMessage;
-        let opponentInfoMessage;
         if (weapon === opponentWeapon) {
-          playerInfoMessage = selectRandom(drawingStatements)
-          opponentInfoMessage = selectRandom(drawingStatements)
           database.ref(`/battles/${this.props.player.battle.opponentUid}`).update({
-            infoMessage: opponentInfoMessage,
+            infoMessage: selectRandom(drawingStatements),
             weapon: null
           })
           database.ref(`/battles/${this.props.player.uid}`).update({
-            infoMessage: playerInfoMessage,
+            infoMessage: selectRandom(drawingStatements),
             weapon: null
           })
           return
         } else if (weaponsMatrix[weapon].includes(opponentWeapon)) {
           this.props.startCreditPlayer(25)
-          // playerInfoMessage = selectRandom(winningStatements)
-          // opponentInfoMessage = selectRandom(losingStatements)
         } else {
           this.props.startDebitPlayer(25)
-          // opponentInfoMessage = selectRandom(losingStatements)
-          // playerInfoMessage = selectRandom(winningStatements)
         }
-        // database.ref(`/battles/${this.props.player.battle.opponentUid}`).update({infoMessage: opponentInfoMessage})
-        // database.ref(`/battles/${this.props.player.uid}`).update({infoMessage: playerInfoMessage})
         database.ref(`/battles/${this.props.player.battle.opponentUid}`).remove()
         database.ref(`/battles/${this.props.player.uid}`).remove()
       } else {
-        console.log('no opponent weapon');
+        database.ref(`/battles/${this.props.player.uid}`).update({
+          infoMessage: selectRandom(waitingStatemnets),
+          weapon
+        })
       }
     })
   }
@@ -65,11 +59,9 @@ class RPS extends Component {
         {this.props.player.battle ? (
           <div className='rps'>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
-            <div id="rps-choices">
-              <RPSChoice value='Rock' sendMove={this.sendChoice}/>
-              <RPSChoice value='Paper' sendMove={this.sendChoice}/>
-              <RPSChoice value='Scissors' sendMove={this.sendChoice}/>
-            </div>
+            <button value='Rock' onClick={this.sendChoice}>Rock</button> <br/>
+            <button value='Paper' onClick={this.sendChoice}>Paper</button> <br/>
+            <button value='Scissors' onClick={this.sendChoice}>Scissors</button>
           </div>
         ) : (
           <h1>Game over</h1>
@@ -89,4 +81,4 @@ const mapStateToProps = (state) => ({
   player: state.auth
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RPS);
+export default connect(mapStateToProps, mapDispatchToProps)(Battle);

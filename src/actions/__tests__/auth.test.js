@@ -25,7 +25,7 @@ beforeEach(done => {
   players = firebaseLoad(playersData, done)
   currentPlayer = players[0]
   uid = currentPlayer.uid
-  defaultAuthState = { auth: { uid } };
+  defaultAuthState = { auth: { ...currentPlayer  } };
   store = createMockStore(defaultAuthState)
 })
 
@@ -38,57 +38,35 @@ test('should create the login action object with defaults', () => {
   expect(action).toEqual({
     type: 'LOGIN',
     player: {
-      sessionQuestions: [],
       inventory: {
         ruby: [],
         bean: [],
         key: [],
       },
+      sessionQuestions: [],
       ...currentPlayer,
     }
   })
 })
 
-test('should get player data from database and initialise with deafults', (done) => {
+test('should get player data from database and initialise with defaults', (done) => {
   store.dispatch(startLogin(uid)).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({
       type: "LOGIN",
       player: {
-        sessionQuestions: [],
         inventory: {
           ruby: [],
           bean: [],
           key: [],
         },
+        sessionQuestions: [],
         ...currentPlayer
       }
     })
     done();
   })
 })
-
-// test('should sign in player via Google Sign in', (done) => {
-//   store.dispatch(startGoogleLogin()).then(() => {
-//     const actions = store.getActions();
-//     expect(actions[0]).toEqual({
-//       type: "LOGIN",
-//       player: {...players[0]}
-//     })
-//     done()
-//   })
-// })
-//
-// test('should sign in player via Github Sign in', (done) => {
-//   store.dispatch(startGithubLogin()).then(() => {
-//     const actions = store.getActions();
-//     expect(actions[0]).toEqual({
-//       type: "LOGIN",
-//       player: {...players[0]}
-//     })
-//     done()
-//   })
-// })
 
 test('should create logout action object', () => {
   expect(logout()).toEqual({
