@@ -249,7 +249,7 @@ export default [
         "visible":true,
         "width":16,
         "x":608,
-        "y":256
+        "y":240
        },
        {
         "gid":3865,
