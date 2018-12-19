@@ -18,6 +18,14 @@ body {
   font-style:normal;
 }
 
+#game-wrapper {
+  position: relative;
+  margin: 20px auto;
+  border: 5px solid darkgoldenrod;
+  max-width: 1324px;
+  display: flex;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -61,6 +69,7 @@ header {
 .logout-button:hover {
   box-shadow: 2px 2px darkgoldenrod
 }
+
 .modal-button {
   size: 40px 40px;
   position: absolute;
@@ -111,6 +120,22 @@ header {
   box-shadow: 4px 4px black
 }
 
+.correct-answer {
+  background-color: ForestGreen;
+}
+
+.correct-answer:hover {
+  background-color: ForestGreen;
+}
+
+.wrong-answer {
+  background-color: FireBrick;
+}
+
+.wrong-answer:hover{
+  background-color: FireBrick;
+}
+
 #answer-0 {
   position: absolute;
   top: 300px;
@@ -135,8 +160,6 @@ header {
   left: 475px;
 }
 
- /* SHOP CSS  */
-
  .popup-header {
    width: 800px;
    padding-top: 10px;
@@ -145,6 +168,31 @@ header {
    font-size: 1.5em;
    font-weight: bold;
  }
+
+ /* LOGIN PAGE */
+
+ #login-page {
+   width: 400px;
+   margin: auto;
+   padding-top: 200px;
+   color: darkgoldenrod;
+   text-align: center;
+ }
+
+.login-button {
+  color: darkgoldenrod;
+  background-color: black;
+  width: 100px;
+  height: 60px;
+  font-family: inherit;
+  font-size: 1.3em;
+  margin: auto;
+  margin: 20px;
+}
+
+.login-button:hover {
+  box-shadow: 2px 2px darkgoldenrod
+}
 
 .message {
   width: 160px;

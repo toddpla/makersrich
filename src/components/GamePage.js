@@ -134,7 +134,7 @@ export class GamePage extends Component {
 
   handlePopupQuiz = () => {
     this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} entered the Quiz house thing!`)
-    this.openModal({modalComponent: <Quiz />})
+    this.openModal({modalComponent: <Quiz closeModal={this.closeModal}/>})
   }
   handlePopupInventory = () => {
     this.openModal({modalComponent: <Inventory />})
@@ -163,15 +163,7 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div
-        style={{
-            position: 'relative',
-            margin: '20px auto',
-            border: '5px solid darkgoldenrod',
-            maxWidth: '1440px',
-            display: 'flex'
-        }}
-        >
+      <div id="game-wrapper" >
 
 
         <Map />

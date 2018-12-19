@@ -19,9 +19,10 @@ export class LoginPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <button id="google-login" onClick={this.handleGoogleLogin}>Google Login</button>
-        <button id="github-login" onClick={this.handleGithubLogin}>Github Login</button>
+      <div id="login-page">
+        <h1>MAKERSRICH</h1>
+        <button className="login-button" onClick={this.handleGoogleLogin}>Google Login</button>
+        <button className="login-button" onClick={this.handleGithubLogin}>Github Login</button>
       </div>
     )
   }

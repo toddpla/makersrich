@@ -10,12 +10,8 @@ export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
-
     if ( this.canAffordQuestion() ) { this.props.startGetQuestion() }
 
-    this.state = {
-      questionCount: 0,
-    }
   }
 
   canAffordQuestion = () => {
@@ -23,12 +19,14 @@ export class Quiz extends React.Component {
   }
 
   sendResultToFirebase = (submission) => {
+    console.log('start of firebase');
+    console.log(submission);
     if (submission.result === true) {
+      console.log('result is true');
       this.props.auth.sessionQuestions.push(submission)
+      console.log('pushed to array');
       this.props.startSendResult({...submission})
-      this.setState({
-        correctQuestions: this.state.correctQuestions + 1
-      })
+      console.log('pushed to firebasea');
       }
     }
 
@@ -39,24 +37,35 @@ export class Quiz extends React.Component {
   }
 
   handleClick = (answerIndex) => {
+    console.log('start handleClick');
     this.props.startDebitPlayer(QUESTION_PRICE).then(() => {
       const submission = {
         uid: this.props.auth.uid,
         questionId: this.props.quiz.id,
         result: answerIndex.toString() === this.props.quiz.correctAnswer
       }
+      console.log(submission);
+      console.log('before firebase');
       this.sendResultToFirebase(submission)
-
-      this.props.clearQuiz()
+      console.log('after firebase');
+      console.log('before can afford');
       if (this.canAffordQuestion()) {
+        console.log('after can afford');
         this.props.startGetQuestion(submission.uid)
+      } else {
+        this.props.clearQuiz()
       }
-      this.setState({
-        questionCount: this.state.questionCount + 1
-      })
-      if (this.state.questionCount === 5) {
-        alert('you did it fam!')
-      }
+    })
+  }
+
+  handleClose = () => {
+    this.props.clearQuiz()
+    this.props.closeModal()
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.handleClose() }
     })
   }
 
@@ -65,10 +74,10 @@ export class Quiz extends React.Component {
     return(
       <div id='quiz-container'>
         <h1>Welcome to the quiz!</h1>
-          { (Object.keys(this.props.quiz).length !== 0 && this.props.quiz.constructor === Object) ? (
+          { (this.props.quiz.constructor === Object && Object.keys(this.props.quiz).length !== 0  ) ? (
             <div id='quiz'>
               <Question question={this.props.quiz.question}/>
-              {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} />)}
+              {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} correct={i.toString() === this.props.quiz.correctAnswer} />)}
             </div>
           )
             :

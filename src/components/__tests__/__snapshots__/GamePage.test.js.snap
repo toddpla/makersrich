@@ -101,13 +101,7 @@ ShallowWrapper {
           />
         </Modal>,
       ],
-      "style": Object {
-        "border": "5px solid darkgoldenrod",
-        "display": "flex",
-        "margin": "20px auto",
-        "maxWidth": "1440px",
-        "position": "relative",
-      },
+      "id": "game-wrapper",
     },
     "ref": null,
     "rendered": Array [
@@ -281,13 +275,7 @@ ShallowWrapper {
             />
           </Modal>,
         ],
-        "style": Object {
-          "border": "5px solid darkgoldenrod",
-          "display": "flex",
-          "margin": "20px auto",
-          "maxWidth": "1440px",
-          "position": "relative",
-        },
+        "id": "game-wrapper",
       },
       "ref": null,
       "rendered": Array [

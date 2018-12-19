@@ -103,13 +103,14 @@ export class Battle extends Component {
           <div className='rps'>
             <h5>Battle with {this.props.player.battle.opponentName}</h5>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
+
             <Timer
               end={moment(this.props.player.battle.created_at).add(5, 'seconds')}
               handleTimeout={this.handleTimeout}
             />
-            <button value='Rock' onClick={this.sendChoice}>Rock</button> <br/>
-            <button value='Paper' onClick={this.sendChoice}>Paper</button> <br/>
-            <button value='Scissors' onClick={this.sendChoice}>Scissors</button>
+            <button className="rps-choice Rock" value='Rock' onClick={this.sendChoice}></button> <br/>
+            <button className="rps-choice Paper" value='Paper' onClick={this.sendChoice}></button> <br/>
+            <button className="rps-choice Scissors" value='Scissors' onClick={this.sendChoice}></button>
           </div>
         ) : (
           <h1>Game over</h1>

@@ -200,8 +200,7 @@ export class Player extends Component {
           left: this.props.player.left,
           height: '16px',
           backgroundPosition: 'center',
-          backgroundImage: `url(${PlayerImg})`,
-          zIndex: 1
+          backgroundImage: `url(${PlayerImg})`
         }}
       >
       </div>

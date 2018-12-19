@@ -7,7 +7,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Wizard's Dwelling. Please complete your thesis before entering"
+                "value":"Wizard's Dwelling. Please complete your thesis before entering. Each question costs 10 coins."
                }],
         "rotation":0,
         "type":"sign",
@@ -49,4 +49,21 @@ export default [
         "width":16,
         "x":672,
         "y":592
+       },
+       {
+        "height":16,
+        "id":19829,
+        "name":"sign_3",
+        "properties":[
+               {
+                "name":"Message",
+                "type":"string",
+                "value":"Go away!"
+               }],
+        "rotation":0,
+        "type":"sign",
+        "visible":true,
+        "width":16,
+        "x":624,
+        "y":144
        }]
