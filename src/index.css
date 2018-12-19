@@ -120,6 +120,22 @@ header {
   box-shadow: 4px 4px black
 }
 
+.correct-answer {
+  background-color: ForestGreen;
+}
+
+.correct-answer:hover {
+  background-color: ForestGreen;
+}
+
+.wrong-answer {
+  background-color: FireBrick;
+}
+
+.wrong-answer:hover{
+  background-color: FireBrick;
+}
+
 #answer-0 {
   position: absolute;
   top: 300px;
