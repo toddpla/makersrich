@@ -63,46 +63,7 @@ ShallowWrapper {
           Leaderboard
         </h3>,
         <PlayersList
-          players={
-            Array [
-              Object {
-                "cash": 0,
-                "displayName": "Frankie",
-                "left": 0,
-                "level": 1,
-                "state": "online",
-                "top": 0,
-                "uid": "1",
-              },
-              Object {
-                "cash": 0,
-                "displayName": "Stanley",
-                "left": 0,
-                "level": 1,
-                "state": "online",
-                "top": 0,
-                "uid": "2",
-              },
-              Object {
-                "cash": 0,
-                "displayName": "Anna",
-                "left": 0,
-                "level": 1,
-                "state": "online",
-                "top": 0,
-                "uid": "3",
-              },
-              Object {
-                "cash": 0,
-                "displayName": "Jenny",
-                "left": 0,
-                "level": 1,
-                "state": "offline",
-                "top": 0,
-                "uid": "4",
-              },
-            ]
-          }
+          players={Array []}
         />,
       ],
       "id": "leaderboard-container",
@@ -125,44 +86,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "players": Array [
-            Object {
-              "cash": 0,
-              "displayName": "Frankie",
-              "left": 0,
-              "level": 1,
-              "state": "online",
-              "top": 0,
-              "uid": "1",
-            },
-            Object {
-              "cash": 0,
-              "displayName": "Stanley",
-              "left": 0,
-              "level": 1,
-              "state": "online",
-              "top": 0,
-              "uid": "2",
-            },
-            Object {
-              "cash": 0,
-              "displayName": "Anna",
-              "left": 0,
-              "level": 1,
-              "state": "online",
-              "top": 0,
-              "uid": "3",
-            },
-            Object {
-              "cash": 0,
-              "displayName": "Jenny",
-              "left": 0,
-              "level": 1,
-              "state": "offline",
-              "top": 0,
-              "uid": "4",
-            },
-          ],
+          "players": Array [],
         },
         "ref": null,
         "rendered": null,
@@ -182,46 +106,7 @@ ShallowWrapper {
             Leaderboard
           </h3>,
           <PlayersList
-            players={
-              Array [
-                Object {
-                  "cash": 0,
-                  "displayName": "Frankie",
-                  "left": 0,
-                  "level": 1,
-                  "state": "online",
-                  "top": 0,
-                  "uid": "1",
-                },
-                Object {
-                  "cash": 0,
-                  "displayName": "Stanley",
-                  "left": 0,
-                  "level": 1,
-                  "state": "online",
-                  "top": 0,
-                  "uid": "2",
-                },
-                Object {
-                  "cash": 0,
-                  "displayName": "Anna",
-                  "left": 0,
-                  "level": 1,
-                  "state": "online",
-                  "top": 0,
-                  "uid": "3",
-                },
-                Object {
-                  "cash": 0,
-                  "displayName": "Jenny",
-                  "left": 0,
-                  "level": 1,
-                  "state": "offline",
-                  "top": 0,
-                  "uid": "4",
-                },
-              ]
-            }
+            players={Array []}
           />,
         ],
         "id": "leaderboard-container",
@@ -244,44 +129,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "players": Array [
-              Object {
-                "cash": 0,
-                "displayName": "Frankie",
-                "left": 0,
-                "level": 1,
-                "state": "online",
-                "top": 0,
-                "uid": "1",
-              },
-              Object {
-                "cash": 0,
-                "displayName": "Stanley",
-                "left": 0,
-                "level": 1,
-                "state": "online",
-                "top": 0,
-                "uid": "2",
-              },
-              Object {
-                "cash": 0,
-                "displayName": "Anna",
-                "left": 0,
-                "level": 1,
-                "state": "online",
-                "top": 0,
-                "uid": "3",
-              },
-              Object {
-                "cash": 0,
-                "displayName": "Jenny",
-                "left": 0,
-                "level": 1,
-                "state": "offline",
-                "top": 0,
-                "uid": "4",
-              },
-            ],
+            "players": Array [],
           },
           "ref": null,
           "rendered": null,
