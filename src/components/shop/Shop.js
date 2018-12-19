@@ -15,9 +15,10 @@ export class Shop extends Component {
     }
   }
 
+
   handlePurchase = () => {
-    this.props.startAddInventoryItem(this.state.selected.type, this.state.selected)
-    this.props.startDebitPlayer(this.state.selected.properties[0].price)
+      this.props.startAddInventoryItem(this.state.selected.type, this.state.selected)
+      this.props.startDebitPlayer(this.state.selected.properties[0].price)
   }
 
   handleSelect = (item) => {
@@ -33,7 +34,7 @@ export class Shop extends Component {
       <div id="muxworthys-bonanza">
         <div className="popup-header">Welcome to Muxworthy's General Store!</div>
         <ShopList inventory={this.props.shop.inventory} handleSelect={this.handleSelect}/>
-        <ShopMessage item={this.state.selected} handlePurchase={this.handlePurchase}/>
+        <ShopMessage item={this.state.selected} cash={this.props.player.cash} handlePurchase={this.handlePurchase}/>
       </div>
     );
   }

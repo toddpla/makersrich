@@ -72,18 +72,21 @@ export class GamePage extends Component {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.startUpdatePlayer(updates)
     }
-    this.props.opponents.forEach(opponent => {
-      if (opponent.left === player.left && opponent.top === player.top) {
-        const playerInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
-        const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
-        Promise.all([playerInBattle, opponentInBattle]).then((values) => {
-          if(values.filter(value => value).length === 0) {
-            database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
-            database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
-          }
-        })
-      }
-    })
+
+    if(this.props.player.cash > 25) {
+      this.props.opponents.forEach(opponent => {
+        if (opponent.left === player.left && opponent.top === player.top) {
+          const playerInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+          const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
+          Promise.all([playerInBattle, opponentInBattle]).then((values) => {
+            if(values.filter(value => value).length === 0) {
+              database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
+              database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
+            }
+          })
+        }
+      })
+    }
     switch(this.checkPortal(updates.left , updates.top)) {
     case "quiz":
       return this.handlePopupQuiz()
