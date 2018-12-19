@@ -18,6 +18,7 @@ import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import Instructions from './Instructions'
+import Sound from 'react-sound'
 
 const customStyles = {
   content : {
@@ -190,7 +191,14 @@ export class GamePage extends Component {
 
 
         <Map />
-
+          <Sound
+            url="you_got_mail.mp3"
+            playStatus={Sound.status.PLAYING}
+            playFromPosition={300 /* in milliseconds */}
+            onLoading={this.handleSongLoading}
+            onPlaying={this.handleSongPlaying}
+            onFinishedPlaying={this.handleSongFinishedPlaying}
+          />
         <Player player={this.props.player}
           handleMovement={this.handleMovement}
           handlePopupInventory={this.handlePopupInventory}
