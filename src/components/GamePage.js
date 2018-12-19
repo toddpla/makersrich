@@ -12,14 +12,12 @@ import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
 import Battle from './battle/Battle'
 import Message from './Message'
-import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
 import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import Instructions from './Instructions'
-
 
 const customStyles = {
   content : {
@@ -47,11 +45,29 @@ export class GamePage extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.startBattle = firebase.functions().httpsCallable('startBattle')
+    // this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
-  componentDidUpdate() {
-    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.closeModal() }
+    })
+  }
+
+  // componentDidUpdate() {
+  //   if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
+  // }
+
+  componentDidUpdate(prevState) {
+    if (prevState.player.battle === undefined && this.props.player.battle !== undefined) {
+      if(!this.state.modalIsOpen) {
+        this.openModal({modalComponent: <Battle />})
+      }
+    } else if (prevState.player.battle !== undefined && this.props.player.battle === undefined) {
+      if (this.state.modalIsOpen){
+        this.closeModal()
+     }
+    }
   }
 
   // modal tings
@@ -93,8 +109,8 @@ export class GamePage extends Component {
           const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
           Promise.all([playerInBattle, opponentInBattle]).then((values) => {
             if(values.filter(value => value).length === 0) {
-              database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
-              database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
+              database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid, opponentName: opponent.displayName, created_at: firebase.database.ServerValue.TIMESTAMP})
+              database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid, opponentName: this.props.player.displayName, created_at: firebase.database.ServerValue.TIMESTAMP})
             }
           })
         }
@@ -166,12 +182,6 @@ export class GamePage extends Component {
 
   handlePopupInstructions = () => {
     this.openModal({modalComponent: <Instructions />})
-  }
-
-  componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      if (e.keyCode === 32) { this.closeModal() }
-    })
   }
 
   render() {
