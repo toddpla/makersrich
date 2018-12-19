@@ -11,7 +11,6 @@ export const startOnAddOpponent = () => {
       .orderByChild('state')
       .equalTo('online')
       .on('child_added', (snapshot) => {
-        console.log('startOnAddOpponent', snapshot.val());
       dispatch(addOpponent({
         uid: snapshot.key,
         ...snapshot.val()

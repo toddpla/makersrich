@@ -1,12 +1,17 @@
 import database from '../firebase/firebase'
 import { updatePlayer } from './auth'
+import moment from 'moment'
 
 export const startOnBattle = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
     return database.ref(`battles/${uid}`).on('value', snap => {
-      console.log(snap.val());
-      dispatch(updatePlayer({battle: snap.val()}))
+      const battle = snap.val()
+      if (battle && battle.created_at && moment(battle.created_at).add(5, 'seconds') > moment()) {
+        // console.log(moment(battle.created_at));
+        dispatch(updatePlayer({battle: 123}))
+      }
+
     })
   }
 }
