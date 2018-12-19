@@ -1,6 +1,6 @@
 const defaultEggReducerState = {
-  top: 0,
-  left: 0
+  top: 16,
+  left: 16
 }
 
 export default (state=defaultEggReducerState, action) => {
