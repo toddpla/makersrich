@@ -24,9 +24,9 @@ ShallowWrapper {
         <p>
           Welcome to MakersRich!
           <br />
-          Aim of the game - Find rubies and beans and complete quizes to level
+          Aim of the game - Find rubies and beans and complete quizzes to level up
           <br />
-          BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper scissors an take your stuff!
+          BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper, scissors and take your stuff!
         </p>,
         <h3>
           Controls
@@ -41,7 +41,7 @@ ShallowWrapper {
           Press 'E' to dig
         </p>,
         <p>
-          Press 'I' to open
+          Press 'I' to open inventory
         </p>,
         <p>
           Press 'Spacebar' to close any pop-ups
@@ -70,9 +70,9 @@ ShallowWrapper {
           "children": Array [
             "Welcome to MakersRich!",
             <br />,
-            "Aim of the game - Find rubies and beans and complete quizes to level",
+            "Aim of the game - Find rubies and beans and complete quizzes to level up",
             <br />,
-            "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper scissors an take your stuff!",
+            "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper, scissors and take your stuff!",
           ],
         },
         "ref": null,
@@ -87,7 +87,7 @@ ShallowWrapper {
             "rendered": null,
             "type": "br",
           },
-          "Aim of the game - Find rubies and beans and complete quizes to level",
+          "Aim of the game - Find rubies and beans and complete quizzes to level up",
           Object {
             "instance": null,
             "key": undefined,
@@ -97,7 +97,7 @@ ShallowWrapper {
             "rendered": null,
             "type": "br",
           },
-          "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper scissors an take your stuff!",
+          "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper, scissors and take your stuff!",
         ],
         "type": "p",
       },
@@ -150,10 +150,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Press 'I' to open",
+          "children": "Press 'I' to open inventory",
         },
         "ref": null,
-        "rendered": "Press 'I' to open",
+        "rendered": "Press 'I' to open inventory",
         "type": "p",
       },
       Object {
@@ -183,9 +183,9 @@ ShallowWrapper {
           <p>
             Welcome to MakersRich!
             <br />
-            Aim of the game - Find rubies and beans and complete quizes to level
+            Aim of the game - Find rubies and beans and complete quizzes to level up
             <br />
-            BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper scissors an take your stuff!
+            BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper, scissors and take your stuff!
           </p>,
           <h3>
             Controls
@@ -200,7 +200,7 @@ ShallowWrapper {
             Press 'E' to dig
           </p>,
           <p>
-            Press 'I' to open
+            Press 'I' to open inventory
           </p>,
           <p>
             Press 'Spacebar' to close any pop-ups
@@ -229,9 +229,9 @@ ShallowWrapper {
             "children": Array [
               "Welcome to MakersRich!",
               <br />,
-              "Aim of the game - Find rubies and beans and complete quizes to level",
+              "Aim of the game - Find rubies and beans and complete quizzes to level up",
               <br />,
-              "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper scissors an take your stuff!",
+              "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper, scissors and take your stuff!",
             ],
           },
           "ref": null,
@@ -246,7 +246,7 @@ ShallowWrapper {
               "rendered": null,
               "type": "br",
             },
-            "Aim of the game - Find rubies and beans and complete quizes to level",
+            "Aim of the game - Find rubies and beans and complete quizzes to level up",
             Object {
               "instance": null,
               "key": undefined,
@@ -256,7 +256,7 @@ ShallowWrapper {
               "rendered": null,
               "type": "br",
             },
-            "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper scissors an take your stuff!",
+            "BEWARE! Other players are also competing with you and won't be afraid to challenge you to a showdown of rock, paper, scissors and take your stuff!",
           ],
           "type": "p",
         },
@@ -309,10 +309,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Press 'I' to open",
+            "children": "Press 'I' to open inventory",
           },
           "ref": null,
-          "rendered": "Press 'I' to open",
+          "rendered": "Press 'I' to open inventory",
           "type": "p",
         },
         Object {
