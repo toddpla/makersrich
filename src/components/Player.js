@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { SPRITE_SIZE } from '../constants'
 import PlayerImg from "../assets/player.png"
+import PickImg from "../assets/pick.png"
 import { connect } from 'react-redux'
 import { collectItem, digTile, unDigTile } from '../actions/map'
 import { startAddInventoryItem, startUpdatePlayer, startCreditPlayer } from '../actions/auth'
@@ -178,7 +179,19 @@ export class Player extends Component {
       <div>
 
       {button}
-
+      <div id="pick"
+        style={{
+          position: 'absolute',
+          width: '16px',
+          top: this.props.player.top,
+          left: this.props.player.left + 8,
+          height: '16px',
+          backgroundPosition: 'center',
+          rotate: 90,
+          backgroundImage: `url(${PickImg})`
+        }}
+      >
+      </div>
       <div id="player"
         style={{
           position: 'absolute',
@@ -187,10 +200,12 @@ export class Player extends Component {
           left: this.props.player.left,
           height: '16px',
           backgroundPosition: 'center',
-          backgroundImage: `url(${PlayerImg})`
+          backgroundImage: `url(${PlayerImg})`,
+          zIndex: 1
         }}
       >
       </div>
+
       </div>
     );
   }

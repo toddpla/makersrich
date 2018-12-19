@@ -31,6 +31,21 @@ ShallowWrapper {
       "children": Array [
         undefined,
         <div
+          id="pick"
+          style={
+            Object {
+              "backgroundImage": "url(pick.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": 408,
+              "position": "absolute",
+              "rotate": 90,
+              "top": 336,
+              "width": "16px",
+            }
+          }
+        />,
+        <div
           id="player"
           style={
             Object {
@@ -41,6 +56,7 @@ ShallowWrapper {
               "position": "absolute",
               "top": 336,
               "width": "16px",
+              "zIndex": 1,
             }
           }
         />,
@@ -49,6 +65,27 @@ ShallowWrapper {
     "ref": null,
     "rendered": Array [
       undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": "pick",
+          "style": Object {
+            "backgroundImage": "url(pick.png)",
+            "backgroundPosition": "center",
+            "height": "16px",
+            "left": 408,
+            "position": "absolute",
+            "rotate": 90,
+            "top": 336,
+            "width": "16px",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -63,6 +100,7 @@ ShallowWrapper {
             "position": "absolute",
             "top": 336,
             "width": "16px",
+            "zIndex": 1,
           },
         },
         "ref": null,
@@ -81,6 +119,21 @@ ShallowWrapper {
         "children": Array [
           undefined,
           <div
+            id="pick"
+            style={
+              Object {
+                "backgroundImage": "url(pick.png)",
+                "backgroundPosition": "center",
+                "height": "16px",
+                "left": 408,
+                "position": "absolute",
+                "rotate": 90,
+                "top": 336,
+                "width": "16px",
+              }
+            }
+          />,
+          <div
             id="player"
             style={
               Object {
@@ -91,6 +144,7 @@ ShallowWrapper {
                 "position": "absolute",
                 "top": 336,
                 "width": "16px",
+                "zIndex": 1,
               }
             }
           />,
@@ -99,6 +153,27 @@ ShallowWrapper {
       "ref": null,
       "rendered": Array [
         undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": "pick",
+            "style": Object {
+              "backgroundImage": "url(pick.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": 408,
+              "position": "absolute",
+              "rotate": 90,
+              "top": 336,
+              "width": "16px",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -113,6 +188,7 @@ ShallowWrapper {
               "position": "absolute",
               "top": 336,
               "width": "16px",
+              "zIndex": 1,
             },
           },
           "ref": null,

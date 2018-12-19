@@ -5,10 +5,13 @@ exports[`renders correctly 1`] = `
   className="map"
   style={
     Object {
-      "alignItems": "center",
       "backgroundImage": "url('proofofwork.png')",
+      "display": "block",
       "height": "672px",
-      "justifyContent": "center",
+      "margin": "auto",
+      "maxHeight": "672px",
+      "maxWidth": "1024px",
+      "overflow": "auto",
       "position": "relative",
       "width": "1024px",
     }
