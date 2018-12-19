@@ -73,9 +73,5 @@ describe('Quiz', () => {
     it('calls #startGetQuestion', () => {
       expect(startGetQuestion).toHaveBeenLastCalledWith(submission.uid)
     });
-
-    it('increases questionCount', () => {
-      expect(instance.state.questionCount).toEqual(1)
-    });
   });
 })
