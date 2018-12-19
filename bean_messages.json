@@ -56,4 +56,14 @@ PATCH"
       "value":"All information on the web in transferred as a string. The most common format for transferring data is JSON"
     }
   ]
+},
+{
+  "name":"bean_6",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"In Javascript, a variable without a value has the data type 'undefined'. The other data types are: Number, String, Boolean and Object."
+    }
+  ]
 }

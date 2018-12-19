@@ -47,4 +47,24 @@
       "value":"CRUD stands for Create, Read, Update, Delete"
      }
   ]
+},
+{
+  "name":"ruby_6",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"p, puts and binding.pry are common tools for debugging in Ruby"
+     }
+  ]
+},
+{
+  "name":"ruby_7",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"In Ruby, methods can either be set as public, private or protected. This determines the accesibility of the method."
+     }
+  ]
 }
