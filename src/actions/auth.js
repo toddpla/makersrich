@@ -1,4 +1,5 @@
 import database, { firebase, googleAuthProvider, githubAuthProvider } from '../firebase/firebase'
+import { startSendNewsfeedMessage } from './newsfeed'
 
 export const login = (uid, player) => ({
     type: 'LOGIN',
@@ -46,6 +47,7 @@ export const startLogin = (uid) => {
         playerData.inventory = inventory
       }
       dispatch(login(uid, playerData))
+      dispatch(startSendNewsfeedMessage('has joined the game!'))
     })
   }
 }
@@ -56,6 +58,7 @@ export const logout = () => ({
 
 export const startLogout = () => {
   return (dispatch) => {
+    dispatch(startSendNewsfeedMessage('has left the game!'))
     dispatch(logout())
     return firebase.auth().signOut()
   }

@@ -159,7 +159,6 @@ export class GamePage extends Component {
   }
 
   render() {
-    console.log('GamePage render', this.props.opponents);
     return (
       <div
         style={{

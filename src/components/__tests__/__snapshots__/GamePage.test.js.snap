@@ -63,6 +63,7 @@ ShallowWrapper {
           notOnMap={false}
           player="player"
         />,
+        Array [],
         <Modal
           ariaHideApp={false}
           bodyOpenClassName="ReactModal__Body--open"
@@ -225,6 +226,7 @@ ShallowWrapper {
             notOnMap={false}
             player="player"
           />,
+          Array [],
           <Modal
             ariaHideApp={false}
             bodyOpenClassName="ReactModal__Body--open"

@@ -21,12 +21,12 @@ class Opponent extends Component {
   }
 
   componentWillUnmount() {
-    database.ref(`/players/${this.props.opponent.uid}`).off("value", this.state.connection); 
+    database.ref(`/players/${this.props.opponent.uid}`).off("value", this.state.connection);
   }
 
   render() {
     return (
-      <div id="player"
+      <div id={this.props.opponent.uid}
         style={{
           position: 'absolute',
           width: '16px',
