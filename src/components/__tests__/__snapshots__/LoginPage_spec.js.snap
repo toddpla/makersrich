@@ -3,11 +3,13 @@
 exports[`renders correctly 1`] = `
 <div>
   <button
+    id="google-login"
     onClick={[Function]}
   >
     Google Login
   </button>
   <button
+    id="github-login"
     onClick={[Function]}
   >
     Github Login
