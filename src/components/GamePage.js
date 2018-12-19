@@ -85,14 +85,12 @@ export class GamePage extends Component {
   }
 
   handleOnFocus = () => {
-    console.log('FOCESEDDD');
     this.setState({
       onFocus: true
     })
   }
 
   handleOffFocus = () => {
-    console.log('UNFOCUSING FAM');
     this.setState({
       onFocus: false
     })

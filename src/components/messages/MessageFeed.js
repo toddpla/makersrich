@@ -4,6 +4,11 @@ import './chatroom.css'
 
 class MessageFeed extends Component {
 
+  componentDidUpdate() {
+    var feed = document.getElementById('message-feed')
+    feed.scrollTop = feed.scrollHeight
+  }
+
   render() {
     return (
       <div id="chatroom-container">
