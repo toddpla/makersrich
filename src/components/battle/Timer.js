@@ -37,7 +37,6 @@ export class Timer extends Component {
       </div>
     );
   }
-
 }
 
 export default Timer;

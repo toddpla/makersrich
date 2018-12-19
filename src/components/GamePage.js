@@ -49,6 +49,12 @@ export class GamePage extends Component {
     this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.closeModal() }
+    })
+  }
+
   componentDidUpdate() {
     if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
   }
@@ -153,12 +159,6 @@ export class GamePage extends Component {
 
   handlePopupInstructions = () => {
     this.openModal({modalComponent: <Instructions />})
-  }
-
-  componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      if (e.keyCode === 32) { this.closeModal() }
-    })
   }
 
   render() {

@@ -8,10 +8,8 @@ export const startOnBattle = () => {
     return database.ref(`battles/${uid}`).on('value', snap => {
       const battle = snap.val()
       if (battle && battle.created_at && moment(battle.created_at).add(5, 'seconds') > moment()) {
-        // console.log(moment(battle.created_at));
-        dispatch(updatePlayer({battle: 123}))
+        dispatch(updatePlayer({battle}))
       }
-
     })
   }
 }
