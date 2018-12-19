@@ -139,10 +139,6 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <InformationMessage message={message}/>})
   }
 
-  handlePopupLevelPlayersList = () => {
-    this.openModal({modalComponent: <LevelPlayers level={this.props.player.level}/>})
-  }
-
   handlePopupLeaderboard = () => {
     this.openModal({modalComponent: <Leaderboard />})
   }
@@ -171,9 +167,9 @@ export class GamePage extends Component {
         }}
         >
 
+        <ControlPanel handlePopupLeaderboard={this.handlePopupLeaderboard}/>
 
-        <Map>
-        </Map>
+        <Map />
 
         <Player player={this.props.player}
           handleMovement={this.handleMovement}
