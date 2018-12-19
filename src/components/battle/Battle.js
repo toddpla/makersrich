@@ -6,7 +6,7 @@ import { startCreditPlayer } from '../../actions/auth'
 import { startDebitPlayer } from '../../actions/auth'
 import './rps.css'
 
-class Battle extends Component {
+export class Battle extends Component {
 
   constructor(props) {
     const openingStatements = ["Time to fight", "Choose your weapon", "What's it gonna to be Maker..."]
@@ -59,17 +59,9 @@ class Battle extends Component {
         {this.props.player.battle ? (
           <div className='rps'>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
-<<<<<<< HEAD:src/components/battle/Battle.js
             <button value='Rock' onClick={this.sendChoice}>Rock</button> <br/>
             <button value='Paper' onClick={this.sendChoice}>Paper</button> <br/>
             <button value='Scissors' onClick={this.sendChoice}>Scissors</button>
-=======
-            <div id="rps-choices">
-              <RPSChoice value='Rock' sendMove={this.sendChoice}/>
-              <RPSChoice value='Paper' sendMove={this.sendChoice}/>
-              <RPSChoice value='Scissors' sendMove={this.sendChoice}/>
-            </div>
->>>>>>> master:src/components/RPS/RPS.js
           </div>
         ) : (
           <h1>Game over</h1>
