@@ -181,7 +181,7 @@ export class Player extends Component {
       <div>
 
       {button}
-      <div id="pick"
+      <div id="player_pick"
         style={{
           position: 'absolute',
           width: '16px',
