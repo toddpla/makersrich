@@ -4,8 +4,43 @@ exports[`renders correctly 1`] = `
 <div
   id="rps-battle-container"
 >
-  <h1>
-    Game over
-  </h1>
+  <div
+    className="rps"
+  >
+    <h5>
+      Battle with 
+      James Bond
+    </h5>
+    <h3>
+      What's it gonna to be Maker...
+    </h3>
+    <div>
+      <h3>
+        
+      </h3>
+    </div>
+    <button
+      onClick={[Function]}
+      value="Rock"
+    >
+      Rock
+    </button>
+     
+    <br />
+    <button
+      onClick={[Function]}
+      value="Paper"
+    >
+      Paper
+    </button>
+     
+    <br />
+    <button
+      onClick={[Function]}
+      value="Scissors"
+    >
+      Scissors
+    </button>
+  </div>
 </div>
 `;
