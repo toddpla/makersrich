@@ -18,6 +18,14 @@ body {
   font-style:normal;
 }
 
+#game-wrapper {
+  position: relative;
+  margin: 20px auto;
+  border: 5px solid darkgoldenrod;
+  max-width: 1324px;
+  display: flex;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

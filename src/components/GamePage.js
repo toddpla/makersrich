@@ -163,15 +163,7 @@ export class GamePage extends Component {
 
   render() {
     return (
-      <div
-        style={{
-            position: 'relative',
-            margin: '20px auto',
-            border: '5px solid darkgoldenrod',
-            maxWidth: '1440px',
-            display: 'flex'
-        }}
-        >
+      <div id="game-wrapper" >
 
 
         <Map />
