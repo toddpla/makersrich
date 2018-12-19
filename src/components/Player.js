@@ -62,8 +62,6 @@ export class Player extends Component {
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
           return this.props.handlePopupInventory()
-        case 82:
-          return this.props.handlePopupRPS()
         case 81:
           return this.props.checkSign(this.props.player.left, this.props.player.top)
         case 88:
