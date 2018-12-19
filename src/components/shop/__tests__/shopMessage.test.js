@@ -16,7 +16,6 @@ test('it displays all info when item selected', () => {
 
   renderer.render(<ShopMessage item={selected}/>)
   const result = renderer.getRenderOutput()
-  console.log(result.props.children);
   expect(result.props.children[0].props.children).toEqual('Cheese')
   expect(result.props.children[1].props.className).toEqual('shop-selected-item cheese')
   expect(result.props.children[2].props.id).toEqual('muxworthys-opinion')

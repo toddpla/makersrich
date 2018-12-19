@@ -26,7 +26,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <td>
+        <td
+          className="leaderboard-table-cell"
+        >
           <img
             alt="status"
             src="images/online.png"
@@ -37,15 +39,24 @@ ShallowWrapper {
             }
           />
         </td>,
-        <td>
+        <td
+          className="leaderboard-table-cell table-displayName"
+        >
           Frankie
         </td>,
-        <td>
+        <td
+          className="leaderboard-table-cell"
+        >
           0
         </td>,
-        <td />,
-        <td />,
+        <td
+          className="leaderboard-table-cell"
+        />,
+        <td
+          className="leaderboard-table-cell"
+        />,
       ],
+      "className": "leaderboard-table-row",
     },
     "ref": null,
     "rendered": Array [
@@ -63,6 +74,7 @@ ShallowWrapper {
               }
             }
           />,
+          "className": "leaderboard-table-cell",
         },
         "ref": null,
         "rendered": Object {
@@ -88,6 +100,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Frankie",
+          "className": "leaderboard-table-cell table-displayName",
         },
         "ref": null,
         "rendered": "Frankie",
@@ -99,6 +112,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 0,
+          "className": "leaderboard-table-cell",
         },
         "ref": null,
         "rendered": 0,
@@ -110,6 +124,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
+          "className": "leaderboard-table-cell",
         },
         "ref": null,
         "rendered": null,
@@ -121,6 +136,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
+          "className": "leaderboard-table-cell",
         },
         "ref": null,
         "rendered": null,
@@ -136,7 +152,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <td>
+          <td
+            className="leaderboard-table-cell"
+          >
             <img
               alt="status"
               src="images/online.png"
@@ -147,15 +165,24 @@ ShallowWrapper {
               }
             />
           </td>,
-          <td>
+          <td
+            className="leaderboard-table-cell table-displayName"
+          >
             Frankie
           </td>,
-          <td>
+          <td
+            className="leaderboard-table-cell"
+          >
             0
           </td>,
-          <td />,
-          <td />,
+          <td
+            className="leaderboard-table-cell"
+          />,
+          <td
+            className="leaderboard-table-cell"
+          />,
         ],
+        "className": "leaderboard-table-row",
       },
       "ref": null,
       "rendered": Array [
@@ -173,6 +200,7 @@ ShallowWrapper {
                 }
               }
             />,
+            "className": "leaderboard-table-cell",
           },
           "ref": null,
           "rendered": Object {
@@ -198,6 +226,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Frankie",
+            "className": "leaderboard-table-cell table-displayName",
           },
           "ref": null,
           "rendered": "Frankie",
@@ -209,6 +238,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": 0,
+            "className": "leaderboard-table-cell",
           },
           "ref": null,
           "rendered": 0,
@@ -220,6 +250,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
+            "className": "leaderboard-table-cell",
           },
           "ref": null,
           "rendered": null,
@@ -231,6 +262,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
+            "className": "leaderboard-table-cell",
           },
           "ref": null,
           "rendered": null,
