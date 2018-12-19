@@ -34,8 +34,7 @@ class Opponent extends Component {
           left: this.state.left,
           height: '16px',
           backgroundPosition: 'center',
-          backgroundImage: `url(${PlayerImg})`,
-          zIndex: 1
+          backgroundImage: `url(${PlayerImg})`
         }}
       >
       </div>
