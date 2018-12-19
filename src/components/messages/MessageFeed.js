@@ -11,7 +11,7 @@ class MessageFeed extends Component {
         <ul id="message-feed">
           {this.props.messages.map(message => {
           return (
-            <li>{message.message} </li>
+            <li><span class="message-name">{message.name.split(' ')[0]}:</span> {message.message} </li>
           )
         })}
         </ul>

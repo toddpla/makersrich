@@ -6,7 +6,7 @@
   list-style-type: none;
   width: 250px;
   text-align: left;
-  padding-inline-start: 20px;
+  padding-inline-start: 15px;
 }
 
 #chatroom-container {
@@ -36,6 +36,10 @@
   padding: 0px 10px;
   font-size: 1.2em;
   font-family: 'Munro'
+}
+
+.message-name {
+  color: darkgoldenrod;
 }
 
 .send-message-button {

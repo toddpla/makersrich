@@ -6,7 +6,8 @@ export const startSendMessage = (message) => {
    database.ref('messages').push({
      created_at: firebase.database.ServerValue.TIMESTAMP,
      message: message,
-     created_by: player.uid
+     created_by: player.uid,
+     name: player.displayName
    })
  }
 }
