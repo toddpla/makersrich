@@ -20,8 +20,8 @@ export class LoginPage extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleGoogleLogin}>Google Login</button>
-        <button onClick={this.handleGithubLogin}>Github Login</button>
+        <button id="google-login" onClick={this.handleGoogleLogin}>Google Login</button>
+        <button id="github-login" onClick={this.handleGithubLogin}>Github Login</button>
       </div>
     )
   }
