@@ -12,7 +12,6 @@ export class Player extends Component {
 
   constructor(props) {
     super(props)
-    console.log(props);
     this.state = {
       inInventory: false,
       level: this.getPlayerLevel(props)
@@ -27,7 +26,6 @@ export class Player extends Component {
     }
 
     var sessionQuestions = this.props.player.sessionQuestions.length
-    console.log(questions);
     var level =  (questions + sessionQuestions) / 5
     return Math.floor(level)
   }
