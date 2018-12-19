@@ -98,5 +98,35 @@
     },
     "correctAnswer": "0",
     "question": "What is the most common format for data retrieved from a server by a client?"
+  },
+  "11": {
+    "answers": {
+      "0": "debugging",
+      "1": "binding.pry",
+      "2": "puts",
+      "3": "p"
+    },
+    "correctAnswer": "0",
+    "question": "Which of these is not a common tool for debugging in Ruby?"
+  },
+  "12": {
+    "answers": {
+      "0": "public",
+      "1": "protected",
+      "2": "private",
+      "3": "permit"
+    },
+    "correctAnswer": "3",
+    "question": "Which of these is not used for access control in Ruby?"
+  },
+  "13": {
+    "answers": {
+      "0": "Integer",
+      "1": "Undefined",
+      "2": "Data",
+      "3": "Module"
+    },
+    "correctAnswer": "0",
+    "question": "Which of these is a Javascript data type"
   }
 }
