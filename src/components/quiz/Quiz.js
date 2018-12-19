@@ -60,12 +60,23 @@ export class Quiz extends React.Component {
     })
   }
 
+  handleClose = () => {
+    this.props.clearQuiz()
+    this.props.closeModal()
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.handleClose() }
+    })
+  }
+
   render() {
 
     return(
       <div id='quiz-container'>
         <h1>Welcome to the quiz!</h1>
-          { (Object.keys(this.props.quiz).length !== 0 && this.props.quiz.constructor === Object) ? (
+          { (this.props.quiz.constructor === Object && Object.keys(this.props.quiz).length !== 0  ) ? (
             <div id='quiz'>
               <Question question={this.props.quiz.question}/>
               {this.props.quiz.answers.map((answer, i) => <Answer key={i} id={i} answer={answer} handleClick={this.handleClick} />)}
