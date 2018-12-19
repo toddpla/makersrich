@@ -28,7 +28,7 @@ class NewsFeed extends Component {
         {this.state.newsfeed.map((item, i) => {
           return (
             <div key={i} className="newsfeed-message">
-              {item.message}
+              <strong>{item.displayName && item.displayName.split(" ")[0]}</strong> {item.message}
             </div>
           )
         })}

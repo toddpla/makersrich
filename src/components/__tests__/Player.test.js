@@ -34,7 +34,6 @@ describe('Player', function() {
 
   describe('movement', function() {
     it('responds to left', function() {
-      console.log(instance);
       const leftEvent = {
         keyCode: 37,
       }
