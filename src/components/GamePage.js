@@ -183,6 +183,7 @@ export class GamePage extends Component {
           closeModal={this.closeModal}
           notOnMap={this.state.modalIsOpen}
         />
+        {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
 
         <Modal
           ariaHideApp={false}
