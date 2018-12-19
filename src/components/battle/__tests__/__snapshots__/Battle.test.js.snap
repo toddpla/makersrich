@@ -20,27 +20,24 @@ exports[`renders correctly 1`] = `
       </h3>
     </div>
     <button
+      className="rps-choice Rock"
       onClick={[Function]}
       value="Rock"
-    >
-      Rock
-    </button>
+    />
      
     <br />
     <button
+      className="rps-choice Paper"
       onClick={[Function]}
       value="Paper"
-    >
-      Paper
-    </button>
+    />
      
     <br />
     <button
+      className="rps-choice Scissors"
       onClick={[Function]}
       value="Scissors"
-    >
-      Scissors
-    </button>
+    />
   </div>
 </div>
 `;

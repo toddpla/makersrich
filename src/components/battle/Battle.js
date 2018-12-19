@@ -17,7 +17,7 @@ export class Battle extends Component {
     this.state = {
       uid: props.player.uid,
       opponentUid: props.player.battle.opponentUid,
-      opponentName: props.player.battle.opponentName.split(" ")[0],
+      opponentName: props.player.battle.opponentName.split(" ")[0] || '',
       infoMessage: openingStatements[Math.floor(Math.random() * openingStatements.length)],
       drawingStatements: ["It's === have another go", "Its a draw, go again!", "You chose the same. Have another go!"],
       waitingStatemnets: ["Weapon selected!", "Waiting for opponent!", "Here we go!"],
@@ -28,7 +28,7 @@ export class Battle extends Component {
   }
 
   updateBattle = (uid, updates) => {
-    database.ref(`/battles/${uid}`).updates(updates)
+    database.ref(`/battles/${uid}`).update(updates)
   }
 
   removeBattles = () => {
@@ -39,8 +39,13 @@ export class Battle extends Component {
   }
 
   getOpponentWeapon = () => {
-    return database.ref(`/battles/${this.opponentUid}/weapon`).once('value')
+    return database.ref(`/battles/${this.state.opponentUid}/weapon`).once('value')
   }
+
+  getPlayerWeapon = () => {
+    return database.ref(`/battles/${this.state.uid}/weapon`).once('value')
+  }
+
 
   finishGame = (winner) => {
     this.props.updatePlayer({battle: null})
@@ -52,7 +57,7 @@ export class Battle extends Component {
         this.props.startSendNewsfeedMessage(`was beaten by ${this.state.opponentName} in a battle`)
         this.props.startDebitPlayer(this.state.betAmount)
       } else {
-        this.props.startSendNewsfeedMessage(`draw with ${this.state.opponentName} in a battle`)
+        this.props.startSendNewsfeedMessage(`drew with ${this.state.opponentName} in a battle`)
         this.props.startDebitPlayer(this.state.betAmount)
         // this.props.startDebitOpponent(this.state.betAmount)
       }
@@ -82,7 +87,7 @@ export class Battle extends Component {
           this.finishGame(winner)
         }
       } else {
-        database.ref(`/battles/${this.state.uid}`).update({
+        this.updateBattle(this.state.uid, {
           infoMessage: selectRandom(this.state.waitingStatemnets),
           weapon
         })
@@ -91,8 +96,14 @@ export class Battle extends Component {
   }
 
   handleTimeout = () => {
-    this.getOpponentWeapon().then(snap => {
-      snap.exists() ? this.finishGame('opponent') : this.finishGame()
+    this.getPlayerWeapon().then(snap => {
+      console.log('snap val', snap.val());
+      if(snap.exists()) {
+        console.log('player should win');
+        this.finishGame('player')
+      } else {
+        this.finishGame()
+      }
     })
   }
 
@@ -103,7 +114,6 @@ export class Battle extends Component {
           <div className='rps'>
             <h5>Battle with {this.props.player.battle.opponentName}</h5>
             <h3>{this.props.player.battle.infoMessage || this.state.infoMessage}</h3>
-
             <Timer
               end={moment(this.props.player.battle.created_at).add(5, 'seconds')}
               handleTimeout={this.handleTimeout}

@@ -12,7 +12,6 @@ import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
 import Battle from './battle/Battle'
 import Message from './Message'
-import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
 import ControlPanel from './controlpanel/ControlPanel'
@@ -46,7 +45,7 @@ export class GamePage extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.startBattle = firebase.functions().httpsCallable('startBattle')
+    // this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
   componentDidMount() {
@@ -55,8 +54,20 @@ export class GamePage extends Component {
     })
   }
 
-  componentDidUpdate() {
-    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
+  // componentDidUpdate() {
+  //   if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
+  // }
+
+  componentDidUpdate(prevState) {
+    if (prevState.player.battle === undefined && this.props.player.battle !== undefined) {
+      if(!this.state.modalIsOpen) {
+        this.openModal({modalComponent: <Battle />})
+      }
+    } else if (prevState.player.battle !== undefined && this.props.player.battle === undefined) {
+      if (this.state.modalIsOpen){
+        this.closeModal()
+     }
+    }
   }
 
   // modal tings
