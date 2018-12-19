@@ -67,6 +67,9 @@ ShallowWrapper {
             Player
           </th>
           <th>
+            Level
+          </th>
+          <th>
             Cash
           </th>
           <th>
@@ -128,6 +131,9 @@ ShallowWrapper {
             <th />
             <th>
               Player
+            </th>
+            <th>
+              Level
             </th>
             <th>
               Cash
@@ -192,6 +198,9 @@ ShallowWrapper {
                 Player
               </th>,
               <th>
+                Level
+              </th>,
+              <th>
                 Cash
               </th>,
               <th>
@@ -223,6 +232,17 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Player",
+              "type": "th",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Level",
+              },
+              "ref": null,
+              "rendered": "Level",
               "type": "th",
             },
             Object {
@@ -349,6 +369,9 @@ ShallowWrapper {
               Player
             </th>
             <th>
+              Level
+            </th>
+            <th>
               Cash
             </th>
             <th>
@@ -410,6 +433,9 @@ ShallowWrapper {
               <th />
               <th>
                 Player
+              </th>
+              <th>
+                Level
               </th>
               <th>
                 Cash
@@ -474,6 +500,9 @@ ShallowWrapper {
                   Player
                 </th>,
                 <th>
+                  Level
+                </th>,
+                <th>
                   Cash
                 </th>,
                 <th>
@@ -505,6 +534,17 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": "Player",
+                "type": "th",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Level",
+                },
+                "ref": null,
+                "rendered": "Level",
                 "type": "th",
               },
               Object {
