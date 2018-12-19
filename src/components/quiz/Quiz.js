@@ -10,7 +10,6 @@ export class Quiz extends React.Component {
 
   constructor(props) {
     super(props);
-
     if ( this.canAffordQuestion() ) { this.props.startGetQuestion() }
 
     this.state = {
@@ -47,9 +46,10 @@ export class Quiz extends React.Component {
       }
       this.sendResultToFirebase(submission)
 
-      this.props.clearQuiz()
       if (this.canAffordQuestion()) {
         this.props.startGetQuestion(submission.uid)
+      } else {
+        this.props.clearQuiz()
       }
       this.setState({
         questionCount: this.state.questionCount + 1
