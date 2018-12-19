@@ -12,7 +12,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":0,
         "y":64
@@ -30,7 +30,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":96,
         "y":96
@@ -48,7 +48,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":176,
         "y":224
@@ -66,7 +66,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":48,
         "y":336
@@ -84,10 +84,10 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
-        "x":144,
-        "y":400
+        "x":976,
+        "y":608
        },
        {
         "gid":3865,
@@ -102,7 +102,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":96,
         "y":480
@@ -120,10 +120,10 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":144,
-        "y":544
+        "y":528
        },
        {
         "gid":3865,
@@ -138,10 +138,10 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":224,
-        "y":528
+        "y":512
        },
        {
         "gid":3865,
@@ -156,7 +156,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":336,
         "y":496
@@ -174,10 +174,10 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":416,
-        "y":544
+        "y":528
        },
        {
         "gid":3865,
@@ -192,7 +192,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":576,
         "y":656
@@ -210,7 +210,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":640,
         "y":544
@@ -228,10 +228,10 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":704,
-        "y":400
+        "y":384
        },
        {
         "gid":3865,
@@ -246,7 +246,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":608,
         "y":256
@@ -264,7 +264,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":512,
         "y":112
@@ -282,7 +282,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":992,
         "y":64
@@ -300,7 +300,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":832,
         "y":48
@@ -318,7 +318,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":928,
         "y":384
@@ -336,7 +336,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":976,
         "y":480
@@ -354,7 +354,7 @@ export default [
                }],
         "rotation":0,
         "type":"ruby",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":848,
         "y":608
@@ -372,10 +372,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":272,
-        "y":128
+        "y":112
        },
        {
         "gid":3884,
@@ -390,10 +390,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":352,
-        "y":288
+        "y":272
        },
        {
         "gid":3884,
@@ -408,10 +408,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":272,
-        "y":336
+        "y":320
        },
        {
         "gid":3884,
@@ -426,7 +426,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":144,
         "y":16
@@ -444,7 +444,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":32,
         "y":416
@@ -462,7 +462,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":32,
         "y":544
@@ -480,7 +480,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":128,
         "y":608
@@ -498,10 +498,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":256,
-        "y":608
+        "y":592
        },
        {
         "gid":3884,
@@ -516,7 +516,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":288,
         "y":464
@@ -534,7 +534,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":400,
         "y":432
@@ -552,10 +552,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":480,
-        "y":496
+        "y":480
        },
        {
         "gid":3884,
@@ -570,7 +570,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":512,
         "y":384
@@ -588,10 +588,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":624,
-        "y":608
+        "y":592
        },
        {
         "gid":3884,
@@ -606,10 +606,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":752,
-        "y":464
+        "y":448
        },
        {
         "gid":3884,
@@ -624,7 +624,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":976,
         "y":416
@@ -642,10 +642,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":912,
-        "y":208
+        "y":192
        },
        {
         "gid":3884,
@@ -660,10 +660,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":848,
-        "y":240
+        "y":224
        },
        {
         "gid":3884,
@@ -678,7 +678,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":720,
         "y":208
@@ -696,10 +696,10 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":640,
-        "y":112
+        "y":96
        },
        {
         "gid":3884,
@@ -714,7 +714,7 @@ export default [
                }],
         "rotation":0,
         "type":"bean",
-        "visible":false,
+        "visible":true,
         "width":16,
         "x":432,
         "y":16
