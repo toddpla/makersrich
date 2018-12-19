@@ -56,7 +56,6 @@ ShallowWrapper {
               "position": "absolute",
               "top": 336,
               "width": "16px",
-              "zIndex": 1,
             }
           }
         />,
@@ -100,7 +99,6 @@ ShallowWrapper {
             "position": "absolute",
             "top": 336,
             "width": "16px",
-            "zIndex": 1,
           },
         },
         "ref": null,
@@ -144,7 +142,6 @@ ShallowWrapper {
                 "position": "absolute",
                 "top": 336,
                 "width": "16px",
-                "zIndex": 1,
               }
             }
           />,
@@ -188,7 +185,6 @@ ShallowWrapper {
               "position": "absolute",
               "top": 336,
               "width": "16px",
-              "zIndex": 1,
             },
           },
           "ref": null,
