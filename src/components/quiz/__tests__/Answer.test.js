@@ -19,7 +19,7 @@ test('it renders Answer', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
-test('calls #handleClick on click', () => {
-  wrapper.find('div').simulate('click')
-  expect(handleClick).toHaveBeenLastCalledWith('1')
-})
+// test('calls #handleClick on click', () => {
+//   wrapper.find('div').simulate('click')
+//   expect(handleClick).toHaveBeenLastCalledWith('1')
+// })
