@@ -59,6 +59,17 @@ ShallowWrapper {
             }
           }
         />,
+        <Connect(MessageForm)
+          handleOnFocus={[Function]}
+          style={
+            Object {
+              "height": "40px",
+              "width": "40px",
+              "zIndex": 0,
+            }
+          }
+        />,
+        <Connect(MessageFeed) />,
       ],
     },
     "ref": null,
@@ -105,6 +116,31 @@ ShallowWrapper {
         "rendered": null,
         "type": "div",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleOnFocus": [Function],
+          "style": Object {
+            "height": "40px",
+            "width": "40px",
+            "zIndex": 0,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -145,6 +181,17 @@ ShallowWrapper {
               }
             }
           />,
+          <Connect(MessageForm)
+            handleOnFocus={[Function]}
+            style={
+              Object {
+                "height": "40px",
+                "width": "40px",
+                "zIndex": 0,
+              }
+            }
+          />,
+          <Connect(MessageFeed) />,
         ],
       },
       "ref": null,
@@ -190,6 +237,31 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleOnFocus": [Function],
+            "style": Object {
+              "height": "40px",
+              "width": "40px",
+              "zIndex": 0,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",
