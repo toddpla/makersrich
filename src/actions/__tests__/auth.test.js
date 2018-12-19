@@ -38,13 +38,12 @@ test('should create the login action object with defaults', () => {
   expect(action).toEqual({
     type: 'LOGIN',
     player: {
-      sessionQuestions: [],
       inventory: {
         ruby: [],
         bean: [],
         key: [],
       },
-      questions: [],
+      sessionQuestions: [],
       ...currentPlayer,
     }
   })
@@ -56,13 +55,12 @@ test('should get player data from database and initialise with defaults', (done)
     expect(actions[0]).toEqual({
       type: "LOGIN",
       player: {
-        sessionQuestions: [],
         inventory: {
           ruby: [],
           bean: [],
           key: [],
         },
-        questions: [],
+        sessionQuestions: [],
         ...currentPlayer
       }
     })
