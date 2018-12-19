@@ -5,5 +5,8 @@ exports[`renders correctly 1`] = `
   className="message"
 >
   message
+  <div
+    className="message-item undefined"
+  />
 </div>
 `;
