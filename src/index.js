@@ -5,7 +5,6 @@ import AppRouter from './routers/AppRouter'
 import { history } from './routers/AppRouter'
 import { firebase, subscribe } from './firebase/firebase'
 import { startLogin, logout } from './actions/auth'
-import { startOnMessages } from './actions/messages'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore'
@@ -43,7 +42,6 @@ const loadFirebaseData = (user) => {
       store.dispatch(startOnAddOpponent())
       store.dispatch(startOnRemoveOpponent())
       store.dispatch(startOnBattle())
-      store.dispatch(startOnMessages())
       renderApp()
       hasLoadedData = true
     })
