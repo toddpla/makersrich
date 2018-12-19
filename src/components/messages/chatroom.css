@@ -1,5 +1,6 @@
 #message-feed {
-  height: 200px;
+  height: 220px;
+  margin: 5px 0;
   overflow-y:scroll;
   position: absolute;
   list-style-type: none;
@@ -33,6 +34,7 @@
   width: 150px;
   margin: 0 20px;
   padding: 0px 10px;
+  font-size: 1.2em;
   font-family: 'Munro'
 }
 
