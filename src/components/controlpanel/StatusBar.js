@@ -11,6 +11,7 @@ class StatusBar extends Component {
         <div className="status-count"><div className="key status-bar-image">{this.props.player.inventory.key.length}</div></div>
         <div className="status-count"><div className="bean status-bar-image">{this.props.player.inventory.bean.length}</div></div>
         <div className="status-count"><div className="ruby status-bar-image">{this.props.player.inventory.ruby.length}</div></div>
+        <div className="status-count"><div className="lvl status-bar-image">{this.props.player.level}</div></div>
       </div>
     );
   }
