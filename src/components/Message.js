@@ -5,6 +5,8 @@ class Message extends Component {
     return (
       <div className='message'>
         {this.props.message}
+        <div className={`message-item ${(this.props.item && this.props.item.type)}`}>
+        </div>
       </div>
     )
   }
