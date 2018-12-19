@@ -33,7 +33,7 @@ export const startWinEgg = () => {
     }
     let updates = {}
     updates[`egg`] = {left, top}
-    updates[`players/${player.uid}/cash`] = player.cash + 100
+    updates[`players/${player.uid}/cash`] = player.cash + 1000
     return database.ref().update(updates)
   }
 }
