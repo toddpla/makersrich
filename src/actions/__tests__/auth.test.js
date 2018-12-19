@@ -38,10 +38,13 @@ test('should create the login action object with defaults', () => {
   expect(action).toEqual({
     type: 'LOGIN',
     player: {
+      cash: 0,
+      displayName: currentPlayer.displayName,
+      state: "online",
       inventory: {
         ruby: [],
         bean: [],
-        key: [],
+        key: []
       },
       ...currentPlayer,
     }
