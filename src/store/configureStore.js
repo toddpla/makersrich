@@ -6,6 +6,7 @@ import mapReducer from '../reducers/map'
 import shopReducer from '../reducers/shop'
 import opponentsReducer from '../reducers/opponents'
 import messageReducer from '../reducers/messages'
+import eggReducer from '../reducers/egg'
 
 import thunk from 'redux-thunk'
 
@@ -21,7 +22,8 @@ export default () => {
       opponents: opponentsReducer,
       map: mapReducer,
       shop: shopReducer,
-      messages: messageReducer
+      messages: messageReducer,
+      egg: eggReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   )

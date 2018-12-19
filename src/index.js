@@ -11,6 +11,7 @@ import configureStore from './store/configureStore'
 import { startOnAddOpponent, startOnRemoveOpponent } from './actions/opponents'
 import { startOnBattle} from './actions/battle'
 import { startOnMessages} from './actions/messages'
+import { startOnEgg } from './actions/egg'
 // import LoadingPage from './components/LoadingPage'
 import Modal from 'react-modal'
 
@@ -44,6 +45,7 @@ const loadFirebaseData = (user) => {
       store.dispatch(startOnRemoveOpponent())
       store.dispatch(startOnBattle())
       store.dispatch(startOnMessages())
+      store.dispatch(startOnEgg())
       renderApp()
       hasLoadedData = true
     })
