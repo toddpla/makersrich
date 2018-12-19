@@ -58,11 +58,14 @@ ShallowWrapper {
           handlePopupInventory={[Function]}
           handlePopupMessage={[Function]}
           notOnMap={false}
+          onFocus={false}
           player="player"
         />,
         Array [],
         <div>
           <ControlPanel
+            handleOffFocus={[Function]}
+            handleOnFocus={[Function]}
             handlePopupLeaderboard={[Function]}
           />
         </div>,
@@ -127,6 +130,7 @@ ShallowWrapper {
           "handlePopupMessage": [Function],
           "handlePopupRPS": undefined,
           "notOnMap": false,
+          "onFocus": false,
           "player": "player",
         },
         "ref": null,
@@ -139,6 +143,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ControlPanel
+            handleOffFocus={[Function]}
+            handleOnFocus={[Function]}
             handlePopupLeaderboard={[Function]}
           />,
         },
@@ -148,6 +154,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "handleOffFocus": [Function],
+            "handleOnFocus": [Function],
             "handlePopupLeaderboard": [Function],
           },
           "ref": null,
@@ -232,11 +240,14 @@ ShallowWrapper {
             handlePopupInventory={[Function]}
             handlePopupMessage={[Function]}
             notOnMap={false}
+            onFocus={false}
             player="player"
           />,
           Array [],
           <div>
             <ControlPanel
+              handleOffFocus={[Function]}
+              handleOnFocus={[Function]}
               handlePopupLeaderboard={[Function]}
             />
           </div>,
@@ -301,6 +312,7 @@ ShallowWrapper {
             "handlePopupMessage": [Function],
             "handlePopupRPS": undefined,
             "notOnMap": false,
+            "onFocus": false,
             "player": "player",
           },
           "ref": null,
@@ -313,6 +325,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ControlPanel
+              handleOffFocus={[Function]}
+              handleOnFocus={[Function]}
               handlePopupLeaderboard={[Function]}
             />,
           },
@@ -322,6 +336,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "handleOffFocus": [Function],
+              "handleOnFocus": [Function],
               "handlePopupLeaderboard": [Function],
             },
             "ref": null,

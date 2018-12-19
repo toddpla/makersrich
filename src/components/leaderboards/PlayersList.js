@@ -9,7 +9,7 @@ export class PlayersList extends Component {
       <table id="leaderboard-table">
       <tbody>
         <tr className="leaderboard-table-headings">
-          <th></th><th>Player</th><th>Cash</th><th>Rubies</th><th>Beans</th>
+          <th></th><th>Player</th><th>Level</th><th>Cash</th><th>Rubies</th><th>Beans</th>
         </tr>
         {this.props.players.map((player, i) => <PlayersListItem {...player}/>)}
         </tbody>

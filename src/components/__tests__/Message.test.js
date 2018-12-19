@@ -14,6 +14,6 @@ test('renders with a message prop', () => {
   const renderer = new ShallowRenderer()
   renderer.render(<Message message={'message'} />)
   const result = renderer.getRenderOutput()
-  expect(result.props.children).toEqual("message")
+  expect(result.props.children[0]).toEqual("message")
 
 })

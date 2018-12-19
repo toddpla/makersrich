@@ -19,11 +19,11 @@ export class Player extends Component {
     }
   }
 
-  getPlayerLevel = (props) => {
+  getPlayerLevel = () => {
     var questions = 0
 
-    if (props.player.questions !== undefined ) {
-      questions = Object.keys(props.player.questions).length
+    if (this.props.player.questions !== undefined ) {
+      questions = Object.keys(this.props.player.questions).length
     }
 
     var sessionQuestions = this.props.player.sessionQuestions.length
@@ -31,10 +31,15 @@ export class Player extends Component {
     return Math.floor(level)
   }
 
-  updatePlayerLevel = (props) => {
-    this.setState({
-      level: this.getPlayerLevel(props)
-    })
+  updatePlayerLevel = () => {
+    var currentLevel = this.props.player.level
+    var newLevel = this.getPlayerLevel()
+    if (newLevel > currentLevel) {
+      this.props.startUpdatePlayer({ level: newLevel} )
+      this.props.startSendNewsfeedMessage(
+        `${this.props.player.displayName.split(' ')[0]} has levelled up!!`
+      )
+    }
   }
 
   handleKeyDown = (e) => {
@@ -51,12 +56,11 @@ export class Player extends Component {
           return this.props.handleMovement({ left: this.props.player.left + SPRITE_SIZE, top: this.props.player.top  })
         // down key
         case 40:
-          this.updatePlayerLevel(this.props)
+          this.updatePlayerLevel()
           return this.props.handleMovement({ top: this.props.player.top + SPRITE_SIZE, left: this.props.player.left  })
         case 69:
           return this.attemptDig(this.props.player.left, this.props.player.top)
         case 73:
-          this.updatePlayerLevel(this.props)
           return this.props.handlePopupInventory()
         case 82:
           return this.props.handlePopupRPS()
@@ -147,14 +151,16 @@ export class Player extends Component {
       this.props.startAddInventoryItem(item.type, item)
       this.setState({inPopUp: true})
       this.props.startSendNewsfeedMessage(`${this.props.player.displayName.split(' ')[0]} found a ${item.type}!`)
-      this.props.handlePopupMessage(`You found a ${item.type}!`)
+      this.props.handlePopupMessage(`You found a ${item.type}!`, item)
     }
   }
 
   componentDidMount() {
     window.addEventListener('keydown', (e) => {
-      e.preventDefault()
-      this.handleKeyDown(e)
+      if(!this.props.onFocus){
+        e.preventDefault()
+        this.handleKeyDown(e)
+      }
     })
   }
 
@@ -222,7 +228,7 @@ const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startAddInventoryItem: (itemRef, item) => dispatch(startAddInventoryItem(itemRef, item)),
   startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
-  startCreditPlayer: (amount) => dispatch(startCreditPlayer(amount))
+  startCreditPlayer: (amount) => dispatch(startCreditPlayer(amount)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
