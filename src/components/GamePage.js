@@ -167,10 +167,12 @@ export class GamePage extends Component {
         style={{
             position: 'relative',
             margin: '20px auto',
+            border: '5px solid darkgoldenrod',
+            maxWidth: '1440px',
+            display: 'flex'
         }}
         >
 
-        <ControlPanel handlePopupLeaderboard={this.handlePopupLeaderboard}/>
 
         <Map />
 
@@ -182,9 +184,13 @@ export class GamePage extends Component {
           handlePopupMessage={this.handlePopupMessage}
           handlePopupInstructions={this.handlePopupInstructions}
           checkSign={this.checkSign}
-          closeModal={this.closeModal}
           notOnMap={this.state.modalIsOpen}
         />
+
+        <div>
+        <ControlPanel
+          handlePopupLeaderboard={this.handlePopupLeaderboard}/>
+          </div>
 
         <Modal
           ariaHideApp={false}
@@ -197,6 +203,7 @@ export class GamePage extends Component {
           {this.state.modalComponent}
           <div className="modal-button" onClick={this.closeModal}></div>
         </Modal>
+
         </div>
     );
   }
