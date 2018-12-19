@@ -7,5 +7,10 @@ exports[`should render correctly 1`] = `
   <h1>
     Welcome to the quiz!
   </h1>
+  <div>
+    <h2>
+      Come back when you have more money
+    </h2>
+  </div>
 </div>
 `;

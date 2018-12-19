@@ -9,6 +9,7 @@ ShallowWrapper {
     player={
       Object {
         "left": 400,
+        "sessionQuestions": Array [],
         "top": 336,
       }
     }

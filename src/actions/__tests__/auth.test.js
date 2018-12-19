@@ -57,6 +57,7 @@ test('should get player data from database and initialise with deafults', (done)
     expect(actions[0]).toEqual({
       type: "LOGIN",
       player: {
+        sessionQuestions: [],
         inventory: {
           ruby: [],
           bean: [],
