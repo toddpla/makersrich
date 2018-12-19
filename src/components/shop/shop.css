@@ -27,6 +27,12 @@
    line-height: 1.5em;
  }
 
+ #no-money-message {
+   position: absolute;
+   top:300px;
+   width: 300px;
+ }
+
  #purchase-item-button {
    position: absolute;
    padding-top: 12px;
