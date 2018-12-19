@@ -11,7 +11,6 @@ export const startOnAddOpponent = () => {
       .orderByChild('state')
       .equalTo('online')
       .on('child_added', (snapshot) => {
-        console.log('startOnAddOpponent', snapshot.val());
       dispatch(addOpponent({
         uid: snapshot.key,
         ...snapshot.val()
@@ -35,47 +34,3 @@ export const startOnRemoveOpponent = () => {
     })
   }
 }
-
-// export const startOnOnlinePlayers = () => {
-//   return (dispatch) => {
-//     return database.ref('players')
-//       .orderByChild('state')
-//       .equalTo('online')
-//       .on('value', (snap) => {
-//
-//       })
-//   }
-// }
-
-//
-// export const startOnAddOpponent = () => {
-//   return (dispatch) => {
-//     return database.ref('players')
-//       .orderByChild('state')
-//       .equalTo('online')
-//       .on('child_added', (snapshot) => {
-//         const connection = database.ref(`players/${snapshot.key}`).on('value', (childSnap) => {
-//           // dispatch(updateOpponent())
-//           return {
-//             ...childSnap.val()
-//           }})
-//       dispatch(addOpponent({
-//         uid: snapshot.key,
-//         connection
-//       }))
-//     })
-//   }
-// }
-//
-//
-// export const startOnRemoveOpponent = () => {
-//   return (dispatch) => {
-//     return database.ref('players')
-//     .orderByChild('state')
-//     .equalTo('online')
-//     .on('child_removed', (snapshot) => {
-//       // console.log('startOnRemoveOpponent', snapshot.val());
-//       dispatch(removeOpponent(snapshot.key))
-//     })
-//   }
-// }

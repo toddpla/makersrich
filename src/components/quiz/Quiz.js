@@ -19,14 +19,9 @@ export class Quiz extends React.Component {
   }
 
   sendResultToFirebase = (submission) => {
-    console.log('start of firebase');
-    console.log(submission);
     if (submission.result === true) {
-      console.log('result is true');
       this.props.auth.sessionQuestions.push(submission)
-      console.log('pushed to array');
       this.props.startSendResult({...submission})
-      console.log('pushed to firebasea');
       }
     }
 
@@ -37,20 +32,14 @@ export class Quiz extends React.Component {
   }
 
   handleClick = (answerIndex) => {
-    console.log('start handleClick');
     this.props.startDebitPlayer(QUESTION_PRICE).then(() => {
       const submission = {
         uid: this.props.auth.uid,
         questionId: this.props.quiz.id,
         result: answerIndex.toString() === this.props.quiz.correctAnswer
       }
-      console.log(submission);
-      console.log('before firebase');
       this.sendResultToFirebase(submission)
-      console.log('after firebase');
-      console.log('before can afford');
       if (this.canAffordQuestion()) {
-        console.log('after can afford');
         this.props.startGetQuestion(submission.uid)
       } else {
         this.props.clearQuiz()

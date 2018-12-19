@@ -17,7 +17,7 @@ export class MessageForm extends Component {
     return (
       <div id="message-form">
       <form onSubmit={this.onSubmit}>
-        <input type='text' autocomplete="off" id="messagebox" placeholder="Enter Message" onBlur={this.props.handleOffFocus} onFocus={this.props.handleOnFocus}/>
+        <input type='text' autoComplete="off" id="messagebox" placeholder="Enter Message" onBlur={this.props.handleOffFocus} onFocus={this.props.handleOnFocus}/>
         <button className="send-message-button" id="submit" value="Submit">Submit</button>
       </form>
 
