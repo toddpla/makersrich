@@ -7,12 +7,12 @@ class InventoryListItem extends Component {
   }
 
   getType = () => {
-    if(this.props.item.type === 'miscellaneous'){
-      return this.props.item.properties[0].type + " miscellaneous-item"
-    } else {
+    // if(this.props.item.type === 'miscellaneous'){
+    //   return this.props.item.properties[0].type + " miscellaneous-item"
+    // } else {
       return this.props.item.type
     }
-  }
+  // }
 
   render() {
     return (
