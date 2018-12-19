@@ -31,7 +31,7 @@ ShallowWrapper {
       "children": Array [
         undefined,
         <div
-          id="pick"
+          id="player_pick"
           style={
             Object {
               "backgroundImage": "url(pick.png)",
@@ -69,7 +69,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "id": "pick",
+          "id": "player_pick",
           "style": Object {
             "backgroundImage": "url(pick.png)",
             "backgroundPosition": "center",
@@ -117,7 +117,7 @@ ShallowWrapper {
         "children": Array [
           undefined,
           <div
-            id="pick"
+            id="player_pick"
             style={
               Object {
                 "backgroundImage": "url(pick.png)",
@@ -155,7 +155,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "id": "pick",
+            "id": "player_pick",
             "style": Object {
               "backgroundImage": "url(pick.png)",
               "backgroundPosition": "center",
