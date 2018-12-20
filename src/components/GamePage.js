@@ -14,6 +14,8 @@ import Battle from './battle/Battle'
 import Message from './Message'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
+import Egg from './Egg'
+import { startWinEgg } from '../actions/egg'
 import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
@@ -85,14 +87,12 @@ export class GamePage extends Component {
   }
 
   handleOnFocus = () => {
-    console.log('FOCESEDDD');
     this.setState({
       onFocus: true
     })
   }
 
   handleOffFocus = () => {
-    console.log('UNFOCUSING FAM');
     this.setState({
       onFocus: false
     })
@@ -103,7 +103,9 @@ export class GamePage extends Component {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.startUpdatePlayer(updates)
     }
-
+    if (player.left === this.props.egg.left && player.top === this.props.egg.top) {
+      this.props.startWinEgg()
+    }
     if(this.props.player.cash > 25) {
       this.props.opponents.forEach(opponent => {
         if (opponent.left === player.left && opponent.top === player.top) {
@@ -189,8 +191,6 @@ export class GamePage extends Component {
   render() {
     return (
       <div id="game-wrapper" >
-
-
         <Map />
 
         <Player player={this.props.player}
@@ -205,14 +205,13 @@ export class GamePage extends Component {
           onFocus={this.state.onFocus}
         />
         {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
-
+        <Egg />
         <div>
         <ControlPanel
           handleOnFocus={this.handleOnFocus}
           handleOffFocus={this.handleOffFocus}
           handlePopupLeaderboard={this.handlePopupLeaderboard}/>
-          </div>
-
+        </div>
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
@@ -224,7 +223,6 @@ export class GamePage extends Component {
           {this.state.modalComponent}
           <div className="modal-button" onClick={this.closeModal}></div>
         </Modal>
-
         </div>
     );
   }
@@ -233,12 +231,14 @@ export class GamePage extends Component {
 export const mapStateToProps = (state) => ({
   map: state.map,
   player: state.auth,
-  opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid)
+  opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid),
+  egg: state.egg
 })
 
 export const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
+  startWinEgg: () => dispatch(startWinEgg())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

@@ -6,7 +6,7 @@ export default [
           "name":"Apple",
           "type":"apple",
           "value": "A nice granny apple",
-          "price":"10"
+          "price":"12"
         }]
       },
       {
@@ -16,7 +16,7 @@ export default [
           "name":"Blue Potion",
           "type":"bluepotion",
           "value": "This'll make you wavey!",
-          "price":"10"
+          "price":"14"
         }]
       },
       {
@@ -26,7 +26,7 @@ export default [
           "name":"Boomerang",
           "type":"boomerang",
           "value": "Fling this around",
-          "price":"10"
+          "price":"19"
         }]
       },
       {
@@ -66,7 +66,7 @@ export default [
           "name":"Red Potion",
           "type":"redpotion",
           "value": "Shrink potion",
-          "price":"10"
+          "price":"13"
         }]
       },
       {
@@ -76,7 +76,7 @@ export default [
           "name":"Pick",
           "type":"pengpick",
           "value": "For those hard to dig spots",
-          "price":"10"
+          "price":"11"
         }]
       },
       {
@@ -96,7 +96,7 @@ export default [
           "name":"Cheese",
           "type":"cheese",
           "value": "Deliciously mature cheddar",
-          "price":"10"
+          "price":"16"
         }]
       },
       {
@@ -106,7 +106,7 @@ export default [
           "name":"Cherry",
           "type":"cherry",
           "value": "Put on your birthday cake",
-          "price":"10"
+          "price":"13"
         }]
       },
       {
@@ -116,7 +116,7 @@ export default [
           "name":"Cookie",
           "type":"cookie",
           "value": "Yummy",
-          "price":"10"
+          "price":"25"
         }]
       },
       {
@@ -126,7 +126,7 @@ export default [
           "name":"Eggs",
           "type":"eggs",
           "value": "Throw them at people",
-          "price":"10"
+          "price":"5"
         }]
       },
       {
@@ -136,7 +136,7 @@ export default [
           "name":"Gloves",
           "type":"gloves",
           "value": "Keep your hands warm",
-          "price":"10"
+          "price":"8"
         }]
       },
       {
@@ -156,7 +156,7 @@ export default [
           "name":"Green Potion",
           "type":"greenpotion",
           "value": "Not sure what this does",
-          "price":"10"
+          "price":"13"
         }]
       },
       {
@@ -166,7 +166,7 @@ export default [
           "name":"Jambon",
           "type":"jambon",
           "value": "I'm vegetarian, so is this jambon",
-          "price":"10"
+          "price":"50"
         }]
       },
       {
@@ -176,7 +176,7 @@ export default [
           "name":"Lemon",
           "type":"lemon",
           "value": "Make lemonade I guess",
-          "price":"10"
+          "price":"3"
         }]
       },
       {
@@ -186,7 +186,7 @@ export default [
           "name":"Red Ring",
           "type":"redring",
           "value": "For that VERY special someone",
-          "price":"10"
+          "price":"200"
         }]
       },
       {
@@ -196,7 +196,7 @@ export default [
           "name":"Strawberry",
           "type":"strawberry",
           "value": "mmmmm",
-          "price":"10"
+          "price":"13"
         }]
       },
       {
@@ -206,7 +206,7 @@ export default [
           "name":"Yellow Potion",
           "type":"yellowpotion",
           "value": "Dangerous",
-          "price":"10"
+          "price":"1"
         }]
       },
       {
@@ -216,7 +216,7 @@ export default [
           "name":"Shield",
           "type":"shield",
           "value": "...",
-          "price":"10"
+          "price":"15"
         }]
       }
 

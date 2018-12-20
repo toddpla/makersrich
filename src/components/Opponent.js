@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import database from '../firebase/firebase'
-import PlayerImg from "../assets/player.png"
+import OpponentImg from "../assets/opponent.png"
+import PickImg from "../assets/pick.png"
 
 class Opponent extends Component {
 
@@ -26,6 +27,20 @@ class Opponent extends Component {
 
   render() {
     return (
+      <div>
+      <div id="opponent_pick"
+        style={{
+          position: 'absolute',
+          width: '16px',
+          top: this.state.top,
+          left: this.state.left + 8,
+          height: '16px',
+          backgroundPosition: 'center',
+          rotate: 90,
+          backgroundImage: `url(${PickImg})`
+        }}
+      >
+      </div>
       <div id={this.props.opponent.uid}
         style={{
           position: 'absolute',
@@ -34,9 +49,10 @@ class Opponent extends Component {
           left: this.state.left,
           height: '16px',
           backgroundPosition: 'center',
-          backgroundImage: `url(${PlayerImg})`
+          backgroundImage: `url(${OpponentImg})`
         }}
       >
+      </div>
       </div>
     );
   }
