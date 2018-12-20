@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme'
 import Answer from '../Answer'
 
-let wrapper, handleClick
+let wrapper, handleClick, instance
 
 beforeEach(function() {
   handleClick = jest.fn()
@@ -11,8 +11,16 @@ beforeEach(function() {
       id={'1'}
       answer={'answer'}
       correct={true}
+      handleClick={handleClick}
     />
   )
+
+  document.body.innerHTML =
+  '<div id="answer-1">' +
+  '</div>'
+
+  instance = wrapper.instance()
+
 });
 
 test('it renders Answer', () => {
