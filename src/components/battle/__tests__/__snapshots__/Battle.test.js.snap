@@ -39,7 +39,7 @@ ShallowWrapper {
         className="rps"
       >
         <h5>
-          Battle with 
+          Battle with
           James Bond
         </h5>
         <h3>
@@ -54,14 +54,14 @@ ShallowWrapper {
           onClick={[Function]}
           value="Rock"
         />
-         
+
         <br />
         <button
           className="rps-choice Paper"
           onClick={[Function]}
           value="Paper"
         />
-         
+
         <br />
         <button
           className="rps-choice Scissors"
@@ -79,7 +79,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h5>
-            Battle with 
+            Battle with
             James Bond
           </h5>,
           <h3>
@@ -227,7 +227,7 @@ ShallowWrapper {
           className="rps"
         >
           <h5>
-            Battle with 
+            Battle with
             James Bond
           </h5>
           <h3>
@@ -242,14 +242,14 @@ ShallowWrapper {
             onClick={[Function]}
             value="Rock"
           />
-           
+
           <br />
           <button
             className="rps-choice Paper"
             onClick={[Function]}
             value="Paper"
           />
-           
+
           <br />
           <button
             className="rps-choice Scissors"
@@ -267,7 +267,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h5>
-              Battle with 
+              Battle with
               James Bond
             </h5>,
             <h3>
