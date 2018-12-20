@@ -12,7 +12,7 @@ beforeEach(() => {
   player['battle'] = battlesData.fixtures[0]
   startDebitPlayer = jest.fn()
   startCreditPlayer = jest.fn()
-  battle = shallow(
+  battle = renderer.create(
     <Battle
       player={player}
       startDebitPlayer={startDebitPlayer}
@@ -27,8 +27,4 @@ beforeEach(() => {
 
 test('renders correctly', () => {
   expect(battle).toMatchSnapshot()
-})
-
-test("should win game if player choses rock and opponent chooses scissors", () => {
-  console.log(battle);
 })
