@@ -5,6 +5,7 @@ import Answer from './Answer'
 import { startSendResult, startGetQuestion, clearQuiz } from '../../actions/quiz'
 import { startUpdatePlayer, startDebitPlayer, updatePlayer } from '../../actions/auth'
 import { QUESTION_PRICE } from '../../constants'
+import './quiz.css'
 
 export class Quiz extends React.Component {
 
