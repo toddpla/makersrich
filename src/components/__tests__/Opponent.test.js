@@ -3,6 +3,9 @@ import { shallow } from 'enzyme'
 import Opponent from '../Opponent'
 
 test('renders correctly', () => {
-  const wrapper = shallow(<Opponent />)
+  let opponent = {
+    uid: 1
+  }
+  const wrapper = shallow(<Opponent opponent={opponent}/>)
   expect(wrapper).toMatchSnapshot();
 });
