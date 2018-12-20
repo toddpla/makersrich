@@ -1,6 +1,6 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import database, {firebase} from '../../firebase/firebase'
+import database from '../../firebase/firebase'
 import * as actions from '../battle'
 import playersData from '../../test/fixtures/players'
 import { firebaseLoad } from '../../test/firebase-helper'
@@ -18,39 +18,53 @@ beforeEach(done => {
   opponent = players[1]
 })
 
-afterAll((done) => {
-  database.ref('/players').remove().then(() => done())
+afterEach((done) => {
+  database.ref('/battles').remove().then(() => done())
 })
 
 test('should create a create battle action object', () => {
-  const action = actions.createBattle(opponent)
+  const action = actions.enterBattle(opponent)
   expect(action).toEqual({
-    type: "CREATE_BATTLE",
+    type: "ENTER_BATTLE",
     opponent: players[1]
   })
 })
 
 test("should create a battle entry for the player and opponent", (done) => {
-  store.dispatch(actions.startCreateBattle(opponent)).then(() => {
+  store.dispatch(actions.startEnterBattle(opponent)).then(() => {
     const actions = store.getActions()
     expect(actions[0]).toEqual({
-      type: "CREATE_BATTLE",
+      type: "ENTER_BATTLE",
       opponent: players[1]
     })
-    const result = {
-      playerBattle: database.ref(`battles/${uid}/`).once('value'),
-      opponentBattle: database.ref(`battles/${opponent.uid}/`).once('value')
-    }
-    return result
-  }).then(result => {
-    expect(result.playerBattle.val()).toEqual({
-      opponentUid: players[1].uid,
-      opponentName: players[1].displayName
+    Promise.all([
+      database.ref(`battles/${uid}/`).once('value').then(snap => snap.val()),
+      database.ref(`battles/${opponent.uid}/`).once('value').then(snap => snap.val())
+    ]).then(result => {
+      expect(result[0].opponentUid).toEqual(players[1].uid)
+      expect(result[0].opponentName).toEqual(players[1].displayName)
+      expect(typeof result[0].created_at).toBe("number")
+
+      expect(result[1].opponentUid).toEqual(players[0].uid)
+      expect(result[1].opponentName).toEqual(players[0].displayName)
+      expect(typeof result[1].created_at).toBe("number")
+      done()
     })
-    expect(result.opponentBattle.val()).toEqual({
-      opponentUid: uid,
-      opponentName: currentPlayer.displayName
-    })
+  })
+})
+
+test("should check whether a player is in a battle", (done) => {
+  store.dispatch(actions.startCheckOpponentCanBattle(opponent)).then((snap) => {
+    expect(snap).toBeTruthy()
     done()
+  })
+})
+
+test("should check whether a player is in a battle", (done) => {
+  database.ref(`battles/${opponent.uid}`).set({opponentUid: currentPlayer.uid}).then(() => {
+    store.dispatch(actions.startCheckOpponentCanBattle(opponent)).then((snap) => {
+      expect(snap).toBeFalsy()
+      done()
+    })
   })
 })

@@ -18,7 +18,6 @@ beforeEach(() => {
       startDebitPlayer={startDebitPlayer}
       startCreditPlayer={startCreditPlayer}
     />)
-
 })
 
 test('renders correctly', () => {
