@@ -12,26 +12,24 @@ export class Leaderboard extends Component {
   }
 
   componentDidMount() {
-    console.log(1);
     this.setState({
       connection: database.ref(`players`).on('value', (snapshot) => {
-                  console.log(2);
                   var players = []
-                  console.log(3);
                   Object.keys(snapshot.val()).forEach((playerKey) => {
                   players.push(snapshot.val()[playerKey])
                   })
-                  console.log(4);
                   this.setState({
                     players
                   })
       })
     })
+  }
 
+  componentWillUnmount() {
+    database.ref(`players`).off("value", this.state.connection);
   }
 
   render() {
-    console.log(5);
     return (
       <div id="leaderboard-container">
         <h3>Leaderboard</h3>
