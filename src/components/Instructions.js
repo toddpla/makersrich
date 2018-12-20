@@ -15,7 +15,9 @@ class Instructions extends Component {
         <p>Use the arrow keys to move around</p>
         <p>Press 'Q' to interact with signs</p>
         <p>Press 'E' to dig</p>
-        <p>Press 'I' to open inventory</p>
+        <p>Press 'I' to open your inventory</p>
+        <p>Press 'T' to start writing a message</p>
+
         <p>Press 'Spacebar' to close any pop-ups</p>
       </div>
     );

@@ -41,7 +41,10 @@ ShallowWrapper {
           Press 'E' to dig
         </p>,
         <p>
-          Press 'I' to open inventory
+          Press 'I' to open your inventory
+        </p>,
+        <p>
+          Press 'T' to start writing a message
         </p>,
         <p>
           Press 'Spacebar' to close any pop-ups
@@ -150,10 +153,21 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Press 'I' to open inventory",
+          "children": "Press 'I' to open your inventory",
         },
         "ref": null,
-        "rendered": "Press 'I' to open inventory",
+        "rendered": "Press 'I' to open your inventory",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Press 'T' to start writing a message",
+        },
+        "ref": null,
+        "rendered": "Press 'T' to start writing a message",
         "type": "p",
       },
       Object {
@@ -200,7 +214,10 @@ ShallowWrapper {
             Press 'E' to dig
           </p>,
           <p>
-            Press 'I' to open inventory
+            Press 'I' to open your inventory
+          </p>,
+          <p>
+            Press 'T' to start writing a message
           </p>,
           <p>
             Press 'Spacebar' to close any pop-ups
@@ -309,10 +326,21 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Press 'I' to open inventory",
+            "children": "Press 'I' to open your inventory",
           },
           "ref": null,
-          "rendered": "Press 'I' to open inventory",
+          "rendered": "Press 'I' to open your inventory",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Press 'T' to start writing a message",
+          },
+          "ref": null,
+          "rendered": "Press 'T' to start writing a message",
           "type": "p",
         },
         Object {
