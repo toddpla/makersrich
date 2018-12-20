@@ -7,3 +7,6 @@ export const QUESTION_PRICE = 10
 
 // battle
 export const DEFAULT_BATTLE_BET_AMOUNT = 25
+
+// egg
+export const DEFAULT_EGG_CASH = 50

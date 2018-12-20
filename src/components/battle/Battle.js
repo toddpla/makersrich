@@ -1,12 +1,22 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import database, { firebase } from '../../firebase/firebase'
-import moment from 'moment'
-import selectRandom from '../../utils/selectRandom'
-import { startCreditPlayer, startDebitPlayer, updatePlayer } from '../../actions/auth'
-import { startSendNewsfeedMessage } from '../../actions/newsfeed'
-import Timer from './Timer'
-import { DEFAULT_BATTLE_BET_AMOUNT } from '../../constants'
+// packages
+import React, { Component }           from 'react';
+import { connect }                    from 'react-redux'
+import database, { firebase }         from '../../firebase/firebase'
+import moment                         from 'moment'
+
+// utils
+import selectRandom                   from '../../utils/selectRandom'
+import { DEFAULT_BATTLE_BET_AMOUNT }  from '../../constants'
+
+// actions
+import { startCreditPlayer,
+        startDebitPlayer,
+        updatePlayer }                from '../../actions/auth'
+import { startSendNewsfeedMessage }   from '../../actions/newsfeed'
+
+// components
+import Timer                          from './Timer'
+
 import './rps.css'
 
 export class Battle extends Component {
@@ -49,9 +59,9 @@ export class Battle extends Component {
 
 
   finishGame = (winner) => {
-    this.props.updatePlayer({battle: null})
     this.removeBattles().then(() => {
       if (winner === 'player') {
+        console.log('player winning');
         this.props.startCreditPlayer(this.state.betAmount)
         this.props.startSendNewsfeedMessage(`beat ${this.state.opponentName} in a battle`)
       } else if (winner === 'opponent') {
@@ -91,7 +101,7 @@ export class Battle extends Component {
         }
       } else {
         this.updateBattle(this.state.uid, {
-          infoMessage: "Winner winer chicken dinner!",
+          infoMessage: "Waiting for opponent!",
           // infoMessage: selectRandom(this.state.waitingStatemnets),
           weapon
         })
@@ -100,13 +110,21 @@ export class Battle extends Component {
   }
 
   handleTimeout = () => {
-    this.getPlayerWeapon().then(snap => {
-      if(snap.exists()) {
-        this.finishGame('player')
-      } else {
-        this.finishGame()
-      }
-    })
+    if (this.props.player.battle.insagtor) {
+      Promise.all([
+        this.getPlayerWeapon(),
+        this.getOpponentWeapon()
+      ]).then(result => {
+        if (result[0].exists()) {
+          this.finishGame('player')
+        } else if (result[1].exists()) {
+          this.finishGame('opponent')
+        } else {
+          this.finishGame()
+        }
+      })
+    }
+    this.props.updatePlayer({battle: null})
   }
 
   render() {

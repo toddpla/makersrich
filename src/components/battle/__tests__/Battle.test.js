@@ -18,8 +18,12 @@ beforeEach(() => {
       startDebitPlayer={startDebitPlayer}
       startCreditPlayer={startCreditPlayer}
     />)
-
 })
+
+// afterEach((done) => {
+//   database.ref('/players').remove().then(() => done())
+//   database.ref('/battle').remove().then(() => done())
+// })
 
 test('renders correctly', () => {
   expect(battle).toMatchSnapshot()

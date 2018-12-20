@@ -1,25 +1,34 @@
 
-import React, { Component } from 'react'
+// third parties
+import React, { Component }   from 'react'
 import database, { firebase } from '../firebase/firebase'
-import Player from './Player';
-import Opponent from './Opponent'
-import { connect } from 'react-redux'
-import { startUpdatePlayer } from '../actions/auth'
+import { connect }            from 'react-redux'
+import Modal                  from  'react-modal'
+
+// utils and constants
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
-import Modal from 'react-modal'
-import Quiz from './quiz/Quiz'
-import Shop from './shop/Shop'
-import Inventory from './Inventory/Inventory'
-import Battle from './battle/Battle'
-import Message from './Message'
-import Leaderboard from './leaderboards/Leaderboard'
-import Map from './Map'
-import Egg from './Egg'
-import { startWinEgg } from '../actions/egg'
-import ControlPanel from './controlpanel/ControlPanel'
-import opponentsSelector from '../selectors/opponents'
+
+// components
+import Player           from './Player';
+import Opponent         from './Opponent'
+import Quiz             from './quiz/Quiz'
+import Shop             from './shop/Shop'
+import Inventory        from './Inventory/Inventory'
+import Battle           from './battle/Battle'
+import Message          from './Message'
+import Leaderboard      from './leaderboards/Leaderboard'
+import Instructions     from './Instructions'
+import Map              from './Map'
+import Egg              from './Egg'
+import ControlPanel     from './controlpanel/ControlPanel'
+
+// actions
+import { startWinEgg }              from '../actions/egg'
+import opponentsSelector            from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
-import Instructions from './Instructions'
+import { startUpdatePlayer }        from '../actions/auth'
+import { startEnterBattle,
+          startCheckOpponentCanBattle} from '../actions/battle'
 
 const customStyles = {
   content : {
@@ -33,7 +42,6 @@ const customStyles = {
     border                : 'none'
   }
 };
-
 
 export class GamePage extends Component {
 
@@ -106,15 +114,12 @@ export class GamePage extends Component {
     if (player.left === this.props.egg.left && player.top === this.props.egg.top) {
       this.props.startWinEgg()
     }
-    if(this.props.player.cash > 25) {
+    if(this.props.player.cash > 25 && player.battle === undefined) {
       this.props.opponents.forEach(opponent => {
         if (opponent.left === player.left && opponent.top === player.top) {
-          const playerInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
-          const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
-          Promise.all([playerInBattle, opponentInBattle]).then((values) => {
-            if(values.filter(value => value).length === 0) {
-              database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid, opponentName: opponent.displayName, created_at: firebase.database.ServerValue.TIMESTAMP})
-              database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid, opponentName: this.props.player.displayName, created_at: firebase.database.ServerValue.TIMESTAMP})
+          this.props.startCheckOpponentCanBattle(opponent).then((opponentCanBattle) => {
+            if (opponentCanBattle) {
+              this.props.startEnterBattle(opponent)
             }
           })
         }
@@ -238,7 +243,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
   startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
-  startWinEgg: () => dispatch(startWinEgg())
+  startWinEgg: () => dispatch(startWinEgg()),
+  startCheckOpponentCanBattle: (opponent) => dispatch(startCheckOpponentCanBattle(opponent)),
+  startEnterBattle: (opponent) => dispatch(startEnterBattle(opponent))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
