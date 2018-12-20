@@ -18,7 +18,7 @@ let props = {
     portals: [{x: 15, y: 30, name: 'Shop'}],
     signs: [{x: 15, y: 14, properties: [{value: 'This is a sign'}] }]
   },
-  egg: {left: 0, top: 0} 
+  egg: {left: 0, top: 0}
 }
 
 let updates = {left: 0, top: 0}

@@ -1,6 +1,41 @@
-import database from '../firebase/firebase'
+import database, { firebase } from '../firebase/firebase'
 import { updatePlayer } from './auth'
 import moment from 'moment'
+
+
+export const enterBattle = (opponent) => ({
+  type: "ENTER_BATTLE",
+  opponent
+})
+
+export const startEnterBattle = (opponent) => {
+  return (dispatch, getState) => {
+    const player = getState().auth
+    let updates = {}
+    updates[`battles/${player.uid}`] = {
+      opponentUid: opponent.uid,
+      opponentName: opponent.displayName,
+      created_at: firebase.database.ServerValue.TIMESTAMP,
+      instigator: true
+    }
+    updates[`battles/${opponent.uid}`] = {
+      opponentUid: player.uid,
+      opponentName: player.displayName,
+      created_at: firebase.database.ServerValue.TIMESTAMP
+    }
+    return database.ref().update(updates).then(() => {
+      dispatch(enterBattle(opponent))
+    })
+  }
+}
+
+export const startCheckOpponentCanBattle = (opponent) => {
+  return (dispatch) => {
+    return database.ref(`battles/${opponent.uid}`).once('value').then(snap => {
+      return !snap.exists()
+    })
+  }
+}
 
 export const startOnBattle = () => {
   return (dispatch, getState) => {

@@ -1,5 +1,6 @@
 import database from '../firebase/firebase'
 import impassables from '../data/maps/level1/impassable'
+import { DEFAULT_EGG_CASH } from '../constants'
 
 export const updateEgg = (egg) => ({
   type: "UPDATE_EGG",
@@ -33,7 +34,7 @@ export const startWinEgg = () => {
     }
     let updates = {}
     updates[`egg`] = {left, top}
-    updates[`players/${player.uid}/cash`] = player.cash + 1000
+    updates[`players/${player.uid}/cash`] = player.cash + DEFAULT_EGG_CASH
     return database.ref().update(updates)
   }
 }
