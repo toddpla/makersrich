@@ -19,6 +19,7 @@ beforeEach(done => {
 })
 
 afterEach((done) => {
+  database.ref('/players').remove().then(() => done())
   database.ref('/battles').remove().then(() => done())
 })
 
@@ -53,14 +54,14 @@ test("should create a battle entry for the player and opponent", (done) => {
   })
 })
 
-test("should check whether a player is in a battle", (done) => {
+test("startCheckOpponentCanBattle returns true if player not in battle", (done) => {
   store.dispatch(actions.startCheckOpponentCanBattle(opponent)).then((snap) => {
     expect(snap).toBeTruthy()
     done()
   })
 })
 
-test("should check whether a player is in a battle", (done) => {
+test("startCheckOpponentCanBattle returns false if player in battle", (done) => {
   database.ref(`battles/${opponent.uid}`).set({opponentUid: currentPlayer.uid}).then(() => {
     store.dispatch(actions.startCheckOpponentCanBattle(opponent)).then((snap) => {
       expect(snap).toBeFalsy()

@@ -29,7 +29,7 @@ beforeEach(done => {
   store = createMockStore(defaultAuthState)
 })
 
-afterAll((done) => {
+afterEach((done) => {
   database.ref('/players').remove().then(() => done())
 })
 

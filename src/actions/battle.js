@@ -15,7 +15,8 @@ export const startEnterBattle = (opponent) => {
     updates[`battles/${player.uid}`] = {
       opponentUid: opponent.uid,
       opponentName: opponent.displayName,
-      created_at: firebase.database.ServerValue.TIMESTAMP
+      created_at: firebase.database.ServerValue.TIMESTAMP,
+      instigator: true
     }
     updates[`battles/${opponent.uid}`] = {
       opponentUid: player.uid,
