@@ -15,4 +15,13 @@ describe('quiz reducer', () => {
     const state = quizReducer(undefined, action)
     expect(state).toEqual(questions[0])
   })
+
+  it('should return the new question state', () => {
+    const action = {
+      type: 'CLEAR_QUIZ',
+      quiz: 'quiz'
+    }
+    const state = quizReducer(undefined, action)
+    expect(state).toEqual('quiz')
+  })
 })
