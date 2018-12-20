@@ -10,7 +10,7 @@ beforeEach(function() {
     <Answer
       id={'1'}
       answer={'answer'}
-      handleClick={handleClick}
+      correct={true}
     />
   )
 });
@@ -18,8 +18,3 @@ beforeEach(function() {
 test('it renders Answer', () => {
   expect(wrapper).toMatchSnapshot()
 })
-
-// test('calls #handleClick on click', () => {
-//   wrapper.find('div').simulate('click')
-//   expect(handleClick).toHaveBeenLastCalledWith('1')
-// })

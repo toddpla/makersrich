@@ -4,11 +4,12 @@ import { Quiz } from '../Quiz'
 
 describe('Quiz', () => {
   let wrapper, startSendResult, startGetQuestion, quiz, auth, startDebitPlayer,
-      clearQuiz
+      clearQuiz, canAffordQuestion, sendResultToFirebase
 
   beforeEach(function() {
     clearQuiz = jest.fn()
     startGetQuestion = jest.fn()
+    canAffordQuestion = jest.fn()
     startSendResult = jest.fn()
     startDebitPlayer= jest.fn(() => {
       return new Promise((resolve, reject) => {
@@ -48,6 +49,11 @@ describe('Quiz', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
+  it('calls #canAffordQuestion', () => {
+    let instance = wrapper.instance()
+    expect(instance.canAffordQuestion).toEqual(expect.any(Function))
+  })
+
   test('it calls #startGetQuestion', () => {
     expect(startGetQuestion).toHaveBeenCalled()
   })
@@ -72,6 +78,10 @@ describe('Quiz', () => {
 
     it('calls #startGetQuestion', () => {
       expect(startGetQuestion).toHaveBeenLastCalledWith(submission.uid)
+    });
+
+    it('calls #startDebitPlayer', () => {
+      expect(startDebitPlayer).toHaveBeenLastCalledWith(10)
     });
   });
 })

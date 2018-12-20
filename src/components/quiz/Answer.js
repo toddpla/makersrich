@@ -3,7 +3,6 @@ import React from 'react'
 export default class Answer extends React.Component {
 
   handleClick = () => {
-
     var div = document.getElementById(`answer-${this.props.id}`)
     if (this.props.correct) {
       div.setAttribute('class', "quiz-answer-box correct-answer")
