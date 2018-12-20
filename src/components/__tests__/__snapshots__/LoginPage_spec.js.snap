@@ -19,5 +19,18 @@ exports[`renders correctly 1`] = `
   >
     Github Login
   </button>
+  <div
+    style={
+      Object {
+        "backgroundImage": "url(LoginPageFella.png)",
+        "height": "270px",
+        "marginLeft": "70px",
+        "marginTop": "50px",
+        "width": "320px",
+      }
+    }
+  >
+     
+  </div>
 </div>
 `;
