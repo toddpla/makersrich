@@ -12,7 +12,8 @@ export const login = (uid, player) => ({
       inventory: {
         ruby: [],
         bean: [],
-        key: [],
+        miscellaneous: [],
+        key: []
       },
       sessionQuestions: [],
       ...player

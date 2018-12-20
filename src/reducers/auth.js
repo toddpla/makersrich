@@ -1,3 +1,14 @@
+const defaultAuthReducerState = {
+  inventory: {
+    ruby: [],
+    bean: [],
+    miscellaneous: [],
+    key: []
+  }
+}
+
+
+
 export default (state = {}, action) => {
   switch (action.type) {
     case 'LOGIN':
