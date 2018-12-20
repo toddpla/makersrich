@@ -12,6 +12,7 @@ ShallowWrapper {
       }
     }
     clearQuiz={[MockFunction]}
+    closeModal={[MockFunction]}
     quiz={
       Object {
         "answers": Array [

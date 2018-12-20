@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Opponent
+    opponent={
+      Object {
+        "uid": 1,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          id="opponent_pick"
+          style={
+            Object {
+              "backgroundImage": "url(pick.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": -8,
+              "position": "absolute",
+              "rotate": 90,
+              "top": -16,
+              "width": "16px",
+            }
+          }
+        />,
+        <div
+          id={1}
+          style={
+            Object {
+              "backgroundImage": "url(opponent.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": -16,
+              "position": "absolute",
+              "top": -16,
+              "width": "16px",
+            }
+          }
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": "opponent_pick",
+          "style": Object {
+            "backgroundImage": "url(pick.png)",
+            "backgroundPosition": "center",
+            "height": "16px",
+            "left": -8,
+            "position": "absolute",
+            "rotate": 90,
+            "top": -16,
+            "width": "16px",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": 1,
+          "style": Object {
+            "backgroundImage": "url(opponent.png)",
+            "backgroundPosition": "center",
+            "height": "16px",
+            "left": -16,
+            "position": "absolute",
+            "top": -16,
+            "width": "16px",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            id="opponent_pick"
+            style={
+              Object {
+                "backgroundImage": "url(pick.png)",
+                "backgroundPosition": "center",
+                "height": "16px",
+                "left": -8,
+                "position": "absolute",
+                "rotate": 90,
+                "top": -16,
+                "width": "16px",
+              }
+            }
+          />,
+          <div
+            id={1}
+            style={
+              Object {
+                "backgroundImage": "url(opponent.png)",
+                "backgroundPosition": "center",
+                "height": "16px",
+                "left": -16,
+                "position": "absolute",
+                "top": -16,
+                "width": "16px",
+              }
+            }
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": "opponent_pick",
+            "style": Object {
+              "backgroundImage": "url(pick.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": -8,
+              "position": "absolute",
+              "rotate": 90,
+              "top": -16,
+              "width": "16px",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": 1,
+            "style": Object {
+              "backgroundImage": "url(opponent.png)",
+              "backgroundPosition": "center",
+              "height": "16px",
+              "left": -16,
+              "position": "absolute",
+              "top": -16,
+              "width": "16px",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

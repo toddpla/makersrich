@@ -112,24 +112,3 @@ export const startCreditPlayer = (amount) => {
     })
   }
 }
-
-// export const startDebitOpponent = (amount) => {
-//   return (dispatch, getState) => {
-//     const uid = getState().auth.battle.opponentUid
-//     return database.ref(`players/${uid}/cash`).once('value').then((snapshot) => {
-//       const currentCash = snapshot.val() || 0
-//       dispatch(startUpdatePlayer({cash: currentCash - amount})).then(() => {})
-//       dispatch(startSendNewsfeedMessage('has left the game!'))
-//     })
-//   }
-// }
-
-// export const startCreditOpponent = (amount) => {
-//   return (dispatch, getState) => {
-//     const uid = getState().auth.battle.opponentUid
-//     return database.ref(`players/${uid}/cash`).once('value').then((snapshot) => {
-//       const currentCash = snapshot.val() || 0
-//       dispatch(startUpdatePlayer({cash: currentCash + amount}))
-//     })
-//   }
-// }

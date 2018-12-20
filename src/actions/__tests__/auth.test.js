@@ -60,6 +60,7 @@ test('should get player data from database and initialise with defaults', (done)
           bean: [],
           key: [],
         },
+        state: 'online',
         sessionQuestions: [],
         ...currentPlayer
       }

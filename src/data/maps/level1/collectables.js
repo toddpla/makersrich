@@ -5,11 +5,11 @@ export default [
         "id":19830,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+           "name":"Message",
+           "type":"string",
+           "value":"The process of test-driven development(TDD) involves writing your tests before any code. It acts as a plan for the code you intend to write and validates its completion"
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -23,11 +23,11 @@ export default [
         "id":19831,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+           "name":"Message",
+           "type":"string",
+           "value":"If every class or module of a program is responsibile for only one part of functionality of a program, it has adhered to the Single Responsibility Principle"
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -41,11 +41,11 @@ export default [
         "id":19832,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+           "name":"Message",
+           "type":"string",
+           "value":"OOD stands for Object-Oriented Design"
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -59,11 +59,11 @@ export default [
         "id":19833,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+           "name":"Message",
+           "type":"string",
+           "value":"Synchronous behaviour is when a program is executed line by line but it waits for functions to complete and return a value"
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -77,11 +77,11 @@ export default [
         "id":19834,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+           "name":"Message",
+           "type":"string",
+           "value":"CRUD stands for Create, Read, Update, Delete"
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -95,11 +95,11 @@ export default [
         "id":19835,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"p, puts and binding.pry are common tools for debugging in Ruby"
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -113,11 +113,11 @@ export default [
         "id":19836,
         "name":"",
         "properties":[
-               {
-                "name":"Message",
-                "type":"string",
-                "value":"Rubies!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"In Ruby, methods can either be set as public, private or protected. This determines the accesibility of the method."
+          }],
         "rotation":0,
         "type":"ruby",
         "visible":true,
@@ -365,11 +365,11 @@ export default [
         "id":19850,
         "name":"",
         "properties":[
-               {
-                "name":"Messages",
-                "type":"string",
-                "value":"Beans!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"SRP stands for the Single Responsibility Principle"
+          }],
         "rotation":0,
         "type":"bean",
         "visible":true,
@@ -383,11 +383,11 @@ export default [
         "id":19852,
         "name":"",
         "properties":[
-               {
-                "name":"Messages",
-                "type":"string",
-                "value":"Beans!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"JavaScript is differnt from Ruby in that it demonstrates asynchronous behaviour. An example of this would be the fetch() function"
+          }],
         "rotation":0,
         "type":"bean",
         "visible":true,
@@ -401,11 +401,11 @@ export default [
         "id":19853,
         "name":"",
         "properties":[
-               {
-                "name":"Messages",
-                "type":"string",
-                "value":"Beans!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"Asynchronous behaviour is when a program is executed line by line but it does not wait for functions to complete and return a value"
+          }],
         "rotation":0,
         "type":"bean",
         "visible":true,
@@ -419,11 +419,11 @@ export default [
         "id":19854,
         "name":"",
         "properties":[
-               {
-                "name":"Messages",
-                "type":"string",
-                "value":"Beans!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value": "HTTP defines a set of request methods to indicate the desired action. They include:\nGET,\nHEAD,\nPOST,\nPUT,\nDELETE,\nCONNECT,\nOPTIONS,\nTRACE,\nPATCH"
+          }],
         "rotation":0,
         "type":"bean",
         "visible":true,
@@ -437,11 +437,11 @@ export default [
         "id":19855,
         "name":"",
         "properties":[
-               {
-                "name":"Messages",
-                "type":"string",
-                "value":"Beans!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"All information on the web in transferred as a string. The most common format for transferring data is JSON"
+          }],
         "rotation":0,
         "type":"bean",
         "visible":true,
@@ -455,11 +455,11 @@ export default [
         "id":19856,
         "name":"",
         "properties":[
-               {
-                "name":"Messages",
-                "type":"string",
-                "value":"Beans!!!!"
-               }],
+          {
+            "name":"Message",
+            "type":"string",
+            "value":"In Javascript, a variable without a value has the data type 'undefined'. The other data types are: Number, String, Boolean and Object."
+          }],
         "rotation":0,
         "type":"bean",
         "visible":true,
