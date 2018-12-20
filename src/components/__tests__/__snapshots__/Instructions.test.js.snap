@@ -41,7 +41,7 @@ ShallowWrapper {
           Press 'E' to dig
         </p>,
         <p>
-          Press 'I' to open inventory
+          Press 'I' to open your inventory
         </p>,
         <p>
           Press 'T' to start writing a message
@@ -153,10 +153,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Press 'I' to open inventory",
+          "children": "Press 'I' to open your inventory",
         },
         "ref": null,
-        "rendered": "Press 'I' to open inventory",
+        "rendered": "Press 'I' to open your inventory",
         "type": "p",
       },
       Object {
@@ -214,7 +214,7 @@ ShallowWrapper {
             Press 'E' to dig
           </p>,
           <p>
-            Press 'I' to open inventory
+            Press 'I' to open your inventory
           </p>,
           <p>
             Press 'T' to start writing a message
@@ -326,10 +326,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Press 'I' to open inventory",
+            "children": "Press 'I' to open your inventory",
           },
           "ref": null,
-          "rendered": "Press 'I' to open inventory",
+          "rendered": "Press 'I' to open your inventory",
           "type": "p",
         },
         Object {
