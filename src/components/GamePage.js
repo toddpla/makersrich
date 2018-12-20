@@ -12,14 +12,14 @@ import Shop from './shop/Shop'
 import Inventory from './Inventory/Inventory'
 import Battle from './battle/Battle'
 import Message from './Message'
-import LevelPlayers from './leaderboards/LevelPlayers'
 import Leaderboard from './leaderboards/Leaderboard'
 import Map from './Map'
+import Egg from './Egg'
+import { startWinEgg } from '../actions/egg'
 import ControlPanel from './controlpanel/ControlPanel'
 import opponentsSelector from '../selectors/opponents'
 import { startSendNewsfeedMessage } from '../actions/newsfeed'
 import Instructions from './Instructions'
-
 
 const customStyles = {
   content : {
@@ -47,11 +47,29 @@ export class GamePage extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.startBattle = firebase.functions().httpsCallable('startBattle')
+    // this.startBattle = firebase.functions().httpsCallable('startBattle')
   }
 
-  componentDidUpdate() {
-    if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 32) { this.closeModal() }
+    })
+  }
+
+  // componentDidUpdate() {
+  //   if (!!this.props.player.battle && !this.state.modalIsOpen) this.openModal({modalComponent: <Battle />})
+  // }
+
+  componentDidUpdate(prevState) {
+    if (prevState.player.battle === undefined && this.props.player.battle !== undefined) {
+      if(!this.state.modalIsOpen) {
+        this.openModal({modalComponent: <Battle />})
+      }
+    } else if (prevState.player.battle !== undefined && this.props.player.battle === undefined) {
+      if (this.state.modalIsOpen){
+        this.closeModal()
+     }
+    }
   }
 
   // modal tings
@@ -85,7 +103,9 @@ export class GamePage extends Component {
     if (!this.checkBoundaries(updates) && this.checkImpassable(updates)) {
       this.props.startUpdatePlayer(updates)
     }
-
+    if (player.left === this.props.egg.left && player.top === this.props.egg.top) {
+      this.props.startWinEgg()
+    }
     if(this.props.player.cash > 25) {
       this.props.opponents.forEach(opponent => {
         if (opponent.left === player.left && opponent.top === player.top) {
@@ -93,8 +113,8 @@ export class GamePage extends Component {
           const opponentInBattle = database.ref(`/battles/${this.props.player.uid}`).once('value').then(snap => snap.exists())
           Promise.all([playerInBattle, opponentInBattle]).then((values) => {
             if(values.filter(value => value).length === 0) {
-              database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid})
-              database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid})
+              database.ref(`/battles/${this.props.player.uid}`).set({opponentUid: opponent.uid, opponentName: opponent.displayName, created_at: firebase.database.ServerValue.TIMESTAMP})
+              database.ref(`/battles/${ opponent.uid}`).set({opponentUid: this.props.player.uid, opponentName: this.props.player.displayName, created_at: firebase.database.ServerValue.TIMESTAMP})
             }
           })
         }
@@ -168,17 +188,9 @@ export class GamePage extends Component {
     this.openModal({modalComponent: <Instructions />})
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      if (e.keyCode === 32) { this.closeModal() }
-    })
-  }
-
   render() {
     return (
       <div id="game-wrapper" >
-
-
         <Map />
 
         <Player player={this.props.player}
@@ -193,14 +205,13 @@ export class GamePage extends Component {
           onFocus={this.state.onFocus}
         />
         {this.props.opponents.map((opponent, i) => <Opponent key={i} opponent={opponent} />)}
-
+        <Egg />
         <div>
         <ControlPanel
           handleOnFocus={this.handleOnFocus}
           handleOffFocus={this.handleOffFocus}
           handlePopupLeaderboard={this.handlePopupLeaderboard}/>
-          </div>
-
+        </div>
         <Modal
           ariaHideApp={false}
           isOpen={this.state.modalIsOpen}
@@ -212,7 +223,6 @@ export class GamePage extends Component {
           {this.state.modalComponent}
           <div className="modal-button" onClick={this.closeModal}></div>
         </Modal>
-
         </div>
     );
   }
@@ -221,12 +231,14 @@ export class GamePage extends Component {
 export const mapStateToProps = (state) => ({
   map: state.map,
   player: state.auth,
-  opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid)
+  opponents: opponentsSelector(state.opponents, 'online', state.auth.level, state.auth.uid),
+  egg: state.egg
 })
 
 export const mapDispatchToProps = (dispatch) => ({
   startUpdatePlayer: (updates) => dispatch(startUpdatePlayer(updates)),
-  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message))
+  startSendNewsfeedMessage: (message) => dispatch(startSendNewsfeedMessage(message)),
+  startWinEgg: () => dispatch(startWinEgg())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GamePage);
