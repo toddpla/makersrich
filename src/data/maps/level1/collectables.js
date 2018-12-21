@@ -296,7 +296,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Ruby focuses on coder efficiency, thus there are many shorthand ways of writing common statements. For example x++ increments x by 1 and x += y is equal to x = x + y""
+                "value":"Ruby focuses on coder efficiency, thus there are many shorthand ways of writing common statements. For example x++ increments x by 1 and x += y is equal to x = x + y"
                }],
         "rotation":0,
         "type":"ruby",
@@ -531,6 +531,7 @@ export default [
                 "name":"Messages",
                 "type":"string",
                 "value":"JavaScript is browser side scripting language"
+              }],
         "rotation":0,
         "type":"bean",
         "visible":true,

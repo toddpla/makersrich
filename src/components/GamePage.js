@@ -7,19 +7,6 @@ import Modal                  from  'react-modal'
 
 // utils and constants
 import { MAX_HEIGHT, MAX_WIDTH, SPRITE_SIZE } from '../constants'
-import Modal from 'react-modal'
-import Quiz from './quiz/Quiz'
-import Shop from './shop/Shop'
-import Inventory from './inventory/Inventory'
-import RPS from './RPS/RPS'
-import Message from './Message'
-import LevelPlayers from './leaderboards/LevelPlayers'
-import Leaderboard from './leaderboards/Leaderboard'
-import Map from './Map'
-import ControlPanel from './controlpanel/ControlPanel'
-import opponentsSelector from '../selectors/opponents'
-import { startSendNewsfeedMessage } from '../actions/newsfeed'
-import Instructions from './Instructions'
 
 // components
 import Player           from './Player';
