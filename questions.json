@@ -13,7 +13,7 @@
     "answers": {
       "0": "Small responsibility please?",
       "1": "Single responsibility principle",
-      "2": "Simulataneous reaction probability",
+      "2": "Simultaneous reaction probability",
       "3": "Single rows pass"
     },
     "correctAnswer": "1",
@@ -21,10 +21,10 @@
   },
   "3": {
     "answers": {
-      "0": "Every file should be responsibile for one part of the program",
-      "1": "Every class should be responsibile for one part of the program",
-      "2": "Every line should be responsibile for one part of the program",
-      "3": "Every variable should be responsibile for one part of the program"
+      "0": "Every file should be responsible for one part of the program",
+      "1": "Every class should be responsible for one part of the program",
+      "2": "Every line should be responsible for one part of the program",
+      "3": "Every variable should be responsible for one part of the program"
     },
     "correctAnswer": "1",
     "question": "What is the single responsibility principle?"
@@ -54,7 +54,7 @@
       "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
       "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
       "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
-      "3": "Program is executed line by line. Exection is stopped by errors"
+      "3": "Program is executed line by line. Execution is stopped by errors"
     },
     "correctAnswer": "2",
     "question": "Which of the following best describes asynchronous behaviour?"
@@ -64,7 +64,7 @@
       "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
       "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
       "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
-      "3": "Program is executed line by line. Exection is stopped by errors"
+      "3": "Program is executed line by line. Execution is stopped by errors"
     },
     "correctAnswer": "1",
     "question": "Which of the following best describes synchronous behaviour?"
@@ -98,5 +98,255 @@
     },
     "correctAnswer": "0",
     "question": "What is the most common format for data retrieved from a server by a client?"
+  },
+  "11": {
+    "answers": {
+      "0": "debugging",
+      "1": "binding.pry",
+      "2": "puts",
+      "3": "p"
+    },
+    "correctAnswer": "0",
+    "question": "Which of these is not a common tool for debugging in Ruby?"
+  },
+  "12": {
+    "answers": {
+      "0": "public",
+      "1": "protected",
+      "2": "private",
+      "3": "permit"
+    },
+    "correctAnswer": "3",
+    "question": "Which of these is not used for access control in Ruby?"
+  },
+  "13": {
+    "answers": {
+      "0": "Integer",
+      "1": "Undefined",
+      "2": "Data",
+      "3": "Module"
+    },
+    "correctAnswer": "0",
+    "question": "Which of these is a Javascript data type"
+  },
+  "14": {
+    "answers": {
+      "0": "Java & Python",
+      "1": "Python & CSS",
+      "2": "HTML & CSS",
+      "3": "Ruby & HTML"
+    },
+    "correctAnswer": "2",
+    "question": "Which of these languages are often used with Javascript?"
+  },
+  "15": {
+    "answers": {
+      "0": "array.push()",
+      "1": "array.pull()",
+      "2": "array.pop()",
+      "3": "array.peace()"
+    },
+    "correctAnswer": "2",
+    "question": "How do you remove and return the last element in an array?"
+  },
+  "16": {
+    "answers": {
+      "0": "Application",
+      "1": "None of These",
+      "2": "Programming",
+      "3": "Scripting"
+    },
+    "correctAnswer": "3",
+    "question": "JavaScript is a ________ language?"
+  },
+  "17": {
+    "answers": {
+      "0": "ISP",
+      "1": "Server",
+      "2": "Browser",
+      "3": "None of These"
+    },
+    "correctAnswer": "2",
+    "question": "JavaScript is _______ Side Scripting Language?"
+  },
+  "18": {
+    "answers": {
+      "0": "The process of downloading and rendering a webpage",
+      "1": "A protocol which defined the layout of a webpage",
+      "2": "A protocol which defines how messages are formatted and transmitted",
+      "3": "A protocol which defines how to execute a JavaScript file"
+    },
+    "correctAnswer": "2",
+    "question": "What is HTTP?"
+  },
+  "19": {
+    "answers": {
+      "0": "an Interpreted",
+      "1": "a Compiled",
+      "2": "a Transfered",
+      "3": "a Rubish"
+    },
+    "correctAnswer": "0",
+    "question": "JavaScript is ________ language?"
+  },
+  "20": {
+    "answers": {
+      "0": "slash",
+      "1": "full stop",
+      "2": "comma",
+      "3": "semicolon"
+    },
+    "correctAnswer": "3",
+    "question": "Statements in most programming are terminated by what?"
+  },
+  "21": {
+    "answers": {
+      "0": "New developers take on existing projects",
+      "1": "New methods take on the properties of existing methods",
+      "2": "New builds take on the functionality of existing builds",
+      "3": "New objects take on the properties of existing objects"
+    },
+    "correctAnswer": "3",
+    "question": "Which statement best describes 'inheritance' in programming?"
+  },
+  "22": {
+    "answers": {
+      "0": "Code that doesn't contain repeating lines of code",
+      "1": "Code that does contain repeating lines of code",
+      "2": "Code that contains regular expressions",
+      "3": "Code that doesn't contain regular expressions"
+    },
+    "correctAnswer": "0",
+    "question": "What is meant by DRY code?"
+  },
+  "23": {
+    "answers": {
+      "0": "HTML",
+      "1": "CSS",
+      "2": "NodeJS",
+      "3": "React"
+    },
+    "correctAnswer": "0",
+    "question": "What technology is used to style a webpage?"
+  },
+  "24": {
+    "answers": {
+      "0": "Swift",
+      "1": "Agile",
+      "2": "Fast",
+      "3": "XP"
+    },
+    "correctAnswer": "1",
+    "question": "Which of the following is a common project management methodology when building software in a team?"
+  },
+  "25": {
+    "answers": {
+      "0": "+=",
+      "1": "-=",
+      "2": "*=",
+      "3": "%="
+    },
+    "correctAnswer": "3",
+    "question": "Which of the following is not a valid assignment operator in Ruby?"
+  },
+  "26": {
+    "answers": {
+      "0": "Multiplies the value twice",
+      "1": "It is used as exponent like 2**3=8",
+      "2": "It is the multiplication operator",
+      "3": "Breaks everything in your code"
+    },
+    "correctAnswer": "1",
+    "question": "What does the **= assignment operator do in Ruby?"
+  },
+  "27": {
+    "answers": {
+      "0": "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+      "1": "var colors = ['red', 'green', 'blue']",
+      "2": "var colors = 'red', 'green', 'blue',",
+      "3": "var colors = (1:'red', 2:'green', 3:'blue')"
+    },
+    "correctAnswer": "1",
+    "question": "What is the correct way to write a JavaScript array"
+  },
+  "28": {
+    "answers": {
+      "0": "<scripting>",
+      "1": "<js>",
+      "2": "<script>",
+      "3": "<code>"
+    },
+    "correctAnswer": "2",
+    "question": "Inside which HTML element do we put JavaScript code?"
+  },
+  "29": {
+    "answers": {
+      "0": "onClick",
+      "1": "onMouseOver",
+      "2": "onMouseClick",
+      "3": "onPointingWithMyMouseFriend"
+    },
+    "correctAnswer": "0",
+    "question": "Which event occurs when the user clicks on an HTML element?"
+  },
+  "30": {
+    "answers": {
+      "0": "Single Responsibility and Interface Segregation Principle",
+      "1": "Subtle Method and Open/Closed Principle",
+      "2": "Red Herring and Liskov Substitution Principle",
+      "3": "Dependency Inversion and Multi Responsibility Principle"
+    },
+    "correctAnswer": "0",
+    "question": "What does which of these are both SOLID principles?"
+  },
+  "31": {
+    "answers": {
+      "0": "Local",
+      "1": "Global",
+      "2": "Instance",
+      "3": "Class"
+    },
+    "correctAnswer": "3",
+    "question": "Variables that start with two '@' symbols are what kind of variables in Ruby"
+  },
+  "32": {
+    "answers": {
+      "0": "%constant",
+      "1": "Constant",
+      "2": "CONSTANT",
+      "3": "&&constant"
+    },
+    "correctAnswer": "2",
+    "question": "Which of the above is following the naming convention for a constant in Ruby?"
+  },
+  "33": {
+    "answers": {
+      "0": "Local",
+      "1": "Global",
+      "2": "Instance",
+      "3": "Class"
+    },
+    "correctAnswer": "1",
+    "question": "Variables that start with a dollar sign are what kind of variables in Ruby?"
+  },
+  "34": {
+    "answers": {
+      "0": "x + y + z",
+      "1": "x + zy",
+      "2": "z + y",
+      "3": "xzy"
+    },
+    "correctAnswer": "1",
+    "question": "What would x += zy equal?"
+  },
+  "35": {
+    "answers": {
+      "0": "It cannot be make any noise",
+      "1": "It cannot be publicly called",
+      "2": "It cannot be changed",
+      "3": "It calls a function"
+    },
+    "correctAnswer": "2",
+    "question": "What does immutable variable mean?"
   }
 }
