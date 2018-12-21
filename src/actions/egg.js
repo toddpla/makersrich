@@ -23,8 +23,8 @@ export const startWinEgg = () => {
     let left, top, checkBoo
     while (locationNotFound) {
       checkBoo = false
-      left = Math.floor(Math.random() * 64) * 16
-      top = Math.floor(Math.random() * 42) * 16
+      left = (Math.floor(Math.random() * 63) * 16) + 16
+      top = (Math.floor(Math.random() * 41) * 16) + 16
       impassables.forEach(({x, y}) => {
         if (x === left && y === top) {
           checkBoo = true

@@ -1,7 +1,8 @@
 # MakersRich
 
-[Playing the Game](#Playing the Game) | [Setup](#setup) | [Testing](#testing)
+[Playing the Game](#playing-the-game) | [Setup](#setup) | [Testing](#testing)
 
+[![Build Status](https://travis-ci.com/toddpla/makersrich.svg?branch=master)](https://travis-ci.com/toddpla/makersrich)
 [![Waffle.io - Issues in progress](https://badge.waffle.io/toddpla/Proof-of-Work.png?label=in%20progress&title=In%20Progress)](http://waffle.io/toddpla/Proof-of-Work)
 [![star this repo](http://githubbadges.com/star.svg?user=toddpla&repo=makersrich&style=flat)](https://github.com/toddpla/makersrich)
 [![fork this repo](http://githubbadges.com/fork.svg?user=toddpla&repo=makersrich&style=flat)](https://github.com/toddpla/makersrich/fork)
@@ -9,7 +10,7 @@
 [![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/boennemann/badges/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
-The game is deployed on firebase, here - [MakersRich](www.makerzrich.firebaseapp.com)
+The game is deployed on firebase, here - [MakersRich](https://makerzrich.firebaseapp.com)
 
 # Playing the Game
 ## Gameplay
