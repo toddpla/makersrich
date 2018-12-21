@@ -67,4 +67,24 @@
       "value":"In Ruby, methods can either be set as public, private or protected. This determines the accesibility of the method."
      }
   ]
+},
+{
+  "name":"ruby_8",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"HTTP is a protocol which defines how messages should be formatted and transmitted"
+     }
+  ]
+},
+{
+  "name":"ruby_9",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"Large programs often contain thousands of lines of code. Each statement is commonly separated using semi-colon"
+     }
+  ]
 }

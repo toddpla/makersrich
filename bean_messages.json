@@ -66,4 +66,44 @@ PATCH"
       "value":"In Javascript, a variable without a value has the data type 'undefined'. The other data types are: Number, String, Boolean and Object."
     }
   ]
-}
+},
+{
+  "name":"bean_7",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"JavaScript is used widely on websites and usally coupled with HTML and CSS"
+    }
+  ]
+},
+{
+  "name":"bean_8",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"Arrays are a type of data structure. The method 'pop()' can be used to remove the last element"
+    }
+  ]
+},
+{
+  "name":"bean_9",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"JavaScript is a scripting language most commonly used to 'script' the behaviour of a webpage"
+    }
+  ]
+},
+{
+  "name":"bean_10",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"JavaScript is browser side scripting language"
+    }
+  ]
+},

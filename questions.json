@@ -171,13 +171,13 @@
   },
   "18": {
     "answers": {
-      "0": "ISP",
-      "1": "Server",
-      "2": "Browser",
-      "3": "None of These"
+      "0": "The process of downloading and rendering a webpage",
+      "1": "A protocol which defined the layout of a webpage",
+      "2": "A protocol which defines how messages are formatted and transmitted",
+      "3": "A protocol which defines how to execute a JavaScript file"
     },
     "correctAnswer": "2",
-    "question": "JavaScript is _______ Side Scripting Language?"
+    "question": "What is HTTP?"
   },
   "19": {
     "answers": {
@@ -197,6 +197,6 @@
       "3": "semicolon"
     },
     "correctAnswer": "3",
-    "question": "JavaScript statements are terminated by what?"
+    "question": "Statements in most programming are terminated by what?"
   }
 }
