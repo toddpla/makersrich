@@ -42,6 +42,7 @@ test('should create the login action object with defaults', () => {
         ruby: [],
         bean: [],
         key: [],
+        miscellaneous: []
       },
       sessionQuestions: [],
       ...currentPlayer,
@@ -59,6 +60,7 @@ test('should get player data from database and initialise with defaults', (done)
           ruby: [],
           bean: [],
           key: [],
+          miscellaneous: []
         },
         state: 'online',
         sessionQuestions: [],
