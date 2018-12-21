@@ -64,4 +64,13 @@ firebase deploy
 
 Pull Requests are most welcome! Head over to the issues tab to see what could be done.
 
+## Authors
+
+[Todd](www.github.com/toddpla)
+[Imtiyaz](www.github.com/imtiyazzaman1)
+[Felix](www.github.com/felixjtdb)
+[Robin](www.github.com/rbbri)
+[Alfie](www.github.com/runticle)
+
+
 [![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](http://forthebadge.com)
