@@ -134,7 +134,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"HTTP is a protocol which defines how messages should be formatted and transmitted"
                }],
         "rotation":0,
         "type":"ruby",
@@ -152,7 +152,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"In programming, inheritance allows new objects to take on the properties of an existing one"
                }],
         "rotation":0,
         "type":"ruby",
@@ -170,7 +170,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"DRY (Don't Repeat Yourself) means keeping your code free from repeating lines of code"
                }],
         "rotation":0,
         "type":"ruby",
@@ -188,7 +188,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"Agile is a common methodology used when building software in teams"
                }],
         "rotation":0,
         "type":"ruby",
@@ -206,7 +206,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"*=, +=, -=, and **= are all valid assignment operators in Ruby"
                }],
         "rotation":0,
         "type":"ruby",
@@ -224,7 +224,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"**= is an exponent operator in Ruby"
                }],
         "rotation":0,
         "type":"ruby",
@@ -242,7 +242,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"When declaring class variables in Ruby you prefix the varible name with '@@', to declare a global variable you prefix with '$'."
                }],
         "rotation":0,
         "type":"ruby",
@@ -260,7 +260,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"Ruby follows SOLID Design Principles, which is one of the most popular sets of design principles in object-oriented software development"
                }],
         "rotation":0,
         "type":"ruby",
@@ -278,7 +278,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"In Ruby it is convention for constant to be in all CAPITALS"
                }],
         "rotation":0,
         "type":"ruby",
@@ -296,7 +296,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"Ruby focuses on coder efficiency, thus there are many shorthand ways of writing common statements. For example x++ increments x by 1 and x += y is equal to x = x + y""
                }],
         "rotation":0,
         "type":"ruby",
@@ -314,7 +314,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"Symbols in Ruby are immutable meaning they can't be changed, to contrast this strings are mutable and can be changed at will."
                }],
         "rotation":0,
         "type":"ruby",
@@ -350,7 +350,7 @@ export default [
                {
                 "name":"Message",
                 "type":"string",
-                "value":"Rubies!!!!"
+                "value":"The word ruby comes from the Latin rubens which means red"
                }],
         "rotation":0,
         "type":"ruby",
@@ -386,7 +386,7 @@ export default [
           {
             "name":"Message",
             "type":"string",
-            "value":"JavaScript is differnt from Ruby in that it demonstrates asynchronous behaviour. An example of this would be the fetch() function"
+            "value":"JavaScript is different from Ruby in that it demonstrates asynchronous behaviour. An example of this would be the fetch() function"
           }],
         "rotation":0,
         "type":"bean",
@@ -476,7 +476,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JavaScript is used widely on websites and usually coupled with HTML and CSS"
                }],
         "rotation":0,
         "type":"bean",
@@ -494,7 +494,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"Arrays are a type of data structure. The method 'pop()' can be used to remove the last element"
                }],
         "rotation":0,
         "type":"bean",
@@ -512,7 +512,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JavaScript is a scripting language most commonly used to 'script' the behaviour of a webpage"
                }],
         "rotation":0,
         "type":"bean",
@@ -530,8 +530,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
-               }],
+                "value":"JavaScript is browser side scripting language"
         "rotation":0,
         "type":"bean",
         "visible":true,
@@ -548,7 +547,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"In a webpage, HTML gives the structure, CSS gives the styling and JavaScript makes it interactive."
                }],
         "rotation":0,
         "type":"bean",
@@ -566,7 +565,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"An array can be written in JavaScript by var array = ['1', '2']"
                }],
         "rotation":0,
         "type":"bean",
@@ -584,7 +583,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JavaScript code can be included in HTML with a <script> tag"
                }],
         "rotation":0,
         "type":"bean",
@@ -602,7 +601,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"When a user clicks on a HTML element the onClick event occurs"
                }],
         "rotation":0,
         "type":"bean",
@@ -620,7 +619,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JavaScript was developed under the working title Mocha"
                }],
         "rotation":0,
         "type":"bean",
@@ -638,7 +637,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JavaScript was developed by the Netscape team"
                }],
         "rotation":0,
         "type":"bean",
@@ -656,7 +655,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JS can also be used in the backend with frameworks like Node.js"
                }],
         "rotation":0,
         "type":"bean",
@@ -674,7 +673,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"JavaScript is single threaded"
                }],
         "rotation":0,
         "type":"bean",
@@ -692,7 +691,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"Desktop applications can be written in JS with frameworks such as Electron.js"
                }],
         "rotation":0,
         "type":"bean",
@@ -710,7 +709,7 @@ export default [
                {
                 "name":"Messages",
                 "type":"string",
-                "value":"Beans!!!!"
+                "value":"console.log() can be used to gain visibility when debugging JS code"
                }],
         "rotation":0,
         "type":"bean",
