@@ -241,12 +241,52 @@
   },
   "25": {
     "answers": {
-      "0": "Swift",
-      "1": "Agile",
-      "2": "Fast",
-      "3": "XP"
+      "0": "+=",
+      "1": "-=",
+      "2": "*=",
+      "3": "%="
+    },
+    "correctAnswer": "3",
+    "question": "Which of the following is not a valid assignment operator in Ruby?"
+  },
+  "26": {
+    "answers": {
+      "0": "Multiplies the value twice",
+      "1": "It is used as exponent like 2**3=8",
+      "2": "It is the multiplication operator",
+      "3": "Breaks everything in your code"
     },
     "correctAnswer": "1",
-    "question": "Which of the following is a common project management methodology when building software in a team?"
+    "question": "What does the **= assignment operator do?"
+  },
+  "27": {
+    "answers": {
+      "0": "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+      "1": "var colors = ['red', 'green', 'blue']",
+      "2": "var colors = 'red', 'green', 'blue',",
+      "3": "var colors = (1:'red', 2:'green', 3:'blue')"
+    },
+    "correctAnswer": "1",
+    "question": "What is the correct way to write a JavaScript array"
+  },
+  "28": {
+    "answers": {
+      "0": "<scripting>",
+      "1": "<js>",
+      "2": "<script>",
+      "3": "<code>"
+    },
+    "correctAnswer": "2",
+    "question": "Inside which HTML element do we put JavaScript code?"
+  },
+  "29": {
+    "answers": {
+      "0": "onClick",
+      "1": "onMouseOver",
+      "2": "onMouseClick",
+      "3": "onPointingWithMyMouseFriend"
+    },
+    "correctAnswer": "0",
+    "question": "Which event occurs when the user clicks on an HTML element?"
   },
 }
