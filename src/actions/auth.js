@@ -24,6 +24,9 @@ export const startLogin = (uid) => {
   return (dispatch, getState) => {
     // const uid = getState().auth.uid
     return database.ref(`players/${uid}`).once('value').then((snapshot) => {
+      if(snapshot.val() === null){
+        window.location.reload()
+      }
       const playerData = snapshot.val() || {}
       if (playerData.inventory !== undefined) {
         const inventory = {
