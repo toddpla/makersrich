@@ -13,7 +13,7 @@
     "answers": {
       "0": "Small responsibility please?",
       "1": "Single responsibility principle",
-      "2": "Simulataneous reaction probability",
+      "2": "Simultaneous reaction probability",
       "3": "Single rows pass"
     },
     "correctAnswer": "1",
@@ -21,10 +21,10 @@
   },
   "3": {
     "answers": {
-      "0": "Every file should be responsibile for one part of the program",
-      "1": "Every class should be responsibile for one part of the program",
-      "2": "Every line should be responsibile for one part of the program",
-      "3": "Every variable should be responsibile for one part of the program"
+      "0": "Every file should be responsible for one part of the program",
+      "1": "Every class should be responsible for one part of the program",
+      "2": "Every line should be responsible for one part of the program",
+      "3": "Every variable should be responsible for one part of the program"
     },
     "correctAnswer": "1",
     "question": "What is the single responsibility principle?"
@@ -54,7 +54,7 @@
       "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
       "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
       "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
-      "3": "Program is executed line by line. Exection is stopped by errors"
+      "3": "Program is executed line by line. Execution is stopped by errors"
     },
     "correctAnswer": "2",
     "question": "Which of the following best describes asynchronous behaviour?"
@@ -64,7 +64,7 @@
       "0": "Program is executed line by line. Executions waits for functions to return a value before continuing",
       "1": "Program is executed line by line. Executions waits a default time for function to return a value before continuing",
       "2": "Program is executed line by line. Executions does not wait for functions to return a value before continuing",
-      "3": "Program is executed line by line. Exection is stopped by errors"
+      "3": "Program is executed line by line. Execution is stopped by errors"
     },
     "correctAnswer": "1",
     "question": "Which of the following best describes synchronous behaviour?"
@@ -257,7 +257,7 @@
       "3": "Breaks everything in your code"
     },
     "correctAnswer": "1",
-    "question": "What does the **= assignment operator do?"
+    "question": "What does the **= assignment operator do in Ruby?"
   },
   "27": {
     "answers": {
@@ -289,4 +289,114 @@
     "correctAnswer": "0",
     "question": "Which event occurs when the user clicks on an HTML element?"
   },
+"21": {
+    "answers": {
+      "0": "New developers take on existing projects",
+      "1": "New methods take on the properties of existing methods",
+      "2": "New builds take on the functionality of existing builds",
+      "3": "New objects take on the properties of existing objects"
+    },
+    "correctAnswer": "3",
+    "question": "Which statement best describes 'inheritance' in programming?"
+  },
+  "22": {
+    "answers": {
+      "0": "Code that doesn't contain repeating lines of code",
+      "1": "Code that does contain repeating lines of code",
+      "2": "Code that contains regular expressions",
+      "3": "Code that doesn't contain regular expressions"
+    },
+    "correctAnswer": "0",
+    "question": "What is meant by DRY code?"
+  },
+  "23": {
+    "answers": {
+      "0": "HTML",
+      "1": "CSS",
+      "2": "NodeJS",
+      "3": "React"
+    },
+    "correctAnswer": "0",
+    "question": "What technology is used to style a webpage?"
+  },
+  "24": {
+    "answers": {
+      "0": "Swift",
+      "1": "Agile",
+      "2": "Fast",
+      "3": "XP"
+    },
+    "correctAnswer": "1",
+    "question": "Which of the following is a common project management methodology when building software in a team?"
+  },
+  "25": {
+    "answers": {
+      "0": "Swift",
+      "1": "Agile",
+      "2": "Fast",
+      "3": "XP"
+    },
+    "correctAnswer": "1",
+    "question": "Which of the following is a common project management methodology when building software in a team?"
+  },
+  "30": {
+    "answers": {
+      "0": "Single Responsibility and Interface Segregation Principle",
+      "1": "Subtle Method and Open/Closed Principle",
+      "2": "Red Herring and Liskov Substitution Principle",
+      "3": "Dependency Inversion and Multi Responsibility Principle"
+    },
+    "correctAnswer": "0",
+    "question": "What does which of these are both SOLID principles?"
+  },
+  "31": {
+    "answers": {
+      "0": "Local",
+      "1": "Global",
+      "2": "Instance",
+      "3": "Class"
+    },
+    "correctAnswer": "3",
+    "question": "Variables that start with two '@' symbols are what kind of variables in Ruby"
+  },
+  "32": {
+    "answers": {
+      "0": "%constant",
+      "1": "Constant",
+      "2": "CONSTANT",
+      "3": "&&constant"
+    },
+    "correctAnswer": "2",
+    "question": "Which of the above is following the naming convention for a constant in Ruby?"
+  },
+  "33": {
+    "answers": {
+      "0": "Local",
+      "1": "Global",
+      "2": "Instance",
+      "3": "Class"
+    },
+    "correctAnswer": "1",
+    "question": "Variables that start with a dollar sign are what kind of variables in Ruby?"
+  },
+  "34": {
+    "answers": {
+      "0": "x + y + z",
+      "1": "x + zy",
+      "2": "z + y",
+      "3": "xzy"
+    },
+    "correctAnswer": "1",
+    "question": "What would x += zy equal?"
+  },
+  "35": {
+    "answers": {
+      "0": "It cannot be make any noise",
+      "1": "It cannot be publicly called",
+      "2": "It cannot be changed",
+      "3": "It calls a function"
+    },
+    "correctAnswer": "2",
+    "question": "What does immutable variable mean?"
+  }
 }
