@@ -9,7 +9,7 @@
 [![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/boennemann/badges/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
-The game is deployed on firebase, here - [MakersRich](www.makerzrich.firebaseapp.com)
+The game is deployed on firebase, here - [MakersRich](https://makerzrich.firebaseapp.com)
 
 # Playing the Game
 ## Gameplay
