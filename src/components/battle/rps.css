@@ -32,7 +32,7 @@
 }
 
 .Rock {
-  background-image: url('/assets/rock.png');
+  background-image: url('/assets/Rock.png');
 }
 
 .Scissors {
@@ -43,5 +43,5 @@
 }
 
 .Paper {
-  background-image: url('/assets/paper.png');
+  background-image: url('/assets/Paper.png');
 }
