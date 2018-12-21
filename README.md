@@ -1,6 +1,6 @@
 # MakersRich
 
-[Playing the Game](#Playing the Game) | [Setup](#setup) | [Testing](#testing)
+[Playing the Game](#playing-the-game) | [Setup](#setup) | [Testing](#testing)
 
 [![Waffle.io - Issues in progress](https://badge.waffle.io/toddpla/Proof-of-Work.png?label=in%20progress&title=In%20Progress)](http://waffle.io/toddpla/Proof-of-Work)
 [![star this repo](http://githubbadges.com/star.svg?user=toddpla&repo=makersrich&style=flat)](https://github.com/toddpla/makersrich)
