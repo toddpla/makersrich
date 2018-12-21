@@ -107,3 +107,13 @@ PATCH"
     }
   ]
 },
+{
+  "name":"bean_11",
+  "properties":[
+    {
+      "name":"Message",
+      "type":"string",
+      "value":"In a webpage, HTML gives the structure, CSS gives the styling and JavaScript makes it interactive "
+    }
+  ]
+},

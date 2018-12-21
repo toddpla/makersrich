@@ -87,4 +87,34 @@
       "value":"Large programs often contain thousands of lines of code. Each statement is commonly separated using semi-colon"
      }
   ]
-}
+},
+{
+  "name":"ruby_10",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"In programming, inhertance allows new objects to take on the properties of an existing one"
+     }
+  ]
+},
+{
+  "name":"ruby_11",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"DRY (Don't Repeat Yourself) means keeping your code free from repeating lines of code"
+     }
+  ]
+},
+{
+  "name":"ruby_12",
+  "properties":[
+     {
+      "name":"Message",
+      "type":"string",
+      "value":"Agile is a common methodology used when building software in teams"
+     }
+  ]
+},

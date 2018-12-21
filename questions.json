@@ -198,5 +198,55 @@
     },
     "correctAnswer": "3",
     "question": "Statements in most programming are terminated by what?"
-  }
+  },
+  "21": {
+    "answers": {
+      "0": "New developers take on existing projects",
+      "1": "New methods take on the properties of existing methods",
+      "2": "New builds take on the functionality of existing builds",
+      "3": "New objects take on the properties of existing objects"
+    },
+    "correctAnswer": "3",
+    "question": "Which statement best describes 'inheritance' in programming?"
+  },
+  "22": {
+    "answers": {
+      "0": "Code that doesn't contain repeating lines of code",
+      "1": "Code that does contain repeating lines of code",
+      "2": "Code that contains regular expressions",
+      "3": "Code that doesn't contain regular expressions"
+    },
+    "correctAnswer": "0",
+    "question": "What is meant by DRY code?"
+  },
+  "23": {
+    "answers": {
+      "0": "HTML",
+      "1": "CSS",
+      "2": "NodeJS",
+      "3": "React"
+    },
+    "correctAnswer": "0",
+    "question": "What technology is used to style a webpage?"
+  },
+  "24": {
+    "answers": {
+      "0": "Swift",
+      "1": "Agile",
+      "2": "Fast",
+      "3": "XP"
+    },
+    "correctAnswer": "1",
+    "question": "Which of the following is a common project management methodology when building software in a team?"
+  },
+  "25": {
+    "answers": {
+      "0": "Swift",
+      "1": "Agile",
+      "2": "Fast",
+      "3": "XP"
+    },
+    "correctAnswer": "1",
+    "question": "Which of the following is a common project management methodology when building software in a team?"
+  },
 }
