@@ -6,7 +6,7 @@
 [![Waffle.io - Issues in progress](https://badge.waffle.io/toddpla/Proof-of-Work.png?label=in%20progress&title=In%20Progress)](http://waffle.io/toddpla/Proof-of-Work)
 [![star this repo](http://githubbadges.com/star.svg?user=toddpla&repo=makersrich&style=flat)](https://github.com/toddpla/makersrich)
 [![fork this repo](http://githubbadges.com/fork.svg?user=toddpla&repo=makersrich&style=flat)](https://github.com/toddpla/makersrich/fork)
-[![Pending Pull-Requests](http://githubbadges.herokuapp.com/boennemann/badges/pulls.svg?style=flat)](https://github.com/boennemann/badges/pulls)
+[![Pending Pull-Requests](http://githubbadges.herokuapp.com/toddpla/makersrich/pulls.svg?style=flat)](https://github.com/boennemann/badges/pulls)
 [![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/boennemann/badges/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
