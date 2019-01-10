@@ -71,6 +71,3 @@ Pull Requests are most welcome! Head over to the issues tab to see what could be
 [Felix](www.github.com/felixjtdb)
 [Robin](www.github.com/rbbri)
 [Alfie](www.github.com/runticle)
-
-
-[![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](http://forthebadge.com)
